@@ -1,0 +1,48 @@
+import Hero from "@/components/Hero";
+import RankingTable from "@/components/RankingTable";
+import PerksGrid from "@/components/PerksGrid";
+import platformData from "@/data/platforms.json";
+import perkData from "@/data/perks.json";
+import type { Perk, Platform } from "@/types";
+
+// JSON 字面量类型收窄为数据模型（字段见 src/types.ts）
+const platforms = platformData as Platform[];
+const perks = perkData as Perk[];
+
+export default function Home() {
+  const lastChecked = [...platforms]
+    .map((p) => p.last_checked)
+    .sort((a, b) => b.localeCompare(a))[0]?.slice(0, 10) ?? "—";
+
+  return (
+    <>
+      <Hero
+        platformCount={platforms.length}
+        perkCount={perks.length}
+        lastChecked={lastChecked}
+      />
+
+      <section id="ranking" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
+        <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="text-2xl font-bold">📊 评测排行榜</h2>
+          <p className="text-xs text-foreground/50">
+            点击表头排序 · 数据源 src/data/platforms.json
+          </p>
+        </div>
+        <RankingTable platforms={platforms} />
+      </section>
+
+      <section id="perks" className="border-t border-foreground/10 bg-foreground/[0.02]">
+        <div className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
+          <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-2xl font-bold">🎁 免费羊毛专区</h2>
+            <p className="text-xs text-foreground/50">
+              新用户额度 · 兑换码 · 折扣 · 数据源 src/data/perks.json
+            </p>
+          </div>
+          <PerksGrid perks={perks} />
+        </div>
+      </section>
+    </>
+  );
+}

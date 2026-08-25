@@ -1,0 +1,55 @@
+# Api探照灯 · 定时实测平台数据（Phase 2）
+# 每 6 小时（UTC）自动执行 ping_test.py --apply，指标变化时自动提交回仓库。
+# 手动触发：GitHub Actions 页 → Run workflow。
+#
+# 首次配置（一次性）：
+# 1. Settings → Actions → General → Workflow permissions → 选 "Read and write permissions"
+#    （否则 GITHUB_TOKEN 只读，push 会失败）
+# 2. Settings → Secrets and variables → Actions → New secret → SPOTLIGHT_TEST_KEY
+#    （测试 Key；留空也行，脚本会跳过鉴权头仅测连通性）
+
+name: CI - 定时实测平台数据
+
+on:
+  schedule:
+    # UTC 时间 / 每 6 小时；北京时间 = UTC+8。GitHub 调度可能存在数分钟延迟。
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write # 允许把实测结果 push 回仓库
+
+concurrency:
+  group: api-spotlight-cron-test
+  cancel-in-progress: true # 手动触发时取消进行中的定时任务，避免重复写回
+
+jobs:
+  test-and-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 实测并写回 platforms.json
+        env:
+          # 未配置 secret 时为空字符串，脚本自动走 no-key 模式
+          SPOTLIGHT_TEST_KEY: ${{ secrets.SPOTLIGHT_TEST_KEY }}
+        run: python scripts/ping_test.py --apply
+
+      - name: 提交数据变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "未检测到指标变化，跳过提交"
+          else
+            git commit -m "chore: update platform metrics (${GITHUB_SHA::7})"
+            git push
+          fi
