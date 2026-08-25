@@ -53,7 +53,7 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 `perks.json`：`id / name / provider / content / requirement / link / expires_at / tag / is_hot`
 
-⚠️ 当前全部为**示例占位数据**（域名指向 example.com），正式运营前请替换为真实站点并逐个校准 `test_endpoint`。
+⚠️ 当前为 **15 条空白模板**（无任何示例数据）：直接填写真实站点即可；`status` / `latency_ms` / `success_rate` / `last_checked` 无需手填，由 `ping_test.py` 实测写回。
 
 ## 部署
 
