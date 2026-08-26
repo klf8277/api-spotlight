@@ -93,6 +93,8 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 ✅ 当前为 **27 家公开 API 服务商 / 大厂平台**（海外原生：OpenAI、Anthropic、Google Gemini、xAI、Cohere、Groq、Mistral；国内主流：DeepSeek、SiliconFlow、Moonshot、智谱、阿里百炼、百度千帆、火山方舟、腾讯混元、MiniMax、阶跃星辰；聚合/生态：OpenRouter、Together AI、Fireworks AI、Novita AI、Perplexity、NVIDIA NIM、Hugging Face、Cerebras、DeepInfra、SambaNova），全部纯净官网直链、零返利参数；`status` / `latency_ms` / `success_rate` / `last_checked` 由 `ping_test.py` 实测写回。
 
+📌 **模型清单口径（2026-08）**：基于官方文档/公开模型列表更新（OpenAI、Anthropic、DeepSeek、xAI 官网文档 + OpenRouter / Novita / DeepInfra 公开模型列表交叉取证），聚合平台展示其在列最新模型；一切以官网为准。
+
 ## 部署
 
 | 平台 | 设置 |

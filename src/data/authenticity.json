@@ -3,7 +3,7 @@
   "profiles": [
     {
       "platform_id": "provider-openai",
-      "model": "gpt-4o",
+      "model": "gpt-5.6-sol",
       "chat_endpoint": "/v1/chat/completions",
       "temps": [
         0.3,
@@ -14,7 +14,7 @@
     },
     {
       "platform_id": "provider-deepseek",
-      "model": "deepseek-v3",
+      "model": "deepseek-v4-pro",
       "chat_endpoint": "/chat/completions",
       "temps": [
         0.3,
@@ -25,7 +25,7 @@
     },
     {
       "platform_id": "provider-siliconflow",
-      "model": "deepseek-ai/DeepSeek-V3",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
       "chat_endpoint": "/v1/chat/completions",
       "temps": [
         0.3,
@@ -60,21 +60,21 @@
   "reports": [
     {
       "platform_id": "provider-openai",
-      "model": "gpt-4o",
+      "model": "gpt-5.6-sol",
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"
     },
     {
       "platform_id": "provider-deepseek",
-      "model": "deepseek-v3",
+      "model": "deepseek-v4-pro",
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"
     },
     {
       "platform_id": "provider-siliconflow",
-      "model": "deepseek-ai/DeepSeek-V3",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"
