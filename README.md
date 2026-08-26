@@ -59,7 +59,18 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 **判定铁律：参考值未校准（`calibrated: false`）一律返回 `unknown`，绝不臆断。**
 
-- **校准方法**：到官方直连正版渠道对同一模型采集 ≥20 次探针响应，回填 `median_tokens / token_tolerance_pct / max_repeat / self_id_patterns`，置 `calibrated: true`。
+- **校准方法（一条命令自动回写）**：先到**官方直连正版渠道**取 Key，运行：
+
+  ```bash
+  # Windows（官方直连 Key，示例：OpenAI 正版渠道）
+  set SPOTLIGHT_TEST_KEY=sk-official-xxx
+  python scripts/authenticity_test.py --provider provider-openai --samples-per-temp 4 --max-tokens 600 --calibrate
+  ```
+
+  - `--calibrate` 以本次采样为基线，**自动回写** `scripts/fingerprints.json`（`median_tokens / token_tolerance_pct / max_repeat / self_id_patterns` 并置 `calibrated: true`；原子替换 + `.bak` 备份）；
+  - 建议 `--samples-per-temp 4`（2 温度 × 4 次 = 8 次采样）；成功采样不足 8 次会**拒绝回写**并提示；
+  - ⚠️ **基线必须来自官方直连正版渠道**——用中转站的 Key 校准，等于把参照物架在嫌疑犯身上；
+  - 校准完成后，该模型在普通抽查（不带 `--calibrate`）即可输出 `authentic / suspect / ⏳ 未校准` 判定。
 - **档案位置**：`src/data/authenticity.json`（可增长；`platform_id` 关联 `platforms.json`）。
 - **安全**：复用 `api_key_env` 环境变量链，Key 不落盘；响应仅存 120 字符摘要。
 - **成本**：每次抽查消耗调用方 Key token（默认 2 温度 × 2 采样 × 600 token），可调低。

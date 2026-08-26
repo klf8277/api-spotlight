@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import type { AuthenticityReport, Platform } from "@/types";
 
 type SortKey = "name" | "latency_ms" | "success_rate";
@@ -63,6 +63,44 @@ function VerdictBadge({ report }: { report?: AuthenticityReport }) {
   );
 }
 
+function AuthDetail({ report }: { report?: AuthenticityReport }) {
+  if (!report) {
+    return (
+      <span className="text-foreground/50">
+        暂无该平台的抽查报告（未配置抽查档案 src/data/authenticity.json）。
+      </span>
+    );
+  }
+  const items: Array<[string, string]> = [
+    ["温度档", (report.temps ?? []).map(String).join(" / ") || "—"],
+    ["采样数", report.samples != null ? String(report.samples) : "—"],
+    ["自 ID", report.self_id_seen ?? "—"],
+    ["漂移度", report.token_stdev_pct != null ? `${report.token_stdev_pct}%` : "—"],
+    ["响应中位", report.latency_ms != null ? `${report.latency_ms}ms` : "—"],
+    ["中位 tokens", report.token_median != null ? String(report.token_median) : "—"],
+    ["重复率", report.repeat_ratio != null ? String(report.repeat_ratio) : "—"],
+    ["抽查时间", report.checked_at ?? "—"],
+  ];
+  return (
+    <div className="grid grid-cols-2 gap-x-8 gap-y-1.5 font-mono text-[11px] leading-5 text-foreground/70 sm:grid-cols-4">
+      {items.map(([k, v]) => (
+        <span key={k}>
+          <span className="text-foreground/40">{k}：</span>
+          {v}
+        </span>
+      ))}
+      {report.summary && (
+        <span className="col-span-2 sm:col-span-4">摘要：{report.summary}</span>
+      )}
+      {report.note && (
+        <span className="col-span-2 text-amber-600 dark:text-amber-400 sm:col-span-4">
+          备注：{report.note}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function RankingTable({
   platforms,
   authenticityMap,
@@ -72,6 +110,8 @@ export default function RankingTable({
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("latency_ms");
   const [asc, setAsc] = useState(true);
+  // 抽查详情展开行：点击徽标切换
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const sorted = useMemo(() => {
     const arr = [...platforms];
@@ -141,8 +181,8 @@ export default function RankingTable({
           </thead>
           <tbody>
             {sorted.map((p, i) => (
+              <Fragment key={p.id}>
               <tr
-                key={p.id}
                 className="border-b border-foreground/5 last:border-0 hover:bg-foreground/[0.03]"
               >
                 <td className="px-4 py-3 font-mono text-foreground/40">{i + 1}</td>
@@ -177,7 +217,14 @@ export default function RankingTable({
                   </span>
                 </td>
                 <td className="px-4 py-3">
-                  <VerdictBadge report={authenticityMap[p.id]} />
+                  <button
+                    type="button"
+                    onClick={() => setOpenId(openId === p.id ? null : p.id)}
+                    className="text-left"
+                    title="点击展开抽查详情"
+                  >
+                    <VerdictBadge report={authenticityMap[p.id]} />
+                  </button>
                 </td>
                 <td className="px-4 py-3 font-mono">
                   {p.latency_ms === null ? (
@@ -210,6 +257,14 @@ export default function RankingTable({
                   </a>
                 </td>
               </tr>
+              {openId === p.id && (
+                <tr className="border-b border-foreground/5 bg-foreground/[0.02]">
+                  <td colSpan={8} className="px-4 py-3 text-xs">
+                    <AuthDetail report={authenticityMap[p.id]} />
+                  </td>
+                </tr>
+              )}
+              </Fragment>
             ))}
           </tbody>
         </table>
@@ -219,6 +274,7 @@ export default function RankingTable({
         数据由 scripts/ping_test.py 定期更新，点击表头可排序。
         真实性列为 Phase 3 抽查结果（scripts/authenticity_test.py），
         未配置测试 Key 或指纹参考值未校准时显示 — / ⏳。
+        点击徽标可展开抽查详情（温度档 / 自 ID / 漂移度 / 响应 / 时间戳）。
       </p>
     </div>
   );

@@ -15,6 +15,12 @@ Api探照灯 · Phase 3：模型真实性抽查脚本（独立方法学实现）
   python scripts/authenticity_test.py --apply       # 写回 src/data/authenticity.json（原子替换 + .bak 备份）
   python scripts/authenticity_test.py --provider provider-openai,provider-deepseek --samples-per-temp 2
 
+指纹校准（一次性，必须用官方直连正版渠道的 Key）：
+  set SPOTLIGHT_TEST_KEY=sk-official-xxx
+  python scripts/authenticity_test.py --provider provider-openai --samples-per-temp 4 --calibrate
+  # --calibrate 会以本次采样为基线自动回写 scripts/fingerprints.json（置 calibrated=true）；
+  # 建议 ≥8 次成功采样（2 温度 × 4 次）；样本不足拒绝回写。
+
 安全：Key 仅从环境变量读取（复用 platforms.json 的 api_key_env 安全链）；
       响应内容只保留截断摘要，不打印完整文本。
 成本：每次调用消耗调用方 Key 的 token，默认 2 温度 × 2 采样 × max_tokens 600，可调低。
@@ -222,6 +228,38 @@ async def run_all(reports: list[dict]) -> None:
         # reports 由 main 拼装（避免复杂嵌套），此处占位——实际调度见 main
 
 
+def calibrate_fingerprints(results: list[dict], fingerprints: dict, min_samples: int = 8):
+    """用本次采样生成基线并回写 fingerprints.json（原子替换 + .bak 备份，样本不足拒绝）。"""
+    updated, skipped = 0, []
+    for r in results:
+        model = r.get("model", "")
+        samples = r.get("samples") or 0
+        median = r.get("token_median")
+        if r.get("verdict") in ("skipped", "no-response") or samples < min_samples or median is None:
+            skipped.append(f"{model}: 成功采样 {samples} 次 / 判定 {r.get('verdict')}")
+            continue
+        ref = fingerprints.get(model) or {}
+        ref["calibrated"] = True
+        ref["median_tokens"] = median
+        stdev = r.get("token_stdev_pct") or 10.0
+        ref["token_tolerance_pct"] = max(20, round(stdev * 2 + 10))
+        if r.get("repeat_ratio") is not None:
+            ref["max_repeat"] = round(min(1.0, r["repeat_ratio"] + 0.15), 3)
+        if not ref.get("self_id_patterns"):
+            ref["self_id_patterns"] = [model]
+        if ref.get("expected_self_id") is None:
+            ref["expected_self_id"] = r.get("self_id_seen")
+        ref["note"] = f"基线由 authenticity_test.py --calibrate 于 {r['checked_at']} 采样回写"
+        fingerprints[model] = ref
+        updated += 1
+    if updated:
+        shutil.copy2(FINGERPRINTS_FILE, FINGERPRINTS_FILE.with_suffix(".json.bak"))
+        tmp = FINGERPRINTS_FILE.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(fingerprints, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        os.replace(tmp, FINGERPRINTS_FILE)
+    return updated, "；".join(skipped) or "无"
+
+
 async def main() -> int:
     parser = argparse.ArgumentParser(description="Api探照灯 模型真实性抽查（Phase 3，默认干跑）")
     parser.add_argument("--apply", action="store_true", help="写回 src/data/authenticity.json（默认仅打印）")
@@ -230,6 +268,11 @@ async def main() -> int:
     parser.add_argument("--max-tokens", type=int, default=600, help="单次响应最大 token（默认 600）")
     parser.add_argument("--timeout", type=float, default=60.0, help="单次请求超时秒数（默认 60）")
     parser.add_argument("--concurrency", type=int, default=4)
+    parser.add_argument(
+        "--calibrate",
+        action="store_true",
+        help="用本次采样校准并回写 scripts/fingerprints.json（建议≥8 次成功采样，必须用官方直连 Key）",
+    )
     args = parser.parse_args()
 
     profiles_doc = _load_json(PROFILES_FILE)
@@ -271,6 +314,17 @@ async def main() -> int:
         if r.get("note"):
             print(f"    ↳ {r['note'][:110]}")
         print(f"    ↳ 摘要：{r.get('summary','')[:80]}")
+
+    if args.calibrate:
+        updated, skipped_msg = calibrate_fingerprints(results, fingerprints, min_samples=8)
+        if updated:
+            print(
+                f"\n✅ 指纹基线已回写 scripts/fingerprints.json：更新 {updated} 个模型（calibrated=true）\n"
+                "   下一步：用同样模型再跑普通抽查（不带 --calibrate）即可得到 authentic/suspect 判定。"
+            )
+        else:
+            print(f"\n⚠️ 未回写指纹基线：{skipped_msg}")
+            print("   请检查：是否配置了官方直连正版渠道的 Key？成功采样是否 ≥8 次？")
 
     if args.apply:
         now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
