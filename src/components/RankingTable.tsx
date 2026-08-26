@@ -68,8 +68,8 @@ function Sparkline({ points }: { points: number[] }) {
       }`}
       role="img"
       aria-label="延迟历史（近 30 天）"
-      title="延迟历史（近 30 天，由每日实测记录）"
     >
+      <title>延迟历史（近 30 天，由每日实测记录）</title>
       <path
         d={d}
         fill="none"
