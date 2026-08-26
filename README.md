@@ -59,8 +59,15 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 | 平台 | 设置 |
 |---|---|
-| Vercel | Framework = Next.js（识别 `output: 'export'` 自动静态化） |
-| Cloudflare Pages | Build command `npm run build` · Output `out/` · Node 20+ |
+| Vercel | 仓库根已附 `vercel.json`（framework=nextjs，output=out），导入仓库零配置即可；Vercel 也会自动识别 `output: 'export'` 静态化 |
+| Cloudflare Pages | Build command `npm run build` · Output directory `out/` · Node 22+ |
+
+**Cloudflare Pages 详细步骤（5 步）：**
+1. 仓库推送 GitHub 后，CF 控制台 → Workers & Pages → Create → Pages → Connect to Git；
+2. 选择仓库，框架预设选 **Next.js**（或 Blank）；
+3. Build command 填 `npm run build`，Build output directory 填 `out`；
+4. 环境变量按需添加 `SPOTLIGHT_TEST_KEY`（仅用于 CRON 实测，非页面构建必需），Node.js version 选 22；
+5. 保存并部署，之后每次 push 自动触发；cron 提交的 `chore: update platform metrics` 也会自动触发新构建。
 
 ## 目录结构
 
@@ -73,9 +80,10 @@ git commit && git push                # 指标有变化时自动提交回仓库
 │   └── types.ts          # 数据模型
 ├── public/               # 静态资源
 ├── scripts/ping_test.py  # 接口实测脚本
-└── next.config.ts        # output: 'export'
+├── next.config.ts        # output: 'export'
+└── vercel.json           # Vercel 部署配置（CF Pages 按 README 填参数）
 ```
 
 ## 免责声明
 
-本站为中立评测导航，不直接提供任何支付结算与 API 服务。本站为 100% 独立开源评测，不包含任何商业返利链接（Zero Affiliate Links），收录与排序不受任何商业合作影响，指标均来自公开可测数据。
+本站为中立评测导航，不直接提供任何支付结算与 API 服务。本站为 100% 独立第三方开源监控，不含任何商业返利链接。所有品牌商标归原公司所有，所列福利均为各平台官方公开信息。收录与排序不受任何商业合作影响，指标均来自公开可测数据。

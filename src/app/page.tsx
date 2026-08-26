@@ -35,9 +35,9 @@ export default function Home() {
       <section id="perks" className="border-t border-foreground/10 bg-foreground/[0.02]">
         <div className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
           <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="text-2xl font-bold">🎁 免费羊毛专区</h2>
+            <h2 className="text-2xl font-bold">🎁 官方公开免费/赠额区</h2>
             <p className="text-xs text-foreground/50">
-              新用户额度 · 兑换码 · 折扣 · 数据源 src/data/perks.json
+              各平台官方公开新用户福利 · 以官网为准 · 数据源 src/data/perks.json
             </p>
           </div>
           <PerksGrid perks={perks} />

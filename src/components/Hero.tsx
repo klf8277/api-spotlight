@@ -31,7 +31,7 @@ export default function Hero({ platformCount, perkCount, lastChecked }: HeroProp
             href="#perks"
             className="rounded-lg border border-foreground/10 px-4 py-2 text-sm font-medium hover:bg-foreground/5"
           >
-            免费羊毛专区
+            官方赠额区
           </a>
         </div>
         <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-4 font-mono text-sm text-foreground/60">
@@ -42,7 +42,7 @@ export default function Hero({ platformCount, perkCount, lastChecked }: HeroProp
             </dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-wider">羊毛福利</dt>
+            <dt className="text-xs uppercase tracking-wider">官方赠额</dt>
             <dd className="mt-1 text-2xl font-semibold text-foreground">{perkCount}</dd>
           </div>
           <div>
