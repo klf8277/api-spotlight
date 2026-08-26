@@ -26,6 +26,16 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
+      # 闸门：只允许部署"最新 main"；迟到运行的旧提交直接跳过，防止旧版本覆盖新部署
+      - name: 仅部署最新 main 提交
+        run: |
+          LATEST_MAIN=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$GITHUB_SHA" != "$LATEST_MAIN" ]; then
+            echo "⏭️ 本次运行 head=${GITHUB_SHA:0:8} 已不是最新 main（${LATEST_MAIN:0:8}），跳过部署"
+            exit 0
+          fi
+          echo "✅ 本次为最新 main（${GITHUB_SHA:0:8}），继续部署"
+
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
