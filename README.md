@@ -26,6 +26,7 @@ python scripts/ping_test.py          # 实测，仅打印（默认，安全）
 python scripts/ping_test.py --apply  # 实测并写回 src/data/platforms.json（原子替换 + .bak 备份）
 python scripts/authenticity_test.py            # 真实性抽查（Phase 3，干跑）
 python scripts/authenticity_test.py --apply    # 写回 src/data/authenticity.json（原子替换 + .bak 备份）
+python scripts/history_update.py --apply       # 追加当日延迟历史基线（30 天封顶，cron 自动执行）
 npm run build                                  # 写回后必须重新构建才能生效
 ```
 
@@ -84,6 +85,7 @@ git commit && git push                # 指标有变化时自动提交回仓库
 - **`cn_access`**：境内直连可用性观察（🟢 境内直连 / 🟡 境内受限 / 🔴 境内不可）——基于本站本机实测记录，跨境网络存在时点差异，**非官方保证**；
 - **`payment_methods`**：支付方式（支付宝 / 微信支付 / 国际信用卡 / 对公转账），公开信息整理，以官网为准；
 - 悬停「🇨🇳」徽标可查看支付方式详情；后期待接入"内地 Runner 双端并测"后可实现双视角自动对比。
+- **📉 历史趋势**：延迟列下的迷你曲线（纯 SVG，零依赖）由 `src/data/history.json` 驱动（`history_update.py` 每日追加，30 天封顶，原子替换 + .bak）。
 
 ## 数据结构（schema 见 src/types.ts）
 

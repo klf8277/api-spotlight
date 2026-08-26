@@ -48,6 +48,16 @@ export interface Perk {
   verified_at?: string;
 }
 
+/** 历史趋势：src/data/history.json 条目（scripts/history_update.py 产出，30 天封顶） */
+export interface HistoryPlatformPoint {
+  latency_ms: number | null;
+  success_rate: number;
+}
+export interface HistoryEntry {
+  date: string;
+  platforms: Record<string, HistoryPlatformPoint>;
+}
+
 /** 真实性抽查报告：src/data/authenticity.json 的 reports 条目（scripts/authenticity_test.py --apply 产出） */
 export interface AuthenticityReport {
   platform_id: string;

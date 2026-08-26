@@ -43,6 +43,9 @@ jobs:
           SPOTLIGHT_TEST_KEY: ${{ secrets.SPOTLIGHT_TEST_KEY }}
         run: python scripts/ping_test.py --apply
 
+      - name: 记录当日历史基线
+        run: python scripts/history_update.py --apply
+
       - name: 提交数据变更
         run: |
           git config user.name "github-actions[bot]"
@@ -55,21 +58,30 @@ jobs:
             git push
           fi
 
-      # Watchman 自愈：若 push 触发部署失效或部署落后于 main，自动补触发
+      # Watchman 自愈：按 head_sha 匹配运行记录；同 SHA 已有 完成/进行中/排队 运行时不重复补发
       - name: Watchman - 确保部署跟上 main
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           HEAD=$(git rev-parse HEAD)
-          LAST=$(curl -s -m 20 -H "Authorization: Bearer ${GH_TOKEN}" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/runs?per_page=1" \
-            | python3 -c "import json,sys; r=json.load(sys.stdin).get('workflow_runs',[]); print(r[0]['head_sha'] if r else '')" || true)
-          if [ -z "$LAST" ] || [ "$LAST" != "$HEAD" ]; then
-            echo "⚠️ 部署落后于 main（HEAD=${HEAD} 已部署=${LAST:-无}），触发自愈部署..."
+          R=$(curl -s -m 20 -H "Authorization: Bearer ${GH_TOKEN}" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/runs?per_page=10")
+          NEED=$(echo "$R" | python3 -c "
+import json, sys
+head = sys.argv[1] if len(sys.argv) > 1 else ''
+try:
+    runs = json.load(sys.stdin).get('workflow_runs', [])
+except Exception:
+    print('1'); sys.exit(0)
+m = [r for r in runs if r.get('head_sha', '') == head]
+print('0' if (m and m[0].get('status') in ('completed', 'in_progress', 'queued')) else '1')
+" "$HEAD")
+          if [ "$NEED" = "1" ]; then
+            echo "⚠️ 未发现同 SHA(HEAD=${HEAD}) 的部署运行，触发自愈..."
             curl -s -m 20 -X POST -H "Authorization: Bearer ${GH_TOKEN}" \
               -d '{"ref":"main"}' \
               "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/dispatches" \
               -o /dev/null -w "dispatch_http=%{http_code}\n"
           else
-            echo "✅ 部署已跟上 main（${HEAD}），无需自愈"
+            echo "✅ 已存在 HEAD=${HEAD} 的部署运行（完成/进行中/排队），无需自愈"
           fi

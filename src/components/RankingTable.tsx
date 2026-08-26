@@ -42,6 +42,46 @@ function latencyTone(v: number): string {
   return "text-red-500";
 }
 
+function Sparkline({ points }: { points: number[] }) {
+  if (points.length < 2) return null;
+  const w = 96,
+    h = 24,
+    pad = 2;
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const range = max - min || 1;
+  const step = (w - pad * 2) / (points.length - 1);
+  const d = points
+    .map(
+      (v, i) =>
+        `${i === 0 ? "M" : "L"}${(pad + i * step).toFixed(1)},${(
+          h - pad - ((v - min) / range) * (h - pad * 2)
+        ).toFixed(1)}`,
+    )
+    .join(" ");
+  const improving = points[points.length - 1] < points[0];
+  return (
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      className={`mt-1 h-5 w-24 ${
+        improving ? "text-emerald-500/80" : "text-amber-500/80"
+      }`}
+      role="img"
+      aria-label="延迟历史（近 30 天）"
+      title="延迟历史（近 30 天，由每日实测记录）"
+    >
+      <path
+        d={d}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function VerdictBadge({ report }: { report?: AuthenticityReport }) {
   const CONF: Record<string, { label: string; cls: string }> = {
     authentic: {
@@ -123,9 +163,11 @@ function AuthDetail({ report }: { report?: AuthenticityReport }) {
 export default function RankingTable({
   platforms,
   authenticityMap,
+  latencyHistory,
 }: {
   platforms: Platform[];
   authenticityMap: Record<string, AuthenticityReport>;
+  latencyHistory?: Record<string, Array<{ date: string; latency: number }>>;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("latency_ms");
   const [asc, setAsc] = useState(true);
@@ -285,6 +327,9 @@ export default function RankingTable({
                   ) : (
                     <span className={latencyTone(p.latency_ms)}>{p.latency_ms}</span>
                   )}
+                  <Sparkline
+                    points={(latencyHistory?.[p.id] ?? []).map((e) => e.latency)}
+                  />
                 </td>
                 <td className="px-4 py-3 font-mono">{p.success_rate.toFixed(1)}%</td>
                 <td
