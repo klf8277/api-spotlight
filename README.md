@@ -53,7 +53,7 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 `perks.json`：`id / name / provider / content / requirement / link / expires_at / tag / is_hot`
 
-✅ 当前为 **15 家公开 API 服务商 / 大厂平台**（OpenRouter、OpenAI、Anthropic、Google Gemini、DeepSeek、SiliconFlow、Moonshot、智谱、阿里百炼、火山方舟、腾讯混元、MiniMax、Groq、Mistral、xAI），全部纯净官网直链、零返利参数；`status` / `latency_ms` / `success_rate` / `last_checked` 由 `ping_test.py` 实测写回。
+✅ 当前为 **27 家公开 API 服务商 / 大厂平台**（海外原生：OpenAI、Anthropic、Google Gemini、xAI、Cohere、Groq、Mistral；国内主流：DeepSeek、SiliconFlow、Moonshot、智谱、阿里百炼、百度千帆、火山方舟、腾讯混元、MiniMax、阶跃星辰；聚合/生态：OpenRouter、Together AI、Fireworks AI、Novita AI、Perplexity、NVIDIA NIM、Hugging Face、Cerebras、DeepInfra、SambaNova），全部纯净官网直链、零返利参数；`status` / `latency_ms` / `success_rate` / `last_checked` 由 `ping_test.py` 实测写回。
 
 ## 部署
 
