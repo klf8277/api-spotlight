@@ -75,9 +75,17 @@ git commit && git push                # 指标有变化时自动提交回仓库
 - **安全**：复用 `api_key_env` 环境变量链，Key 不落盘；响应仅存 120 字符摘要。
 - **成本**：每次抽查消耗调用方 Key token（默认 2 温度 × 2 采样 × 600 token），可调低。
 
+## 双视角可用性（🇨🇳 境内视角）
+
+榜单在云端视角（CI/cron 实测，全球部署视角）之外，提供国内开发者最关心的维度：
+
+- **`cn_access`**：境内直连可用性观察（🟢 境内直连 / 🟡 境内受限 / 🔴 境内不可）——基于本站本机实测记录，跨境网络存在时点差异，**非官方保证**；
+- **`payment_methods`**：支付方式（支付宝 / 微信支付 / 国际信用卡 / 对公转账），公开信息整理，以官网为准；
+- 悬停「🇨🇳」徽标可查看支付方式详情；后期待接入"内地 Runner 双端并测"后可实现双视角自动对比。
+
 ## 数据结构（schema 见 src/types.ts）
 
-`platforms.json`：`id / name / url / api_base / affiliate_url(已废弃,恒 null) / status / latency_ms / success_rate / supported_models / is_featured / tags / test_endpoint / api_key_env / last_checked`（`api_base` 用于官网 ≠ API 域的探测，不填则回退 `url`）
+`platforms.json`：`id / name / type(official=官方原厂 | relay=第三方中转) / url / api_base / affiliate_url(已废弃,恒 null) / status / latency_ms / success_rate / supported_models / is_featured / tags / payment_methods / cn_access / test_endpoint / api_key_env / last_checked`（`api_base` 用于官网 ≠ API 域的探测，不填则回退 `url`）
 
 `perks.json`：`id / name / provider / content / requirement / link / expires_at / tag / is_hot`
 

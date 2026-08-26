@@ -17,6 +17,25 @@ const STATUS_DOT: Record<Platform["status"], string> = {
   offline: "bg-red-500",
 };
 
+// 🇨🇳 境内视角：本站本机实测观察（非官方保证）
+const CN_ACCESS: Record<string, { label: string; dot: string; cls: string }> = {
+  direct: {
+    label: "境内直连",
+    dot: "bg-emerald-500",
+    cls: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  },
+  unstable: {
+    label: "境内受限",
+    dot: "bg-amber-500",
+    cls: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+  },
+  blocked: {
+    label: "境内不可",
+    dot: "bg-red-500",
+    cls: "bg-red-500/15 text-red-500",
+  },
+};
+
 function latencyTone(v: number): string {
   if (v < 200) return "text-emerald-600 dark:text-emerald-400";
   if (v < 400) return "text-amber-600 dark:text-amber-400";
@@ -159,6 +178,7 @@ export default function RankingTable({
               </th>
               <th className="px-4 py-3 font-medium">状态</th>
               <th className="px-4 py-3 font-medium">真实性抽查</th>
+              <th className="px-4 py-3 font-medium">🇨🇳 境内可用</th>
               <th className="px-4 py-3 font-medium">
                 <button
                   onClick={() => onSort("latency_ms")}
@@ -236,6 +256,29 @@ export default function RankingTable({
                     <VerdictBadge report={authenticityMap[p.id]} />
                   </button>
                 </td>
+                <td className="px-4 py-3">
+                  {(() => {
+                    const cn = CN_ACCESS[p.cn_access ?? "direct"];
+                    const pays = p.payment_methods ?? [];
+                    return (
+                      <>
+                        <span
+                          className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${cn.cls}`}
+                          title={`支付方式：${pays.join("、") || "以官网为准"}（公开信息整理）`}
+                        >
+                          <span className={`h-1.5 w-1.5 rounded-full ${cn.dot}`} />
+                          {cn.label}
+                        </span>
+                        <div className="mt-0.5 text-[10px] text-foreground/40">
+                          {pays.length > 0
+                            ? pays.slice(0, 2).join(" · ") +
+                              (pays.length > 2 ? ` +${pays.length - 2}` : "")
+                            : "支付方式以官网为准"}
+                        </div>
+                      </>
+                    );
+                  })()}
+                </td>
                 <td className="px-4 py-3 font-mono">
                   {p.latency_ms === null ? (
                     <span className="text-foreground/40">—</span>
@@ -269,7 +312,7 @@ export default function RankingTable({
               </tr>
               {openId === p.id && (
                 <tr className="border-b border-foreground/5 bg-foreground/[0.02]">
-                  <td colSpan={8} className="px-4 py-3 text-xs">
+                  <td colSpan={9} className="px-4 py-3 text-xs">
                     <AuthDetail report={authenticityMap[p.id]} />
                   </td>
                 </tr>
@@ -285,6 +328,7 @@ export default function RankingTable({
         真实性列为 Phase 3 抽查结果（scripts/authenticity_test.py），
         未配置测试 Key 或指纹参考值未校准时显示 — / ⏳。
         点击徽标可展开抽查详情（温度档 / 自 ID / 漂移度 / 响应 / 时间戳）。
+        🇨🇳 境内可用性为本站本机实测观察（非官方保证，跨境网络存在时点差异）；支付方式为公开信息整理，以官网为准。
       </p>
     </div>
   );

@@ -12,6 +12,8 @@
     "supported_models": ["openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-2.5-pro", "deepseek/deepseek-v3"],
     "is_featured": true,
     "tags": ["全球聚合", "一 key 多模型", "美元计价"],
+    "payment_methods": ["国际信用卡", "加密货币"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -29,6 +31,8 @@
     "supported_models": ["gpt-4o", "gpt-4o-mini", "gpt-4.1"],
     "is_featured": false,
     "tags": ["官方直供", "行业标杆", "GPT-4o 家族"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -46,6 +50,8 @@
     "supported_models": ["claude-3-5-sonnet", "claude-3-7-sonnet", "claude-3-5-haiku"],
     "is_featured": false,
     "tags": ["代码专精", "Claude 家族", "长上下文"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -63,6 +69,8 @@
     "supported_models": ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.0-flash"],
     "is_featured": false,
     "tags": ["多模态", "超长上下文", "Gemini 家族"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -80,6 +88,8 @@
     "supported_models": ["grok-3", "grok-3-mini", "grok-2"],
     "is_featured": false,
     "tags": ["Grok 家族", "实时数据"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -97,6 +107,8 @@
     "supported_models": ["command-r-plus", "command-r", "command-a"],
     "is_featured": false,
     "tags": ["企业级", "RAG 生态", "多语言"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -114,6 +126,8 @@
     "supported_models": ["llama-3.3-70b-versatile", "gemma2-27b-it", "mixtral-8x7b-32768"],
     "is_featured": false,
     "tags": ["极速推理", "LPU 硬件", "免费额度"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -131,6 +145,8 @@
     "supported_models": ["mistral-large-latest", "mistral-small-latest", "codestral-latest"],
     "is_featured": false,
     "tags": ["欧洲系", "开源模型", "多语言"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -148,6 +164,8 @@
     "supported_models": ["deepseek-v3", "deepseek-r1"],
     "is_featured": true,
     "tags": ["国产开源", "极致性价比"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -165,6 +183,8 @@
     "supported_models": ["deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct", "THUDM/GLM-4-9B-Chat"],
     "is_featured": true,
     "tags": ["国产 GPU 云", "模型全家桶", "注册送额"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -182,6 +202,8 @@
     "supported_models": ["moonshot-v1-8k", "moonshot-v1-32k", "kimi-k2"],
     "is_featured": true,
     "tags": ["超长上下文", "Kimi 家族", "国产新锐"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -198,6 +220,8 @@
     "supported_models": ["glm-4-plus", "glm-4.5", "glm-4-air"],
     "is_featured": false,
     "tags": ["国产第一梯队", "GLM 家族"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -215,6 +239,8 @@
     "supported_models": ["qwen-max", "qwen-turbo", "qwen-plus"],
     "is_featured": false,
     "tags": ["阿里生态", "通义千问", "企业级"],
+    "payment_methods": ["支付宝", "微信支付", "对公转账"],
+    "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -232,6 +258,8 @@
     "supported_models": ["ernie-4.0-8k", "ernie-4.5", "ernie-3.5-8k"],
     "is_featured": false,
     "tags": ["百度生态", "文心 ERNIE", "企业级"],
+    "payment_methods": ["支付宝", "微信支付", "对公转账"],
+    "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -249,6 +277,8 @@
     "supported_models": ["doubao-pro-128k", "doubao-pro-32k", "doubao-lite-32k"],
     "is_featured": false,
     "tags": ["字节生态", "豆包系列", "企业级"],
+    "payment_methods": ["支付宝", "微信支付", "对公转账"],
+    "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -266,6 +296,8 @@
     "supported_models": ["hunyuan-turbo", "hunyuan-pro", "hunyuan-large"],
     "is_featured": false,
     "tags": ["腾讯生态", "混元家族"],
+    "payment_methods": ["微信支付", "对公转账"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -283,6 +315,8 @@
     "supported_models": ["abab6.5s-chat", "MiniMax-M1"],
     "is_featured": false,
     "tags": ["长上下文", "本土创企"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -300,6 +334,8 @@
     "supported_models": ["step-2-16k", "step-1-32k", "step-1-8k"],
     "is_featured": false,
     "tags": ["国产新锐", "Step 家族"],
+    "payment_methods": ["支付宝", "微信支付"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -317,6 +353,8 @@
     "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct"],
     "is_featured": true,
     "tags": ["全模型池", "开放权重", "推理加速"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -334,6 +372,8 @@
     "supported_models": ["accounts/fireworks/models/llama-v3p1-70b-instruct", "accounts/fireworks/models/deepseek-v3", "accounts/fireworks/models/qwen2p5-72b-instruct"],
     "is_featured": false,
     "tags": ["推理加速", "开放权重", "企业级"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/inference/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -351,6 +391,8 @@
     "supported_models": ["deepseek-v3", "llama-3.3-70b", "qwen2.5-72b"],
     "is_featured": false,
     "tags": ["性价比", "GPU 云"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v3/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -368,6 +410,8 @@
     "supported_models": ["sonar", "sonar-pro", "sonar-reasoning"],
     "is_featured": true,
     "tags": ["联网搜索", "实时引用"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -385,6 +429,8 @@
     "supported_models": ["meta/llama-3.3-70b-instruct", "deepseek-ai/deepseek-r1", "moonshotai/kimi-k2"],
     "is_featured": false,
     "tags": ["英伟达生态", "GPU 云", "高吞吐"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "unstable",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -402,6 +448,8 @@
     "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct"],
     "is_featured": true,
     "tags": ["开源生态", "模型量巨大"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -419,6 +467,8 @@
     "supported_models": ["llama-3.3-70b", "llama3.1-8b", "qwen3-32b"],
     "is_featured": false,
     "tags": ["超高速推理", "晶圆级芯片"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -436,6 +486,8 @@
     "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "mistralai/Mistral-Small-24B-Instruct-2501"],
     "is_featured": false,
     "tags": ["低价开放权重", "弹性"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "direct",
     "test_endpoint": "/v1/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -453,6 +505,8 @@
     "supported_models": ["Meta-Llama-3.3-70B-Instruct", "DeepSeek-R1-Distill-Llama-70B", "Qwen2.5-72B-Instruct"],
     "is_featured": false,
     "tags": ["晶圆级芯片", "R1 官方", "极速"],
+    "payment_methods": ["国际信用卡"],
+    "cn_access": "unstable",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"

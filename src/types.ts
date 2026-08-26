@@ -22,6 +22,10 @@ export interface Platform {
   supported_models: string[];
   is_featured?: boolean;
   tags?: string[];
+  /** 公开信息整理的支付方式（支付宝/微信支付/国际信用卡等），以官网为准 */
+  payment_methods?: string[];
+  /** 境内视角可用性（本站本机实测观察）：direct=境内直连可用 / unstable=境内受限（波动或需代理）/ blocked=境内不可达 */
+  cn_access?: "direct" | "unstable" | "blocked";
   /** 当前测试用的端点路径，默认 /v1/models */
   test_endpoint: string;
   /** 测试 Key 对应的环境变量名（值为变量名，不是 Key 本身） */
