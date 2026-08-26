@@ -30,17 +30,18 @@ python scripts/authenticity_test.py --calibrate  # 指纹校准（需官方直�
 git push origin main                           # Push 即部署
 ```
 
-## ⚠️ 已知问题（2026-08-26 起）
+## 已知问题（2026-08-27 定论）
 
-- **GitHub Actions 事件触发失效**：连续 3 次 push 未自动触发 deploy_pages.yml（无失败记录）。
-  对策：① watchman（cron 自愈，≤6h 自动补触发）；② 人工应急（本机）：
+- **Push 触发为「延迟排队」而非失效**（实测约 20 分钟量级，配置正常）。已用双保险兜底：
+  ① 部署闸门「仅部署最新 main」（迟到旧提交自动跳过，杜绝回滚）；
+  ② watchman（cron 自愈，45s 复检后再补发，避免与迟到 push 重复）。
+- 人工应急（仅当线上滞后 >6h 且 watchman 未动作时使用）：
   ```bash
   CRED=$(printf "protocol=https\nhost=github.com\n\n" | GIT_TERMINAL_PROMPT=0 git credential fill)
   TOKEN=$(echo "$CRED" | grep "^password=" | cut -d= -f2-)
   curl -X POST -H "Authorization: Bearer $TOKEN" -d '{"ref":"main"}' \
     "https://api.github.com/repos/klf8277/api-spotlight/actions/workflows/deploy_pages.yml/dispatches"
   ```
-  根因待查：repo Settings → Actions → General 的「允许 Actions 运行」开关。
 
 ## 模型清单口径（2026-08）
 

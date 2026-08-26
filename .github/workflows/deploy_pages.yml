@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # 闸门：只允许部署"最新 main"；迟到运行的旧提交直接跳过，防止旧版本覆盖新部署
       - name: 仅部署最新 main 提交
@@ -44,6 +44,9 @@ jobs:
 
       - name: 安装依赖
         run: npm ci
+
+      - name: 静态检查 (Lint)
+        run: npm run lint
 
       - name: 构建静态站点
         run: npm run build

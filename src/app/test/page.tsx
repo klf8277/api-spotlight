@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "在线测试区 · APISpotlight",
@@ -31,12 +32,12 @@ set SPOTLIGHT_TEST_KEY=sk-xxx && python scripts/ping_test.py`}
       <p className="mt-4 text-xs text-foreground/50">
         ⚠️ Key 只允许存在于环境变量；写回后需重新构建：npm run build。
       </p>
-      <a
+      <Link
         href="/"
         className="mt-8 inline-block rounded-lg border border-foreground/10 px-4 py-2 text-sm hover:bg-foreground/5"
       >
         ← 返回首页
-      </a>
+      </Link>
     </div>
   );
 }

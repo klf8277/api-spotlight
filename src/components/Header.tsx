@@ -24,12 +24,12 @@ export default function Header() {
           </span>
         </Link>
         <nav className="flex items-center gap-0.5 text-sm sm:gap-1.5">
-          <a href="/#ranking" className="rounded-md px-2 py-1 hover:bg-foreground/5">
+          <Link href="/#ranking" className="rounded-md px-2 py-1 hover:bg-foreground/5">
             评测排行榜
-          </a>
-          <a href="/#perks" className="rounded-md px-2 py-1 hover:bg-foreground/5">
+          </Link>
+          <Link href="/#perks" className="rounded-md px-2 py-1 hover:bg-foreground/5">
             官方赠额区
-          </a>
+          </Link>
           <Link href="/test" className="rounded-md px-2 py-1 hover:bg-foreground/5">
             在线测试区
           </Link>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "测试方法论 · APISpotlight",
@@ -73,12 +74,12 @@ export default function MethodPage() {
           </section>
         ))}
       </div>
-      <a
+      <Link
         href="/"
         className="mt-10 inline-block rounded-lg border border-foreground/10 px-4 py-2 text-sm hover:bg-foreground/5"
       >
         ← 返回首页
-      </a>
+      </Link>
     </div>
   );
 }
