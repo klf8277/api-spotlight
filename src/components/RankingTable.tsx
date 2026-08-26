@@ -156,18 +156,8 @@ export default function RankingTable({ platforms }: { platforms: Platform[] }) {
                     rel="noopener noreferrer nofollow"
                     className="font-medium text-emerald-600 hover:underline dark:text-emerald-400"
                   >
-                    官网
+                    官网 ↗
                   </a>
-                  {p.affiliate_url && (
-                    <a
-                      href={p.affiliate_url}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      className="ml-2 text-foreground/60 hover:underline"
-                    >
-                      推广
-                    </a>
-                  )}
                 </td>
               </tr>
             ))}

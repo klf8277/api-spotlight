@@ -1,227 +1,354 @@
 [
   {
-    "id": "provider-1",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
-    "is_featured": false,
-    "tags": [],
+    "id": "provider-openrouter",
+    "name": "OpenRouter",
+    "url": "https://openrouter.ai",
+    "api_base": "https://openrouter.ai/api",
+    "affiliate_url": null,
+    "status": "degraded",
+    "latency_ms": 456,
+    "success_rate": 66.7,
+    "supported_models": [
+      "openai/gpt-5.6",
+      "anthropic/claude-sonnet-5",
+      "deepseek/deepseek-v3",
+      "google/gemini-2.5-pro"
+    ],
+    "is_featured": true,
+    "tags": [
+      "全球聚合",
+      "一 key 多模型",
+      "美元计价"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-2",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-openai",
+    "name": "OpenAI",
+    "url": "https://platform.openai.com",
+    "api_base": "https://api.openai.com",
+    "affiliate_url": null,
+    "status": "degraded",
+    "latency_ms": 625,
+    "success_rate": 66.7,
+    "supported_models": [
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gpt-5.5"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "官方直供",
+      "行业标杆",
+      "GPT-5.6 家族"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-3",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-anthropic",
+    "name": "Anthropic",
+    "url": "https://platform.anthropic.com",
+    "api_base": "https://api.anthropic.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 793,
+    "success_rate": 100.0,
+    "supported_models": [
+      "claude-sonnet-5",
+      "claude-opus-5"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "代码专精",
+      "Claude 家族",
+      "长上下文"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-4",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-google",
+    "name": "Google Gemini",
+    "url": "https://ai.google.dev",
+    "api_base": "https://generativelanguage.googleapis.com",
+    "affiliate_url": null,
+    "status": "degraded",
+    "latency_ms": 443,
+    "success_rate": 66.7,
+    "supported_models": [
+      "gemini-2.5-pro",
+      "gemini-2.5-flash"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "多模态",
+      "超长上下文",
+      "Gemini 家族"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-5",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
-    "is_featured": false,
-    "tags": [],
+    "id": "provider-deepseek",
+    "name": "DeepSeek",
+    "url": "https://platform.deepseek.com",
+    "api_base": "https://api.deepseek.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 222,
+    "success_rate": 100.0,
+    "supported_models": [
+      "deepseek-v3",
+      "deepseek-r1"
+    ],
+    "is_featured": true,
+    "tags": [
+      "国产开源",
+      "极致性价比"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-6",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
-    "is_featured": false,
-    "tags": [],
+    "id": "provider-siliconflow",
+    "name": "SiliconFlow",
+    "url": "https://siliconflow.cn",
+    "api_base": "https://api.siliconflow.cn",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 88,
+    "success_rate": 100.0,
+    "supported_models": [
+      "deepseek-ai/DeepSeek-V3",
+      "Qwen/Qwen2.5-72B",
+      "THUDM/GLM-4.6"
+    ],
+    "is_featured": true,
+    "tags": [
+      "国产 GPU 云",
+      "模型全家桶",
+      "注册送额"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-7",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
-    "is_featured": false,
-    "tags": [],
+    "id": "provider-moonshot",
+    "name": "Moonshot AI (Kimi)",
+    "url": "https://platform.moonshot.cn",
+    "api_base": "https://api.moonshot.cn",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 188,
+    "success_rate": 100.0,
+    "supported_models": [
+      "kimi-k2",
+      "kimi-k2-thinking",
+      "moonshot-v1-128k"
+    ],
+    "is_featured": true,
+    "tags": [
+      "超长上下文",
+      "Kimi 家族",
+      "国产新锐"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-8",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-zhipu",
+    "name": "智谱 AI (GLM)",
+    "url": "https://open.bigmodel.cn",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 135,
+    "success_rate": 100.0,
+    "supported_models": [
+      "GLM-4.6",
+      "GLM-4.5",
+      "GLM-4-Plus"
+    ],
     "is_featured": false,
-    "tags": [],
-    "test_endpoint": "/v1/models",
+    "tags": [
+      "国产第一梯队",
+      "GLM 家族"
+    ],
+    "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-9",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-bailian",
+    "name": "阿里云百炼 (通义)",
+    "url": "https://bailian.console.aliyun.com",
+    "api_base": "https://dashscope.aliyuncs.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 102,
+    "success_rate": 100.0,
+    "supported_models": [
+      "qwen-max",
+      "qwen-plus",
+      "qwen-long"
+    ],
     "is_featured": false,
-    "tags": [],
-    "test_endpoint": "/v1/models",
+    "tags": [
+      "阿里生态",
+      "通义千问",
+      "企业级"
+    ],
+    "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-10",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-volcano",
+    "name": "火山引擎方舟 (豆包)",
+    "url": "https://www.volcengine.com/product/ark",
+    "api_base": "https://ark.cn-beijing.volces.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 71,
+    "success_rate": 100.0,
+    "supported_models": [
+      "DeepSeek-V3",
+      "DeepSeek-R1",
+      "Doubao-1.5-Pro-32k"
+    ],
     "is_featured": false,
-    "tags": [],
-    "test_endpoint": "/v1/models",
+    "tags": [
+      "字节生态",
+      "豆包 + DeepSeek",
+      "企业级"
+    ],
+    "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-11",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-tencent",
+    "name": "腾讯混元",
+    "url": "https://cloud.tencent.com/product/hunyuan",
+    "api_base": "https://api.hunyuan.cloud.tencent.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 1196,
+    "success_rate": 100.0,
+    "supported_models": [
+      "hunyuan-turbo",
+      "hunyuan-pro",
+      "hunyuan-large"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "腾讯生态",
+      "混元家族"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-12",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-minimax",
+    "name": "MiniMax",
+    "url": "https://platform.minimaxi.com",
+    "api_base": "https://api.minimaxi.com",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 194,
+    "success_rate": 100.0,
+    "supported_models": [
+      "MiniMax-M1",
+      "abab6.5s-chat"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "长上下文",
+      "本土创企"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-13",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-groq",
+    "name": "Groq",
+    "url": "https://console.groq.com",
+    "api_base": "https://api.groq.com/openai",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 553,
+    "success_rate": 100.0,
+    "supported_models": [
+      "Llama-3.3-70B",
+      "Gemma-3-27B",
+      "GPT-OSS-120B"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "极速推理",
+      "LPU 硬件",
+      "免费额度"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-14",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-mistral",
+    "name": "Mistral AI",
+    "url": "https://console.mistral.ai",
+    "api_base": "https://api.mistral.ai",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 585,
+    "success_rate": 100.0,
+    "supported_models": [
+      "mistral-large-latest",
+      "mistral-small-latest",
+      "codestral-latest"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "欧洲系",
+      "开源模型",
+      "多语言"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   },
   {
-    "id": "provider-15",
-    "name": "",
-    "url": "",
-    "affiliate_url": "",
-    "status": "offline",
-    "latency_ms": null,
-    "success_rate": 0,
-    "supported_models": [],
+    "id": "provider-xai",
+    "name": "xAI (Grok)",
+    "url": "https://x.ai",
+    "api_base": "https://api.x.ai",
+    "affiliate_url": null,
+    "status": "online",
+    "latency_ms": 631,
+    "success_rate": 100.0,
+    "supported_models": [
+      "grok-4",
+      "grok-3",
+      "grok-3-mini"
+    ],
     "is_featured": false,
-    "tags": [],
+    "tags": [
+      "Grok 家族",
+      "实时数据"
+    ],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": ""
+    "last_checked": "2026-08-26T11:27:29Z"
   }
 ]

@@ -7,8 +7,8 @@ export default function Footer() {
           一切以各平台官方信息为准。
         </p>
         <p>
-          利益披露：榜单中「推广」链接为带返利参数的推荐链接（affiliate），
-          收录与排序不受推广合作影响，指标均来自公开可测数据。
+          本站为 100% 独立开源评测，不包含任何商业返利链接（Zero Affiliate Links），
+          收录与排序不受任何商业合作影响，指标均来自公开可测数据。
         </p>
         <p className="font-mono">
           © 2026 Api探照灯 · 纯静态部署 · 无用户数据收集 · 社区：Telegram · QQ

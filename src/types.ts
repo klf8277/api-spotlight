@@ -6,8 +6,10 @@ export interface Platform {
   id: string;
   name: string;
   url: string;
-  /** 带返利参数的推荐链接（可选；Footer 已声明用途） */
-  affiliate_url?: string;
+  /** 探测用 API 基础地址；不填则回退 url（官网与 API 同源的平台无需设置） */
+  api_base?: string;
+  /** 已废弃：Zero Affiliate 定位下恒为 null，字段保留兼容旧数据 */
+  affiliate_url?: string | null;
   status: PlatformStatus;
   /** 最近实测延迟中位数（ms），无数据时为 null */
   latency_ms: number | null;

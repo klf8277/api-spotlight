@@ -60,7 +60,7 @@ async def probe_site(
     timeout: float,
 ) -> dict:
     """对单站采样 samples 次，返回结果摘要（不修改原站数据）。"""
-    base = (site.get("url") or "").rstrip("/")
+    base = ((site.get("api_base") or site.get("url")) or "").rstrip("/")
     endpoint = site.get("test_endpoint") or "/v1/models"
     if not base:
         return {"id": site["id"], "name": site["name"], "error": "url 为空，跳过"}

@@ -49,11 +49,11 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 ## 数据结构（schema 见 src/types.ts）
 
-`platforms.json`：`id / name / url / affiliate_url / status / latency_ms / success_rate / supported_models / is_featured / tags / test_endpoint / api_key_env / last_checked`
+`platforms.json`：`id / name / url / api_base / affiliate_url(已废弃,恒 null) / status / latency_ms / success_rate / supported_models / is_featured / tags / test_endpoint / api_key_env / last_checked`（`api_base` 用于官网 ≠ API 域的探测，不填则回退 `url`）
 
 `perks.json`：`id / name / provider / content / requirement / link / expires_at / tag / is_hot`
 
-⚠️ 当前为 **15 条空白模板**（无任何示例数据）：直接填写真实站点即可；`status` / `latency_ms` / `success_rate` / `last_checked` 无需手填，由 `ping_test.py` 实测写回。
+✅ 当前为 **15 家公开 API 服务商 / 大厂平台**（OpenRouter、OpenAI、Anthropic、Google Gemini、DeepSeek、SiliconFlow、Moonshot、智谱、阿里百炼、火山方舟、腾讯混元、MiniMax、Groq、Mistral、xAI），全部纯净官网直链、零返利参数；`status` / `latency_ms` / `success_rate` / `last_checked` 由 `ping_test.py` 实测写回。
 
 ## 部署
 
@@ -78,4 +78,4 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 ## 免责声明
 
-本站为中立评测导航，不直接提供任何支付结算与 API 服务；榜单中「推广」链接（affiliate）仅作为利益披露标注，收录与排序不受推广合作影响。
+本站为中立评测导航，不直接提供任何支付结算与 API 服务。本站为 100% 独立开源评测，不包含任何商业返利链接（Zero Affiliate Links），收录与排序不受任何商业合作影响，指标均来自公开可测数据。
