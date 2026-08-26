@@ -24,7 +24,9 @@ npm run preview      # python -m http.server 4173 --directory out
 ```bash
 python scripts/ping_test.py          # 实测，仅打印（默认，安全）
 python scripts/ping_test.py --apply  # 实测并写回 src/data/platforms.json（原子替换 + .bak 备份）
-npm run build                        # 写回后必须重新构建才能生效
+python scripts/authenticity_test.py            # 真实性抽查（Phase 3，干跑）
+python scripts/authenticity_test.py --apply    # 写回 src/data/authenticity.json（原子替换 + .bak 备份）
+npm run build                                  # 写回后必须重新构建才能生效
 ```
 
 - 测试 Key 仅从环境变量读取（`platforms.json` 的 `api_key_env` 字段指定变量名），禁止写入代码 / JSON。
@@ -46,6 +48,21 @@ git commit && git push                # 指标有变化时自动提交回仓库
 2. **加密测试 Key**：Settings → Secrets and variables → Actions → New secret，名称 `SPOTLIGHT_TEST_KEY`（可留空——留空时脚本自动跳过鉴权头，仅测连通性）。
 
 数据提交后，若仓库已接入 Vercel / Cloudflare Pages，会自动触发重新构建部署。需要手动触发：Actions 页 → 该工作流 → Run workflow。
+
+## 真实性抽查（Phase 3）
+
+`scripts/authenticity_test.py`（独立方法学实现，不依赖任何第三方仓库代码）：
+
+1. **Temperature 采样**：固定探针提示词，多温度（默认 0.3 / 0.7 / 1.3）下重复采样；
+2. **特征提取**：模型自报内部标识（自 ID）、token 长度中位数、温度间漂移、重复率；
+3. **指纹比对**：与 `scripts/fingerprints.json` 参考值比对 → `authentic / suspect / unknown / skipped`。
+
+**判定铁律：参考值未校准（`calibrated: false`）一律返回 `unknown`，绝不臆断。**
+
+- **校准方法**：到官方直连正版渠道对同一模型采集 ≥20 次探针响应，回填 `median_tokens / token_tolerance_pct / max_repeat / self_id_patterns`，置 `calibrated: true`。
+- **档案位置**：`src/data/authenticity.json`（可增长；`platform_id` 关联 `platforms.json`）。
+- **安全**：复用 `api_key_env` 环境变量链，Key 不落盘；响应仅存 120 字符摘要。
+- **成本**：每次抽查消耗调用方 Key token（默认 2 温度 × 2 采样 × 600 token），可调低。
 
 ## 数据结构（schema 见 src/types.ts）
 
@@ -76,10 +93,12 @@ git commit && git push                # 指标有变化时自动提交回仓库
 ├── src/
 │   ├── app/              # page.tsx（首页）/ test/page.tsx（在线测试区）
 │   ├── components/       # Header Hero RankingTable PerksGrid Footer ThemeToggle
-│   ├── data/             # platforms.json perks.json
+│   ├── data/             # platforms.json perks.json authenticity.json
 │   └── types.ts          # 数据模型
 ├── public/               # 静态资源
-├── scripts/ping_test.py  # 接口实测脚本
+├── scripts/ping_test.py  # 接口实测脚本（Phase 1 连通性）
+├── scripts/authenticity_test.py  # 真实性抽查脚本（Phase 3）
+├── scripts/fingerprints.json     # 指纹参考值库（校准点位）
 ├── next.config.ts        # output: 'export'
 └── vercel.json           # Vercel 部署配置（CF Pages 按 README 填参数）
 ```

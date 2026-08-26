@@ -1,0 +1,42 @@
+{
+  "_note": "真实性抽查档案：platform_id 对应 platforms.json；chat_endpoint 为该平台的 OpenAI 兼容对话路径；reports 由 scripts/authenticity_test.py --apply 写回。",
+  "profiles": [
+    {
+      "platform_id": "provider-openai",
+      "model": "gpt-5.6-sol",
+      "chat_endpoint": "/v1/chat/completions",
+      "temps": [0.3, 0.7, 1.3],
+      "max_tokens": 600
+    },
+    {
+      "platform_id": "provider-deepseek",
+      "model": "deepseek-v3",
+      "chat_endpoint": "/chat/completions",
+      "temps": [0.3, 0.7, 1.3],
+      "max_tokens": 600
+    },
+    {
+      "platform_id": "provider-siliconflow",
+      "model": "deepseek-ai/DeepSeek-V3",
+      "chat_endpoint": "/v1/chat/completions",
+      "temps": [0.3, 0.7, 1.3],
+      "max_tokens": 600
+    },
+    {
+      "platform_id": "provider-zhipu",
+      "model": "GLM-4.6",
+      "chat_endpoint": "/api/paas/v4/chat/completions",
+      "temps": [0.3, 0.7, 1.3],
+      "max_tokens": 600
+    },
+    {
+      "platform_id": "provider-moonshot",
+      "model": "kimi-k2",
+      "chat_endpoint": "/v1/chat/completions",
+      "temps": [0.3, 0.7, 1.3],
+      "max_tokens": 600
+    }
+  ],
+  "reports": [],
+  "last_checked": ""
+}
