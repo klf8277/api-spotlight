@@ -44,6 +44,8 @@ export interface Perk {
   expires_at?: string;
   tag?: string;
   is_hot?: boolean;
+  /** 最后核验日期（YYYY-MM-DD） */
+  verified_at?: string;
 }
 
 /** 真实性抽查报告：src/data/authenticity.json 的 reports 条目（scripts/authenticity_test.py --apply 产出） */

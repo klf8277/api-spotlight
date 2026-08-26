@@ -35,6 +35,9 @@ yarn-error.log*
 !.env.example
 *.bak
 
+# /data/*.json 对外快照由 scripts/sync_public_data.mjs 构建时生成
+/public/data/
+
 # vercel
 .vercel
 

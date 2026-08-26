@@ -24,6 +24,9 @@ export default function PerksGrid({ perks }: { perks: Perk[] }) {
           {p.expires_at && (
             <p className="mt-1 text-xs text-foreground/50">有效期：{p.expires_at}</p>
           )}
+          {p.verified_at && (
+            <p className="mt-1 text-xs text-foreground/50">最后验证：{p.verified_at}</p>
+          )}
           <a
             href={p.link}
             target="_blank"

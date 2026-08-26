@@ -8,7 +8,8 @@
     "link": "https://siliconflow.cn",
     "expires_at": "长期有效（以官网为准）",
     "tag": "注册赠额",
-    "is_hot": true
+    "is_hot": true,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-2",
@@ -19,7 +20,8 @@
     "link": "https://openrouter.ai",
     "expires_at": "长期有效（以官网为准）",
     "tag": "注册赠额",
-    "is_hot": true
+    "is_hot": true,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-3",
@@ -30,7 +32,8 @@
     "link": "https://www.together.ai",
     "expires_at": "长期有效（以官网为准）",
     "tag": "初始额度",
-    "is_hot": true
+    "is_hot": true,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-4",
@@ -41,7 +44,8 @@
     "link": "https://console.groq.com",
     "expires_at": "长期有效",
     "tag": "免费限额",
-    "is_hot": true
+    "is_hot": true,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-5",
@@ -52,7 +56,8 @@
     "link": "https://build.nvidia.com",
     "expires_at": "长期有效（以官网为准）",
     "tag": "试用额度",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-6",
@@ -63,7 +68,8 @@
     "link": "https://cohere.com",
     "expires_at": "长期有效（以官网为准）",
     "tag": "试用额度",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-7",
@@ -74,7 +80,8 @@
     "link": "https://huggingface.co",
     "expires_at": "长期有效（以官网为准）",
     "tag": "免费额度",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-8",
@@ -85,7 +92,8 @@
     "link": "https://open.bigmodel.cn",
     "expires_at": "以官方活动为准",
     "tag": "注册赠额",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-9",
@@ -96,7 +104,8 @@
     "link": "https://bailian.console.aliyun.com",
     "expires_at": "以官方活动为准",
     "tag": "试用额度",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   },
   {
     "id": "perk-10",
@@ -107,6 +116,7 @@
     "link": "https://qianfan.baidubce.com",
     "expires_at": "以官方活动为准",
     "tag": "试用额度",
-    "is_hot": false
+    "is_hot": false,
+    "verified_at": "2026-08-26"
   }
 ]

@@ -33,6 +33,9 @@ export default function Header() {
           <Link href="/test" className="rounded-md px-2 py-1 hover:bg-foreground/5">
             在线测试区
           </Link>
+          <Link href="/method" className="rounded-md px-2 py-1 hover:bg-foreground/5">
+            方法学
+          </Link>
           {COMMUNITY.map((c) => (
             <a
               key={c.href}

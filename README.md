@@ -118,9 +118,19 @@ git commit && git push                # 指标有变化时自动提交回仓库
 ├── scripts/ping_test.py  # 接口实测脚本（Phase 1 连通性）
 ├── scripts/authenticity_test.py  # 真实性抽查脚本（Phase 3）
 ├── scripts/fingerprints.json     # 指纹参考值库（校准点位）
+├── scripts/sync_public_data.mjs  # 构建期数据快照 → /data/*.json 公开 API
+├── src/app/method/       # 测试方法论页
+├── LICENSE               # MIT
+└── CONTRIBUTING.md       # 贡献指南
 ├── next.config.ts        # output: 'export'
 └── vercel.json           # Vercel 部署配置（CF Pages 按 README 填参数）
 ```
+
+## 开源与数据 API
+
+- **公开 JSON API**（构建时快照，只读）：`/data/platforms.json`、`/data/perks.json`、`/data/authenticity.json`
+- **许可证**：MIT（见 `LICENSE`）；贡献指南见 `CONTRIBUTING.md`（零返利 / 零造假 / Key 安全红线）
+- 测试节点、采样口径、判定规则见页面「方法学」或仓库 `README` 对应章节
 
 ## 免责声明
 

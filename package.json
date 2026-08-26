@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/sync_public_data.mjs && next build",
     "preview": "python -m http.server 4173 --directory out",
     "test:ping": "python scripts/ping_test.py",
     "test:auth": "python scripts/authenticity_test.py",
