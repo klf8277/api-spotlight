@@ -3,11 +3,17 @@ import RankingTable from "@/components/RankingTable";
 import PerksGrid from "@/components/PerksGrid";
 import platformData from "@/data/platforms.json";
 import perkData from "@/data/perks.json";
-import type { Perk, Platform } from "@/types";
+import authenticityData from "@/data/authenticity.json";
+import type { AuthenticityReport, Perk, Platform } from "@/types";
 
 // JSON 字面量类型收窄为数据模型（字段见 src/types.ts）
 const platforms = platformData as Platform[];
 const perks = perkData as Perk[];
+
+// 真实性抽查报告：platform_id → 最新报告（来源 scripts/authenticity_test.py --apply）
+const authenticityMap = Object.fromEntries(
+  (authenticityData.reports as AuthenticityReport[]).map((r) => [r.platform_id, r]),
+);
 
 export default function Home() {
   const lastChecked = [...platforms]
@@ -29,7 +35,7 @@ export default function Home() {
             点击表头排序 · 数据源 src/data/platforms.json
           </p>
         </div>
-        <RankingTable platforms={platforms} />
+        <RankingTable platforms={platforms} authenticityMap={authenticityMap} />
       </section>
 
       <section id="perks" className="border-t border-foreground/10 bg-foreground/[0.02]">

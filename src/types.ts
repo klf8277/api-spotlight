@@ -37,3 +37,22 @@ export interface Perk {
   tag?: string;
   is_hot?: boolean;
 }
+
+/** 真实性抽查报告：src/data/authenticity.json 的 reports 条目（scripts/authenticity_test.py --apply 产出） */
+export interface AuthenticityReport {
+  platform_id: string;
+  model: string;
+  endpoint?: string;
+  /** authentic | suspect | unknown | skipped | no-response */
+  verdict: string;
+  samples?: number;
+  temps?: number[];
+  latency_ms?: number;
+  token_median?: number;
+  token_stdev_pct?: number;
+  repeat_ratio?: number;
+  self_id_seen?: string | null;
+  summary?: string;
+  note?: string | null;
+  checked_at: string;
+}

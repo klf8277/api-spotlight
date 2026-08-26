@@ -11,7 +11,7 @@ export default function Footer() {
           所列福利均为各平台官方公开信息。收录与排序不受任何商业合作影响，指标均来自公开可测数据。
         </p>
         <p className="font-mono">
-          © 2026 Api探照灯 · 纯静态部署 · 无用户数据收集 · 社区：Telegram · QQ
+          © 2026 APISpotlight (API 探照灯) · 纯静态部署 · 无用户数据收集 · 社区：Telegram · QQ
         </p>
       </div>
     </footer>

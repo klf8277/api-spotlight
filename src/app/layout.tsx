@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Api探照灯 · AI 接口评测与福利导航",
+  title: "APISpotlight · API 探照灯",
   description:
-    "全网 AI 接口公正评测与福利导航 · 定期实测、数据透明 · 纯静态零数据库",
+    "APISpotlight (API 探照灯) · 全网 AI 接口公正评测与福利导航 · 定期实测、数据透明 · 纯静态零数据库",
 };
 
 // 首屏前置主题脚本：读 localStorage（回退系统偏好），避免暗色模式闪白（FOUC）

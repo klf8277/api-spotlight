@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "在线测试区 · Api探照灯",
+  title: "在线测试区 · APISpotlight",
   description:
     "在线测试区说明：浏览器直连测试受 CORS 限制，请使用本地 scripts/ping_test.py。",
 };

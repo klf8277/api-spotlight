@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Platform } from "@/types";
+import type { AuthenticityReport, Platform } from "@/types";
 
 type SortKey = "name" | "latency_ms" | "success_rate";
 
@@ -23,7 +23,53 @@ function latencyTone(v: number): string {
   return "text-red-500";
 }
 
-export default function RankingTable({ platforms }: { platforms: Platform[] }) {
+function VerdictBadge({ report }: { report?: AuthenticityReport }) {
+  const CONF: Record<string, { label: string; cls: string }> = {
+    authentic: {
+      label: "✅ 正宗",
+      cls: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
+    },
+    suspect: { label: "⚠️ 掺假嫌疑", cls: "bg-red-500/15 text-red-500" },
+    unknown: {
+      label: "⏳ 未校准",
+      cls: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+    },
+    skipped: { label: "🚫 无 Key 跳过", cls: "bg-foreground/5 text-foreground/50" },
+    "no-response": { label: "❌ 无响应", cls: "bg-red-500/15 text-red-500" },
+  };
+  if (!report) {
+    return (
+      <span
+        className="text-foreground/40"
+        title="未配置抽查档案（src/data/authenticity.json）"
+      >
+        —
+      </span>
+    );
+  }
+  const c = CONF[report.verdict] ?? {
+    label: report.verdict,
+    cls: "bg-foreground/5 text-foreground/50",
+  };
+  return (
+    <span
+      className={`inline-block whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${c.cls}`}
+      title={`${report.verdict} · ${report.model ?? ""} · ${report.checked_at ?? ""}${
+        report.note ? " · " + report.note : ""
+      }`}
+    >
+      {c.label}
+    </span>
+  );
+}
+
+export default function RankingTable({
+  platforms,
+  authenticityMap,
+}: {
+  platforms: Platform[];
+  authenticityMap: Record<string, AuthenticityReport>;
+}) {
   const [sortKey, setSortKey] = useState<SortKey>("latency_ms");
   const [asc, setAsc] = useState(true);
 
@@ -72,6 +118,7 @@ export default function RankingTable({ platforms }: { platforms: Platform[] }) {
                 </button>
               </th>
               <th className="px-4 py-3 font-medium">状态</th>
+              <th className="px-4 py-3 font-medium">真实性抽查</th>
               <th className="px-4 py-3 font-medium">
                 <button
                   onClick={() => onSort("latency_ms")}
@@ -129,6 +176,9 @@ export default function RankingTable({ platforms }: { platforms: Platform[] }) {
                     {STATUS_LABEL[p.status]}
                   </span>
                 </td>
+                <td className="px-4 py-3">
+                  <VerdictBadge report={authenticityMap[p.id]} />
+                </td>
                 <td className="px-4 py-3 font-mono">
                   {p.latency_ms === null ? (
                     <span className="text-foreground/40">—</span>
@@ -167,6 +217,8 @@ export default function RankingTable({ platforms }: { platforms: Platform[] }) {
       <p className="mt-3 text-xs text-foreground/50">
         指标说明：延迟为最近实测中位数（每站 3 次采样），成功率 = 成功请求 / 总请求；
         数据由 scripts/ping_test.py 定期更新，点击表头可排序。
+        真实性列为 Phase 3 抽查结果（scripts/authenticity_test.py），
+        未配置测试 Key 或指纹参考值未校准时显示 — / ⏳。
       </p>
     </div>
   );

@@ -9,7 +9,7 @@ export default function Hero({ platformCount, perkCount, lastChecked }: HeroProp
     <section className="border-b border-foreground/10">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
         <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-          {"// Api Spotlight"}
+          {"// APISpotlight · API 探照灯"}
         </p>
         <h1 className="mt-3 max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
           全网 AI 接口公正评测

@@ -16,7 +16,12 @@ export default function Header() {
           className="flex items-center gap-2 font-mono text-lg font-bold tracking-tight"
         >
           <span aria-hidden>🔦</span>
-          Api探照灯
+          <span className="flex flex-col leading-none">
+            <span>APISpotlight</span>
+            <span className="text-[10px] font-normal tracking-widest text-foreground/50">
+              API 探照灯
+            </span>
+          </span>
         </Link>
         <nav className="flex items-center gap-0.5 text-sm sm:gap-1.5">
           <a href="/#ranking" className="rounded-md px-2 py-1 hover:bg-foreground/5">
