@@ -189,6 +189,16 @@ export default function RankingTable({
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap items-center gap-1.5">
                     <span className="font-medium">{p.name}</span>
+                    <span
+                      className={
+                        p.type === "relay"
+                          ? "rounded-full bg-amber-500/15 px-1.5 py-0.5 text-[11px] font-medium text-amber-600 dark:text-amber-400"
+                          : "rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"
+                      }
+                      title={p.type === "relay" ? "第三方中转节点" : "官方原厂直连节点"}
+                    >
+                      {p.type === "relay" ? "🔁 第三方中转" : "🏢 官方原厂"}
+                    </span>
                     {p.is_featured && (
                       <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
                         ⭐ 推荐

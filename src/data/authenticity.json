@@ -3,7 +3,7 @@
   "profiles": [
     {
       "platform_id": "provider-openai",
-      "model": "gpt-5.6-sol",
+      "model": "gpt-4o",
       "chat_endpoint": "/v1/chat/completions",
       "temps": [
         0.3,
@@ -36,7 +36,7 @@
     },
     {
       "platform_id": "provider-zhipu",
-      "model": "GLM-4.6",
+      "model": "glm-4-plus",
       "chat_endpoint": "/api/paas/v4/chat/completions",
       "temps": [
         0.3,
@@ -60,7 +60,7 @@
   "reports": [
     {
       "platform_id": "provider-openai",
-      "model": "gpt-5.6-sol",
+      "model": "gpt-4o",
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"
@@ -81,7 +81,7 @@
     },
     {
       "platform_id": "provider-zhipu",
-      "model": "GLM-4.6",
+      "model": "glm-4-plus",
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"

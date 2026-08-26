@@ -2,24 +2,16 @@
   {
     "id": "provider-openrouter",
     "name": "OpenRouter",
+    "type": "official",
     "url": "https://openrouter.ai",
     "api_base": "https://openrouter.ai/api",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 78,
     "success_rate": 100.0,
-    "supported_models": [
-      "openai/gpt-5.6",
-      "anthropic/claude-sonnet-5",
-      "deepseek/deepseek-v3",
-      "google/gemini-2.5-pro"
-    ],
+    "supported_models": ["openai/gpt-4o", "anthropic/claude-3.5-sonnet", "google/gemini-2.5-pro", "deepseek/deepseek-v3"],
     "is_featured": true,
-    "tags": [
-      "全球聚合",
-      "一 key 多模型",
-      "美元计价"
-    ],
+    "tags": ["全球聚合", "一 key 多模型", "美元计价"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -27,24 +19,16 @@
   {
     "id": "provider-openai",
     "name": "OpenAI",
+    "type": "official",
     "url": "https://platform.openai.com",
     "api_base": "https://api.openai.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 163,
     "success_rate": 100.0,
-    "supported_models": [
-      "gpt-5.6-sol",
-      "gpt-5.6-terra",
-      "gpt-5.6-luna",
-      "gpt-5.5"
-    ],
+    "supported_models": ["gpt-4o", "gpt-4o-mini", "gpt-4.1"],
     "is_featured": false,
-    "tags": [
-      "官方直供",
-      "行业标杆",
-      "GPT-5.6 家族"
-    ],
+    "tags": ["官方直供", "行业标杆", "GPT-4o 家族"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -52,22 +36,16 @@
   {
     "id": "provider-anthropic",
     "name": "Anthropic",
+    "type": "official",
     "url": "https://platform.anthropic.com",
     "api_base": "https://api.anthropic.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 87,
     "success_rate": 100.0,
-    "supported_models": [
-      "claude-sonnet-5",
-      "claude-opus-5"
-    ],
+    "supported_models": ["claude-3-5-sonnet", "claude-3-7-sonnet", "claude-3-5-haiku"],
     "is_featured": false,
-    "tags": [
-      "代码专精",
-      "Claude 家族",
-      "长上下文"
-    ],
+    "tags": ["代码专精", "Claude 家族", "长上下文"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -75,22 +53,16 @@
   {
     "id": "provider-google",
     "name": "Google Gemini",
+    "type": "official",
     "url": "https://ai.google.dev",
     "api_base": "https://generativelanguage.googleapis.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 92,
     "success_rate": 100.0,
-    "supported_models": [
-      "gemini-2.5-pro",
-      "gemini-2.5-flash"
-    ],
+    "supported_models": ["gemini-2.5-pro", "gemini-2.5-flash", "gemini-2.0-flash"],
     "is_featured": false,
-    "tags": [
-      "多模态",
-      "超长上下文",
-      "Gemini 家族"
-    ],
+    "tags": ["多模态", "超长上下文", "Gemini 家族"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -98,22 +70,16 @@
   {
     "id": "provider-xai",
     "name": "xAI (Grok)",
+    "type": "official",
     "url": "https://x.ai",
     "api_base": "https://api.x.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 86,
     "success_rate": 100.0,
-    "supported_models": [
-      "grok-4",
-      "grok-3",
-      "grok-3-mini"
-    ],
+    "supported_models": ["grok-3", "grok-3-mini", "grok-2"],
     "is_featured": false,
-    "tags": [
-      "Grok 家族",
-      "实时数据"
-    ],
+    "tags": ["Grok 家族", "实时数据"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -121,23 +87,16 @@
   {
     "id": "provider-cohere",
     "name": "Cohere",
+    "type": "official",
     "url": "https://cohere.com",
     "api_base": "https://api.cohere.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 120,
     "success_rate": 100.0,
-    "supported_models": [
-      "command-r-plus",
-      "command-r",
-      "command-a"
-    ],
+    "supported_models": ["command-r-plus", "command-r", "command-a"],
     "is_featured": false,
-    "tags": [
-      "企业级",
-      "RAG 生态",
-      "多语言"
-    ],
+    "tags": ["企业级", "RAG 生态", "多语言"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -145,23 +104,16 @@
   {
     "id": "provider-groq",
     "name": "Groq",
+    "type": "official",
     "url": "https://console.groq.com",
     "api_base": "https://api.groq.com/openai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 273,
     "success_rate": 100.0,
-    "supported_models": [
-      "Llama-3.3-70B",
-      "Gemma-3-27B",
-      "GPT-OSS-120B"
-    ],
+    "supported_models": ["llama-3.3-70b-versatile", "gemma2-27b-it", "mixtral-8x7b-32768"],
     "is_featured": false,
-    "tags": [
-      "极速推理",
-      "LPU 硬件",
-      "免费额度"
-    ],
+    "tags": ["极速推理", "LPU 硬件", "免费额度"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -169,23 +121,16 @@
   {
     "id": "provider-mistral",
     "name": "Mistral AI",
+    "type": "official",
     "url": "https://console.mistral.ai",
     "api_base": "https://api.mistral.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 181,
     "success_rate": 100.0,
-    "supported_models": [
-      "mistral-large-latest",
-      "mistral-small-latest",
-      "codestral-latest"
-    ],
+    "supported_models": ["mistral-large-latest", "mistral-small-latest", "codestral-latest"],
     "is_featured": false,
-    "tags": [
-      "欧洲系",
-      "开源模型",
-      "多语言"
-    ],
+    "tags": ["欧洲系", "开源模型", "多语言"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -193,21 +138,16 @@
   {
     "id": "provider-deepseek",
     "name": "DeepSeek",
+    "type": "official",
     "url": "https://platform.deepseek.com",
     "api_base": "https://api.deepseek.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 365,
     "success_rate": 100.0,
-    "supported_models": [
-      "deepseek-v3",
-      "deepseek-r1"
-    ],
+    "supported_models": ["deepseek-v3", "deepseek-r1"],
     "is_featured": true,
-    "tags": [
-      "国产开源",
-      "极致性价比"
-    ],
+    "tags": ["国产开源", "极致性价比"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -215,23 +155,16 @@
   {
     "id": "provider-siliconflow",
     "name": "SiliconFlow",
+    "type": "official",
     "url": "https://siliconflow.cn",
     "api_base": "https://api.siliconflow.cn",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 971,
     "success_rate": 100.0,
-    "supported_models": [
-      "deepseek-ai/DeepSeek-V3",
-      "Qwen/Qwen2.5-72B",
-      "THUDM/GLM-4.6"
-    ],
+    "supported_models": ["deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct", "THUDM/GLM-4-9B-Chat"],
     "is_featured": true,
-    "tags": [
-      "国产 GPU 云",
-      "模型全家桶",
-      "注册送额"
-    ],
+    "tags": ["国产 GPU 云", "模型全家桶", "注册送额"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -239,23 +172,16 @@
   {
     "id": "provider-moonshot",
     "name": "Moonshot AI (Kimi)",
+    "type": "official",
     "url": "https://platform.moonshot.cn",
     "api_base": "https://api.moonshot.cn",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 1118,
     "success_rate": 100.0,
-    "supported_models": [
-      "kimi-k2",
-      "kimi-k2-thinking",
-      "moonshot-v1-128k"
-    ],
+    "supported_models": ["moonshot-v1-8k", "moonshot-v1-32k", "kimi-k2"],
     "is_featured": true,
-    "tags": [
-      "超长上下文",
-      "Kimi 家族",
-      "国产新锐"
-    ],
+    "tags": ["超长上下文", "Kimi 家族", "国产新锐"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -263,21 +189,15 @@
   {
     "id": "provider-zhipu",
     "name": "智谱 AI (GLM)",
+    "type": "official",
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 417,
     "success_rate": 100.0,
-    "supported_models": [
-      "GLM-4.6",
-      "GLM-4.5",
-      "GLM-4-Plus"
-    ],
+    "supported_models": ["glm-4-plus", "glm-4.5", "glm-4-air"],
     "is_featured": false,
-    "tags": [
-      "国产第一梯队",
-      "GLM 家族"
-    ],
+    "tags": ["国产第一梯队", "GLM 家族"],
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -285,23 +205,16 @@
   {
     "id": "provider-bailian",
     "name": "阿里云百炼 (通义)",
+    "type": "official",
     "url": "https://bailian.console.aliyun.com",
     "api_base": "https://dashscope.aliyuncs.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 717,
     "success_rate": 100.0,
-    "supported_models": [
-      "qwen-max",
-      "qwen-plus",
-      "qwen-long"
-    ],
+    "supported_models": ["qwen-max", "qwen-turbo", "qwen-plus"],
     "is_featured": false,
-    "tags": [
-      "阿里生态",
-      "通义千问",
-      "企业级"
-    ],
+    "tags": ["阿里生态", "通义千问", "企业级"],
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -309,23 +222,16 @@
   {
     "id": "provider-qianfan",
     "name": "百度千帆 (文心)",
+    "type": "official",
     "url": "https://qianfan.baidubce.com",
     "api_base": "https://qianfan.baidubce.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 818,
     "success_rate": 100.0,
-    "supported_models": [
-      "ERNIE-4.5",
-      "ERNIE-4.0",
-      "ERNIE-3.5"
-    ],
+    "supported_models": ["ernie-4.0-8k", "ernie-4.5", "ernie-3.5-8k"],
     "is_featured": false,
-    "tags": [
-      "百度生态",
-      "文心 ERNIE",
-      "企业级"
-    ],
+    "tags": ["百度生态", "文心 ERNIE", "企业级"],
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -333,23 +239,16 @@
   {
     "id": "provider-volcano",
     "name": "火山引擎方舟 (豆包)",
+    "type": "official",
     "url": "https://www.volcengine.com/product/ark",
     "api_base": "https://ark.cn-beijing.volces.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 809,
     "success_rate": 100.0,
-    "supported_models": [
-      "DeepSeek-V3",
-      "DeepSeek-R1",
-      "Doubao-1.5-Pro-32k"
-    ],
+    "supported_models": ["doubao-pro-128k", "doubao-pro-32k", "doubao-lite-32k"],
     "is_featured": false,
-    "tags": [
-      "字节生态",
-      "豆包 + DeepSeek",
-      "企业级"
-    ],
+    "tags": ["字节生态", "豆包系列", "企业级"],
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -357,22 +256,16 @@
   {
     "id": "provider-tencent",
     "name": "腾讯混元",
+    "type": "official",
     "url": "https://cloud.tencent.com/product/hunyuan",
     "api_base": "https://api.hunyuan.cloud.tencent.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 1591,
     "success_rate": 100.0,
-    "supported_models": [
-      "hunyuan-turbo",
-      "hunyuan-pro",
-      "hunyuan-large"
-    ],
+    "supported_models": ["hunyuan-turbo", "hunyuan-pro", "hunyuan-large"],
     "is_featured": false,
-    "tags": [
-      "腾讯生态",
-      "混元家族"
-    ],
+    "tags": ["腾讯生态", "混元家族"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -380,21 +273,16 @@
   {
     "id": "provider-minimax",
     "name": "MiniMax",
+    "type": "official",
     "url": "https://platform.minimaxi.com",
     "api_base": "https://api.minimaxi.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 1068,
     "success_rate": 100.0,
-    "supported_models": [
-      "MiniMax-M1",
-      "abab6.5s-chat"
-    ],
+    "supported_models": ["abab6.5s-chat", "MiniMax-M1"],
     "is_featured": false,
-    "tags": [
-      "长上下文",
-      "本土创企"
-    ],
+    "tags": ["长上下文", "本土创企"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -402,22 +290,16 @@
   {
     "id": "provider-stepfun",
     "name": "阶跃星辰 (StepFun)",
+    "type": "official",
     "url": "https://platform.stepfun.com",
     "api_base": "https://api.stepfun.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 767,
     "success_rate": 100.0,
-    "supported_models": [
-      "Step-2-16k",
-      "Step-1-32k",
-      "Step-2-mini"
-    ],
+    "supported_models": ["step-2-16k", "step-1-32k", "step-1-8k"],
     "is_featured": false,
-    "tags": [
-      "国产新锐",
-      "Step 家族"
-    ],
+    "tags": ["国产新锐", "Step 家族"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -425,23 +307,16 @@
   {
     "id": "provider-together",
     "name": "Together AI",
+    "type": "official",
     "url": "https://www.together.ai",
     "api_base": "https://api.together.xyz",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 185,
     "success_rate": 100.0,
-    "supported_models": [
-      "meta-llama/Llama-3.3-70B",
-      "deepseek-ai/DeepSeek-V3",
-      "Qwen/Qwen2.5-72B"
-    ],
+    "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct"],
     "is_featured": true,
-    "tags": [
-      "全模型池",
-      "开放权重",
-      "推理加速"
-    ],
+    "tags": ["全模型池", "开放权重", "推理加速"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -449,23 +324,16 @@
   {
     "id": "provider-fireworks",
     "name": "Fireworks AI",
+    "type": "official",
     "url": "https://fireworks.ai",
     "api_base": "https://api.fireworks.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 98,
     "success_rate": 100.0,
-    "supported_models": [
-      "Llama-3.3-70B",
-      "DeepSeek-V3",
-      "Qwen2.5-72B"
-    ],
+    "supported_models": ["accounts/fireworks/models/llama-v3p1-70b-instruct", "accounts/fireworks/models/deepseek-v3", "accounts/fireworks/models/qwen2p5-72b-instruct"],
     "is_featured": false,
-    "tags": [
-      "推理加速",
-      "开放权重",
-      "企业级"
-    ],
+    "tags": ["推理加速", "开放权重", "企业级"],
     "test_endpoint": "/inference/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -473,22 +341,16 @@
   {
     "id": "provider-novita",
     "name": "Novita AI",
+    "type": "official",
     "url": "https://novita.ai",
     "api_base": "https://api.novita.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 234,
     "success_rate": 100.0,
-    "supported_models": [
-      "deepseek-v3",
-      "llama-3.3-70b",
-      "qwen2.5-72b"
-    ],
+    "supported_models": ["deepseek-v3", "llama-3.3-70b", "qwen2.5-72b"],
     "is_featured": false,
-    "tags": [
-      "性价比",
-      "GPU 云"
-    ],
+    "tags": ["性价比", "GPU 云"],
     "test_endpoint": "/v3/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -496,22 +358,16 @@
   {
     "id": "provider-perplexity",
     "name": "Perplexity",
+    "type": "official",
     "url": "https://www.perplexity.ai",
     "api_base": "https://api.perplexity.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 134,
     "success_rate": 100.0,
-    "supported_models": [
-      "sonar",
-      "sonar-pro",
-      "sonar-reasoning"
-    ],
+    "supported_models": ["sonar", "sonar-pro", "sonar-reasoning"],
     "is_featured": true,
-    "tags": [
-      "联网搜索",
-      "实时引用"
-    ],
+    "tags": ["联网搜索", "实时引用"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -519,23 +375,16 @@
   {
     "id": "provider-nvidia",
     "name": "NVIDIA NIM",
+    "type": "official",
     "url": "https://build.nvidia.com",
     "api_base": "https://integrated.api.nvidia.com",
     "affiliate_url": null,
     "status": "offline",
     "latency_ms": null,
     "success_rate": 0.0,
-    "supported_models": [
-      "meta/llama-3.3-70b-instruct",
-      "deepseek-ai/deepseek-r1",
-      "moonshotai/kimi-k2"
-    ],
+    "supported_models": ["meta/llama-3.3-70b-instruct", "deepseek-ai/deepseek-r1", "moonshotai/kimi-k2"],
     "is_featured": false,
-    "tags": [
-      "英伟达生态",
-      "GPU 云",
-      "高吞吐"
-    ],
+    "tags": ["英伟达生态", "GPU 云", "高吞吐"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -543,22 +392,16 @@
   {
     "id": "provider-huggingface",
     "name": "Hugging Face",
+    "type": "official",
     "url": "https://huggingface.co",
     "api_base": "https://router.huggingface.co",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 169,
     "success_rate": 100.0,
-    "supported_models": [
-      "meta-llama/Llama-3.3-70B-Instruct",
-      "deepseek-ai/DeepSeek-V3",
-      "Qwen/Qwen2.5-72B-Instruct"
-    ],
+    "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "Qwen/Qwen2.5-72B-Instruct"],
     "is_featured": true,
-    "tags": [
-      "开源生态",
-      "模型量巨大"
-    ],
+    "tags": ["开源生态", "模型量巨大"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -566,22 +409,16 @@
   {
     "id": "provider-cerebras",
     "name": "Cerebras",
+    "type": "official",
     "url": "https://cloud.cerebras.ai",
     "api_base": "https://api.cerebras.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 113,
     "success_rate": 100.0,
-    "supported_models": [
-      "llama-3.3-70b",
-      "llama3.1-8b",
-      "qwen3-32b"
-    ],
+    "supported_models": ["llama-3.3-70b", "llama3.1-8b", "qwen3-32b"],
     "is_featured": false,
-    "tags": [
-      "超高速推理",
-      "晶圆级芯片"
-    ],
+    "tags": ["超高速推理", "晶圆级芯片"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -589,22 +426,16 @@
   {
     "id": "provider-deepinfra",
     "name": "DeepInfra",
+    "type": "official",
     "url": "https://deepinfra.com",
     "api_base": "https://api.deepinfra.com",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 396,
     "success_rate": 100.0,
-    "supported_models": [
-      "meta-llama/Llama-3.3-70B-Instruct",
-      "deepseek-ai/DeepSeek-V3",
-      "mistralai/Mistral-Small-24B"
-    ],
+    "supported_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-V3", "mistralai/Mistral-Small-24B-Instruct-2501"],
     "is_featured": false,
-    "tags": [
-      "低价开放权重",
-      "弹性"
-    ],
+    "tags": ["低价开放权重", "弹性"],
     "test_endpoint": "/v1/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"
@@ -612,23 +443,16 @@
   {
     "id": "provider-sambanova",
     "name": "SambaNova",
+    "type": "official",
     "url": "https://cloud.sambanova.ai",
     "api_base": "https://api.sambanova.ai",
     "affiliate_url": null,
     "status": "online",
     "latency_ms": 222,
     "success_rate": 100.0,
-    "supported_models": [
-      "Meta-Llama-3.3-70B-Instruct",
-      "DeepSeek-R1-Distill-Llama-70B",
-      "Qwen2.5-72B-Instruct"
-    ],
+    "supported_models": ["Meta-Llama-3.3-70B-Instruct", "DeepSeek-R1-Distill-Llama-70B", "Qwen2.5-72B-Instruct"],
     "is_featured": false,
-    "tags": [
-      "晶圆级芯片",
-      "R1 官方",
-      "极速"
-    ],
+    "tags": ["晶圆级芯片", "R1 官方", "极速"],
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-08-26T12:30:39Z"

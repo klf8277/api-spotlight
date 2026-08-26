@@ -2,9 +2,13 @@
 
 export type PlatformStatus = "online" | "degraded" | "offline";
 
+export type PlatformNodeType = "official" | "relay";
+
 export interface Platform {
   id: string;
   name: string;
+  /** 节点类型：official = 官方原厂直连；relay = 第三方中转（接入中转站榜单时使用） */
+  type: PlatformNodeType;
   url: string;
   /** 探测用 API 基础地址；不填则回退 url（官网与 API 同源的平台无需设置） */
   api_base?: string;
