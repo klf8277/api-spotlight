@@ -1,0 +1,44 @@
+# api-spotlight · Push 自动部署到 Cloudflare Pages
+# 需要在仓库 Settings → Secrets and variables → Actions 中配置
+# CLOUDFLARE_API_TOKEN（Cloudflare Pages Edit 权限）。
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-spotlight-pages-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建静态站点
+        run: npm run build
+
+      - name: 部署到 Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx wrangler pages deploy out --project-name=api-spotlight --branch main
