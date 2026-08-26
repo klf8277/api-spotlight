@@ -49,6 +49,8 @@ git commit && git push                # 指标有变化时自动提交回仓库
 
 数据提交后，若仓库已接入 Vercel / Cloudflare Pages，会自动触发重新构建部署。需要手动触发：Actions 页 → 该工作流 → Run workflow。
 
+**Watchman 自愈**：cron 工作流每次运行的最后一步会对比 `main` HEAD 与 `deploy_pages.yml` 最近一次运行对应的提交——若部署落后于 main（push 触发失效等情况），自动用 `GITHUB_TOKEN` 触发一次部署，最大限度保证"数据/代码 → 线上"不自断。
+
 ## 真实性抽查（Phase 3）
 
 `scripts/authenticity_test.py`（独立方法学实现，不依赖任何第三方仓库代码）：

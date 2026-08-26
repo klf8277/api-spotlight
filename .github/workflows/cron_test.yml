@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write # 允许把实测结果 push 回仓库
+  actions: write # watchman：允许触发 deploy_pages.yml（workflow_dispatch 自愈）
 
 concurrency:
   group: api-spotlight-cron-test
@@ -52,4 +53,23 @@ jobs:
           else
             git commit -m "chore: update platform metrics (${GITHUB_SHA::7})"
             git push
+          fi
+
+      # Watchman 自愈：若 push 触发部署失效或部署落后于 main，自动补触发
+      - name: Watchman - 确保部署跟上 main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          HEAD=$(git rev-parse HEAD)
+          LAST=$(curl -s -m 20 -H "Authorization: Bearer ${GH_TOKEN}" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/runs?per_page=1" \
+            | python3 -c "import json,sys; r=json.load(sys.stdin).get('workflow_runs',[]); print(r[0]['head_sha'] if r else '')" || true)
+          if [ -z "$LAST" ] || [ "$LAST" != "$HEAD" ]; then
+            echo "⚠️ 部署落后于 main（HEAD=${HEAD} 已部署=${LAST:-无}），触发自愈部署..."
+            curl -s -m 20 -X POST -H "Authorization: Bearer ${GH_TOKEN}" \
+              -d '{"ref":"main"}' \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/dispatches" \
+              -o /dev/null -w "dispatch_http=%{http_code}\n"
+          else
+            echo "✅ 部署已跟上 main（${HEAD}），无需自愈"
           fi
