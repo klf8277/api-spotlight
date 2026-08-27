@@ -67,16 +67,7 @@ jobs:
           CHECK() {
             curl -s -m 20 -H "Authorization: Bearer ${GH_TOKEN}" \
               "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/runs?per_page=10" \
-              | python3 -c "
-import json, sys
-head = sys.argv[1] if len(sys.argv) > 1 else ''
-try:
-    runs = json.load(sys.stdin).get('workflow_runs', [])
-except Exception:
-    print('1'); sys.exit(0)
-m = [r for r in runs if r.get('head_sha', '') == head]
-print('0' if (m and m[0].get('status') in ('completed', 'in_progress', 'queued')) else '1')
-" "$HEAD"
+              | python3 -c "import json,sys; runs=json.load(sys.stdin).get('workflow_runs',[]) or []; m=[r for r in runs if r.get('head_sha','')==sys.argv[1]]; print('0' if (m and m[0].get('status') in ('completed','in_progress','queued')) else '1')" "$HEAD"
           }
           NEED=$(CHECK)
           if [ "$NEED" = "1" ]; then
