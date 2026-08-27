@@ -51,6 +51,11 @@ jobs:
       - name: 构建静态站点
         run: npm run build
 
+      # 契约闸门：校验 src/data 与 public/data 快照符合 Contract v1
+      # （schema_version、affiliate_url 恒 null、禁商业字段、结构/取值域、快照一致性）
+      - name: 数据契约校验 (Contract v1)
+        run: npm run contract:check
+
       - name: 部署到 Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

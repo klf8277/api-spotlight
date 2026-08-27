@@ -8,6 +8,7 @@
     "preview": "python -m http.server 4173 --directory out",
     "test:ping": "python scripts/ping_test.py",
     "test:auth": "python scripts/authenticity_test.py",
+    "contract:check": "python scripts/contract_validation.py",
     "lint": "eslint"
   },
   "dependencies": {
