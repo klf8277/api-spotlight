@@ -55,6 +55,17 @@
         1.3
       ],
       "max_tokens": 600
+    },
+    {
+      "platform_id": "provider-agnes",
+      "model": "agnes-2.0-flash",
+      "chat_endpoint": "/v1/chat/completions",
+      "temps": [
+        0.3,
+        0.7,
+        1.3
+      ],
+      "max_tokens": 600
     }
   ],
   "reports": [
@@ -92,7 +103,27 @@
       "verdict": "skipped",
       "note": "未配置测试 Key（api_key_env 指向的环境变量为空），仅连通性由 ping_test 覆盖",
       "checked_at": "2026-08-26T14:04:12Z"
+    },
+    {
+      "platform_id": "provider-agnes",
+      "model": "agnes-2.0-flash",
+      "endpoint": "/v1/chat/completions",
+      "verdict": "authentic",
+      "samples": 6,
+      "temps": [
+        0.3,
+        0.7,
+        1.3
+      ],
+      "latency_ms": 5528,
+      "token_median": 422,
+      "token_stdev_pct": 5.5,
+      "repeat_ratio": null,
+      "self_id_seen": "agnes-2.0-flash",
+      "summary": "Agnes-2.0-Flash",
+      "note": "自 ID 命中：agnes-2.0-flash（['agnes-2.0-flash'] 中命中）",
+      "checked_at": "2026-08-27T10:35:50Z"
     }
   ],
-  "last_checked": "2026-08-26T14:04:12Z"
+  "last_checked": "2026-08-27T10:35:50Z"
 }

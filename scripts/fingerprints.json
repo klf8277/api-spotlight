@@ -64,5 +64,15 @@
     "token_tolerance_pct": null,
     "max_repeat": null,
     "note": "待官方直连采样校准"
+  },
+  "agnes-2.0-flash": {
+    "calibrated": true,
+    "median_tokens": 400,
+    "token_tolerance_pct": 22,
+    "self_id_patterns": [
+      "agnes-2.0-flash"
+    ],
+    "expected_self_id": "agnes-2.0-flash",
+    "note": "基线由 authenticity_test.py --calibrate 于 2026-08-27T10:33:17Z 采样回写"
   }
 }
