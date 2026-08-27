@@ -7,6 +7,9 @@ const COMMUNITY = [
   { href: "https://qm.qq.com/apitest", label: "QQ" },
 ];
 
+// Commercial Hub 独立部署，仅导航互连；本站不读取其数据
+const COMMERCIAL_HUB = "https://api-spotlight-commercial.pages.dev/";
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-foreground/10 bg-background/80 backdrop-blur">
@@ -36,6 +39,14 @@ export default function Header() {
           <Link href="/method" className="rounded-md px-2 py-1 hover:bg-foreground/5">
             方法学
           </Link>
+          <a
+            href={COMMERCIAL_HUB}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md px-2 py-1 text-foreground/70 hover:bg-foreground/5 hover:text-foreground sm:inline"
+          >
+            第三方 API 方案<span aria-hidden> ↗</span>
+          </a>
           {COMMUNITY.map((c) => (
             <a
               key={c.href}
