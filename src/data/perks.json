@@ -118,5 +118,17 @@
     "tag": "试用额度",
     "is_hot": false,
     "verified_at": "2026-08-26"
+  },
+  {
+    "id": "perk-11",
+    "name": "免费 API 定价",
+    "provider": "Agnes AI",
+    "content": "官方文档显示 agnes-2.0-flash 输入/输出 Token 当前均为 $0 / 1M（标准价 $0.03 / $0.15）；官网声明提供免费 AI API 额度与免费 API Key，注册即可创建。具体以官网为准。",
+    "requirement": "注册并创建 API Key",
+    "link": "https://agnes-ai.com",
+    "expires_at": "长期有效（以官网为准）",
+    "tag": "免费额度",
+    "is_hot": false,
+    "verified_at": "2026-08-27"
   }
 ]
