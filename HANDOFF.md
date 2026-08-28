@@ -105,3 +105,33 @@ git push origin main                           # Push 即部署
 - `/test/` 返回 308 并规范化到 `/test`，最终 HTTP 200；属既有尾斜杠规范化。
 - 线上 Title 已确认区分：`Free API Credits · APISpotlight` 与 `Free API Credits 资源分类 · APISpotlight`。
 - 当前状态：Production = DEPLOYED；Observation = ACTIVE；Analytics/Search Console 仍待人工读取；Phase 6 = NOT STARTED。未扩展内容范围。
+
+## 2026-08-28 · Model Test Implementation + Security Proposal v0.1
+
+- 交付方案：`D:\Obsidian\klf8277\项目\Api探照灯\23_Model_Test_Implementation_Security_Proposal_v0.1.md`。
+- 仅完成架构/UX/安全设计：Native Browser Direct、Verified Official Redirect、Hybrid、Key 生命周期、telemetry/隐私、成本滥用、Threat Model 与 Build-vs-Redirect 决策；未改代码、数据或生产。
+- 推荐：少量已验证 Provider 的 Native Test + 官方跳转 fallback；Universal API Proxy 明确 `REJECTED FOR V0.1`；ephemeral/OAuth 不作假设，留待 v0.3 研究。
+- 当前状态：Model Test = AUDITED / PROPOSAL READY；Security Gate = DEFINED；Implementation = NOT STARTED；Production = DEPLOYED；Observation = ACTIVE；Phase 6 = NOT STARTED；本轮无部署、无 Git Commit、无 Git Push。
+
+## 2026-08-28 · Gateway / Relay Probe MVP Research v0.1
+
+- 交付研究：`D:\Obsidian\klf8277\项目\Api探照灯\25_Gateway_Relay_Probe_MVP_Research_v0.1.md`。
+- 结论：`GO` 仅针对 Authorized Endpoint、Browser Direct、低影响 Quick Test、可追溯 JSON/Markdown 报告；不批准 Universal Proxy、公共中转打假或 100% 模型身份判断。
+- 已调查 9 个代表性开源项目，并覆盖 Connectivity、Discovery、Functional、Performance、Reliability、Integrity、Report、Web UX、History、Monitoring 维度；许可证/维护风险和复用边界已记录。
+- 安全闸门：Key 只在浏览器内存；不进 APISpotlight、URL、持久化存储、日志或 Analytics；不做服务端抓取；拒绝 loopback/private/metadata 目标；CORS 失败不得自动转代理。
+- 本轮仅完成研究与决策文档；Code/Data/Contract/Benchmark/Production = UNCHANGED；Deployment/Git Commit/Git Push = NONE；Phase 6 = NOT STARTED；等待单独人工实施授权。
+
+## 2026-08-28 · Gateway / Relay Probe MVP v0.1 Implementation
+
+- 交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\26_Gateway_Relay_Probe_Implementation_Audit_v0.1.md`。
+- `/test` 已升级为 Browser Direct Quick Tester：HTTPS Base URL、可选 Key、`/models` Discovery、单模型 Chat/Streaming、TTFT/Latency、错误分类和 JSON/Markdown 报告。
+- 未新增 Server Route/Proxy、数据库/KV、测试 Analytics、长期历史、Share URL、并发压测或身份 classifier；现有核心数据 Contract 未改。
+- 本地验证：lint、TypeScript、build、Contract（UTF-8 环境）通过；浏览器 UI/HTTPS/private target/Clear 冒烟通过。
+- 真实直连验收：B.AI 官方示例确认 `https://api.b.ai/v1`；`/models` = 200、44 个模型；premium `gpt-5.2` 因充值门槛返回 403；免费 `deepseek-v4-flash` 非流式/流式均 200，声明模型 `deepseek-v4-flash-0731`，流式 `[DONE]` 正常，TTFT 约 4.1s。
+- Key 只在本地进程内使用，未写入源码、仓库、报告、日志或 URL；使用后已清除本地变量。Browser CORS 尚未在 `/test` 页面输入真实 Key 做端到端验收。
+- 当前状态：Quick Test = PASS（直连协议）；Evidence Report = PASS；Security Gate = CONDITIONAL（Browser CORS 未验收）；Production = READY TO DEPLOY；Deployment/Git Commit/Git Push = PENDING；Phase 6 = NOT STARTED。
+
+## 2026-08-29 · Gateway / Relay Probe MVP v0.1 Production Deployment
+
+- 用户已明确授权直接部署上线；部署范围仅包含本次 `/test` Browser Direct Probe 实现与对应交接记录，不改核心数据 Contract、Benchmark、Phase 6 或 MPT。
+- 部署前必须通过 `npm run lint`、`npx tsc --noEmit`、`npm run contract:check`、`npm run build`；随后按现有 `main` → GitHub Actions → Cloudflare Pages 链路发布。
