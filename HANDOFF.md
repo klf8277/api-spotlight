@@ -104,4 +104,4 @@ git push origin main                           # Push 即部署
 - 生产冒烟通过：首页、Method、Free Tier 详情、资源实体页、资源分类页、Sitemap、公开 JSON 均 HTTP 200；Sitemap 全量 75/75 最终 HTTP 200。
 - `/test/` 返回 308 并规范化到 `/test`，最终 HTTP 200；属既有尾斜杠规范化。
 - 线上 Title 已确认区分：`Free API Credits · APISpotlight` 与 `Free API Credits 资源分类 · APISpotlight`。
-- 当前状态：Production = DEPLOYED；Observation = NOT YET ACTIVE；Phase 6 = NOT STARTED。未扩展内容范围。
+- 当前状态：Production = DEPLOYED；Observation = ACTIVE；Analytics/Search Console 仍待人工读取；Phase 6 = NOT STARTED。未扩展内容范围。
