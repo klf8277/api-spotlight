@@ -1,19 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const THEME_EVENT = "apis-spotlight-theme-change";
+
+function subscribe(callback: () => void) {
+  const listener = () => callback();
+  window.addEventListener(THEME_EVENT, listener);
+  return () => window.removeEventListener(THEME_EVENT, listener);
+}
+
+function getSnapshot() {
+  return document.documentElement.classList.contains("dark");
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 export default function ThemeToggle() {
-  // 惰性初始化：直接读 DOM class（首屏内联脚本已设置）；SSR 安全（document 未定义时返回 false）
-  const [dark, setDark] = useState(
-    () =>
-      typeof document !== "undefined" &&
-      document.documentElement.classList.contains("dark"),
-  );
+  // 服务端快照固定，客户端挂载后同步首屏脚本设置的主题，避免 hydration mismatch。
+  const dark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
     const next = !dark;
-    setDark(next);
     document.documentElement.classList.toggle("dark", next);
+    window.dispatchEvent(new Event(THEME_EVENT));
     try {
       localStorage.setItem("theme", next ? "dark" : "light");
     } catch {
