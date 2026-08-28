@@ -33,7 +33,7 @@ export default function Footer() {
           >
             OPS1985OS@protonmail.com
           </a>{" "}
-          <span>（仅用于商业合作、Partner 合作、数据合作及商务联系，不提供终端用户技术支持。）</span>
+          <span>（仅用于商业合作、数据合作及商务联系，不提供终端用户技术支持。）</span>
         </p>
         <p className="font-mono">
           © 2026 APISpotlight (API 探照灯) · 纯静态部署 · 无用户数据收集 · 社区：Telegram · QQ
