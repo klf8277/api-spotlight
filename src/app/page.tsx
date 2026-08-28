@@ -43,9 +43,12 @@ export default function Home() {
 
       <section id="ranking" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
         <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="text-2xl font-bold">📊 评测排行榜</h2>
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-foreground/45">01 · BENCHMARK</p>
+            <h2 className="mt-1 text-2xl font-bold">📊 原厂 API 实测</h2>
+          </div>
           <p className="text-xs text-foreground/50">
-            点击表头排序 · 数据源 src/data/platforms.json
+            点击表头排序 · 最近实测数据 · 数据源 src/data/platforms.json
           </p>
         </div>
         <RankingTable

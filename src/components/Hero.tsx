@@ -6,26 +6,26 @@ interface HeroProps {
 
 export default function Hero({ platformCount, perkCount, lastChecked }: HeroProps) {
   return (
-    <section className="border-b border-foreground/10">
+    <section className="border-b border-foreground/10 bg-foreground/[0.015]">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
-        <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-          {"// APISpotlight · API 探照灯"}
-        </p>
-        <h1 className="mt-3 max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-          全网 AI 接口公正评测
-          <br className="hidden sm:block" />
-          与福利导航
-        </h1>
-        <p className="mt-4 max-w-xl leading-7 text-foreground/70">
-          定期实测 · 数据透明 · 轻量纯静态，零数据库依赖。
-          榜单与福利数据由本地 JSON 驱动，所见即所存。
-        </p>
+        <div className="max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            {"// APISpotlight · API 探照灯"}
+          </p>
+          <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            AI API 原厂模型实测与数据参考
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-foreground/70 sm:text-lg">
+            通过真实请求记录延迟、成功率与可用性，并公开测试方法和最近更新时间。
+            纯静态、零数据库，数据来自仓库中的可追溯 JSON。
+          </p>
+        </div>
         <div className="mt-7 flex flex-wrap gap-3">
           <a
             href="#ranking"
-            className="rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90"
+            className="rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm hover:opacity-90"
           >
-            查看评测排行榜
+            查看 Benchmark
           </a>
           <a
             href="#perks"
@@ -34,22 +34,27 @@ export default function Hero({ platformCount, perkCount, lastChecked }: HeroProp
             官方赠额区
           </a>
         </div>
-        <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-4 font-mono text-sm text-foreground/60">
-          <div>
-            <dt className="text-xs uppercase tracking-wider">收录站点</dt>
-            <dd className="mt-1 text-2xl font-semibold text-foreground">
-              {platformCount}
-            </dd>
+        <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="rounded-xl border border-foreground/10 bg-background/70 p-4">
+            <dt className="text-xs text-foreground/50">真实请求</dt>
+            <dd className="mt-2 text-sm font-semibold">定期实测</dd>
           </div>
-          <div>
-            <dt className="text-xs uppercase tracking-wider">官方赠额</dt>
-            <dd className="mt-1 text-2xl font-semibold text-foreground">{perkCount}</dd>
+          <div className="rounded-xl border border-foreground/10 bg-background/70 p-4">
+            <dt className="text-xs text-foreground/50">数据范围</dt>
+            <dd className="mt-2 text-2xl font-semibold">{platformCount}</dd>
           </div>
-          <div>
-            <dt className="text-xs uppercase tracking-wider">最近实测</dt>
-            <dd className="mt-1 text-2xl font-semibold text-foreground">{lastChecked}</dd>
+          <div className="rounded-xl border border-foreground/10 bg-background/70 p-4">
+            <dt className="text-xs text-foreground/50">公开赠额</dt>
+            <dd className="mt-2 text-2xl font-semibold">{perkCount}</dd>
+          </div>
+          <div className="rounded-xl border border-foreground/10 bg-background/70 p-4">
+            <dt className="text-xs text-foreground/50">最后实测</dt>
+            <dd className="mt-2 font-mono text-sm font-semibold">{lastChecked}</dd>
           </div>
         </dl>
+        <p className="mt-4 text-xs text-foreground/50">
+          延迟、成功率和状态均来自实际数据字段；未用构建时间替代实测时间。
+        </p>
       </div>
     </section>
   );

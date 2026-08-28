@@ -25,6 +25,16 @@ export default function Footer() {
           </a>
           （商业内容与本站评测数据相互独立）。
         </p>
+        <p>
+          <span className="font-medium text-foreground/70">Business &amp; Partnerships：</span>{" "}
+          <a
+            href="mailto:OPS1985OS@protonmail.com"
+            className="underline decoration-foreground/30 underline-offset-2 hover:text-foreground"
+          >
+            OPS1985OS@protonmail.com
+          </a>{" "}
+          <span>（仅用于商业合作、Partner 合作、数据合作及商务联系，不提供终端用户技术支持。）</span>
+        </p>
         <p className="font-mono">
           © 2026 APISpotlight (API 探照灯) · 纯静态部署 · 无用户数据收集 · 社区：Telegram · QQ
         </p>

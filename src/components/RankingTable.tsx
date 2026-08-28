@@ -205,7 +205,7 @@ export default function RankingTable({
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-xl border border-foreground/10">
+      <div className="overflow-x-auto rounded-xl border border-foreground/10 bg-background shadow-sm">
         <table className="w-full min-w-[760px] text-sm">
           <thead>
             <tr className="border-b border-foreground/10 text-left text-xs uppercase tracking-wider text-foreground/50">
@@ -281,7 +281,7 @@ export default function RankingTable({
                   )}
                 </td>
                 <td className="px-4 py-3">
-                  <span className="inline-flex items-center gap-1.5">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground/5 px-2 py-0.5 text-xs">
                     <span
                       className={`h-2 w-2 rounded-full ${STATUS_DOT[p.status]}`}
                     />
@@ -321,7 +321,7 @@ export default function RankingTable({
                     );
                   })()}
                 </td>
-                <td className="px-4 py-3 font-mono">
+                <td className="px-4 py-3 font-mono text-base font-semibold">
                   {p.latency_ms === null ? (
                     <span className="text-foreground/40">—</span>
                   ) : (
@@ -331,7 +331,7 @@ export default function RankingTable({
                     points={(latencyHistory?.[p.id] ?? []).map((e) => e.latency)}
                   />
                 </td>
-                <td className="px-4 py-3 font-mono">{p.success_rate.toFixed(1)}%</td>
+                <td className="px-4 py-3 font-mono text-base font-semibold">{p.success_rate.toFixed(1)}%</td>
                 <td
                   className="px-4 py-3 text-foreground/70"
                   title={p.supported_models.join("、")}

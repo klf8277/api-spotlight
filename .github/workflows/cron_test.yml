@@ -1,5 +1,5 @@
 # Api探照灯 · 定时实测平台数据（Phase 2）
-# 每 6 小时（UTC）自动执行 ping_test.py --apply，指标变化时自动提交回仓库。
+# 每日（UTC）自动执行 ping_test.py --apply，指标变化时自动提交回仓库。
 # 手动触发：GitHub Actions 页 → Run workflow。
 #
 # 首次配置（一次性）：
@@ -12,8 +12,8 @@ name: CI - 定时实测平台数据
 
 on:
   schedule:
-    # UTC 时间 / 每 6 小时；北京时间 = UTC+8。GitHub 调度可能存在数分钟延迟。
-    - cron: "0 */6 * * *"
+    # UTC 02:17 / 北京时间 10:17；GitHub 调度可能存在数分钟延迟。
+    - cron: "17 2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -32,6 +32,12 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v5
 
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
       - name: 安装 Python
         uses: actions/setup-python@v5
         with:
@@ -41,10 +47,29 @@ jobs:
         env:
           # 未配置 secret 时为空字符串，脚本自动走 no-key 模式
           SPOTLIGHT_TEST_KEY: ${{ secrets.SPOTLIGHT_TEST_KEY }}
-        run: python scripts/ping_test.py --apply
+        run: |
+          cp src/data/platforms.json "$RUNNER_TEMP/platforms.before.json"
+          set -o pipefail
+          python scripts/ping_test.py --apply | tee "$RUNNER_TEMP/ping-test.log"
+
+      # 保护上一份有效数据：若本轮所有站点均不可达，则视为整轮失败并恢复原文件。
+      - name: 失败保护 - 保留上一份有效数据
+        run: |
+          if ! grep -Eq '^online|^degraded' "$RUNNER_TEMP/ping-test.log"; then
+            echo "本轮没有任何 online/degraded 响应，恢复上一份有效 platforms.json"
+            cp "$RUNNER_TEMP/platforms.before.json" src/data/platforms.json
+            exit 1
+          fi
 
       - name: 记录当日历史基线
         run: python scripts/history_update.py --apply
+
+      - name: 构建前质量闸门
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+          npm run contract:check
 
       - name: 提交数据变更
         run: |
