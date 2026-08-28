@@ -96,3 +96,12 @@ git push origin main                           # Push 即部署
 - 当前状态：P0=0、P1=0、P2=6、P3=2；Build/Lint/Contract/Sitemap/Canonical/Internal Links = PASS；SEO = CONDITIONAL。
 - Observation 基线：Analytics/Search Console = `ACCESS BLOCKED`；Indexed Pages = `UNKNOWN`；External Discovery = `Not Observed`；未猜测不可访问数据。
 - Deployment Authorization = READY；Production = NOT YET DEPLOYED；Observation = NOT YET ACTIVE；Phase 6 = NOT STARTED；本任务无部署、无 Git Commit、无 Git Push。
+
+## 2026-08-28 · Content Foundation v0.1 Production Deployment
+
+- 已按人工授权将 `main` 提交 `e27f1ec6faf34df038ec015dd655decd194bbc34` 发布到 Cloudflare Pages。
+- GitHub Actions `Deploy to Cloudflare Pages` run `33179144085` = `success`。
+- 生产冒烟通过：首页、Method、Free Tier 详情、资源实体页、资源分类页、Sitemap、公开 JSON 均 HTTP 200；Sitemap 全量 75/75 最终 HTTP 200。
+- `/test/` 返回 308 并规范化到 `/test`，最终 HTTP 200；属既有尾斜杠规范化。
+- 线上 Title 已确认区分：`Free API Credits · APISpotlight` 与 `Free API Credits 资源分类 · APISpotlight`。
+- 当前状态：Production = DEPLOYED；Observation = NOT YET ACTIVE；Phase 6 = NOT STARTED。未扩展内容范围。
