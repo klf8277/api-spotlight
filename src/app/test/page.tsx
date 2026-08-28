@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "在线测试区 · APISpotlight",
   description:
     "在线测试区说明：浏览器直连测试受 CORS 限制，请使用本地 scripts/ping_test.py。",
+  alternates: {
+    canonical: "/test/",
+  },
+  openGraph: {
+    url: "https://api-spotlight.pages.dev/test/",
+    title: "在线测试区 · APISpotlight",
+    description: "在线测试区说明：浏览器直连测试受 CORS 限制，请使用本地 scripts/ping_test.py。",
+  },
 };
 
 export default function TestPage() {

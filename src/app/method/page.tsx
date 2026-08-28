@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "测试方法论 · APISpotlight",
   description:
     "APISpotlight 测试方法论：节点位置、采样方法、超时设置、数据更新频率与判定口径。",
+  alternates: {
+    canonical: "/method/",
+  },
+  openGraph: {
+    url: "https://api-spotlight.pages.dev/method/",
+    title: "测试方法论 · APISpotlight",
+    description: "APISpotlight 测试方法论：节点位置、采样方法、超时设置、数据更新频率与判定口径。",
+  },
 };
 
 const SECTIONS: Array<{ title: string; items: string[] }> = [
