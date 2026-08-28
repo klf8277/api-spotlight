@@ -13,6 +13,9 @@ export type ProbeErrorCategory =
   | "User Input";
 
 export type StreamingStatus = "pass" | "fail" | "unavailable";
+export type ProbeResultStatus = "VERIFIED_BY_TEST" | "INCONCLUSIVE" | "NOT_VERIFIED";
+export type TestConfidence = "HIGH" | "MEDIUM" | "LOW";
+export type ResponseConsistencyStatus = "CONSISTENT" | "INCONCLUSIVE";
 
 export interface DiscoveredModel {
   id: string;
@@ -25,12 +28,22 @@ export interface ProbeError {
   status?: number;
 }
 
+export interface ResponseConsistency {
+  status: ResponseConsistencyStatus;
+  requestedModel: string;
+  observedModels: string[];
+  reason: string | null;
+}
+
 export interface ProbeReport {
   testId: string;
+  attemptNumber: number;
   testedAt: string;
   endpoint: string;
   model: string;
   testVersion: string;
+  probeVersion: string;
+  probeFamily: string;
   requestCount: number;
   successCount: number;
   ttftMs: number | null;
@@ -39,7 +52,9 @@ export interface ProbeReport {
   observedResponse: string | null;
   observedResponseModel: string | null;
   usageAvailable: boolean;
-  protocolSignal: "Consistent" | "Inconclusive" | "Anomaly Detected";
+  resultStatus: ProbeResultStatus;
+  confidence: TestConfidence;
+  responseConsistency: ResponseConsistency;
   errors: ProbeError[];
 }
 
@@ -122,8 +137,15 @@ function endpointPath(endpoint: string, path: string): string {
 }
 
 function errorForStatus(status: number, action: string): ProbeRequestError {
-  if (status === 401 || status === 403) {
-    return new ProbeRequestError("Authentication", `${action} was rejected by the endpoint.`, status);
+  if (status === 401) {
+    return new ProbeRequestError("Authentication", `${action} was not accepted with the supplied credentials.`, status);
+  }
+  if (status === 403) {
+    return new ProbeRequestError(
+      "Authentication",
+      `${action} was rejected; account, plan, model, or access permissions may apply.`,
+      status,
+    );
   }
   if (status === 404) {
     return new ProbeRequestError("Endpoint", `${action} endpoint was not found.`, status);
@@ -346,10 +368,65 @@ export async function runStreamingChat(endpoint: string, apiKey: string, model: 
   
 }
 
-export function classifyProtocolSignal(requestedModel: string, observedModels: Array<string | null>): ProbeReport["protocolSignal"] {
+export function assessResponseConsistency(requestedModel: string, observedModels: Array<string | null>): ResponseConsistency {
   const present = observedModels.filter((model): model is string => Boolean(model));
-  if (!present.length) return "Inconclusive";
-  return present.every((model) => model === requestedModel) ? "Consistent" : "Anomaly Detected";
+  const unique = [...new Set(present)];
+  if (!present.length) {
+    return {
+      status: "INCONCLUSIVE",
+      requestedModel,
+      observedModels: [],
+      reason: "No response model declaration was available to compare.",
+    };
+  }
+  if (present.every((model) => model === requestedModel)) {
+    return {
+      status: "CONSISTENT",
+      requestedModel,
+      observedModels: unique,
+      reason: "The observed response model declaration matched the requested model in the completed responses.",
+    };
+  }
+  if (unique.length === 1) {
+    return {
+      status: "INCONCLUSIVE",
+      requestedModel,
+      observedModels: unique,
+      reason: "The endpoint returned a different model identifier or version alias. This can reflect alias normalization or gateway routing; it does not by itself prove model substitution.",
+    };
+  }
+  return {
+    status: "INCONCLUSIVE",
+    requestedModel,
+    observedModels: unique,
+    reason: "Model identifiers differed between completed responses. Common causes include aliases, version labels, or gateway routing; this signal does not by itself prove model substitution.",
+  };
+}
+
+export function deriveResultStatus(requestCount: number, successCount: number): ProbeResultStatus {
+  if (requestCount > 0 && successCount === requestCount) return "VERIFIED_BY_TEST";
+  if (successCount > 0) return "INCONCLUSIVE";
+  return "NOT_VERIFIED";
+}
+
+export function deriveConfidence(
+  resultStatus: ProbeResultStatus,
+  streaming: StreamingStatus,
+  ttftMs: number | null,
+  totalLatencyMs: number | null,
+  responseConsistency: ResponseConsistency,
+): TestConfidence {
+  if (
+    resultStatus === "VERIFIED_BY_TEST" &&
+    streaming === "pass" &&
+    ttftMs !== null &&
+    totalLatencyMs !== null &&
+    responseConsistency.status === "CONSISTENT"
+  ) {
+    return "HIGH";
+  }
+  if (resultStatus !== "NOT_VERIFIED" && totalLatencyMs !== null) return "MEDIUM";
+  return "LOW";
 }
 
 export function createTestId(): string {

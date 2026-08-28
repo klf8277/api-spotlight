@@ -139,3 +139,12 @@ git push origin main                           # Push 即部署
 - 线上回归：`/`、`/method`、`/test`、`/sitemap.xml`、`/data/platforms.json` 均 HTTP 200；B.AI 对 `https://api-spotlight.pages.dev` 返回 CORS `Access-Control-Allow-Origin: *`，Authorization 预检 OPTIONS = 204。
 - 当前状态：Gateway / Relay Probe = DEPLOYED；Quick Test = PASS（直连协议）；Evidence Report = PASS；Security Gate = PASS（静态检查 + CORS 预检；未在浏览器 UI 输入真实 Key）；Production = DEPLOYED；Deployment = SUCCESS；Git Commit/Push = COMPLETE；Phase 6 = NOT STARTED。
 - Key 后续动作：请立即在 B.AI 控制台删除本次临时 Key；APISpotlight 未保存该 Key。
+
+## 2026-08-29 · Test Result Integrity & Trust Layer v0.1（本地完成，未部署）
+
+- 用户已明确授权实施结果完整性与解释层；交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\27_Test_Result_Integrity_Audit_v0.1.md`。
+- `/test` 已增加 `VERIFIED BY TEST`、`INCONCLUSIVE`、`NOT VERIFIED` 三态结果、`HIGH/MEDIUM/LOW` Confidence、Response Consistency、证据边界、Probe version/family、Attempt 编号和重新测试入口。
+- DeepSeek 模型标识差异现在只显示为 `Response Consistency = INCONCLUSIVE`；GLM timeout 显示 `NOT VERIFIED`；GPT 403 保留账户/套餐/模型权限含义；不生成 Fake/Scam/Fraud/真实性评分。
+- 真实测试数据路径未改变：Browser Direct、两次低影响请求、Key 仅内存态、测试结束清除；未新增 Proxy、Server fetch、数据库、Analytics、日志或持久化。
+- 回归：lint、TypeScript、build、Contract、静态 `/test` 页面、Clear、结果解释纯函数映射、安全扫描均 PASS；Sitemap 75/75、Canonical 75/75；4 个既有 `/platform` 内链遗留记录为 P2。
+- 当前状态：Test Result Integrity = IMPLEMENTED；Production = UNCHANGED；Deployment = NONE；Git Commit = NONE；Git Push = NONE；Phase 6 = NOT STARTED；等待人工验收。
