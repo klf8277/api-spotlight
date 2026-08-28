@@ -134,4 +134,8 @@ git push origin main                           # Push 即部署
 ## 2026-08-29 · Gateway / Relay Probe MVP v0.1 Production Deployment
 
 - 用户已明确授权直接部署上线；部署范围仅包含本次 `/test` Browser Direct Probe 实现与对应交接记录，不改核心数据 Contract、Benchmark、Phase 6 或 MPT。
-- 部署前必须通过 `npm run lint`、`npx tsc --noEmit`、`npm run contract:check`、`npm run build`；随后按现有 `main` → GitHub Actions → Cloudflare Pages 链路发布。
+- 部署前 `npm run lint`、`npx tsc --noEmit`、`npm run contract:check`、`npm run build` 均 PASS；提交 `a5a8999db9b907bb7f43e1d7f2e106471c587f4a` 已推送 `main`。
+- GitHub Actions `Deploy to Cloudflare Pages` run `33188398595` = `success`。
+- 线上回归：`/`、`/method`、`/test`、`/sitemap.xml`、`/data/platforms.json` 均 HTTP 200；B.AI 对 `https://api-spotlight.pages.dev` 返回 CORS `Access-Control-Allow-Origin: *`，Authorization 预检 OPTIONS = 204。
+- 当前状态：Gateway / Relay Probe = DEPLOYED；Quick Test = PASS（直连协议）；Evidence Report = PASS；Security Gate = PASS（静态检查 + CORS 预检；未在浏览器 UI 输入真实 Key）；Production = DEPLOYED；Deployment = SUCCESS；Git Commit/Push = COMPLETE；Phase 6 = NOT STARTED。
+- Key 后续动作：请立即在 B.AI 控制台删除本次临时 Key；APISpotlight 未保存该 Key。
