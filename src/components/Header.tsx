@@ -35,6 +35,8 @@ export default function Header() {
             <span className="hidden sm:inline">官方赠额区</span>
             <span className="sm:hidden">赠额</span>
           </Link>
+          <Link href="/free-tier" className="hidden shrink-0 whitespace-nowrap rounded-md px-2 py-1 hover:bg-foreground/5 sm:inline">Free Tier</Link>
+          <Link href="/resources" className="hidden shrink-0 whitespace-nowrap rounded-md px-2 py-1 hover:bg-foreground/5 sm:inline">资源</Link>
           <Link href="/test" className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
             <span className="hidden sm:inline">在线测试区</span>
             <span className="sm:hidden">测试</span>

@@ -48,6 +48,74 @@ export interface Perk {
   verified_at?: string;
 }
 
+export type VerificationStatus = "verified" | "partial" | "unknown";
+
+export interface PlatformContent {
+  slug: string;
+  platform_id: string;
+  short_description: string;
+  capabilities: string[];
+  free_tier_summary: string;
+  free_limits: string;
+  credit_card: string;
+  signup: string;
+  restrictions: string[];
+  pricing_url: string;
+  documentation_url: string;
+  website_url: string;
+  last_verified: string;
+  verification_status: VerificationStatus;
+  recommended_use_cases: string[];
+  related_resource_slugs: string[];
+}
+
+export interface FreeTierEntry {
+  slug: string;
+  provider: string;
+  platform_id?: string;
+  api_service: string;
+  free_amount: string;
+  unit: string;
+  reset_period: string;
+  rate_limits: string;
+  credit_card: string;
+  signup: string;
+  expiration: string;
+  restrictions: string[];
+  official_pricing_url: string;
+  official_documentation_url: string;
+  official_website_url: string;
+  last_verified: string;
+  source_type: string;
+  verification_status: VerificationStatus;
+  confidence: "high" | "medium" | "low";
+  related_resource_slugs: string[];
+}
+
+export interface DeveloperResource {
+  slug: string;
+  name: string;
+  category: string;
+  category_slug: string;
+  description: string;
+  free_summary: string;
+  official_url: string;
+  documentation_url?: string;
+  related_platform_ids: string[];
+  related_free_tier_slugs: string[];
+  quality: {
+    developer_relevance: number;
+    api_relevance: number;
+    free_value: number;
+    uniqueness: number;
+    source_quality: number;
+    maintenance_risk: number;
+    total: number;
+    verdict: "Strong Candidate" | "Candidate";
+  };
+  last_verified: string;
+}
+
 /** 历史趋势：src/data/history.json 条目（scripts/history_update.py 产出，30 天封顶） */
 export interface HistoryPlatformPoint {
   latency_ms: number | null;
