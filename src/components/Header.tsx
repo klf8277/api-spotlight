@@ -13,31 +13,35 @@ const COMMERCIAL_HUB = "https://api-spotlight-commercial.pages.dev/";
 export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-foreground/10 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-4 py-3 sm:gap-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-mono text-lg font-bold tracking-tight"
+          className="flex shrink-0 items-center gap-2 font-mono text-base font-bold tracking-tight sm:text-lg"
         >
           <span aria-hidden>🔦</span>
           <span className="flex flex-col leading-none">
             <span>APISpotlight</span>
-            <span className="text-[10px] font-normal tracking-widest text-foreground/50">
+            <span className="hidden text-[10px] font-normal tracking-widest text-foreground/50 sm:block">
               API 探照灯
             </span>
           </span>
         </Link>
-        <nav className="flex items-center gap-0.5 text-sm sm:gap-1.5">
-          <Link href="/#ranking" className="rounded-md px-2 py-1 hover:bg-foreground/5">
-            评测排行榜
+        <nav className="flex min-w-0 items-center justify-end gap-0 text-xs sm:gap-1.5 sm:text-sm">
+          <Link href="/#ranking" className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
+            <span className="hidden sm:inline">评测排行榜</span>
+            <span className="sm:hidden">榜单</span>
           </Link>
-          <Link href="/#perks" className="rounded-md px-2 py-1 hover:bg-foreground/5">
-            官方赠额区
+          <Link href="/#perks" className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
+            <span className="hidden sm:inline">官方赠额区</span>
+            <span className="sm:hidden">赠额</span>
           </Link>
-          <Link href="/test" className="rounded-md px-2 py-1 hover:bg-foreground/5">
-            在线测试区
+          <Link href="/test" className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
+            <span className="hidden sm:inline">在线测试区</span>
+            <span className="sm:hidden">测试</span>
           </Link>
-          <Link href="/method" className="rounded-md px-2 py-1 hover:bg-foreground/5">
-            方法学
+          <Link href="/method" className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
+            <span className="hidden sm:inline">方法学</span>
+            <span className="sm:hidden">方法</span>
           </Link>
           <a
             href={COMMERCIAL_HUB}
