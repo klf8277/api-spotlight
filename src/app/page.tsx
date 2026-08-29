@@ -38,7 +38,8 @@ export default function Home() {
     <>
       <Hero
         platformCount={platforms.length}
-        perkCount={perks.length}
+        freeTierCount={freeTiers.length}
+        resourceCount={resources.length}
         lastChecked={lastChecked}
       />
 

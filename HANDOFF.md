@@ -164,3 +164,22 @@ git push origin main                           # Push 即部署
 - 发布提交：Mobile UX `d7f2c8dc0bf1a23ff65705dd17ebe0b17c44d720` 与自动指标更新 `90d41e765c63550d879127b974baa67a66c67b7c` 合并为 `efaf80a88e5fd95dd49e4887aa2fe6c195bff7bd`；已推送 `main`。
 - GitHub Actions `Deploy to Cloudflare Pages` run `33245441484` = `success`；线上地址：`https://api-spotlight.pages.dev`。
 - 当前状态：Mobile UX = DEPLOYED；Desktop UX = REGRESSION PASS；Production = DEPLOYED；Deployment = SUCCESS；Git Commit/Push = COMPLETE；Phase 6 = NOT STARTED；等待人工验收。
+
+## 2026-08-29 · Homepage Value Proposition v0.1（本地完成，未部署）
+
+- 交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\29_Homepage_Value_Proposition_Audit_v0.1.md`、`30_Homepage_Value_Proposition_Implementation_Audit_v0.1.md`。
+- 仅修改 `src/components/Hero.tsx` 与 `src/app/page.tsx`：首页 Hero 改为直接表达发现 API、查 Free Tier、测试授权 Endpoint，并加入四个真实行动入口。
+- 数字从现有 JSON 读取：28 个 API 平台、13 个 Free Tier、35 个开发者资源；未制造用户量、认证或可靠性营销数字。
+- Mobile 320/360/375/390/412 与 Desktop 1280/1440/1920 回归通过；页面级横向溢出为 0；Hero“开始测试”可导航到 `/test` 并成功返回。
+- `npm run lint`、`npx tsc --noEmit`、`npm run build`、`npm run contract:check` 均 PASS；Sitemap 75/75、Canonical 75/75、首页核心内链 PASS。
+- Data、Contract、Benchmark、Gateway Probe、安全模型、现有 URL、Mobile Navigation = UNCHANGED；未调用真实 Provider，未使用或输出 API Key。
+- 当前状态：Homepage Value Proposition = IMPLEMENTED LOCALLY；Production = DEPLOYED（未变更）；Deployment = NONE；Git Commit/Push = NONE；Phase 6 = NOT STARTED。等待明确部署授权。
+
+## 2026-08-29 · Product Structure / Retention / Competitive Pattern Research v0.1
+
+- 交付研究：D:\Obsidian\klf8277\项目\Api探照灯\31_Product_Structure_Retention_Research_v0.1.md。
+- 研究完成并停止：核查 11 个竞争/参考对象，覆盖 Freebuff、OpenRouter、Artificial Analysis、FMHY、free-for.dev、TAAFT、Promptfoo、LiteLLM、Portkey Gateway、LLM CLI、Linux.do；完成 20+ 候选能力评分。
+- 核心结论：当前最大问题是任务型信息架构与回访触发器不足；Gateway Test 可成为差异化，但核心应是授权、低影响、可复现、可解释的 Evidence Layer，不是公共中转站打假或万能 Proxy。
+- 建议导航：Find API / Free Tier / Compare / Test / Resources；Model Test 与 Gateway Test 共用 Test 壳层和结果模型，但保留两种模式。
+- NOW：任务型首页/导航、Free Tier 条件工具箱、小批量 Model Detail/Compare、Test Evidence/Retest、人工 Recent Changes/Troubleshooting。6.0：历史、自动复测、Reliability Score、Monitoring、用户历史、公共 API 数据服务、高级反探针。
+- 本轮仅写研究文件与交接日志；Code/Data/Contract/Benchmark/Production = UNCHANGED；Deployment/Commit/Push = NONE；Phase 6 = NOT STARTED。研究报告不构成实施授权。
