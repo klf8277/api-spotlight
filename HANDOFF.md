@@ -217,3 +217,22 @@ git push origin main                           # Push 即部署
 - 未调用真实 Provider，未索取、保存或输出 API Key；无数据库、账户、CRM、Proxy、Scheduler、Monitoring 或 6.0 架构。
 - 本轮状态：`Code = CHANGED (Commercial only)`、`Data = CHANGED (Commercial partners.json only)`、`Contract = UNCHANGED`、`Benchmark = UNCHANGED`、`Official Core = UNCHANGED`、`Production = UNCHANGED`、`Deployment = NONE`、`Commit = NONE`、`Push = NONE`、`Phase 6 = NOT STARTED`。
 - 本条仅为交接记录；未对 Official Core 做任何代码修改、部署或发布。
+
+## 2026-08-29 · Commercial Hub v0.2 Deployment
+
+- 交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\35_Commercial_Hub_v0.2_Deployment_Audit_v0.1.md`。
+- Commercial Commit：`ba1c422`（`feat(commercial): add provider comparison and offers`），已推送 `main`。
+- Production：`https://api-spotlight-commercial.pages.dev`；首页、About、Join、Compare、Offers、Sitemap 与 6 个 Partner Detail 均 HTTP 200；新页面标题、Disclosure 与 Sitemap 已生效。
+- Desktop `1280/1440/1920`、Mobile `320/360/375/390/412` 回归 PASS；无页面级横向溢出；未调用真实 Provider，未处理或输出 API Key。
+- GitHub Actions 运行号：`UNKNOWN`（私有 Actions 页面需要登录，匿名 API 受限；未猜测编号）。生产标记和冒烟验证为 `Deployment = SUCCESS`。
+- Official Core、Contract、Benchmark、Security 与 Phase 6 未因本次 Commercial 部署改变；Phase 6 = `NOT STARTED`。
+
+## 2026-08-29 · Official Developer Benefits Expansion
+
+- 交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\36_Official_Developer_Benefits_Expansion_Audit_v0.1.md`。
+- Official 数据新增 3 条：Cloudflare Workers AI、Fireworks AI、Mistral Open-weight/self-hosted；修正 NVIDIA NIM 为官方确认的开发用 Free serverless APIs，并保留 credits/生产资格 Unknown。
+- Free Tier 总量 `16`，Perks 总量 `14`；新增条目 `Verified=3`、`Partially Verified=0`、`Unknown=0`；NVIDIA 修正后为 `Partially Verified`。本轮数据质量计数：`P0=0`、`P1=0`、`P2=4`、`P3=0`。
+- 官方来源核验、lint、TypeScript、build、UTF-8 Contract、Sitemap `78/78`、Canonical `78/78`、Internal Links `0 missing`、Desktop/Mobile 回归均 PASS；生产新增页面与公开 JSON 已 HTTP 200。
+- Official Commit：`b5bb2ef`（`feat(data): expand official developer benefits`），已推送 `main`；Production：`https://api-spotlight.pages.dev`；Deployment = `SUCCESS`。
+- GitHub Actions 运行号：`UNKNOWN`（私有 Actions 页面需要登录，匿名 API 受限；未猜测编号）。未新增数据库、CMS、账户、Scheduler、Monitoring、Proxy 或 Phase 6 能力。
+- 最终状态：Official Developer Benefits = `IMPLEMENTED`；Official Core = `CHANGED (data only)`；Contract/Benchmark = `UNCHANGED`；Security = `PASS`；Production = `DEPLOYED`；Phase 6 = `NOT STARTED`；未发现未授权修改。
