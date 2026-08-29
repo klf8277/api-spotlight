@@ -151,3 +151,14 @@ git push origin main                           # Push 即部署
 - 线上回归：`https://api-spotlight.pages.dev/`、`/method`、`/test`、`/sitemap.xml`、`/data/platforms.json` 均 HTTP 200；线上 `/test` 资源包含 Trust Layer 的 `VERIFIED BY TEST`、`INCONCLUSIVE`、`Response Consistency` 和 `重新测试` 文案。
 - 最终快照：`D:\Obsidian\klf8277\项目\Api探照灯\快照_2026-08-29_TestResultIntegrity_TrustLayer`，包含源码、审计/交接文档及 `SHA256SUMS.txt`；不含 `node_modules`、`.next`、`out`、凭据或 API Key。
 - 当前状态：Test Result Integrity = DEPLOYED；Production = DEPLOYED；Deployment = SUCCESS；Git Commit/Push = COMPLETE；Phase 6 = NOT STARTED；等待人工验收。
+
+## 2026-08-29 · Mobile UX v0.1（本地完成，未部署）
+
+- 用户已授权执行 `Mobile UX v0.1 Audit & Implementation`；交付审计：`D:\Obsidian\klf8277\项目\Api探照灯\28_Mobile_UX_Implementation_Audit_v0.1.md`。
+- 移动端 `sm` 以下改为汉堡抽屉导航，优先提供首页、API 平台、免费额度、模型测试、开发者资源；支持关闭按钮、遮罩关闭、ESC 关闭和 body 滚动锁定。桌面端保留原导航。
+- 首页移动端新增“模型测试”入口；Platform/Free Tier/Resource/Perks 卡片仅在移动端收紧内边距，桌面断点恢复原密度。
+- `RelatedLinks` 展示层跳过无法解析 platform slug 的历史关联 ID，消除空 `/platform` 内链；未修改数据、路由、Benchmark、Contract 或 `/test` 核心 Probe。
+- Mobile 320/360/375/390/412 与 Desktop 1280/1440/1920 回归均通过；抽屉打开、关闭、遮罩、ESC、重点页面及 `/test` 表单回归通过。
+- `npm run lint`、`npx tsc --noEmit`、`npm run build`、`npm run contract:check` 均 PASS；Sitemap 75/75、Canonical 75/75（根路径尾斜杠规范化）、Internal Links 0 missing PASS。
+- `/platforms` 不属于现有路由，实际平台详情路由为 `/platform/[slug]`；本轮遵守 URL unchanged，未新增重复路由。
+- 当前状态：Mobile UX = IMPLEMENTED；Desktop UX = REGRESSION PASS；Production = UNCHANGED；Deployment = NONE；Git Commit = NONE；Git Push = NONE；Phase 6 = NOT STARTED；等待人工验收。

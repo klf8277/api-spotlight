@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { DeveloperResource, FreeTierEntry, Platform, PlatformContent } from "@/types";
-import { freeTierHref, platformHref, resourceHref } from "@/lib/content";
+import { freeTierHref, platformSlug, resourceHref } from "@/lib/content";
 
 export function PlatformCard({ platform, content }: { platform: Platform; content: PlatformContent }) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-foreground/10 bg-background p-5 shadow-sm">
+    <article className="flex h-full flex-col rounded-xl border border-foreground/10 bg-background p-4 shadow-sm sm:p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Platform</p>
@@ -23,7 +23,7 @@ export function PlatformCard({ platform, content }: { platform: Platform; conten
 
 export function FreeTierCard({ entry }: { entry: FreeTierEntry }) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-foreground/10 p-5">
+    <article className="flex h-full flex-col rounded-xl border border-foreground/10 p-4 sm:p-5">
       <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Free Tier</p>
       <h3 className="mt-2 text-lg font-semibold">{entry.provider}</h3>
       <p className="mt-1 text-xs text-foreground/50">{entry.api_service}</p>
@@ -36,7 +36,7 @@ export function FreeTierCard({ entry }: { entry: FreeTierEntry }) {
 
 export function ResourceCard({ resource }: { resource: DeveloperResource }) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-foreground/10 p-5">
+    <article className="flex h-full flex-col rounded-xl border border-foreground/10 p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
         <span className="rounded-full bg-emerald-500/10 px-2 py-1 text-xs text-emerald-700 dark:text-emerald-300">{resource.category}</span>
         <span className="text-xs text-foreground/45">{resource.quality.total}/30</span>
@@ -52,7 +52,10 @@ export function ResourceCard({ resource }: { resource: DeveloperResource }) {
 export function RelatedLinks({ platformIds = [], freeTierSlugs = [], resourceSlugs = [] }: { platformIds?: string[]; freeTierSlugs?: string[]; resourceSlugs?: string[] }) {
   return (
     <div className="flex flex-wrap gap-2">
-      {platformIds.map((id) => <Link key={id} href={platformHref(id)} className="rounded-full border border-foreground/10 px-3 py-1.5 text-xs hover:bg-foreground/5">平台页</Link>)}
+      {platformIds.map((id) => {
+        const slug = platformSlug(id);
+        return slug ? <Link key={id} href={`/platform/${slug}`} className="rounded-full border border-foreground/10 px-3 py-1.5 text-xs hover:bg-foreground/5">平台页</Link> : null;
+      })}
       {freeTierSlugs.map((slug) => <Link key={slug} href={freeTierHref(slug)} className="rounded-full border border-foreground/10 px-3 py-1.5 text-xs hover:bg-foreground/5">Free Tier</Link>)}
       {resourceSlugs.map((slug) => <Link key={slug} href={resourceHref(slug)} className="rounded-full border border-foreground/10 px-3 py-1.5 text-xs hover:bg-foreground/5">开发资源</Link>)}
     </div>

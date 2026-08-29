@@ -33,6 +33,12 @@ export default function Hero({ platformCount, perkCount, lastChecked }: HeroProp
           >
             官方赠额区
           </a>
+          <a
+            href="/test"
+            className="rounded-lg border border-emerald-500/30 px-4 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-500/10 dark:text-emerald-300 sm:hidden"
+          >
+            模型测试 →
+          </a>
         </div>
         <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
           <div className="rounded-xl border border-foreground/10 bg-background/70 p-4">

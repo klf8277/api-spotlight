@@ -6,7 +6,7 @@ export default function PerksGrid({ perks }: { perks: Perk[] }) {
       {perks.map((p) => (
         <article
           key={p.id}
-          className="relative flex flex-col rounded-xl border border-foreground/10 p-4"
+          className="relative flex flex-col rounded-xl border border-foreground/10 p-3.5 sm:p-4"
         >
           {p.is_hot && (
             <span className="absolute right-3 top-3 rounded-full bg-orange-500/90 px-2 py-0.5 text-xs font-semibold text-white">
