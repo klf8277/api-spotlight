@@ -49,15 +49,15 @@
   },
   {
     "id": "perk-5",
-    "name": "API Catalog 免费试用额度",
+    "name": "开发用 Free Serverless APIs",
     "provider": "NVIDIA NIM",
-    "content": "英伟达 API Catalog 面向注册用户提供免费试用额度，覆盖主流开源模型；以官网为准。",
-    "requirement": "免费注册",
+    "content": "NVIDIA Developer Program 提供面向开发者的免费工具与学习资源；API Catalog 公开写明提供面向开发的 Free serverless APIs。固定额度、模型范围和生产资格以账户与条款为准，不把此项写成永久免费或生产免费。",
+    "requirement": "NVIDIA 账户 + Get API Key",
     "link": "https://build.nvidia.com",
-    "expires_at": "长期有效（以官网为准）",
-    "tag": "试用额度",
+    "expires_at": "以官方政策为准",
+    "tag": "开发测试",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-08-29"
   },
   {
     "id": "perk-6",
@@ -130,5 +130,41 @@
     "tag": "免费额度",
     "is_hot": false,
     "verified_at": "2026-08-27"
+  },
+  {
+    "id": "perk-12",
+    "name": "Workers AI 每日免费 Neurons",
+    "provider": "Cloudflare Workers AI",
+    "content": "官方 Pricing 明确每天提供 10,000 Neurons 免费分配，按日 UTC 重置；部分模型需要付费 billing method，具体计划与模型条件以官网为准。",
+    "requirement": "Cloudflare 账户 + Workers AI",
+    "link": "https://developers.cloudflare.com/workers-ai/",
+    "expires_at": "按 Workers 计划政策（以官网为准）",
+    "tag": "免费限额",
+    "is_hot": false,
+    "verified_at": "2026-08-29"
+  },
+  {
+    "id": "perk-13",
+    "name": "Serverless Inference $1 Free Credits",
+    "provider": "Fireworks AI",
+    "content": "官方 Pricing 明确新用户开始使用 Serverless Inference 时提供 $1 free credits；这是一次性试用额度，不是永久免费 API。",
+    "requirement": "注册 Fireworks 账户",
+    "link": "https://fireworks.ai/pricing",
+    "expires_at": "固定有效期 Unknown，以账户政策为准",
+    "tag": "试用额度",
+    "is_hot": false,
+    "verified_at": "2026-08-29"
+  },
+  {
+    "id": "perk-14",
+    "name": "开放权重自托管（非免费托管 API）",
+    "provider": "Mistral AI",
+    "content": "Mistral 官方定价 FAQ 说明部分开放权重模型可自托管；Mistral 7B 等对 research/individual use 为 Apache 2.0，商业部署需单独核对许可证。",
+    "requirement": "自有 GPU/基础设施 + 按模型许可证使用",
+    "link": "https://mistral.ai/pricing",
+    "expires_at": "以模型许可证与官方条款为准",
+    "tag": "免费自托管",
+    "is_hot": false,
+    "verified_at": "2026-08-29"
   }
 ]

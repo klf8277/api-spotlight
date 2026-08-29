@@ -175,6 +175,19 @@ git push origin main                           # Push 即部署
 - Data、Contract、Benchmark、Gateway Probe、安全模型、现有 URL、Mobile Navigation = UNCHANGED；未调用真实 Provider，未使用或输出 API Key。
 - 当前状态：Homepage Value Proposition = IMPLEMENTED LOCALLY；Production = DEPLOYED（未变更）；Deployment = NONE；Git Commit/Push = NONE；Phase 6 = NOT STARTED。等待明确部署授权。
 
+## 2026-08-29 · APISpotlight NOW-01 Homepage Value Proposition Deployment
+
+- 已按明确部署授权发布 Homepage Value Proposition v0.1；范围仅为既有 `Hero.tsx`、`src/app/page.tsx` 与本次交接记录。
+- Commit：`d3215334dfcd40ff9b7ff1962e3442017d01ae96`（`feat(home): clarify homepage value proposition`）。
+- GitHub Actions：`Deploy to Cloudflare Pages #41`，completed successfully，耗时 48s。
+- Production：`https://api-spotlight.pages.dev/`；部署后首页已出现“找 AI API”“开始测试”“查找免费额度”“浏览 API 平台”“浏览开发资源”等新版本标记。
+- Production Smoke Test：`/`、`/method`、`/test`、`/free-tier`、`/resources`、`/platform/openrouter`、`/free-tier/openrouter`、`/sitemap.xml`、`/data/platforms.json`、`/data/perks.json`、`/data/authenticity.json`、`/data/trends.json`、`/data/contract.json` 均 HTTP 200。
+- Desktop：1280/1440/1920 回归通过；Hero、CTA、导航与首页内容正常；无页面级横向溢出。
+- Mobile：320/360/375/390/412 回归通过；390px 生产首页 Hero、CTA、四入口和统计正常；移动抽屉可打开/关闭，入口完整；无页面级横向溢出；控制台无错误。
+- `/test` CTA 生产冒烟通过：可进入测试页并返回首页；未输入 API Key，未触发 Provider 请求。
+- Observation：`ACTIVE`。本次仅表示新首页版本进入真实用户 Observation，不宣布流量增长、SEO 成功或产品成功；重点观察首页到 `/test`、`/free-tier`、`/resources`、Platform Detail 的第二步行为。
+- Data、Contract、Benchmark、Gateway Test、Model Test、Security、Sitemap 结构、URL 结构、数据库、Proxy、Phase 6 = UNCHANGED / NOT STARTED。
+
 ## 2026-08-29 · Product Structure / Retention / Competitive Pattern Research v0.1
 
 - 交付研究：D:\Obsidian\klf8277\项目\Api探照灯\31_Product_Structure_Retention_Research_v0.1.md。
@@ -183,3 +196,24 @@ git push origin main                           # Push 即部署
 - 建议导航：Find API / Free Tier / Compare / Test / Resources；Model Test 与 Gateway Test 共用 Test 壳层和结果模型，但保留两种模式。
 - NOW：任务型首页/导航、Free Tier 条件工具箱、小批量 Model Detail/Compare、Test Evidence/Retest、人工 Recent Changes/Troubleshooting。6.0：历史、自动复测、Reliability Score、Monitoring、用户历史、公共 API 数据服务、高级反探针。
 - 本轮仅写研究文件与交接日志；Code/Data/Contract/Benchmark/Production = UNCHANGED；Deployment/Commit/Push = NONE；Phase 6 = NOT STARTED。研究报告不构成实施授权。
+
+## 2026-08-29 · APISpotlight 6.0 Architecture Blueprint v0.1
+
+- 已确认 6.0 Developer Verification & Historical Intelligence 文档此前未进入工程实施；其性质为 `ARCHITECTURE / ROADMAP ONLY`。
+- 已完成架构交付：`D:\Obsidian\klf8277\项目\Api探照灯\32_APISpotlight_6.0_Architecture_Blueprint_v0.1.md`。
+- Blueprint 覆盖 Product Blueprint、Architecture Diagram、Canonical Data Model、Test History、Evidence、Historical Result / Change Detection、Scheduler Design、Security Architecture、Public Report、Public API、Migration Strategy、Cost Estimate、Risk Matrix、6.0 Gate Criteria、NOW → 6.0 Boundary 与实施顺序。
+- 本轮仅新增设计文档与交接记录；未修改生产代码、JSON、Contract、Benchmark、Gateway Test、Model Test、Security、Sitemap 结构或 URL 结构。
+- Database、Scheduler、Monitoring、账号系统、API Proxy 均未创建；未调用真实 Provider，未使用或输出 API Key。
+- Code/Data/Contract/Benchmark/Production = `UNCHANGED`；Deployment/Git Commit/Git Push = `NONE`；Phase 6 = `NOT STARTED`。
+- 本 Blueprint 不构成工程实施或部署授权；后续实现需单独、明确授权。
+
+## 2026-08-29 · Commercial Hub v0.2 Minimal Commercial Product Implementation（Official Core 边界记录）
+
+- Commercial 实施审计：`D:\Obsidian\klf8277\项目\Api探照灯\34_Commercial_Hub_v0.2_Implementation_Audit_v0.1.md`。
+- 本轮代码与数据变更仅发生在独立仓库 `D:\api-spotlight-commercial`：Provider Detail、事实型 Comparison、Offers / Benefits、Commercial Disclosure、静态 Provider Submission 入口、SEO/内链/Sitemap 与移动端样式。
+- Commercial `partners.json` 的 6 个既有 Partner 补充结构化字段；不确定内容保留 `Unknown` / `Not Published` / `Not Tested`。未修改 Official Core 数据、Contract、Benchmark、Gateway Test、Model Test 或安全模型。
+- Commercial 本地验证：`npm run lint`、`npx tsc --noEmit`、`npm run build`、`npm run benchmark:check`、`npm run benchmark:test` 均 `PASS`；Official Public Data Contract 构建期 schema `1.0`、28 个平台消费成功。
+- Desktop `1280/1440/1920` 与 Mobile `320/360/375/390/412` 回归 `PASS`；Compare 移动端保持容器内横向滚动，无页面级横向溢出；Commercial 静态路由和 6 个 Partner Detail 已完成本地 HTTP 200 验证。
+- 未调用真实 Provider，未索取、保存或输出 API Key；无数据库、账户、CRM、Proxy、Scheduler、Monitoring 或 6.0 架构。
+- 本轮状态：`Code = CHANGED (Commercial only)`、`Data = CHANGED (Commercial partners.json only)`、`Contract = UNCHANGED`、`Benchmark = UNCHANGED`、`Official Core = UNCHANGED`、`Production = UNCHANGED`、`Deployment = NONE`、`Commit = NONE`、`Push = NONE`、`Phase 6 = NOT STARTED`。
+- 本条仅为交接记录；未对 Official Core 做任何代码修改、部署或发布。
