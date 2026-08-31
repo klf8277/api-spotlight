@@ -463,6 +463,123 @@
           "success_rate": 100.0
         }
       }
+    },
+    {
+      "date": "2026-08-31",
+      "platforms": {
+        "provider-openrouter": {
+          "latency_ms": 26,
+          "success_rate": 100.0
+        },
+        "provider-openai": {
+          "latency_ms": 87,
+          "success_rate": 100.0
+        },
+        "provider-anthropic": {
+          "latency_ms": 91,
+          "success_rate": 100.0
+        },
+        "provider-google": {
+          "latency_ms": 85,
+          "success_rate": 100.0
+        },
+        "provider-xai": {
+          "latency_ms": 45,
+          "success_rate": 100.0
+        },
+        "provider-cohere": {
+          "latency_ms": 106,
+          "success_rate": 100.0
+        },
+        "provider-groq": {
+          "latency_ms": 63,
+          "success_rate": 100.0
+        },
+        "provider-mistral": {
+          "latency_ms": 196,
+          "success_rate": 100.0
+        },
+        "provider-deepseek": {
+          "latency_ms": 307,
+          "success_rate": 100.0
+        },
+        "provider-siliconflow": {
+          "latency_ms": 627,
+          "success_rate": 100.0
+        },
+        "provider-moonshot": {
+          "latency_ms": 990,
+          "success_rate": 100.0
+        },
+        "provider-zhipu": {
+          "latency_ms": 195,
+          "success_rate": 100.0
+        },
+        "provider-bailian": {
+          "latency_ms": 618,
+          "success_rate": 100.0
+        },
+        "provider-qianfan": {
+          "latency_ms": 691,
+          "success_rate": 100.0
+        },
+        "provider-volcano": {
+          "latency_ms": 1411,
+          "success_rate": 100.0
+        },
+        "provider-tencent": {
+          "latency_ms": 1567,
+          "success_rate": 100.0
+        },
+        "provider-minimax": {
+          "latency_ms": 862,
+          "success_rate": 100.0
+        },
+        "provider-stepfun": {
+          "latency_ms": 644,
+          "success_rate": 100.0
+        },
+        "provider-together": {
+          "latency_ms": 60,
+          "success_rate": 100.0
+        },
+        "provider-fireworks": {
+          "latency_ms": 11,
+          "success_rate": 100.0
+        },
+        "provider-novita": {
+          "latency_ms": 103,
+          "success_rate": 100.0
+        },
+        "provider-perplexity": {
+          "latency_ms": 140,
+          "success_rate": 100.0
+        },
+        "provider-nvidia": {
+          "latency_ms": null,
+          "success_rate": 0.0
+        },
+        "provider-huggingface": {
+          "latency_ms": 99,
+          "success_rate": 100.0
+        },
+        "provider-cerebras": {
+          "latency_ms": 88,
+          "success_rate": 100.0
+        },
+        "provider-deepinfra": {
+          "latency_ms": 278,
+          "success_rate": 100.0
+        },
+        "provider-sambanova": {
+          "latency_ms": 33,
+          "success_rate": 100.0
+        },
+        "provider-agnes": {
+          "latency_ms": 288,
+          "success_rate": 100.0
+        }
+      }
     }
   ]
 }
