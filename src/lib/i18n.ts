@@ -9,6 +9,14 @@ export const DEFAULT_LOCALE: Locale = "en";
 
 export const SITE_URL = "https://api-spotlight.pages.dev";
 
+/** Commercial Hub 独立部署，仅导航互连；本站不读取其数据。 */
+export const COMMERCIAL_HUB_URL = "https://api-spotlight-commercial.pages.dev/";
+
+/** Commercial Hub 英文占根路径、中文在 /zh，故按本站语种指向对应版本。 */
+export function commercialHubHref(locale: Locale): string {
+  return `${COMMERCIAL_HUB_URL}${locale === "zh" ? "zh/" : ""}`;
+}
+
 export type Dictionary = typeof en;
 
 const dictionaries: Record<Locale, Dictionary> = { en, zh };

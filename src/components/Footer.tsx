@@ -1,7 +1,6 @@
-import { getDictionary, type Locale } from "@/lib/i18n";
+import { commercialHubHref, getDictionary, type Locale } from "@/lib/i18n";
 
-// Commercial Hub 独立部署，仅导航互连；本站不读取其数据
-const COMMERCIAL_HUB = "https://api-spotlight-commercial.pages.dev/";
+// Commercial Hub 独立部署，仅导航互连；本站不读取其数据（链接按语种指向对应版本）
 
 export default function Footer({ locale }: { locale: Locale }) {
   const dictionary = getDictionary(locale);
@@ -13,7 +12,7 @@ export default function Footer({ locale }: { locale: Locale }) {
         <p>
           {dictionary.footer.line3Prefix}{" "}
           <a
-            href={COMMERCIAL_HUB}
+            href={commercialHubHref(locale)}
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-foreground/30 underline-offset-2 hover:text-foreground"

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import { getDictionary, localePath, type Locale } from "@/lib/i18n";
+import { commercialHubHref, getDictionary, localePath, type Locale } from "@/lib/i18n";
 
 // 社区链接为占位地址，上线前替换为真实群组/频道
 const COMMUNITY = [
@@ -12,8 +12,7 @@ const COMMUNITY = [
   { href: "https://qm.qq.com/apitest", label: "QQ" },
 ];
 
-// Commercial Hub 独立部署，仅导航互连；本站不读取其数据
-const COMMERCIAL_HUB = "https://api-spotlight-commercial.pages.dev/";
+// Commercial Hub 独立部署，仅导航互连；本站不读取其数据（链接按语种指向对应版本）
 
 export default function Header({ locale }: { locale: Locale }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -79,7 +78,7 @@ export default function Header({ locale }: { locale: Locale }) {
             <span className="sm:hidden">{dictionary.nav.methodologyShort}</span>
           </Link>
           <a
-            href={COMMERCIAL_HUB}
+            href={commercialHubHref(locale)}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-md px-2 py-1 text-foreground/70 hover:bg-foreground/5 hover:text-foreground sm:inline"
@@ -141,7 +140,7 @@ export default function Header({ locale }: { locale: Locale }) {
               <Link href={path("/method")} onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.methodology}
               </Link>
-              <a href={COMMERCIAL_HUB} target="_blank" rel="noopener noreferrer" onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
+              <a href={commercialHubHref(locale)} target="_blank" rel="noopener noreferrer" onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.commercial}
               </a>
             </div>
