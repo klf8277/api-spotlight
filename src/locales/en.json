@@ -280,6 +280,19 @@
     "title": "🧪 Test what your API endpoint actually delivers",
     "lead": "Use one low-impact Quick Test to check whether an endpoint is reachable, whether the key is accepted, whether models can be discovered, and whether the selected model can complete both a chat and a streaming call. The result describes this one real observation only; it is not a permanent health check or proof of model identity."
   },
+  "thirdPartyTools": {
+    "kicker": "THIRD-PARTY TOOL · NOT PROVIDED BY THIS SITE",
+    "title": "Need a deeper authenticity check?",
+    "lead": "This page checks reachability, credentials, model discovery and the model identifier the response declares. It does not statistically fingerprint the model behind the endpoint. A separate third-party project does that by sampling answer distributions and comparing them against reference baselines.",
+    "toolName": "meow llm detector (meow-llm-detector)",
+    "toolBody": "Runs on your own machine and ships GPT and Claude reference baselines. It reports a three-colour verdict: a strong pointer to the declared model, insufficient evidence, or a strong pointer to another candidate model. It needs your own API key, and its author states explicitly that it is not a model identity card and cannot by itself prove that a vendor is substituting models.",
+    "licenseLabel": "License:",
+    "license": "PolyForm Noncommercial 1.0.0 — noncommercial use only. Personal research, experiments and testing are permitted; commercial use is not licensed by that project.",
+    "creditLabel": "Credit:",
+    "credit": "Copyright 2026 chen-006 and contributors · Original project: github.com/chen-006/gpt56_api_detector",
+    "independence": "This site neither provides nor endorses that project, and does not run its code or its baseline data. Our own authenticity checks (scripts/authenticity_test.py) are an independent implementation, documented on the methodology page.",
+    "link": "Open the project on GitHub ↗"
+  },
   "probe": {
     "notMeasurable": "Not measurable",
     "authorizedNoticeTitle": "Authorized Endpoint Testing only.",

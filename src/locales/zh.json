@@ -280,6 +280,19 @@
     "title": "🧪 测试你的 API Endpoint 实际返回了什么",
     "lead": "用一次低影响 Quick Test 检查 Endpoint 是否可达、Key 是否被接受、模型是否可发现，以及选定模型能否完成 Chat 和 Streaming。结果只描述本次真实观测，不代表永久健康或模型身份证明。"
   },
+  "thirdPartyTools": {
+    "kicker": "第三方工具 · 非本站提供",
+    "title": "想做更深的真实性核查？",
+    "lead": "本页检查的是可达性、凭据、模型发现，以及响应里声明的模型标识，不做统计指纹比对。另有一个第三方项目用「采样答案分布 + 参考基准比对」来做这件事。",
+    "toolName": "meow llm 检测器（meow-llm-detector）",
+    "toolBody": "在本机运行，随包提供 GPT 与 Claude 参考基准，给出三色结论：强指向申报模型 / 证据不足 / 强指向另一个候选模型。需要你自己的 API Key；作者本人也明确写了它不是模型身份证，不能单凭一份报告断定商家换模型。",
+    "licenseLabel": "许可证：",
+    "license": "PolyForm Noncommercial 1.0.0 —— 仅限非商业用途。个人研究、实验与测试可用；商业用途不在该项目的授权范围内。",
+    "creditLabel": "版权：",
+    "credit": "Copyright 2026 chen-006 and contributors · 原始项目：github.com/chen-006/gpt56_api_detector",
+    "independence": "本站不提供、不背书该项目，也不运行它的代码或其基准数据。本站自己的真实性抽查（scripts/authenticity_test.py）是独立实现，方法学公开在方法学页。",
+    "link": "在 GitHub 上打开该项目 ↗"
+  },
   "probe": {
     "notMeasurable": "无法测量",
     "authorizedNoticeTitle": "Authorized Endpoint Testing only.",
