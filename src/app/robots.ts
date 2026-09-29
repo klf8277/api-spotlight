@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://api-spotlight.pages.dev/sitemap.xml",
+    sitemap: "https://www.apiops.cloud/sitemap.xml",
   };
 }

@@ -7,10 +7,10 @@ export type Locale = (typeof LOCALES)[number];
 /** 默认语种（不带路径前缀，直接占根路径） */
 export const DEFAULT_LOCALE: Locale = "en";
 
-export const SITE_URL = "https://api-spotlight.pages.dev";
+export const SITE_URL = "https://www.apiops.cloud";
 
 /** Commercial Hub 独立部署，仅导航互连；本站不读取其数据。 */
-export const COMMERCIAL_HUB_URL = "https://api-spotlight-commercial.pages.dev/";
+export const COMMERCIAL_HUB_URL = "https://hub.apiops.cloud/";
 
 /** Commercial Hub 英文占根路径、中文在 /zh，故按本站语种指向对应版本。 */
 export function commercialHubHref(locale: Locale): string {

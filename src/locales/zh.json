@@ -270,7 +270,7 @@
       {
         "title": "💻 直接使用数据",
         "items": [
-          "公开 JSON API（构建时快照）：curl https://api-spotlight.pages.dev/data/platforms.json",
+          "公开 JSON API（构建时快照）：curl https://www.apiops.cloud/data/platforms.json",
           "代码库（MIT License）：https://github.com/klf8277/api-spotlight"
         ]
       }

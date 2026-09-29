@@ -9,7 +9,7 @@ import { readdirSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 
 const OUT = "out";
-const SITE = "https://api-spotlight.pages.dev";
+const SITE = "https://www.apiops.cloud";
 // 语言切换器在英文页上故意显示中文标签，属预期内容
 const ALLOWED_CJK = ["中文"];
 

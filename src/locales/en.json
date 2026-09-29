@@ -270,7 +270,7 @@
       {
         "title": "💻 Using the data directly",
         "items": [
-          "Public JSON API (snapshotted at build time): curl https://api-spotlight.pages.dev/data/platforms.json",
+          "Public JSON API (snapshotted at build time): curl https://www.apiops.cloud/data/platforms.json",
           "Source repository (MIT License): https://github.com/klf8277/api-spotlight"
         ]
       }

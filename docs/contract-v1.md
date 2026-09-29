@@ -1,8 +1,10 @@
 # APISpotlight Public Data Contract v1
 
 > 版本：`schema_version = "1.0"` · 生效日期：2026-08-27
+> 修订（2026-09-30）：公开快照权威地址迁移为 `https://www.apiops.cloud/data/*.json`；
+> 旧地址 `https://api-spotlight.pages.dev/data/*.json` 由部署层 301 永久跳转，仅作兼容保留，下游应改用新地址。
 > 本文件是 **Official 公开数据契约的权威规范**。任何下游（含未来 Private Commercial Hub）只能消费
-> `https://api-spotlight.pages.dev/data/*.json` 公开快照 —— **不得依赖 Official 内部源码、内部文件结构或运行时接口**。
+> `https://www.apiops.cloud/data/*.json` 公开快照 —— **不得依赖 Official 内部源码、内部文件结构或运行时接口**。
 > 本规范不含任何商业信息；官方数据禁止出现商业字段（见 §5）。
 
 ## 1. 公开文件清单与信封
