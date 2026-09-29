@@ -285,13 +285,19 @@
     "title": "Need a deeper authenticity check?",
     "lead": "This page checks reachability, credentials, model discovery and the model identifier the response declares. It does not statistically fingerprint the model behind the endpoint. A separate third-party project does that by sampling answer distributions and comparing them against reference baselines.",
     "toolName": "meow llm detector (meow-llm-detector)",
-    "toolBody": "Runs on your own machine and ships GPT and Claude reference baselines. It reports a three-colour verdict: a strong pointer to the declared model, insufficient evidence, or a strong pointer to another candidate model. It needs your own API key, and its author states explicitly that it is not a model identity card and cannot by itself prove that a vendor is substituting models.",
+    "toolBody": "Ships GPT and Claude reference baselines and reports a three-colour verdict: a strong pointer to the declared model, insufficient evidence, or a strong pointer to another candidate model. Its author states explicitly that it is not a model identity card and cannot by itself prove that a vendor is substituting models.",
+    "onlineLabel": "Online version (nothing to install):",
+    "onlineBody": "meowllm.top (spelled meow + llm) — public HTTPS APIs only. The author states that online-version requests, including your key, are processed by Cloudflare and the service's server, and that reports are public (request URL, group and sanitised errors; the key is not included).",
+    "localLabel": "Local version:",
+    "localBody": "Download from GitHub Releases and run it on your own machine; it is the only option for private or intranet endpoints.",
+    "keyAdvice": "Either way, use a separate, revocable key with a spending limit — the same advice the project's own README gives.",
     "licenseLabel": "License:",
     "license": "PolyForm Noncommercial 1.0.0 — noncommercial use only. Personal research, experiments and testing are permitted; commercial use is not licensed by that project.",
     "creditLabel": "Credit:",
-    "credit": "Copyright 2026 chen-006 and contributors · Original project: github.com/chen-006/gpt56_api_detector",
+    "credit": "Copyright 2026 chen-006 and contributors · Original project: github.com/chen-006/meow-llm-detector",
     "independence": "This site neither provides nor endorses that project, and does not run its code or its baseline data. Our own authenticity checks (scripts/authenticity_test.py) are an independent implementation, documented on the methodology page.",
-    "link": "Open the project on GitHub ↗"
+    "onlineLink": "Open the online version ↗",
+    "repoLink": "Open the project on GitHub ↗"
   },
   "probe": {
     "notMeasurable": "Not measurable",

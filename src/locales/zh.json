@@ -285,13 +285,19 @@
     "title": "想做更深的真实性核查？",
     "lead": "本页检查的是可达性、凭据、模型发现，以及响应里声明的模型标识，不做统计指纹比对。另有一个第三方项目用「采样答案分布 + 参考基准比对」来做这件事。",
     "toolName": "meow llm 检测器（meow-llm-detector）",
-    "toolBody": "在本机运行，随包提供 GPT 与 Claude 参考基准，给出三色结论：强指向申报模型 / 证据不足 / 强指向另一个候选模型。需要你自己的 API Key；作者本人也明确写了它不是模型身份证，不能单凭一份报告断定商家换模型。",
+    "toolBody": "随包提供 GPT 与 Claude 参考基准，给出三色结论：强指向申报模型 / 证据不足 / 强指向另一个候选模型。作者本人也明确写了它不是模型身份证，不能单凭一份报告断定商家换模型。",
+    "onlineLabel": "在线版（无需安装）：",
+    "onlineBody": "meowllm.top（域名拼写为 meow + llm）—— 只支持公网 HTTPS API。作者声明：在线版的请求（含 Key）经 Cloudflare 与其服务器处理，且报告公开（含请求网址、分组与脱敏错误，不含 Key）。",
+    "localLabel": "本机版：",
+    "localBody": "从 GitHub Releases 下载后在本机运行；需要测私有或内网端点时只能用这个版本。",
+    "keyAdvice": "两个版本都建议用可撤销、设了额度上限的专用 Key——这也是项目 README 自己的建议。",
     "licenseLabel": "许可证：",
     "license": "PolyForm Noncommercial 1.0.0 —— 仅限非商业用途。个人研究、实验与测试可用；商业用途不在该项目的授权范围内。",
     "creditLabel": "版权：",
-    "credit": "Copyright 2026 chen-006 and contributors · 原始项目：github.com/chen-006/gpt56_api_detector",
+    "credit": "Copyright 2026 chen-006 and contributors · 原始项目：github.com/chen-006/meow-llm-detector",
     "independence": "本站不提供、不背书该项目，也不运行它的代码或其基准数据。本站自己的真实性抽查（scripts/authenticity_test.py）是独立实现，方法学公开在方法学页。",
-    "link": "在 GitHub 上打开该项目 ↗"
+    "onlineLink": "打开在线版 ↗",
+    "repoLink": "在 GitHub 上打开项目 ↗"
   },
   "probe": {
     "notMeasurable": "无法测量",
