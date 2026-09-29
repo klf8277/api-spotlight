@@ -2,3 +2,9 @@
 # Cloudflare Pages 静态重定向（构建时随 public/ 进入站点根）。
 /en / 301
 /en/* /:splat 301
+
+# sitemap 备用入口（200 重写，不是跳转）：GSC 的 sitemap 状态按「提交的 URL」独立维护，
+# 线上 /sitemap.xml 在 GSC 长期卡在「无法抓取」（站点侧体检正常，属 Google 侧状态）。
+# 这里把同一份文件挂在第二个路径上，便于用新 URL 让 GSC 建立全新抓取上下文；
+# 内容与 /sitemap.xml 完全一致（同一份产物），不存在漂移。
+/sitemap-fallback.xml /sitemap.xml 200
