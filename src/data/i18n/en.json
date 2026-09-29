@@ -1,0 +1,1142 @@
+{
+  "$comment": "English translation overlay for src/data/*.json. Keyed by id/slug; any missing key falls back to the Chinese base data. Do not add contract fields here: platforms.json / perks.json / authenticity.json are rewritten by probe scripts and are frozen by Contract v1.",
+  "platforms": {
+    "provider-openrouter": {
+      "name": "OpenRouter",
+      "tags": [
+        "Global aggregation",
+        "One key, many models",
+        "USD pricing"
+      ],
+      "payment_methods": [
+        "International credit card",
+        "Cryptocurrency"
+      ]
+    },
+    "provider-openai": {
+      "name": "OpenAI",
+      "tags": [
+        "Official direct access",
+        "Industry benchmark",
+        "GPT-5.6 family"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-anthropic": {
+      "name": "Anthropic",
+      "tags": [
+        "Code-focused",
+        "Claude family",
+        "Long context"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-google": {
+      "name": "Google Gemini",
+      "tags": [
+        "Multimodal",
+        "Very long context",
+        "Gemini family"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-xai": {
+      "name": "xAI (Grok)",
+      "tags": [
+        "Grok family",
+        "Real-time data"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-cohere": {
+      "name": "Cohere",
+      "tags": [
+        "Enterprise-grade",
+        "RAG ecosystem",
+        "Multilingual"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-groq": {
+      "name": "Groq",
+      "tags": [
+        "Very fast inference",
+        "LPU hardware",
+        "Free tier"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-mistral": {
+      "name": "Mistral AI",
+      "tags": [
+        "Europe-based",
+        "Open-source models",
+        "Multilingual"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-deepseek": {
+      "name": "DeepSeek",
+      "tags": [
+        "China-based open source",
+        "Extremely cost-effective"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-siliconflow": {
+      "name": "SiliconFlow",
+      "tags": [
+        "China-based GPU cloud",
+        "Full model lineup",
+        "Signup credit"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-moonshot": {
+      "name": "Moonshot AI (Kimi)",
+      "tags": [
+        "Very long context",
+        "Kimi family",
+        "China-based, fast-moving"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-zhipu": {
+      "name": "Zhipu AI (GLM)",
+      "tags": [
+        "Top tier in China",
+        "GLM family"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-bailian": {
+      "name": "Alibaba Cloud Model Studio (Tongyi)",
+      "tags": [
+        "Alibaba ecosystem",
+        "Qwen models",
+        "Enterprise-grade"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay",
+        "Corporate bank transfer"
+      ]
+    },
+    "provider-qianfan": {
+      "name": "Baidu Qianfan (ERNIE)",
+      "tags": [
+        "Baidu ecosystem",
+        "ERNIE",
+        "Enterprise-grade"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay",
+        "Corporate bank transfer"
+      ]
+    },
+    "provider-volcano": {
+      "name": "Volcengine Ark (Doubao)",
+      "tags": [
+        "ByteDance ecosystem",
+        "Doubao family",
+        "Enterprise-grade"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay",
+        "Corporate bank transfer"
+      ]
+    },
+    "provider-tencent": {
+      "name": "Tencent Hunyuan",
+      "tags": [
+        "Tencent ecosystem",
+        "Hunyuan family"
+      ],
+      "payment_methods": [
+        "WeChat Pay",
+        "Corporate bank transfer"
+      ]
+    },
+    "provider-minimax": {
+      "name": "MiniMax",
+      "tags": [
+        "Long context",
+        "China-based startup"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-stepfun": {
+      "name": "StepFun",
+      "tags": [
+        "China-based, fast-moving",
+        "Step family"
+      ],
+      "payment_methods": [
+        "Alipay",
+        "WeChat Pay"
+      ]
+    },
+    "provider-together": {
+      "name": "Together AI",
+      "tags": [
+        "Full model pool",
+        "Open weights",
+        "Accelerated inference"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-fireworks": {
+      "name": "Fireworks AI",
+      "tags": [
+        "Accelerated inference",
+        "Open weights",
+        "Enterprise-grade"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-novita": {
+      "name": "Novita AI",
+      "tags": [
+        "Cost-effective",
+        "GPU cloud"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-perplexity": {
+      "name": "Perplexity",
+      "tags": [
+        "Web search",
+        "Real-time citations"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-nvidia": {
+      "name": "NVIDIA NIM",
+      "tags": [
+        "NVIDIA ecosystem",
+        "GPU cloud",
+        "High throughput"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-huggingface": {
+      "name": "Hugging Face",
+      "tags": [
+        "Open-source ecosystem",
+        "Huge model count"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-cerebras": {
+      "name": "Cerebras",
+      "tags": [
+        "Ultra-fast inference",
+        "Wafer-scale chip"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-deepinfra": {
+      "name": "DeepInfra",
+      "tags": [
+        "Low-cost open weights",
+        "Elastic"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-sambanova": {
+      "name": "SambaNova",
+      "tags": [
+        "Wafer-scale chip",
+        "Official R1",
+        "Very fast"
+      ],
+      "payment_methods": [
+        "International credit card"
+      ]
+    },
+    "provider-agnes": {
+      "name": "Agnes AI",
+      "tags": [
+        "Omni-modal",
+        "Free tier"
+      ],
+      "payment_methods": []
+    }
+  },
+  "platformContent": {
+    "openrouter": {
+      "short_description": "An OpenAI-compatible multi-model routing entry point, useful for quickly comparing different providers and open models.",
+      "capabilities": [
+        "Unified Chat Completions interface",
+        "Multi-provider routing",
+        "Model price and availability comparison"
+      ],
+      "free_tier_summary": "Some models are marked as Free; existing benefit records also include a sign-up credit. Fixed allowances and available models change over time.",
+      "free_limits": "Rate limits are applied per model, provider and account policy; fixed daily/monthly allowances are Unknown.",
+      "credit_card": "Unknown; refer to the current sign-up flow in the console.",
+      "signup": "Requires sign-up and creating an API key.",
+      "restrictions": [
+        "Free models may be queued or rate limited",
+        "Routing availability depends on upstream providers",
+        "Check model terms before production use"
+      ],
+      "recommended_use_cases": [
+        "Prototyping",
+        "Multi-model A/B testing",
+        "Unified OpenAI-compatible access"
+      ]
+    },
+    "openai": {
+      "short_description": "The official platform offering general text, reasoning, embedding and multimodal APIs.",
+      "capabilities": [
+        "Text and reasoning models",
+        "Embeddings",
+        "Multimodal and tool calling"
+      ],
+      "free_tier_summary": "The official API pricing page is not used as a fixed free-allowance catalog; the free allowance is Unknown.",
+      "free_limits": "Unknown; refer to the account console and the official pricing page.",
+      "credit_card": "A billing account is usually required to use the paid API; refer to the current sign-up flow.",
+      "signup": "Requires registering a developer account and creating an API key.",
+      "restrictions": [
+        "Model and regional availability may change",
+        "Pricing and rate limits differ by model"
+      ],
+      "recommended_use_cases": [
+        "Production-grade AI applications",
+        "Structured outputs",
+        "Tool calling and multimodal workflows"
+      ]
+    },
+    "anthropic": {
+      "short_description": "Anthropic's official Claude API, emphasizing long context, tool use and a reliable developer interface.",
+      "capabilities": [
+        "Claude text generation",
+        "Long context",
+        "Tool use and vision input"
+      ],
+      "free_tier_summary": "The official pricing page bills by usage; a fixed free API allowance is Unknown.",
+      "free_limits": "Unknown; refer to the account and the pricing page's current policy.",
+      "credit_card": "Unknown; some API usage paths may require billing setup.",
+      "signup": "Requires a developer account and an API key.",
+      "restrictions": [
+        "Rate limits apply at the organization level",
+        "Model, regional and policy requirements may change"
+      ],
+      "recommended_use_cases": [
+        "Long-document processing",
+        "Code understanding",
+        "Safety-sensitive assistants"
+      ]
+    },
+    "gemini": {
+      "short_description": "The entry point to the Google Gemini API and AI Studio, providing multimodal models and Google ecosystem integration.",
+      "capabilities": [
+        "Text and multimodal generation",
+        "Long context",
+        "Structured output and tool calling"
+      ],
+      "free_tier_summary": "The official Gemini API pricing page lists a Free Tier; refer to the page's current tables for the specific models, regions and rates.",
+      "free_limits": "Limits are applied per model in metrics such as RPM, TPM and RPD; refer to the official tables for the specific values.",
+      "credit_card": "Free Tier conditions differ from paid account conditions; whether a card must be linked is per the current AI Studio/Google Cloud flow.",
+      "signup": "Requires a Google account and creating an API key.",
+      "restrictions": [
+        "The free tier differs by model",
+        "The free tier has rate and daily request limits",
+        "Data usage terms must be confirmed for production use"
+      ],
+      "recommended_use_cases": [
+        "Multimodal prototyping",
+        "Long-context experiments",
+        "Google ecosystem applications"
+      ]
+    },
+    "groq": {
+      "short_description": "A high-speed inference API for open models, offering an OpenAI-compatible developer experience.",
+      "capabilities": [
+        "High-speed text inference",
+        "OpenAI-compatible API",
+        "Open model serving"
+      ],
+      "free_tier_summary": "The official console provides a free-tier entry point; dynamic limits are not guessed at as a fixed token allowance.",
+      "free_limits": "Rate limits such as RPM/TPM are configured per model; see the official Rate Limits page for the specific values.",
+      "credit_card": "Existing records show a free sign-up path that does not require a credit card; if the policy changes, refer to the official page.",
+      "signup": "Requires sign-up and creating an API key.",
+      "restrictions": [
+        "The free tier is noticeably rate limited",
+        "The model list and rate limits are adjusted over time",
+        "Not suitable for high-concurrency production workloads without evaluation"
+      ],
+      "recommended_use_cases": [
+        "Low-latency demos",
+        "Real-time interactive prototypes",
+        "Open model comparison"
+      ]
+    },
+    "deepseek": {
+      "short_description": "The official DeepSeek API, providing reasoning and general-purpose model endpoints compatible with the OpenAI SDK.",
+      "capabilities": [
+        "General-purpose chat",
+        "Reasoning models",
+        "OpenAI-compatible endpoints"
+      ],
+      "free_tier_summary": "The official pricing page provides the current billing basis; a fixed free allowance is Unknown and is not inferred from older articles.",
+      "free_limits": "Unknown; refer to the official account balance, rate limits and pricing page.",
+      "credit_card": "Unknown; refer to the current sign-up and top-up flow.",
+      "signup": "Requires sign-up and creating an API key.",
+      "restrictions": [
+        "Models and pricing change with official announcements",
+        "Cross-border network availability varies over time"
+      ],
+      "recommended_use_cases": [
+        "Reasoning tasks",
+        "Prototyping for Chinese-language developers",
+        "OpenAI-compatible migration"
+      ]
+    },
+    "siliconflow": {
+      "short_description": "A model API aggregation and inference platform aimed at Chinese-language developers, covering a range of open models.",
+      "capabilities": [
+        "Unified multi-model API",
+        "Open model inference",
+        "Console for Chinese-language developers"
+      ],
+      "free_tier_summary": "Existing benefit records show a trial allowance after new-user verification; refer to current official announcements for the amount and validity period.",
+      "free_limits": "Per-model rate limits and balance rules are per the official console; fixed allowances are not inferred further.",
+      "credit_card": "Existing records do not require a credit card; identity verification conditions may apply.",
+      "signup": "Requires sign-up; some allowances require completing verification.",
+      "restrictions": [
+        "Granted credits depend on promotions and account conditions",
+        "Pricing and rate limits differ by model",
+        "Note the balance validity period"
+      ],
+      "recommended_use_cases": [
+        "Trying out Chinese-language models",
+        "Open model selection",
+        "Low-cost API prototyping"
+      ]
+    },
+    "together-ai": {
+      "short_description": "A developer platform offering open model inference, fine-tuning and GPU workflows.",
+      "capabilities": [
+        "Open model inference",
+        "Fine-tuning workflows",
+        "OpenAI-compatible API"
+      ],
+      "free_tier_summary": "Existing benefit records include a new-user starting credit; refer to the official account page for the amount and eligibility.",
+      "free_limits": "The free starting credit and model rate limits change; a fixed recurring allowance is Unknown.",
+      "credit_card": "Unknown; refer to the current sign-up and top-up flow.",
+      "signup": "Requires sign-up and creating an API key.",
+      "restrictions": [
+        "The starting credit is not a permanent free commitment",
+        "Model and GPU resources are subject to the official terms"
+      ],
+      "recommended_use_cases": [
+        "Open model prototyping",
+        "Model evaluation",
+        "Fine-tuning and inference experiments"
+      ]
+    },
+    "hugging-face": {
+      "short_description": "An open AI community platform connecting models, datasets, Spaces and Inference Providers.",
+      "capabilities": [
+        "Model and dataset catalog",
+        "Inference Providers",
+        "Spaces app hosting"
+      ],
+      "free_tier_summary": "The official documentation and pricing page offer limited inference usage for free users; fixed allowances may change with account policy.",
+      "free_limits": "Rate limits apply per account, provider and model; refer to the official account page for the specific free allowance.",
+      "credit_card": "Free browsing and some inference paths do not require a credit card; paid plans are handled separately.",
+      "signup": "No account is needed to browse; calling and creating resources usually requires a Hugging Face account and token.",
+      "restrictions": [
+        "Third-party Inference Provider terms differ",
+        "Free resources are shared and rate limited",
+        "Model licenses must be checked separately"
+      ],
+      "recommended_use_cases": [
+        "Open model discovery",
+        "Dataset research",
+        "Lightweight demos and model experiments"
+      ]
+    },
+    "cerebras": {
+      "short_description": "An inference API built on purpose-built AI hardware, offering low latency and support for a range of open models.",
+      "capabilities": [
+        "Low-latency inference",
+        "Open model API",
+        "OpenAI-compatible development"
+      ],
+      "free_tier_summary": "The official developer documentation provides a free developer entry point; the fixed free allowance is per the console's current policy.",
+      "free_limits": "Rate limits and available models change with account policy; the specific values are Unknown.",
+      "credit_card": "Unknown; refer to the current sign-up flow.",
+      "signup": "Requires sign-up and creating an API key.",
+      "restrictions": [
+        "The free tier is suited to development and evaluation",
+        "Production capacity, rates and model scope may be restricted separately"
+      ],
+      "recommended_use_cases": [
+        "Real-time assistants",
+        "Low-latency benchmark comparison",
+        "Open model demos"
+      ]
+    }
+  },
+  "freeTiers": {
+    "siliconflow": {
+      "provider": "SiliconFlow",
+      "api_service": "Multi-model inference API",
+      "free_amount": "About ¥14 / on the order of 20 million tokens (recorded benefit; not directly confirmed on the current official page)",
+      "unit": "Trial credit",
+      "reset_period": "One-time; validity Unknown",
+      "rate_limits": "Rate limited per model and per account",
+      "credit_card": "No card requirement recorded; verification may be required",
+      "signup": "Sign-up plus verification",
+      "expiration": "Subject to the current official announcement",
+      "restrictions": [
+        "Amount and validity may change with promotions",
+        "Only for eligible new users"
+      ],
+      "source_type": "Official pricing/documentation page plus existing benefit records; the current allowance is not directly confirmed by an official page"
+    },
+    "openrouter": {
+      "provider": "OpenRouter",
+      "api_service": "OpenAI-compatible multi-model routing API",
+      "free_amount": "25+ Free models; the Free plan applies only to free models (official Pricing)",
+      "unit": "Free model requests",
+      "reset_period": "Official Pricing currently shows a daily limit; specific reset details Unknown",
+      "rate_limits": "50 reqs/day (currently shown on official Pricing)",
+      "credit_card": "Unknown (the official page does not explicitly state that no card is required)",
+      "signup": "Sign up and create an API Key",
+      "expiration": "Subject to the account page and official policy",
+      "restrictions": [
+        "Free models may queue or be rate limited",
+        "Terms differ by provider and apply separately"
+      ],
+      "source_type": "Official Pricing page (Free plan / 25+ free models / 50 reqs/day)"
+    },
+    "together-ai": {
+      "provider": "Together AI",
+      "api_service": "Open-model inference API",
+      "free_amount": "$1 initial credit (recorded benefit; not directly confirmed on the current official page)",
+      "unit": "Account credit",
+      "reset_period": "One-time; renewal Unknown",
+      "rate_limits": "Rate limited per model and per account",
+      "credit_card": "Unknown",
+      "signup": "Sign up and create an API Key",
+      "expiration": "Subject to official account policy",
+      "restrictions": [
+        "The initial credit is not the same as a long-term free tier",
+        "Models and resources are used under official terms"
+      ],
+      "source_type": "Official site plus existing benefit records; the current fixed allowance is not directly confirmed by an official page"
+    },
+    "groq": {
+      "provider": "Groq",
+      "api_service": "High-speed open-model inference API",
+      "free_amount": "Free tier; fixed token allowance Unknown",
+      "unit": "Free API access",
+      "reset_period": "Per official rate policy",
+      "rate_limits": "Official documentation provides model-level Rate Limits; specific allowances depend on account policy",
+      "credit_card": "Unknown (current official documentation does not directly confirm that no card is required)",
+      "signup": "Free sign-up and create an API Key",
+      "expiration": "Long-term policy subject to the official site",
+      "restrictions": [
+        "Rate limits may be relatively strict",
+        "The free tier should not be treated as a production capacity commitment"
+      ],
+      "source_type": "Official console Rate Limits plus existing benefit records; free eligibility and card requirements are not directly confirmed by the current page"
+    },
+    "gemini": {
+      "provider": "Google Gemini",
+      "api_service": "Gemini API",
+      "free_amount": "Official Pricing explicitly lists a Free Tier; input and output for the listed models can be used free of charge",
+      "unit": "Input/output tokens",
+      "reset_period": "Per official Free Tier policy; specific reset details Unknown",
+      "rate_limits": "Model-level limits; official documentation provides a Rate Limits entry point",
+      "credit_card": "Free Tier and paid account conditions differ; the current process is Unknown",
+      "signup": "Google account plus API Key",
+      "expiration": "Subject to the official pricing page",
+      "restrictions": [
+        "Limited to the models/capabilities listed in the official Free Tier",
+        "The Free Tier page states that some models are Limited access",
+        "Free Tier content may be used to improve Google products"
+      ],
+      "source_type": "Official Gemini API Pricing / Documentation"
+    },
+    "nvidia-nim": {
+      "provider": "NVIDIA NIM",
+      "api_service": "API Catalog model inference plus NIM self-hosting",
+      "free_amount": "The NVIDIA Developer Program provides free tools and learning resources for developers; the API Catalog explicitly offers Free serverless APIs for development; fixed API credits/allowance are not published",
+      "unit": "Development/testing API access; self-hosted software and tool benefits",
+      "reset_period": "Unknown",
+      "rate_limits": "Per account, model and service policy; fixed values Unknown",
+      "credit_card": "Account eligibility for obtaining an API Key is subject to the official page",
+      "signup": "NVIDIA Developer account plus Get API Key",
+      "expiration": "Subject to the account, promotions and official policy",
+      "restrictions": [
+        "The Developer Program page labels NIM for research, development and testing, which is not a production capacity commitment",
+        "The model scope, allowance and rates of the Free serverless APIs must be confirmed on the account page",
+        "NIM self-hosting runs on your own GPU/infrastructure, and licence and commercial/production terms must be checked separately"
+      ],
+      "source_type": "Official NVIDIA Developer Program + API Catalog + API Docs + NIM Docs"
+    },
+    "cerebras": {
+      "provider": "Cerebras",
+      "api_service": "Cerebras Inference API",
+      "free_amount": "Official Pricing explicitly provides a Free tier; the Developer tier starts at $10 and has 10x the rate of the Free tier",
+      "unit": "Free API access / rate limits",
+      "reset_period": "Unknown",
+      "rate_limits": "Free tier baseline; the Developer tier is officially labelled 10x higher rate limits",
+      "credit_card": "Unknown",
+      "signup": "Sign up and create an API Key",
+      "expiration": "Subject to official account policy",
+      "restrictions": [
+        "Free developer access is not a production capacity commitment",
+        "The official documentation labels Preview models as not for production",
+        "Models and rates change"
+      ],
+      "source_type": "Official Pricing page plus official Inference documentation"
+    },
+    "cohere": {
+      "provider": "Cohere",
+      "api_service": "Command / Embed / Rerank API",
+      "free_amount": "A Trial API key is generated automatically when the account is created (official Pricing FAQ)",
+      "unit": "Trial API key / trial call volume",
+      "reset_period": "Unknown",
+      "rate_limits": "Per trial key rules",
+      "credit_card": "Unknown (the official FAQ does not directly confirm that no card is required)",
+      "signup": "A Trial API key is generated automatically after account creation",
+      "expiration": "Subject to the official trial policy",
+      "restrictions": [
+        "Trial keys have rate and usage restrictions",
+        "A production key requires going through the Billing and Usage process",
+        "Enterprise production use requires checking the plan separately"
+      ],
+      "source_type": "Official Pricing FAQ (Trial API key generated automatically)"
+    },
+    "huggingface": {
+      "provider": "Hugging Face",
+      "api_service": "Inference Providers / model inference",
+      "free_amount": "Official documentation explicitly includes a generous free tier; PRO users have additional credits",
+      "unit": "Provider inference credits / free inference tier",
+      "reset_period": "Per account policy",
+      "rate_limits": "Rate limited per provider, model and account",
+      "credit_card": "The free path usually requires no credit card; paid plans must be checked separately",
+      "signup": "Calls require an account and a Token",
+      "expiration": "Subject to the pricing page and account page",
+      "restrictions": [
+        "Third-party provider terms differ",
+        "Model licences must be confirmed separately",
+        "Free-tier allowances change with account/provider policy"
+      ],
+      "source_type": "Official Inference Providers documentation plus official Pricing"
+    },
+    "zhipu": {
+      "provider": "Zhipu AI (GLM)",
+      "api_service": "GLM API",
+      "free_amount": "New-user trial credit; the specific amount depends on official promotions",
+      "unit": "Trial credit",
+      "reset_period": "Per promotion rules",
+      "rate_limits": "Rate limited per model and per account",
+      "credit_card": "Real-name verification may be required; credit card Unknown",
+      "signup": "Sign up at open.bigmodel.cn",
+      "expiration": "Subject to official promotions",
+      "restrictions": [
+        "Promotional credit may expire",
+        "Free policies differ across models"
+      ],
+      "source_type": "Official site / existing verification records"
+    },
+    "bailian": {
+      "provider": "Alibaba Cloud Model Studio (Tongyi)",
+      "api_service": "Tongyi series model API",
+      "free_amount": "New-user trial credit; some models have a daily free call quota",
+      "unit": "Trial credit / free tokens",
+      "reset_period": "Per model and official promotions",
+      "rate_limits": "Rate limited per model and per account",
+      "credit_card": "Real-name verification may be required; credit card Unknown",
+      "signup": "Register for Alibaba Cloud and activate Model Studio",
+      "expiration": "Subject to official promotions",
+      "restrictions": [
+        "Region, real-name verification and model conditions may apply",
+        "The free allowance is subject to what the console displays"
+      ],
+      "source_type": "Official site / existing verification records"
+    },
+    "qianfan": {
+      "provider": "Baidu Qianfan (ERNIE)",
+      "api_service": "ERNIE and multi-model API",
+      "free_amount": "New-user resource package/voucher; the amount depends on official promotions",
+      "unit": "Resource package / voucher",
+      "reset_period": "Per promotion rules",
+      "rate_limits": "Rate limited per model and per account",
+      "credit_card": "Real-name verification may be required; credit card Unknown",
+      "signup": "Register for Baidu AI Cloud and activate Qianfan",
+      "expiration": "Subject to the official announcement",
+      "restrictions": [
+        "Promotion eligibility and validity must be confirmed separately",
+        "Prices and free allowances differ across models"
+      ],
+      "source_type": "Official site / existing verification records"
+    },
+    "agnes-ai": {
+      "provider": "Agnes AI",
+      "api_service": "Agnes API Hub",
+      "free_amount": "agnes-2.0-flash input/output $0 / 1M (existing official records; the current home page does not directly show pricing details)",
+      "unit": "Token price is $0",
+      "reset_period": "Per official policy",
+      "rate_limits": "Unknown",
+      "credit_card": "No card requirement recorded",
+      "signup": "Sign up and create an API Key",
+      "expiration": "Subject to the official pricing page",
+      "restrictions": [
+        "The free price applies to the model and point in time in the records",
+        "Models and free policies may change"
+      ],
+      "source_type": "Official site plus existing verification records; the current home page does not directly confirm pricing details"
+    },
+    "cloudflare-workers-ai": {
+      "provider": "Cloudflare Workers AI",
+      "api_service": "Workers AI inference API / REST API",
+      "free_amount": "Official Pricing states: 10,000 Neurons per day free; applies to Workers Free and Paid plans",
+      "unit": "Neurons / day",
+      "reset_period": "Resets daily at 00:00 UTC",
+      "rate_limits": "Operations fail after exceeding any limit; model and account limits apply separately",
+      "credit_card": "The Workers Free plan can use the daily free allocation; specific model/plan conditions are subject to the official page",
+      "signup": "Cloudflare account plus Workers AI access",
+      "expiration": "Per Cloudflare Workers plan policy; the daily quota is not a one-time trial",
+      "restrictions": [
+        "The free allocation is 10,000 Neurons per day, not an unlimited API",
+        "The official documentation notes that some models require a paid billing method",
+        "Commercial/production use, region and account eligibility must be checked against current Cloudflare terms and plans"
+      ],
+      "source_type": "Official Workers AI Pricing plus REST API documentation"
+    },
+    "fireworks-ai": {
+      "provider": "Fireworks AI",
+      "api_service": "Serverless Inference API",
+      "free_amount": "Official Pricing states: $1 free credits provided when you start using the service",
+      "unit": "One-time account credits",
+      "reset_period": "One-time; renewal Unknown",
+      "rate_limits": "Officially described as high rate limits; specific allowances depend on account and model policy",
+      "credit_card": "Unknown",
+      "signup": "Register a Fireworks account and create API access",
+      "expiration": "The official pricing page does not publish a fixed validity period; subject to account policy",
+      "restrictions": [
+        "The $1 free credits are a trial allowance, not a permanently free API",
+        "Serverless Inference is billed per token after the credits are used",
+        "Commercial/production terms and account limits must be checked against official terms"
+      ],
+      "source_type": "Official Fireworks Pricing plus Documentation"
+    },
+    "mistral-open-weights": {
+      "provider": "Mistral AI",
+      "api_service": "Open-weight models / self-hosted inference",
+      "free_amount": "The official pricing FAQ states that open-weight models can be self-hosted; Mistral 7B and similar are Apache 2.0 for research/individual use",
+      "unit": "FREE SELF-HOSTED (not a hosted API free allowance)",
+      "reset_period": "Not applicable",
+      "rate_limits": "Determined by your own hardware and deployment; Unknown",
+      "credit_card": "No hosted API payment to Mistral is required; your own infrastructure costs are separate",
+      "signup": "Download the models and use them under their licences; the hosted API requires separate registration",
+      "expiration": "Subject to the licences and model terms",
+      "restrictions": [
+        "This is FREE SELF-HOSTED, not a free hosted API",
+        "The official page states that commercial deployments require a Mistral license; production terms must be checked separately",
+        "Licences differ across models; the conclusion for Mistral 7B cannot be extended to all models"
+      ],
+      "source_type": "Official Mistral Pricing FAQ plus Model Documentation"
+    }
+  },
+  "resources": {
+    "free-ai-apis": {
+      "name": "Free AI APIs starter list",
+      "category": "Free AI APIs",
+      "description": "A collection of entry points built around verifiable free tiers, starting credits and low-friction APIs.",
+      "free_summary": "The directory is free to browse; each item's conditions must be checked against the official source."
+    },
+    "free-models": {
+      "name": "Hugging Face Models",
+      "category": "Free AI Models",
+      "description": "The official directory for open models, model cards, licenses and inference entry points.",
+      "free_summary": "The model directory is free to browse; whether inference is free depends on the provider and account."
+    },
+    "free-api-credits": {
+      "name": "Free API Credits",
+      "category": "Free API Credits",
+      "description": "New-user credits, trial balances and promotional vouchers compiled from official sources.",
+      "free_summary": "The page is free; credit status must be confirmed on the provider's official page."
+    },
+    "litellm": {
+      "name": "LiteLLM",
+      "category": "Developer Tools",
+      "description": "Unifies multiple LLM providers behind an OpenAI-compatible interface, suited to gateways, routing and cost observability.",
+      "free_summary": "Open-source project, self-hostable; cloud service plans must be checked separately."
+    },
+    "langchain": {
+      "name": "LangChain",
+      "category": "Developer Tools",
+      "description": "A development framework for orchestrating models, tools, retrieval and agent workflows.",
+      "free_summary": "The core code is open source; third-party model/API costs are not included in the project."
+    },
+    "llamaindex": {
+      "name": "LlamaIndex",
+      "category": "Developer Tools",
+      "description": "An LLM application framework for RAG, data connectors and agents.",
+      "free_summary": "The open-source core is self-hostable; model, vector store and managed service costs are billed separately."
+    },
+    "vllm": {
+      "name": "vLLM",
+      "category": "AI Infrastructure",
+      "description": "A high-throughput open-source framework for LLM inference and OpenAI-compatible serving.",
+      "free_summary": "Open source under Apache-2.0; the GPU/cloud resources required to run it may incur costs."
+    },
+    "ollama": {
+      "name": "Ollama",
+      "category": "AI Infrastructure",
+      "description": "A developer tool for running open models locally with a simple API.",
+      "free_summary": "The software is open source and free to run locally; hardware, power and model storage costs are the user's responsibility."
+    },
+    "mcp": {
+      "name": "Model Context Protocol",
+      "category": "AI Infrastructure",
+      "description": "An open protocol connecting models with external tools, data sources and workflows.",
+      "free_summary": "The specification and SDKs are public; service costs and permissions of individual servers must be checked separately."
+    },
+    "promptfoo": {
+      "name": "Promptfoo",
+      "category": "AI Coding Tools",
+      "description": "A local evaluation tool for prompts, model outputs and security policies.",
+      "free_summary": "The open-source CLI runs locally; enterprise features and external model costs are billed separately."
+    },
+    "langfuse": {
+      "name": "Langfuse",
+      "category": "Observability",
+      "description": "An observability platform for tracing, cost, latency and quality in LLM applications.",
+      "free_summary": "The open-source version is self-hostable; the official cloud free tier and quotas must be checked against the current plan."
+    },
+    "helicone": {
+      "name": "Helicone",
+      "category": "Observability",
+      "description": "An LLM API observability and cost analysis tool with proxy-based integration.",
+      "free_summary": "The core project is open source; the cloud free tier and quotas are subject to the official plan page."
+    },
+    "opentelemetry": {
+      "name": "OpenTelemetry",
+      "category": "Observability",
+      "description": "An open observability standard for cross-language traces, metrics and logs.",
+      "free_summary": "The specification, SDKs and Collector are open source; backend storage costs are billed separately."
+    },
+    "phoenix": {
+      "name": "Arize Phoenix",
+      "category": "Observability",
+      "description": "An open-source tool for LLM tracing, evaluation and retrieval quality observability.",
+      "free_summary": "Open source and self-hostable; the hosted version's plans must be checked separately."
+    },
+    "weave": {
+      "name": "W&B Weave",
+      "category": "Observability",
+      "description": "A developer tool for tracing, evaluating and versioning LLM applications.",
+      "free_summary": "A public developer entry point is available; free tier limits are subject to the official plan page."
+    },
+    "mlflow": {
+      "name": "MLflow",
+      "category": "AI Infrastructure",
+      "description": "An open-source platform for machine learning and generative AI lifecycle management.",
+      "free_summary": "Open source and self-hostable; hosting and storage costs are billed separately."
+    },
+    "chroma": {
+      "name": "Chroma",
+      "category": "Free Vector Databases",
+      "description": "An open-source embedding database and retrieval component for AI applications.",
+      "free_summary": "The open-source local mode is free; the cloud free tier is subject to the official plan page."
+    },
+    "qdrant": {
+      "name": "Qdrant",
+      "category": "Free Vector Databases",
+      "description": "An open-source vector search engine offering filtering, similarity search and a cloud service.",
+      "free_summary": "Open source and free to self-host; the Qdrant Cloud free tier is subject to the official plan page."
+    },
+    "weaviate": {
+      "name": "Weaviate",
+      "category": "Free Vector Databases",
+      "description": "An open-source vector database supporting hybrid search and modular AI integrations.",
+      "free_summary": "Open source and free to self-host; the cloud free tier and resource limits must be checked against the official plan."
+    },
+    "milvus": {
+      "name": "Milvus",
+      "category": "Free Vector Databases",
+      "description": "An open-source database and cloud service for large-scale vector search.",
+      "free_summary": "The open-source components are self-hostable; Zilliz Cloud plans must be checked separately."
+    },
+    "pinecone": {
+      "name": "Pinecone",
+      "category": "Free Vector Databases",
+      "description": "A managed vector database for RAG and semantic search applications.",
+      "free_summary": "An official Starter/free entry point is available; specific storage and read/write limits are subject to the current plan page."
+    },
+    "modal": {
+      "name": "Modal",
+      "category": "Free Compute / GPU",
+      "description": "Launches cloud functions, GPU jobs and model inference services from Python workflows.",
+      "free_summary": "An official developer trial/free credit entry point is available; quotas must be checked against the current plan."
+    },
+    "runpod": {
+      "name": "RunPod",
+      "category": "Free Compute / GPU",
+      "description": "A developer cloud platform for model inference, training and GPU pods.",
+      "free_summary": "Public documentation and a pay-as-you-go entry point; free credits must be confirmed against promotion/account terms."
+    },
+    "huggingface-spaces": {
+      "name": "Hugging Face Spaces",
+      "category": "Free Hosting",
+      "description": "Publish model demos and developer apps with Gradio, Streamlit and similar tools.",
+      "free_summary": "A free hardware tier exists; sleeping, resource and public-visibility limits are subject to the official documentation."
+    },
+    "kaggle-datasets": {
+      "name": "Kaggle Datasets",
+      "category": "Free Datasets",
+      "description": "A searchable, versioned and shareable dataset directory suited to model experiments and baseline reproduction.",
+      "free_summary": "Public browsing and download entry points; each dataset's license must be checked individually."
+    },
+    "common-crawl": {
+      "name": "Common Crawl",
+      "category": "Free Datasets",
+      "description": "A public web crawl corpus and index suited to retrieval, data engineering and research use.",
+      "free_summary": "The data is publicly downloadable; dataset terms, robots and downstream license requirements must be observed."
+    },
+    "github-actions": {
+      "name": "GitHub Actions",
+      "category": "DevOps",
+      "description": "A CI/CD platform for automating tests, data updates and static deployments.",
+      "free_summary": "Public repositories usually include a free Actions quota; minutes and organization plans are subject to official policy."
+    },
+    "cloudflare-pages": {
+      "name": "Cloudflare Pages",
+      "category": "Free Hosting",
+      "description": "An edge deployment platform suited to static sites and frontend build output.",
+      "free_summary": "An official Pages free plan is available; build, request and feature limits are subject to the current plan page."
+    },
+    "sentry": {
+      "name": "Sentry",
+      "category": "Observability",
+      "description": "Error tracking, performance monitoring and release health analysis.",
+      "free_summary": "An official developer free plan is available; event volume and retention are subject to the current plan page."
+    },
+    "posthog": {
+      "name": "PostHog",
+      "category": "Observability",
+      "description": "A product analytics, event capture and experimentation platform suited to observing developer product behavior.",
+      "free_summary": "An official free event quota is available; specific product modules and quotas are subject to the current plan page."
+    },
+    "replicate": {
+      "name": "Replicate",
+      "category": "Developer Tools",
+      "description": "A developer platform for running and deploying community models via API.",
+      "free_summary": "Models can be discovered and tried; pricing, trials and model run costs must be checked against the current page."
+    },
+    "fireworks-ai": {
+      "name": "Fireworks AI",
+      "category": "AI Infrastructure",
+      "description": "A platform offering open-model inference, fine-tuning and high-performance deployment APIs.",
+      "free_summary": "Public documentation allows evaluating the APIs; free credits must be confirmed against the current account and pricing page."
+    },
+    "perplexity-api": {
+      "name": "Perplexity API",
+      "category": "Free AI APIs",
+      "description": "Offers the Sonar API with search and citation capabilities, suited to applications that need real-time information.",
+      "free_summary": "Official documentation and pricing are public; free credits must be confirmed against current account policy."
+    },
+    "model-context-protocol-servers": {
+      "name": "MCP Servers Directory",
+      "category": "Developer Tools",
+      "description": "The official ecosystem entry point for MCP servers, tool connections and local development integrations.",
+      "free_summary": "The ecosystem directory is public; each server's permissions, data handling and costs must be reviewed individually."
+    },
+    "open-webui": {
+      "name": "Open WebUI",
+      "category": "AI Coding Tools",
+      "description": "A self-hostable model chat interface supporting Ollama and OpenAI-compatible APIs.",
+      "free_summary": "Open source and self-hostable; external model API and server resource costs are billed separately."
+    }
+  },
+  "perks": {
+    "perk-1": {
+      "name": "Trial credits on sign-up",
+      "provider": "SiliconFlow",
+      "content": "New users receive trial credits after registering and completing verification (approximately ¥14, on the order of 20 million tokens), usable with models across the whole platform; the exact amount is subject to the current announcement on the official site.",
+      "requirement": "New user registration + verification",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Sign-up credits"
+    },
+    "perk-2": {
+      "name": "$10 trial credit on sign-up",
+      "provider": "OpenRouter",
+      "content": "New users receive $10 in initial credits on registration, which can be used to test the aggregated full model pool; the specific policy is subject to the current announcement on the official site.",
+      "requirement": "New user registration",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Sign-up credits"
+    },
+    "perk-3": {
+      "name": "$1 initial credit on sign-up",
+      "provider": "Together AI",
+      "content": "New users receive $1 in free credits on registration, supporting testing across the full model pool, with rate limits on some models; refer to the official site.",
+      "requirement": "New user registration",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Initial credits"
+    },
+    "perk-4": {
+      "name": "Free tier, no credit card required",
+      "provider": "Groq",
+      "content": "Developers can use the free tier directly to test mainstream open models, with per-model RPM/TPM rate limits; refer to the official site.",
+      "requirement": "Free registration",
+      "expires_at": "Ongoing",
+      "tag": "Free quota"
+    },
+    "perk-5": {
+      "name": "Free serverless APIs for development",
+      "provider": "NVIDIA NIM",
+      "content": "The NVIDIA Developer Program provides free tools and learning resources for developers; the API Catalog publicly states that it provides Free serverless APIs for development. Fixed quotas, model coverage and production eligibility are subject to the account and terms; this item is not to be described as permanently free or free for production.",
+      "requirement": "NVIDIA account + Get API Key",
+      "expires_at": "Subject to the official policy",
+      "tag": "Development and testing"
+    },
+    "perk-6": {
+      "name": "Monthly free quota with a trial key",
+      "provider": "Cohere",
+      "content": "Registration provides a trial API key with a monthly free call quota (on the order of a thousand calls); refer to the official site.",
+      "requirement": "Free registration for a trial key",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Trial credits"
+    },
+    "perk-7": {
+      "name": "Free model inference quota + PRO subscription",
+      "provider": "Hugging Face",
+      "content": "Inference Providers offers a rate-limited trial quota for free models; heavy individual use can subscribe to PRO (from about $9/month); refer to the official site.",
+      "requirement": "Free registration (PRO requires a subscription)",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Free credits"
+    },
+    "perk-8": {
+      "name": "New-user sign-up credits",
+      "provider": "Zhipu AI (GLM)",
+      "content": "After new users register at open.bigmodel.cn, trial credits are issued according to the official promotion and can be used with the full GLM model family; refer to the official site.",
+      "requirement": "New user registration",
+      "expires_at": "Subject to the official promotion",
+      "tag": "Sign-up credits"
+    },
+    "perk-9": {
+      "name": "New-user free credits and free call volume",
+      "provider": "Alibaba Cloud Bailian (Tongyi)",
+      "content": "The Bailian platform provides trial credits for new users, and some models offer a daily free token quota; refer to the official site.",
+      "requirement": "New user registration (real-name verification required)",
+      "expires_at": "Subject to the official promotion",
+      "tag": "Trial credits"
+    },
+    "perk-10": {
+      "name": "New-user free resource package / voucher",
+      "provider": "Baidu Qianfan (ERNIE)",
+      "content": "The Qianfan platform issues free resource packages/vouchers to new users for model trials, and the promotion runs according to the official announcement; refer to the official site.",
+      "requirement": "New user registration (real-name verification required)",
+      "expires_at": "Subject to the official promotion",
+      "tag": "Trial credits"
+    },
+    "perk-11": {
+      "name": "Free API pricing",
+      "provider": "Agnes AI",
+      "content": "Official documentation shows that agnes-2.0-flash input/output tokens are currently $0 / 1M (standard price $0.03 / $0.15); the official site states that it provides free AI API credits and a free API key, which can be created on registration. Specifics are subject to the official site.",
+      "requirement": "Register and create an API key",
+      "expires_at": "Ongoing (refer to the official page)",
+      "tag": "Free credits"
+    },
+    "perk-12": {
+      "name": "Workers AI daily free Neurons",
+      "provider": "Cloudflare Workers AI",
+      "content": "The official Pricing page states a free allocation of 10,000 Neurons per day, reset daily at UTC; some models require a paid billing method, and specific plan and model conditions are subject to the official site.",
+      "requirement": "Cloudflare account + Workers AI",
+      "expires_at": "Per Workers plan policy (refer to the official page)",
+      "tag": "Free quota"
+    },
+    "perk-13": {
+      "name": "Serverless Inference $1 Free Credits",
+      "provider": "Fireworks AI",
+      "content": "The official Pricing page states that new users starting with Serverless Inference receive $1 in free credits; this is a one-time trial credit, not a permanently free API.",
+      "requirement": "Register a Fireworks account",
+      "expires_at": "Fixed validity period Unknown; subject to account policy",
+      "tag": "Trial credits"
+    },
+    "perk-14": {
+      "name": "Open-weight self-hosting (not a free hosted API)",
+      "provider": "Mistral AI",
+      "content": "Mistral's official pricing FAQ states that some open-weight models can be self-hosted; Mistral 7B and others are Apache 2.0 for research/individual use, and commercial deployment requires checking the license separately.",
+      "requirement": "Own GPU/infrastructure + use under the model license",
+      "expires_at": "Subject to the model license and official terms",
+      "tag": "Free self-hosting"
+    }
+  },
+  "authenticity": {
+    "provider-openai": {
+      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+    },
+    "provider-deepseek": {
+      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+    },
+    "provider-siliconflow": {
+      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+    },
+    "provider-zhipu": {
+      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+    },
+    "provider-moonshot": {
+      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+    },
+    "provider-agnes": {
+      "note": "Self-ID match: agnes-2.0-flash (matched in ['agnes-2.0-flash'])"
+    }
+  }
+}

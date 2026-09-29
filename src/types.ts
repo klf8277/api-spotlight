@@ -126,6 +126,64 @@ export interface HistoryEntry {
   platforms: Record<string, HistoryPlatformPoint>;
 }
 
+/**
+ * 英文翻译覆盖层：src/data/i18n/en.json
+ *
+ * 只承载可翻译的展示字段，按 id/slug 索引；缺项或 null 时回退 base 数据（src/data/*.json）。
+ * 独立成文件的原因：契约快照（platforms / perks / authenticity）会被探测脚本重写，
+ * 译文写进这些文件会被采集器覆盖，也会触碰 Contract v1 红线。
+ */
+export interface TranslationOverlay {
+  platforms: Record<
+    string,
+    Partial<Pick<Platform, "name" | "tags" | "payment_methods">>
+  >;
+  platformContent: Record<
+    string,
+    Partial<
+      Pick<
+        PlatformContent,
+        | "short_description"
+        | "capabilities"
+        | "free_tier_summary"
+        | "free_limits"
+        | "credit_card"
+        | "signup"
+        | "restrictions"
+        | "recommended_use_cases"
+      >
+    >
+  >;
+  freeTiers: Record<
+    string,
+    Partial<
+      Pick<
+        FreeTierEntry,
+        | "provider"
+        | "api_service"
+        | "free_amount"
+        | "unit"
+        | "reset_period"
+        | "rate_limits"
+        | "credit_card"
+        | "signup"
+        | "expiration"
+        | "restrictions"
+        | "source_type"
+      >
+    >
+  >;
+  resources: Record<
+    string,
+    Partial<Pick<DeveloperResource, "name" | "category" | "description" | "free_summary">>
+  >;
+  perks: Record<
+    string,
+    Partial<Pick<Perk, "name" | "provider" | "content" | "requirement" | "expires_at" | "tag">>
+  >;
+  authenticity: Record<string, { note?: string | null }>;
+}
+
 /** 真实性抽查报告：src/data/authenticity.json 的 reports 条目（scripts/authenticity_test.py --apply 产出） */
 export interface AuthenticityReport {
   platform_id: string;

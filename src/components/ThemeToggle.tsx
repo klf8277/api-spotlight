@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 const THEME_EVENT = "apis-spotlight-theme-change";
 
@@ -18,9 +19,10 @@ function getServerSnapshot() {
   return false;
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ locale }: { locale: Locale }) {
   // 服务端快照固定，客户端挂载后同步首屏脚本设置的主题，避免 hydration mismatch。
   const dark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const label = getDictionary(locale).theme.toggle;
 
   const toggle = () => {
     const next = !dark;
@@ -37,8 +39,8 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="切换暗色 / 亮色主题"
-      title="切换暗色 / 亮色主题"
+      aria-label={label}
+      title={label}
       className="ml-1 rounded-md border border-foreground/10 p-1.5 text-sm leading-none hover:bg-foreground/5"
     >
       {dark ? "☀️" : "🌙"}

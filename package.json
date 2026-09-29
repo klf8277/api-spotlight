@@ -9,7 +9,9 @@
     "test:ping": "python scripts/ping_test.py",
     "test:auth": "python scripts/authenticity_test.py",
     "contract:check": "python scripts/contract_validation.py",
-    "lint": "eslint"
+    "lint": "eslint",
+    "i18n:check": "node scripts/i18n_check.mjs",
+    "verify:site": "node scripts/site_verify.mjs"
   },
   "dependencies": {
     "next": "16.3.2",

@@ -56,6 +56,16 @@ jobs:
       - name: 数据契约校验 (Contract v1)
         run: npm run contract:check
 
+      # 双语文案体检（非阻断）：漏译只会回退中文基线，不阻止部署，但日志里要看得见
+      - name: i18n 覆盖体检 (非阻断)
+        run: npm run i18n:check
+        continue-on-error: true
+
+      # 站点闸门：内链可达性 / canonical 无尾斜杠 / hreflang 双向完整 / 英文页无中文残留
+      # 新增平台未补英文译文时会在这一步拦下（先跑 npm run i18n:check 定位）
+      - name: 站点产物验收
+        run: npm run verify:site
+
       - name: 部署到 Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
