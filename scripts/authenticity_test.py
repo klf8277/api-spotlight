@@ -199,6 +199,8 @@ async def probe_platform(
         rep_ok = ref.get("max_repeat") is None or (repeat is not None and repeat <= ref["max_repeat"])
         if id_ok and med_ok and rep_ok:
             verdict = "authentic"
+            if self_id is None:
+                notes.append("自 ID 未命中（模型未自报身份，基线实测 expected_self_id=null）；按 token 中位数与重复率符合官方基线判定")
         else:
             verdict = "suspect"
             notes.append(f"比对失败：id_ok={id_ok} med_ok={med_ok} rep_ok={rep_ok}")
@@ -247,8 +249,9 @@ def calibrate_fingerprints(results: list[dict], fingerprints: dict, min_samples:
             ref["max_repeat"] = round(min(1.0, r["repeat_ratio"] + 0.15), 3)
         if not ref.get("self_id_patterns"):
             ref["self_id_patterns"] = [model]
-        if ref.get("expected_self_id") is None:
-            ref["expected_self_id"] = r.get("self_id_seen")
+        # 校准以官方直连实测为准：基线模型若不自报身份，"不自报"本身就是基线行为，
+        # 必须覆盖预填的期望值，否则判定阶段会把官方端点误判为 suspect
+        ref["expected_self_id"] = r.get("self_id_seen")
         ref["note"] = f"基线由 authenticity_test.py --calibrate 于 {r['checked_at']} 采样回写"
         fingerprints[model] = ref
         updated += 1
@@ -328,7 +331,13 @@ async def main() -> int:
 
     if args.apply:
         now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        profiles_doc["reports"] = results
+        # 按 (platform_id, model) 合并写回：未在本次抽查范围内的旧报告原样保留，
+        # 避免 --provider 单平台重跑时把其他平台的报告整体删掉
+        ran_keys = {(r.get("platform_id"), r.get("model")) for r in results}
+        old_reports = profiles_doc.get("reports", [])
+        profiles_doc["reports"] = [
+            o for o in old_reports if (o.get("platform_id"), o.get("model")) not in ran_keys
+        ] + list(results)
         profiles_doc["last_checked"] = now
         shutil.copy2(PROFILES_FILE, PROFILES_FILE.with_suffix(".json.bak"))
         tmp = PROFILES_FILE.with_suffix(".json.tmp")

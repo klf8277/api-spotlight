@@ -18,16 +18,16 @@
     "note": "待官方直连采样校准"
   },
   "deepseek-v4-pro": {
-    "calibrated": false,
+    "calibrated": true,
     "self_id_patterns": [
       "deepseek-v3",
       "deepseek-deepseek-v4-pro"
     ],
-    "expected_self_id": "deepseek-v4-pro",
-    "median_tokens": null,
-    "token_tolerance_pct": null,
+    "expected_self_id": null,
+    "median_tokens": 247,
+    "token_tolerance_pct": 130,
     "max_repeat": null,
-    "note": "待官方直连采样校准"
+    "note": "基线由 authenticity_test.py --calibrate 于 2026-09-30T09:27:52Z 采样回写"
   },
   "deepseek-ai/DeepSeek-V4-Pro": {
     "calibrated": false,

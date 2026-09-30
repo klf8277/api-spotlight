@@ -1124,7 +1124,7 @@
       "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
     },
     "provider-deepseek": {
-      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
+      "note": "Official direct connection (api.deepseek.com): 12 samples across 3 temperatures match the calibrated baseline (token median / repetition). The model does not self-identify (its identity probe reply is not a matchable model ID), so the verdict relies on the token-median and repetition checks"
     },
     "provider-siliconflow": {
       "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
