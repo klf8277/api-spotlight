@@ -1,0 +1,9 @@
+# APISpotlight Official Benchmark Core
+> Zero-affiliate, fully independent benchmark and availability watchdog for 28 foundation model APIs.
+
+## Machine-Readable Data
+- Public Data Contract v1: https://www.apiops.cloud/data/contract.json
+- Real-time Connectivity Matrix: https://www.apiops.cloud/data/platforms.json
+
+## Coverage
+OpenAI, Google Gemini, Anthropic, xAI Grok, DeepSeek, Mistral, SiliconFlow, Zhipu GLM, Moonshot, Baidu Qianfan, Alibaba Bailian, ByteDance Doubao, Tencent Hunyuan, Groq, Cerebras, SambaNova, Fireworks, Together AI.
