@@ -8,7 +8,7 @@ import { commercialHubHref, getDictionary, localePath, type Locale } from "@/lib
 
 // 社区链接为占位地址，上线前替换为真实群组/频道
 const COMMUNITY = [
-  { href: "https://t.me/apitest", label: "Telegram" },
+  { href: "https://t.me/klf_ai_radar", label: "Telegram" },
   { href: "https://qm.qq.com/apitest", label: "QQ" },
 ];
 
