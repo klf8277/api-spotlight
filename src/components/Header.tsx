@@ -78,6 +78,14 @@ export default function Header({ locale }: { locale: Locale }) {
             <span className="sm:hidden">{dictionary.nav.methodologyShort}</span>
           </Link>
           <a
+            href={locale === "zh" ? "https://hub.apiops.cloud/zh/radar/" : "https://hub.apiops.cloud/radar/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md px-2 py-1 font-semibold text-amber-500 hover:bg-foreground/5 hover:text-amber-400 sm:inline"
+          >
+            {dictionary.nav.radar || (locale === "zh" ? "🔥 AI 副业雷达 ↗" : "AI Radar ↗")}
+          </a>
+          <a
             href={commercialHubHref(locale)}
             target="_blank"
             rel="noopener noreferrer"
@@ -140,6 +148,16 @@ export default function Header({ locale }: { locale: Locale }) {
               <Link href={path("/method")} onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.methodology}
               </Link>
+              <a
+                href={locale === "zh" ? "https://hub.apiops.cloud/zh/radar/" : "https://hub.apiops.cloud/radar/"}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeDrawer}
+                className="flex items-center justify-between rounded-lg px-3 py-2 font-semibold text-amber-500 hover:bg-foreground/5"
+              >
+                <span>{dictionary.nav.radar || (locale === "zh" ? "🔥 AI 副业雷达 ↗" : "AI Radar ↗")}</span>
+                <span className="text-xs">↗</span>
+              </a>
               <a href={commercialHubHref(locale)} target="_blank" rel="noopener noreferrer" onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.commercial}
               </a>

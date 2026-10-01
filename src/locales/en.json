@@ -23,6 +23,7 @@
     "testShort": "Test",
     "methodology": "Methodology",
     "methodologyShort": "Method",
+    "radar": "AI Radar ↗",
     "commercial": "Third-party APIs ↗",
     "openDrawer": "Open navigation drawer",
     "closeDrawer": "Close navigation drawer",
