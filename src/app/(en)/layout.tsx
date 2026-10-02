@@ -4,6 +4,7 @@ import Script from "next/script";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import { getDictionary, htmlLang } from "@/lib/i18n";
 import { siteMetadata } from "@/lib/seo";
 
@@ -30,6 +31,7 @@ export default function EnRootLayout({ children }: { children: ReactNode }) {
         <Header locale="en" />
         <main className="flex-1">{children}</main>
         <Footer locale="en" />
+        <BackToTop />
       </body>
     </html>
   );
