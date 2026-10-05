@@ -69,4 +69,6 @@ jobs:
       - name: 部署到 Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # 2026-10-05 换用账号级新式 token（cfut_）：无法用户级发现账号，必须显式给账号 ID（非机密）
+          CLOUDFLARE_ACCOUNT_ID: "5f8a0b82b8fe72382211ab31f01e9d42"
         run: npx wrangler pages deploy out --project-name=api-spotlight --branch main
