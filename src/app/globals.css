@@ -3,20 +3,30 @@
 /* class 策略暗黑模式：ThemeToggle 切换 html.dark */
 @custom-variant dark (&:is(.dark *));
 
+/* ── 双模审美底座（批F 2.5）──────────────────────────────
+   浅色 Blueprint Crisp：极客冷灰白画布 + 纯白卡片 + 冰灰边框
+   （对标 Vercel / Stripe 亮色文档的利落通透感）
+   深色 Deep Space Precision（绝对主场）：深空黑蓝画布 + 悬浮层卡片 + 半透明微光边框
+   ─────────────────────────────────────────────────── */
 :root {
-  /* 批F 工单2-A：Linear / Apple 风格温润米白（护眼纸质底色，长时间阅读不刺眼） */
-  --background: #F9F9F8;
-  --foreground: #18181b;
+  --background: #F8FAFC; /* 画布：极客冷灰白 */
+  --foreground: #0F172A; /* 正文：slate-900 */
+  --card: #FFFFFF; /* 卡片：纯白 */
+  --line: #E2E8F0; /* 边框：冰灰（slate-200） */
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --background: #090D12; /* 画布：深空黑蓝 */
+  --foreground: #FAFAFA;
+  --card: #0E131B; /* 卡片：悬浮层 */
+  --line: rgb(255 255 255 / 0.08); /* 边框：半透明微光 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-line: var(--line);
   /* 系统字体栈：零外部依赖，保证 CI 构建确定性（不在构建期拉取 Google Fonts） */
   --font-sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", Consolas, "Liberation Mono", monospace;
@@ -27,6 +37,24 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+/* 中文大标题断行与孤字治理（批F 2.5）：balance 均衡行宽 + keep-all 避免中文断词
+   （如「先看条件，再决定是否前往。」优先在标点处断行，不留孤字、不断词） */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 等宽数字与算力指标对齐（批F 2.5）：高密度数字列上下对齐 */
+.tabular-metric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
 }
 
 ::selection {

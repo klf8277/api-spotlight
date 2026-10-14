@@ -19,6 +19,17 @@ export default function HomeView({ locale }: { locale: Locale }) {
   const lastChecked = getLastChecked();
   const path = (value: string) => localePath(locale, value);
 
+  // 批F 2.5 工单2：榜单导流胶囊平台集 = 存在公开免费额度记录（free-tiers）或大厂直属·国内可付（支付宝 / 微信）
+  // 判定对中英双语数据标签均成立，保证 zh / en 页面口径一致
+  const MOBILE_PAY_LABELS = ["支付宝", "微信支付", "Alipay", "WeChat Pay"];
+  const promoPlatformIds = platforms
+    .filter(
+      (platform) =>
+        freeTiers.some((entry) => entry.platform_id === platform.id) ||
+        (platform.payment_methods ?? []).some((m) => MOBILE_PAY_LABELS.includes(m)),
+    )
+    .map((platform) => platform.id);
+
   return (
     <>
       <Hero
@@ -53,6 +64,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
           platforms={platforms}
           authenticityMap={authenticityMap}
           latencyHistory={latencyHistory}
+          promoPlatformIds={promoPlatformIds}
         />
       </section>
 

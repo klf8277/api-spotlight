@@ -2,7 +2,7 @@
 
 import { Fragment, useMemo, useState } from "react";
 import type { AuthenticityReport, Platform } from "@/types";
-import { getDictionary, template, type Locale } from "@/lib/i18n";
+import { commercialHubHref, getDictionary, template, type Locale } from "@/lib/i18n";
 
 type SortKey = "name" | "latency_ms" | "success_rate";
 
@@ -20,8 +20,8 @@ const VERDICT_CLS: Record<string, string> = {
   "no-response": "bg-red-500/15 text-red-500",
 };
 
-// 批F 工单2-B：移动支付口径 = 公开信息整理的支付宝 / 微信支付
-const MOBILE_PAY_METHODS = ["支付宝", "微信支付"];
+// 批F 工单2-B / 2.5：移动支付口径 = 公开信息整理的支付宝 / 微信支付（中英双语数据标签均识别，保证双语页面一致）
+const MOBILE_PAY_METHODS = ["支付宝", "微信支付", "Alipay", "WeChat Pay"];
 
 function latencyTone(v: number): string {
   if (v < 200) return "text-emerald-600 dark:text-emerald-400";
@@ -139,11 +139,14 @@ export default function RankingTable({
   platforms,
   authenticityMap,
   latencyHistory,
+  promoPlatformIds = [],
 }: {
   locale: Locale;
   platforms: Platform[];
   authenticityMap: Record<string, AuthenticityReport>;
   latencyHistory?: Record<string, Array<{ date: string; latency: number }>>;
+  /** 批F 2.5 工单2：存在公开免费额度（free-tiers 记录）或大厂直属·国内可付（支付宝/微信）的平台 id */
+  promoPlatformIds?: string[];
 }) {
   const dictionary = getDictionary(locale);
   const ranking = dictionary.ranking;
@@ -190,7 +193,7 @@ export default function RankingTable({
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-xl border border-foreground/10 bg-background shadow-sm">
+      <div className="overflow-x-auto rounded-xl border border-line bg-card shadow-sm">
         <table className="w-full min-w-[720px] text-sm">
           <thead>
             <tr className="border-b border-foreground/10 text-left text-xs uppercase tracking-wider text-foreground/50">
@@ -307,7 +310,7 @@ export default function RankingTable({
                     <VerdictBadge report={authenticityMap[p.id]} locale={locale} />
                   </button>
                 </td>
-                <td className="px-4 py-3 font-mono text-base font-semibold">
+                <td className="tabular-metric px-4 py-3 text-base font-semibold">
                   {p.latency_ms === null ? (
                     <span className="text-foreground/40">—</span>
                   ) : (
@@ -319,7 +322,7 @@ export default function RankingTable({
                     title={ranking.latencySparkTitle}
                   />
                 </td>
-                <td className="px-4 py-3 font-mono text-base font-semibold">{p.success_rate.toFixed(1)}%</td>
+                <td className="tabular-metric px-4 py-3 text-base font-semibold">{p.success_rate.toFixed(1)}%</td>
                 <td
                   className="px-4 py-3 text-foreground/70"
                   title={p.supported_models.join(listSeparator)}
@@ -333,14 +336,28 @@ export default function RankingTable({
                   )}
                 </td>
                 <td className="whitespace-nowrap px-4 py-3">
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="font-medium text-emerald-600 hover:underline dark:text-emerald-400"
-                  >
-                    {ranking.website}
-                  </a>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="font-medium text-emerald-600 hover:underline dark:text-emerald-400"
+                    >
+                      {ranking.website}
+                    </a>
+                    {/* 批F 2.5 工单2：高转化导流胶囊 → 商业站特惠大盘（存在公开免费额度 / 大厂直属·国内可付的平台） */}
+                    {promoPlatformIds.includes(p.id) && (
+                      <a
+                        href={`${commercialHubHref(locale)}offers/`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={ranking.claimFreebieTitle}
+                        className="inline-flex items-center gap-1 rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-700 shadow-[0_0_12px_-4px_rgba(245,158,11,0.55)] hover:bg-amber-500/20 hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
+                      >
+                        {ranking.claimFreebie}
+                      </a>
+                    )}
+                  </div>
                 </td>
               </tr>
               {openId === p.id && (
