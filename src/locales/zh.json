@@ -23,7 +23,7 @@
     "testShort": "测试",
     "methodology": "方法学",
     "methodologyShort": "方法",
-    "radar": "🔥 AI 副业雷达 ↗",
+    "radar": "🛠️ 开源武器库 (副业雷达) ↗",
     "deals": "大厂特惠 ↗",
     "commercial": "第三方 API 方案 ↗",
     "openDrawer": "打开导航菜单",
@@ -181,7 +181,7 @@
   "resourcesIndex": {
     "eyebrow": "Developer Resources",
     "title": "AI / API 开发者资源",
-    "lead": "只收录与 AI、API、开发、基础设施直接相关的资源。每项附官方入口、免费说明、关联平台和质量评分；不做泛 AI 工具垃圾场。",
+    "lead": "只收录与 AI、API、开发、基础设施直接相关的资源：每项均以中文业务定位命名（附英文原名），配官方入口、免费说明与质量评分；生僻底层项目一律不上架，不做泛 AI 工具垃圾场。",
     "categoryNavLabel": "资源分类"
   },
   "resourceDetail": {

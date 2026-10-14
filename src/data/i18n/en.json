@@ -413,7 +413,7 @@
         "Open model inference",
         "Console for Chinese-language developers"
       ],
-      "free_tier_summary": "Existing benefit records show a trial allowance after new-user verification; refer to current official announcements for the amount and validity period.",
+      "free_tier_summary": "New users receive a trial credit after registration and verification (approx. ¥14; usable with DeepSeek / Qwen and other platform models); the pricing page also lists several free models (translation / embedding / rerank). The exact amount is subject to the current official announcement.",
       "free_limits": "Per-model rate limits and balance rules are per the official console; fixed allowances are not inferred further.",
       "credit_card": "Existing records do not require a credit card; identity verification conditions may apply.",
       "signup": "Requires sign-up; some allowances require completing verification.",
@@ -497,9 +497,9 @@
     "siliconflow": {
       "provider": "SiliconFlow",
       "api_service": "Multi-model inference API",
-      "free_amount": "About ¥14 / on the order of 20 million tokens (recorded benefit; not directly confirmed on the current official page)",
+      "free_amount": "New-user sign-up trial credit (approx. ¥14; roughly 20M tokens' worth of calls; usable across platform models including DeepSeek / Qwen); several models are also free to call per the pricing page (subject to the official site)",
       "unit": "Trial credit",
-      "reset_period": "One-time; validity Unknown",
+      "reset_period": "One-time; validity per official terms",
       "rate_limits": "Rate limited per model and per account",
       "credit_card": "No card requirement recorded; verification may be required",
       "signup": "Sign-up plus verification",
@@ -508,7 +508,7 @@
         "Amount and validity may change with promotions",
         "Only for eligible new users"
       ],
-      "source_type": "Official pricing/documentation page plus existing benefit records; the current allowance is not directly confirmed by an official page"
+      "source_type": "Official pricing page (free-model list checked 2026-10-15) + sign-up offer records; the sign-up credit is not directly shown on the pricing page"
     },
     "openrouter": {
       "provider": "OpenRouter",
@@ -646,7 +646,7 @@
     "zhipu": {
       "provider": "Zhipu AI (GLM)",
       "api_service": "GLM API",
-      "free_amount": "New-user trial credit; the specific amount depends on official promotions",
+      "free_amount": "New-user BigModel trial resource pack / voucher (per official promotions); GLM-4.7-Flash / GLM-4.5-Flash and other Flash-series models are free to call (with long-context support)",
       "unit": "Trial credit",
       "reset_period": "Per promotion rules",
       "rate_limits": "Rate limited per model and per account",
@@ -657,23 +657,23 @@
         "Promotional credit may expire",
         "Free policies differ across models"
       ],
-      "source_type": "Official site / existing verification records"
+      "source_type": "Official model documentation (Flash free-model list checked 2026-10-15) + official promotion records"
     },
     "bailian": {
       "provider": "Alibaba Cloud Model Studio (Tongyi)",
       "api_service": "Tongyi series model API",
-      "free_amount": "New-user trial credit; some models have a daily free call quota",
+      "free_amount": "On first activation, an independent free quota is granted automatically per model (typically 1M tokens per model, including the Tongyi / Qwen family), valid for 90 days (per official help documentation)",
       "unit": "Trial credit / free tokens",
-      "reset_period": "Per model and official promotions",
+      "reset_period": "Granted per model; cannot be merged or transferred across models",
       "rate_limits": "Rate limited per model and per account",
       "credit_card": "Real-name verification may be required; credit card Unknown",
       "signup": "Register for Alibaba Cloud and activate Model Studio",
-      "expiration": "Subject to official promotions",
+      "expiration": "90 days from activation or model release (per official terms)",
       "restrictions": [
         "Region, real-name verification and model conditions may apply",
         "The free allowance is subject to what the console displays"
       ],
-      "source_type": "Official site / existing verification records"
+      "source_type": "Official help documentation (checked 2026-10-15: ~1M tokens per model, 90-day validity)"
     },
     "qianfan": {
       "provider": "Baidu Qianfan (ERNIE)",
@@ -757,6 +757,22 @@
         "Licences differ across models; the conclusion for Mistral 7B cannot be extended to all models"
       ],
       "source_type": "Official Mistral Pricing FAQ plus Model Documentation"
+    },
+    "volcengine-ark": {
+      "provider": "Volcano Ark (Volcengine)",
+      "api_service": "Multi-model inference API (Doubao / open models)",
+      "free_amount": "Collaboration Reward returns tokens daily based on usage (up to a 5M/day class per model; applies only to pay-as-you-go online inference); new-user trial quota is subject to the official activity page",
+      "unit": "Collaboration Reward (usage rebate)",
+      "reset_period": "Daily return (online-inference postpaid usage only)",
+      "rate_limits": "Per official rate limits and program terms",
+      "credit_card": "Real-name verification required; per the official sign-up flow",
+      "signup": "Registration + real-name verification",
+      "expiration": "Subject to official program terms",
+      "restrictions": [
+        "Rebates only offset online-inference postpaid usage; not equivalent to cash",
+        "Per-model daily caps and program details may change; refer to official terms"
+      ],
+      "source_type": "Official pricing documentation (checked 2026-10-15) + official program terms"
     }
   },
   "resources": {
@@ -767,205 +783,181 @@
       "free_summary": "The directory is free to browse; each item's conditions must be checked against the official source."
     },
     "free-models": {
-      "name": "Hugging Face Models",
+      "name": "Free open-model library and model cards (Hugging Face Models)",
       "category": "Free AI Models",
       "description": "The official directory for open models, model cards, licenses and inference entry points.",
       "free_summary": "The model directory is free to browse; whether inference is free depends on the provider and account."
     },
     "free-api-credits": {
-      "name": "Free API Credits",
+      "name": "Free API credits & trial voucher collection (Free API Credits)",
       "category": "Free API Credits",
       "description": "New-user credits, trial balances and promotional vouchers compiled from official sources.",
       "free_summary": "The page is free; credit status must be confirmed on the provider's official page."
     },
     "litellm": {
-      "name": "LiteLLM",
+      "name": "Multi-model routing & cost-control gateway (LiteLLM)",
       "category": "Developer Tools",
       "description": "Unifies multiple LLM providers behind an OpenAI-compatible interface, suited to gateways, routing and cost observability.",
       "free_summary": "Open-source project, self-hostable; cloud service plans must be checked separately."
     },
     "langchain": {
-      "name": "LangChain",
+      "name": "LLM app & agent orchestration framework (LangChain)",
       "category": "Developer Tools",
       "description": "A development framework for orchestrating models, tools, retrieval and agent workflows.",
       "free_summary": "The core code is open source; third-party model/API costs are not included in the project."
     },
     "llamaindex": {
-      "name": "LlamaIndex",
+      "name": "RAG retrieval & data-connector framework (LlamaIndex)",
       "category": "Developer Tools",
       "description": "An LLM application framework for RAG, data connectors and agents.",
       "free_summary": "The open-source core is self-hostable; model, vector store and managed service costs are billed separately."
     },
     "vllm": {
-      "name": "vLLM",
+      "name": "High-throughput open-model inference engine (vLLM)",
       "category": "AI Infrastructure",
       "description": "A high-throughput open-source framework for LLM inference and OpenAI-compatible serving.",
       "free_summary": "Open source under Apache-2.0; the GPU/cloud resources required to run it may incur costs."
     },
     "ollama": {
-      "name": "Ollama",
+      "name": "Zero-config local model runner (Ollama)",
       "category": "AI Infrastructure",
       "description": "A developer tool for running open models locally with a simple API.",
       "free_summary": "The software is open source and free to run locally; hardware, power and model storage costs are the user's responsibility."
     },
     "mcp": {
-      "name": "Model Context Protocol",
+      "name": "Open protocol connecting models to tools & data (Model Context Protocol)",
       "category": "AI Infrastructure",
       "description": "An open protocol connecting models with external tools, data sources and workflows.",
       "free_summary": "The specification and SDKs are public; service costs and permissions of individual servers must be checked separately."
     },
     "promptfoo": {
-      "name": "Promptfoo",
+      "name": "Prompt & model-output evaluation toolkit (Promptfoo)",
       "category": "AI Coding Tools",
       "description": "A local evaluation tool for prompts, model outputs and security policies.",
       "free_summary": "The open-source CLI runs locally; enterprise features and external model costs are billed separately."
     },
     "langfuse": {
-      "name": "Langfuse",
+      "name": "Open-source LLM usage tracing & debugging platform (Langfuse)",
       "category": "Observability",
       "description": "An observability platform for tracing, cost, latency and quality in LLM applications.",
       "free_summary": "The open-source version is self-hostable; the official cloud free tier and quotas must be checked against the current plan."
     },
     "helicone": {
-      "name": "Helicone",
+      "name": "LLM API cost analytics & call monitoring proxy (Helicone)",
       "category": "Observability",
       "description": "An LLM API observability and cost analysis tool with proxy-based integration.",
       "free_summary": "The core project is open source; the cloud free tier and quotas are subject to the official plan page."
     },
-    "opentelemetry": {
-      "name": "OpenTelemetry",
-      "category": "Observability",
-      "description": "An open observability standard for cross-language traces, metrics and logs.",
-      "free_summary": "The specification, SDKs and Collector are open source; backend storage costs are billed separately."
-    },
-    "phoenix": {
-      "name": "Arize Phoenix",
-      "category": "Observability",
-      "description": "An open-source tool for LLM tracing, evaluation and retrieval quality observability.",
-      "free_summary": "Open source and self-hostable; the hosted version's plans must be checked separately."
-    },
-    "weave": {
-      "name": "W&B Weave",
-      "category": "Observability",
-      "description": "A developer tool for tracing, evaluating and versioning LLM applications.",
-      "free_summary": "A public developer entry point is available; free tier limits are subject to the official plan page."
-    },
-    "mlflow": {
-      "name": "MLflow",
-      "category": "AI Infrastructure",
-      "description": "An open-source platform for machine learning and generative AI lifecycle management.",
-      "free_summary": "Open source and self-hostable; hosting and storage costs are billed separately."
-    },
     "chroma": {
-      "name": "Chroma",
+      "name": "Local-first lightweight vector database (Chroma)",
       "category": "Free Vector Databases",
       "description": "An open-source embedding database and retrieval component for AI applications.",
       "free_summary": "The open-source local mode is free; the cloud free tier is subject to the official plan page."
     },
     "qdrant": {
-      "name": "Qdrant",
+      "name": "Open-source vector search engine with filtering (Qdrant)",
       "category": "Free Vector Databases",
       "description": "An open-source vector search engine offering filtering, similarity search and a cloud service.",
       "free_summary": "Open source and free to self-host; the Qdrant Cloud free tier is subject to the official plan page."
     },
     "weaviate": {
-      "name": "Weaviate",
+      "name": "Modular hybrid-search open-source vector database (Weaviate)",
       "category": "Free Vector Databases",
       "description": "An open-source vector database supporting hybrid search and modular AI integrations.",
       "free_summary": "Open source and free to self-host; the cloud free tier and resource limits must be checked against the official plan."
     },
     "milvus": {
-      "name": "Milvus",
+      "name": "Open-source vector database for large-scale retrieval (Milvus)",
       "category": "Free Vector Databases",
       "description": "An open-source database and cloud service for large-scale vector search.",
       "free_summary": "The open-source components are self-hostable; Zilliz Cloud plans must be checked separately."
     },
     "pinecone": {
-      "name": "Pinecone",
+      "name": "Managed serverless vector database (Pinecone)",
       "category": "Free Vector Databases",
       "description": "A managed vector database for RAG and semantic search applications.",
       "free_summary": "An official Starter/free entry point is available; specific storage and read/write limits are subject to the current plan page."
     },
     "modal": {
-      "name": "Modal",
+      "name": "Python platform for on-demand cloud functions & GPU jobs (Modal)",
       "category": "Free Compute / GPU",
       "description": "Launches cloud functions, GPU jobs and model inference services from Python workflows.",
       "free_summary": "An official developer trial/free credit entry point is available; quotas must be checked against the current plan."
     },
     "runpod": {
-      "name": "RunPod",
+      "name": "GPU rental & model deployment cloud (RunPod)",
       "category": "Free Compute / GPU",
       "description": "A developer cloud platform for model inference, training and GPU pods.",
       "free_summary": "Public documentation and a pay-as-you-go entry point; free credits must be confirmed against promotion/account terms."
     },
     "huggingface-spaces": {
-      "name": "Hugging Face Spaces",
+      "name": "Free hosting for model demos, zero ops (Hugging Face Spaces)",
       "category": "Free Hosting",
       "description": "Publish model demos and developer apps with Gradio, Streamlit and similar tools.",
       "free_summary": "A free hardware tier exists; sleeping, resource and public-visibility limits are subject to the official documentation."
     },
     "kaggle-datasets": {
-      "name": "Kaggle Datasets",
+      "name": "Searchable, reproducible public dataset hub (Kaggle Datasets)",
       "category": "Free Datasets",
       "description": "A searchable, versioned and shareable dataset directory suited to model experiments and baseline reproduction.",
       "free_summary": "Public browsing and download entry points; each dataset's license must be checked individually."
     },
     "common-crawl": {
-      "name": "Common Crawl",
+      "name": "Global public web-crawl corpus & dataset (Common Crawl)",
       "category": "Free Datasets",
       "description": "A public web crawl corpus and index suited to retrieval, data engineering and research use.",
       "free_summary": "The data is publicly downloadable; dataset terms, robots and downstream license requirements must be observed."
     },
     "github-actions": {
-      "name": "GitHub Actions",
+      "name": "CI/CD automation for code repositories (GitHub Actions)",
       "category": "DevOps",
       "description": "A CI/CD platform for automating tests, data updates and static deployments.",
       "free_summary": "Public repositories usually include a free Actions quota; minutes and organization plans are subject to official policy."
     },
     "cloudflare-pages": {
-      "name": "Cloudflare Pages",
+      "name": "Free edge deployment for static sites & frontends (Cloudflare Pages)",
       "category": "Free Hosting",
       "description": "An edge deployment platform suited to static sites and frontend build output.",
       "free_summary": "An official Pages free plan is available; build, request and feature limits are subject to the current plan page."
     },
     "sentry": {
-      "name": "Sentry",
+      "name": "App error tracking & performance monitoring (Sentry)",
       "category": "Observability",
       "description": "Error tracking, performance monitoring and release health analysis.",
       "free_summary": "An official developer free plan is available; event volume and retention are subject to the current plan page."
     },
     "posthog": {
-      "name": "PostHog",
+      "name": "Product analytics & growth experimentation (PostHog)",
       "category": "Observability",
       "description": "A product analytics, event capture and experimentation platform suited to observing developer product behavior.",
       "free_summary": "An official free event quota is available; specific product modules and quotas are subject to the current plan page."
     },
     "replicate": {
-      "name": "Replicate",
+      "name": "Run community models via one API (Replicate)",
       "category": "Developer Tools",
       "description": "A developer platform for running and deploying community models via API.",
       "free_summary": "Models can be discovered and tried; pricing, trials and model run costs must be checked against the current page."
     },
     "fireworks-ai": {
-      "name": "Fireworks AI",
+      "name": "Fast inference & fine-tuning APIs for open models (Fireworks AI)",
       "category": "AI Infrastructure",
       "description": "A platform offering open-model inference, fine-tuning and high-performance deployment APIs.",
       "free_summary": "Public documentation allows evaluating the APIs; free credits must be confirmed against the current account and pricing page."
     },
     "perplexity-api": {
-      "name": "Perplexity API",
+      "name": "Real-time Q&A API with search & citations (Perplexity API)",
       "category": "Free AI APIs",
       "description": "Offers the Sonar API with search and citation capabilities, suited to applications that need real-time information.",
       "free_summary": "Official documentation and pricing are public; free credits must be confirmed against current account policy."
     },
     "model-context-protocol-servers": {
-      "name": "MCP Servers Directory",
+      "name": "Ready-to-use MCP server directory (MCP Servers Directory)",
       "category": "Developer Tools",
       "description": "The official ecosystem entry point for MCP servers, tool connections and local development integrations.",
       "free_summary": "The ecosystem directory is public; each server's permissions, data handling and costs must be reviewed individually."
     },
     "open-webui": {
-      "name": "Open WebUI",
+      "name": "Self-hosted model chat UI (Open WebUI)",
       "category": "AI Coding Tools",
       "description": "A self-hostable model chat interface supporting Ollama and OpenAI-compatible APIs.",
       "free_summary": "Open source and self-hostable; external model API and server resource costs are billed separately."
@@ -975,7 +967,7 @@
     "perk-1": {
       "name": "Trial credits on sign-up",
       "provider": "SiliconFlow",
-      "content": "New users receive trial credits after registering and completing verification (approximately ¥14, on the order of 20 million tokens), usable with models across the whole platform; the exact amount is subject to the current announcement on the official site.",
+      "content": "New users receive trial credits after registering and completing verification (approx. ¥14, on the order of 20 million tokens), usable with DeepSeek / Qwen and other models across the platform; several models on the pricing page are also free to call. The exact amount is subject to the current announcement on the official site.",
       "requirement": "New user registration + verification",
       "expires_at": "Ongoing (refer to the official page)",
       "tag": "Sign-up credits"
@@ -1031,7 +1023,7 @@
     "perk-8": {
       "name": "New-user sign-up credits",
       "provider": "Zhipu AI (GLM)",
-      "content": "After new users register at open.bigmodel.cn, trial credits are issued according to the official promotion and can be used with the full GLM model family; refer to the official site.",
+      "content": "After registering at open.bigmodel.cn, new users receive trial resource packs / vouchers per official promotions; GLM-4.7-Flash / GLM-4.5-Flash and other Flash-series models are free to call (with long context). Refer to the official site.",
       "requirement": "New user registration",
       "expires_at": "Subject to the official promotion",
       "tag": "Sign-up credits"
@@ -1039,7 +1031,7 @@
     "perk-9": {
       "name": "New-user free credits and free call volume",
       "provider": "Alibaba Cloud Bailian (Tongyi)",
-      "content": "The Bailian platform provides trial credits for new users, and some models offer a daily free token quota; refer to the official site.",
+      "content": "On first activation, per-model free quota is granted automatically (typically 1M tokens per model, including the Tongyi / Qwen family), valid for 90 days; per official help documentation.",
       "requirement": "New user registration (real-name verification required)",
       "expires_at": "Subject to the official promotion",
       "tag": "Trial credits"
@@ -1083,6 +1075,14 @@
       "requirement": "Own GPU/infrastructure + use under the model license",
       "expires_at": "Subject to the model license and official terms",
       "tag": "Free self-hosting"
+    },
+    "perk-15": {
+      "name": "Usage-rebate collaboration reward",
+      "provider": "Volcano Ark (Volcengine)",
+      "content": "Online-inference postpaid usage on official endpoints is rebated in tokens on a daily basis (up to a 5M/day class per model); new-user trial activity is subject to the official site.",
+      "requirement": "Registration + real-name verification; pay-as-you-go online inference",
+      "expires_at": "Subject to official program terms",
+      "tag": "Usage rebate"
     }
   },
   "authenticity": {

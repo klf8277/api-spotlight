@@ -47,12 +47,33 @@ export default function Header({ locale }: { locale: Locale }) {
         <Link
           href={path("/")}
           onClick={closeDrawer}
-          className="flex shrink-0 items-center gap-2 font-mono text-base font-bold tracking-tight sm:text-lg"
+          className="group flex shrink-0 items-center gap-2.5 tracking-tight"
         >
-          <span aria-hidden>🔦</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-cyan-500/10 text-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.12)] transition-all group-hover:border-emerald-500/50 group-hover:shadow-[0_0_16px_rgba(16,185,129,0.22)] dark:text-emerald-400">
+            <svg
+              className="h-4.5 w-4.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" className="opacity-30" />
+              <circle cx="12" cy="12" r="4.5" className="opacity-70" />
+              <circle cx="12" cy="12" r="1.5" className="fill-current" />
+              <line x1="12" y1="1" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="23" />
+              <line x1="1" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="23" y2="12" />
+            </svg>
+          </span>
           <span className="flex flex-col leading-none">
-            <span>APISpotlight</span>
-            <span className="hidden text-[10px] font-normal tracking-widest text-foreground/50 sm:block">
+            <span className="font-mono text-base font-bold tracking-tight text-foreground sm:text-lg">
+              APISpotlight
+            </span>
+            <span className="hidden text-[10px] font-sans font-medium tracking-wider text-foreground/50 sm:block">
               {dictionary.common.tagline}
             </span>
           </span>
@@ -82,7 +103,7 @@ export default function Header({ locale }: { locale: Locale }) {
             rel="noopener noreferrer"
             className="hidden rounded-md px-2 py-1 font-semibold text-amber-500 hover:bg-foreground/5 hover:text-amber-400 sm:inline"
           >
-            {dictionary.nav.radar || (locale === "zh" ? "🔥 AI 副业雷达 ↗" : "AI Radar ↗")}
+            {dictionary.nav.radar || (locale === "zh" ? "🛠️ 开源武器库 (副业雷达) ↗" : "🛠️ Open-Source Toolkit ↗")}
           </a>
           <a
             href={commercialHubHref(locale)}
@@ -139,7 +160,16 @@ export default function Header({ locale }: { locale: Locale }) {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
-              <span className="font-mono text-sm font-semibold">APISpotlight</span>
+              <div className="flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-md border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400">
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" className="opacity-30" />
+                    <circle cx="12" cy="12" r="4.5" className="opacity-70" />
+                    <circle cx="12" cy="12" r="1.5" className="fill-current" />
+                  </svg>
+                </span>
+                <span className="font-mono text-sm font-semibold">APISpotlight</span>
+              </div>
               <button type="button" onClick={closeDrawer} aria-label={dictionary.nav.closeDrawer} className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-foreground/10 text-xl hover:bg-foreground/5">
                 <span aria-hidden>×</span>
               </button>
@@ -174,8 +204,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 onClick={closeDrawer}
                 className="flex items-center justify-between rounded-lg px-3 py-2 font-semibold text-amber-500 hover:bg-foreground/5"
               >
-                <span>{dictionary.nav.radar || (locale === "zh" ? "🔥 AI 副业雷达 ↗" : "AI Radar ↗")}</span>
-                <span className="text-xs">↗</span>
+                <span>{dictionary.nav.radar || (locale === "zh" ? "🛠️ 开源武器库 (副业雷达) ↗" : "🛠️ Open-Source Toolkit ↗")}</span>
               </a>
               <a href={commercialHubHref(locale)} target="_blank" rel="noopener noreferrer" onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.commercial}

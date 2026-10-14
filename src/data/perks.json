@@ -3,13 +3,13 @@
     "id": "perk-1",
     "name": "注册赠体验额度",
     "provider": "SiliconFlow 硅基流动",
-    "content": "新用户注册并完成认证后发放体验额度（约 ¥14，2000 万 token 量级），可用于全平台模型；具体数额以官网当前公告为准。",
+    "content": "新用户注册并完成认证后发放体验额度（约 ¥14，2000 万 token 可调用量，支持 DeepSeek / Qwen 等全平台模型）；价格页另有多款免费模型可零成本调用。具体数额以官网当前公告为准。",
     "requirement": "新用户注册 + 认证",
     "link": "https://siliconflow.cn",
     "expires_at": "长期有效（以官网为准）",
     "tag": "注册赠额",
     "is_hot": true,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-2",
@@ -21,7 +21,7 @@
     "expires_at": "长期有效（以官网为准）",
     "tag": "注册赠额",
     "is_hot": true,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-3",
@@ -33,7 +33,7 @@
     "expires_at": "长期有效（以官网为准）",
     "tag": "初始额度",
     "is_hot": true,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-4",
@@ -45,7 +45,7 @@
     "expires_at": "长期有效",
     "tag": "免费限额",
     "is_hot": true,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-5",
@@ -57,7 +57,7 @@
     "expires_at": "以官方政策为准",
     "tag": "开发测试",
     "is_hot": false,
-    "verified_at": "2026-08-29"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-6",
@@ -69,7 +69,7 @@
     "expires_at": "长期有效（以官网为准）",
     "tag": "试用额度",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-7",
@@ -81,31 +81,31 @@
     "expires_at": "长期有效（以官网为准）",
     "tag": "免费额度",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-8",
     "name": "新用户注册赠额",
     "provider": "智谱 AI (GLM)",
-    "content": "新用户注册 open.bigmodel.cn 后按官方活动发放体验额度，GLM 全家桶模型可用；以官网为准。",
+    "content": "新用户注册 open.bigmodel.cn 后按官方活动发放体验资源包/代金券；GLM-4.7-Flash / GLM-4.5-Flash 等 Flash 系模型免费调用（含长上下文），以官网为准。",
     "requirement": "新用户注册",
     "link": "https://open.bigmodel.cn",
     "expires_at": "以官方活动为准",
     "tag": "注册赠额",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-9",
     "name": "新用户免费额度与免费调用量",
     "provider": "阿里云百炼 (通义)",
-    "content": "百炼平台为新用户提供体验额度，部分模型提供每日免费 token 调用量；以官网为准。",
+    "content": "新用户首次开通自动发放各模型独立免费额度（通常每模型 100 万 Token，通义千问系列等均有独立额度），90 天有效；以官方帮助文档为准。",
     "requirement": "新用户注册（需实名）",
     "link": "https://bailian.console.aliyun.com",
     "expires_at": "以官方活动为准",
     "tag": "试用额度",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-10",
@@ -117,7 +117,7 @@
     "expires_at": "以官方活动为准",
     "tag": "试用额度",
     "is_hot": false,
-    "verified_at": "2026-08-26"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-11",
@@ -129,7 +129,7 @@
     "expires_at": "长期有效（以官网为准）",
     "tag": "免费额度",
     "is_hot": false,
-    "verified_at": "2026-08-27"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-12",
@@ -141,7 +141,7 @@
     "expires_at": "按 Workers 计划政策（以官网为准）",
     "tag": "免费限额",
     "is_hot": false,
-    "verified_at": "2026-08-29"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-13",
@@ -153,7 +153,7 @@
     "expires_at": "固定有效期 Unknown，以账户政策为准",
     "tag": "试用额度",
     "is_hot": false,
-    "verified_at": "2026-08-29"
+    "verified_at": "2026-10-15"
   },
   {
     "id": "perk-14",
@@ -165,6 +165,18 @@
     "expires_at": "以模型许可证与官方条款为准",
     "tag": "免费自托管",
     "is_hot": false,
-    "verified_at": "2026-08-29"
+    "verified_at": "2026-10-15"
+  },
+  {
+    "id": "perk-15",
+    "name": "协作奖励按量返还",
+    "provider": "火山引擎方舟 (Volcengine Ark)",
+    "content": "官方端点在线推理后付费用量按日返还 Token（单模型日封顶 500 万量级）；新用户实名体验活动以官网为准。",
+    "requirement": "注册 + 实名；使用在线推理后付费",
+    "link": "https://www.volcengine.com/product/ark",
+    "expires_at": "以官方活动条款为准",
+    "tag": "按量返还",
+    "is_hot": false,
+    "verified_at": "2026-10-15"
   }
 ]

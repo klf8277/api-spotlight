@@ -12,10 +12,10 @@
     "pricing_url": "https://openai.com/api/pricing/",
     "documentation_url": "https://platform.openai.com/docs/overview",
     "website_url": "https://platform.openai.com",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "partial",
     "recommended_use_cases": ["生产级 AI 应用", "结构化输出", "工具调用与多模态工作流"],
-    "related_resource_slugs": ["langchain", "llamaindex", "opentelemetry"]
+    "related_resource_slugs": ["langchain", "llamaindex", "langfuse"]
   },
   {
     "slug": "anthropic",
@@ -30,7 +30,7 @@
     "pricing_url": "https://www.anthropic.com/pricing",
     "documentation_url": "https://docs.anthropic.com/en/docs/intro",
     "website_url": "https://console.anthropic.com",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "partial",
     "recommended_use_cases": ["长文档处理", "代码理解", "安全敏感型助手"],
     "related_resource_slugs": ["langchain", "llamaindex", "promptfoo"]
@@ -48,7 +48,7 @@
     "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
     "documentation_url": "https://ai.google.dev/gemini-api/docs",
     "website_url": "https://ai.google.dev",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "verified",
     "recommended_use_cases": ["多模态原型", "长上下文实验", "Google 生态应用"],
     "related_resource_slugs": ["langchain", "llamaindex", "promptfoo"]
@@ -66,7 +66,7 @@
     "pricing_url": "https://groq.com/pricing",
     "documentation_url": "https://console.groq.com/docs/overview",
     "website_url": "https://groq.com",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "verified",
     "recommended_use_cases": ["低延迟 Demo", "实时交互原型", "开源模型比较"],
     "related_resource_slugs": ["litellm", "ollama", "promptfoo"]
@@ -84,7 +84,7 @@
     "pricing_url": "https://api-docs.deepseek.com/quick_start/pricing",
     "documentation_url": "https://api-docs.deepseek.com/",
     "website_url": "https://platform.deepseek.com",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "partial",
     "recommended_use_cases": ["推理任务", "中文开发者原型", "OpenAI 兼容迁移"],
     "related_resource_slugs": ["litellm", "promptfoo", "langfuse"]
@@ -94,7 +94,7 @@
     "platform_id": "provider-siliconflow",
     "short_description": "面向中文开发者的模型 API 聚合与推理平台，覆盖多种开源模型。",
     "capabilities": ["多模型统一 API", "开源模型推理", "中文开发者控制台"],
-    "free_tier_summary": "现有福利记录显示新用户认证后有体验额度；具体金额与有效期以当前官方公告为准。",
+    "free_tier_summary": "新用户注册并完成认证后发放体验额度（约 ¥14 量级，支持 DeepSeek / Qwen 等全平台模型）；价格页另有多款免费模型（翻译/向量/重排类）。具体数额以当前官方公告为准。",
     "free_limits": "模型级限速和余额规则以官方控制台为准；固定额度不做额外推断。",
     "credit_card": "现有记录未要求信用卡；实名/认证条件可能适用。",
     "signup": "需要注册，部分额度需要完成认证。",
@@ -102,7 +102,7 @@
     "pricing_url": "https://siliconflow.cn/pricing",
     "documentation_url": "https://docs.siliconflow.cn/",
     "website_url": "https://siliconflow.cn",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "verified",
     "recommended_use_cases": ["中文模型试用", "开源模型选型", "低成本 API 原型"],
     "related_resource_slugs": ["vllm", "litellm", "langfuse"]
@@ -120,7 +120,7 @@
     "pricing_url": "https://www.together.ai/pricing",
     "documentation_url": "https://docs.together.ai/docs/quickstart",
     "website_url": "https://www.together.ai",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "verified",
     "recommended_use_cases": ["开放模型原型", "模型评估", "微调与推理实验"],
     "related_resource_slugs": ["vllm", "litellm", "promptfoo"]
@@ -138,7 +138,7 @@
     "pricing_url": "https://huggingface.co/pricing",
     "documentation_url": "https://huggingface.co/docs/api-inference/index",
     "website_url": "https://huggingface.co",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "verified",
     "recommended_use_cases": ["开源模型发现", "数据集研究", "轻量 Demo 与模型实验"],
     "related_resource_slugs": ["huggingface-spaces", "kaggle-datasets", "vllm"]
@@ -156,9 +156,9 @@
     "pricing_url": "https://www.cerebras.ai/pricing",
     "documentation_url": "https://inference-docs.cerebras.ai/introduction",
     "website_url": "https://cloud.cerebras.ai",
-    "last_verified": "2026-08-28",
+    "last_verified": "2026-10-15",
     "verification_status": "partial",
     "recommended_use_cases": ["实时助手", "低延迟基准比较", "开放模型 Demo"],
-    "related_resource_slugs": ["litellm", "promptfoo", "opentelemetry"]
+    "related_resource_slugs": ["litellm", "promptfoo", "langfuse"]
   }
 ]

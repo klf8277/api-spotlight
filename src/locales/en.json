@@ -23,7 +23,7 @@
     "testShort": "Test",
     "methodology": "Methodology",
     "methodologyShort": "Method",
-    "radar": "AI Radar ↗",
+    "radar": "🛠️ Open-Source Toolkit ↗",
     "deals": "Big-Tech Deals ↗",
     "commercial": "Third-party APIs ↗",
     "openDrawer": "Open navigation drawer",
@@ -181,7 +181,7 @@
   "resourcesIndex": {
     "eyebrow": "Developer Resources",
     "title": "AI / API developer resources",
-    "lead": "Only resources directly related to AI, APIs, development and infrastructure are listed. Each entry includes an official entry point, a free-usage summary, related platforms and a quality score; this is not a dumping ground for generic AI tools.",
+    "lead": "Only resources directly related to AI, APIs, development and infrastructure are listed: every entry is named by its plain-language business purpose (with the original English name) and includes an official entry point, a free-usage summary and a quality score; obscure low-level projects are not listed. This is not a dumping ground for generic AI tools.",
     "categoryNavLabel": "Resource categories"
   },
   "resourceDetail": {

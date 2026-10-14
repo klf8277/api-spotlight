@@ -16,12 +16,32 @@ Contract v1 红线（详见 docs/contract-v1.md）：
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
+
+# 确保在 Windows 控制台（cp936/GBK）下输出带 emoji 提示时不报 UnicodeEncodeError
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "data"
 PUB = ROOT / "public" / "data"
 SCHEMA_VERSION = "1.0"
+
+# 数据保鲜门禁（批F第3阶段）：核验日期超过该天数即控制台警告，防止再出现数月无人复核。
+FRESHNESS_MAX_DAYS = 30
+FRESHNESS_TARGETS = (
+    # (文件, 日期字段优先序, 展示名) —— platforms.json 为探针写回的 last_checked，其余为人工核验日期
+    ("platforms.json", ("last_verified", "last_checked"), "平台实测"),
+    ("free-tiers.json", ("last_verified",), "免费额度"),
+    ("platform-content.json", ("last_verified",), "平台内容"),
+    ("perks.json", ("verified_at",), "官方赠额"),
+    ("resources.json", ("last_verified",), "开发者资源"),
+)
 
 FORBIDDEN_PREFIXES = (
     "partner_", "sponsor_", "ad_", "promo_", "commercial_",
@@ -229,6 +249,58 @@ def validate_history(data, where: str) -> None:
             err(f"{w}.platforms 必须为非空对象")
 
 
+def check_freshness() -> None:
+    """防懒政保鲜门禁：任一条目核验日期距今天超过 FRESHNESS_MAX_DAYS 天 → 明确警告。
+
+    静态 JSON 本身没有问题，问题在于“静态之后没有巡检”。本检查只报警不阻断（CI 仍绿），
+    但每次构建都会把最旧条目的具体日期与天数打到控制台，督促站长复核刷新。
+    """
+    today = date.today()
+    worst: tuple[int, str] | None = None  # (天数, "文件 条目")
+    for name, fields, label in FRESHNESS_TARGETS:
+        path = SRC / name
+        if not path.exists():
+            continue  # 文件缺失由对应 validate_* 报错，这里不重复
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict):
+            data = data.get("reports") or data.get("entries") or data.get("profiles") or []
+        if not isinstance(data, list):
+            continue
+        stale: list[tuple[int, str]] = []
+        unparsable = 0
+        for i, item in enumerate(data):
+            if not isinstance(item, dict):
+                continue
+            raw = next((str(item.get(f)) for f in fields if item.get(f)), None)
+            if not raw:
+                continue
+            try:
+                day = date.fromisoformat(raw[:10])
+            except ValueError:
+                unparsable += 1
+                continue
+            age = (today - day).days
+            if age > FRESHNESS_MAX_DAYS:
+                stale.append((age, f"条目[{i}]{item.get('slug') or item.get('id') or ''} {raw[:10]}"))
+            if worst is None or age > worst[0]:
+                worst = (age, f"{name} {item.get('slug') or item.get('id') or ''}".strip())
+        if stale:
+            stale.sort(reverse=True)
+            oldest = stale[0]
+            warn(
+                f"数据保鲜（{label}·{name}）：{len(stale)}/{len(data)} 条超过 {FRESHNESS_MAX_DAYS} 天未复核"
+                f"（最旧 {oldest[1].split(' ')[1]}，距今 {oldest[0]} 天）→ 请复核并刷新核验日期"
+            )
+        if unparsable:
+            warn(f"数据保鲜（{label}·{name}）：{unparsable} 条日期无法解析（应为 YYYY-MM-DD）")
+    if worst is not None and worst[0] <= FRESHNESS_MAX_DAYS:
+        return f"🕒 保鲜检查：全部核验日期均在 {FRESHNESS_MAX_DAYS} 天内（最旧：{worst[1]}，{max(worst[0], 0)} 天前）"
+    return None
+
+
 def main() -> int:
     platforms = load(SRC / "platforms.json", "src/data/platforms.json")
     if platforms is not None:
@@ -253,8 +325,13 @@ def main() -> int:
                 err(f"public/data/{name} 与 src/data/{name} 不一致（构建快照过期？）")
         validate_contract()
 
+    # 防懒政保鲜门禁（批F第3阶段）：核验日期超 30 天 → 控制台警告（不阻断，同 CI 口径）
+    freshness_ok = check_freshness()
+
     for w in warnings:
         print(f"⚠️  {w}")
+    if freshness_ok:
+        print(freshness_ok)
     if errors:
         print(f"❌ Contract v1 校验失败（{len(errors)} 项）:")
         for e in errors:
