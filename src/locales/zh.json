@@ -44,8 +44,8 @@
   },
   "hero": {
     "eyebrow": "// APISpotlight · API 探照灯",
-    "title": "找 AI API、查免费额度，直接测试授权 Endpoint",
-    "subtitle": "发现官方 API 平台和开发者资源，查看免费层与公开核验状态，再用真实请求了解你有权使用的 Endpoint 实际返回了什么。",
+    "title": "企业级正规大模型与持牌算力权威选型指南",
+    "subtitle": "中立、可复现、开源的企业级 API 拨测基准：只收录官方厂商与持牌云平台的公开端点，展示标准价格、免费额度与实测延迟，不做任何付费排位。",
     "ctaTest": "开始测试 →",
     "ctaFreeTier": "查找免费额度",
     "ctaDirectory": "浏览 API 平台",
@@ -80,7 +80,12 @@
     "rankingTitle": "📊 原厂 API 实测",
     "rankingNote": "点击表头排序 · 最近实测数据 · 数据源 src/data/platforms.json",
     "perksTitle": "🎁 官方公开免费/赠额区",
-    "perksNote": "各平台官方公开新用户福利 · 以官网为准 · 数据源 src/data/perks.json"
+    "perksNote": "各平台官方公开新用户福利 · 以官网为准 · 数据源 src/data/perks.json",
+    "hubCtaEyebrow": "本周速报 · COMMERCIAL HUB",
+    "hubCtaTitle": "🔥 查看本周全网最新持牌云算力降价与免费额度",
+    "hubCtaBody": "由商机雷达 R1 通道自动捕获：大厂免费额度、限时降价与特惠大盘，14 天保鲜、过期自动下架。",
+    "hubCtaButton": "前往商业站特惠大盘 →",
+    "hubCtaNote": "带「推广 · 合作」标注的链接为合作关系，不影响您的价格。"
   },
   "ranking": {
     "colRank": "#",

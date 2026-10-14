@@ -44,8 +44,8 @@
   },
   "hero": {
     "eyebrow": "// APISpotlight · AI API Radar",
-    "title": "Find AI APIs, check free quotas, and test an authorized endpoint directly",
-    "subtitle": "Discover official API platforms and developer resources, review free tiers and public verification status, then use a real request to see what an endpoint you are authorized to use actually returns.",
+    "title": "The authoritative selection guide for enterprise-grade AI models and licensed cloud compute",
+    "subtitle": "A neutral, reproducible, open enterprise API probe benchmark: official vendors and licensed cloud endpoints only, with standard pricing, free quotas and measured latency — never pay-to-rank.",
     "ctaTest": "Start testing →",
     "ctaFreeTier": "Find free quotas",
     "ctaDirectory": "Browse API platforms",
@@ -80,7 +80,12 @@
     "rankingTitle": "📊 Measured official APIs",
     "rankingNote": "Click a column header to sort · latest measured data · source src/data/platforms.json",
     "perksTitle": "🎁 Official public free credits and perks",
-    "perksNote": "New-user benefits published by each provider · refer to the official page · source src/data/perks.json"
+    "perksNote": "New-user benefits published by each provider · refer to the official page · source src/data/perks.json",
+    "hubCtaEyebrow": "WEEKLY FLASH · COMMERCIAL HUB",
+    "hubCtaTitle": "🔥 This week's licensed-cloud price cuts and free quotas",
+    "hubCtaBody": "Captured automatically by radar lane R1: free quotas, limited-time price cuts and the offers board — 14-day freshness, expired entries auto-removed.",
+    "hubCtaButton": "Open the offers board →",
+    "hubCtaNote": "Links marked \"Promoted · Partner\" are partnerships that do not affect your price."
   },
   "ranking": {
     "colRank": "#",

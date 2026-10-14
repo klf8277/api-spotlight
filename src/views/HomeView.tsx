@@ -9,7 +9,7 @@ import {
   getLatencyHistory,
   getSiteData,
 } from "@/lib/content";
-import { getDictionary, localePath, template, type Locale } from "@/lib/i18n";
+import { commercialHubHref, getDictionary, localePath, template, type Locale } from "@/lib/i18n";
 
 export default function HomeView({ locale }: { locale: Locale }) {
   const dictionary = getDictionary(locale);
@@ -63,6 +63,26 @@ export default function HomeView({ locale }: { locale: Locale }) {
             <p className="text-xs text-foreground/50">{dictionary.home.perksNote}</p>
           </div>
           <PerksGrid locale={locale} perks={perks} />
+        </div>
+      </section>
+
+      {/* 批F 工单3-①：底部大盘引流卡 → 商业站特惠大盘（/offers） */}
+      <section className="mx-auto max-w-6xl px-4 pb-14">
+        <div className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-6 sm:p-8">
+          <div className="max-w-2xl">
+            <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.hubCtaEyebrow}</p>
+            <h2 className="mt-2 text-xl font-bold sm:text-2xl">{dictionary.home.hubCtaTitle}</h2>
+            <p className="mt-2 text-sm leading-6 text-foreground/70">{dictionary.home.hubCtaBody}</p>
+            <p className="mt-2 text-xs text-foreground/50">{dictionary.home.hubCtaNote}</p>
+          </div>
+          <a
+            href={`${commercialHubHref(locale)}offers/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg bg-foreground px-5 py-3 text-sm font-semibold text-background shadow-sm hover:opacity-90"
+          >
+            {dictionary.home.hubCtaButton}
+          </a>
         </div>
       </section>
     </>
