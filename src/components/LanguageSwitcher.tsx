@@ -28,7 +28,8 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
       title={ariaLabel}
       className="inline-flex min-h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-foreground/10 px-2 py-1.5 text-xs leading-none hover:bg-foreground/5"
     >
-      <span aria-hidden>🌐</span>
+      {/* 批F 工单1：<640px 隐藏装饰性地球字符，避免窄屏头部横向溢出（标签文字保留） */}
+      <span aria-hidden className="hidden sm:inline">🌐</span>
       <span>{label}</span>
     </Link>
   );

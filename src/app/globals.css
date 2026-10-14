@@ -71,3 +71,22 @@ button {
   outline: 2px solid rgb(16 185 129 / 0.8);
   outline-offset: 3px;
 }
+
+/* 批F 工单2-④：移动端榜单滑动提示微动效（横向轻摆；尊重系统减弱动效偏好） */
+@keyframes swipe-hint {
+  0%,
+  100% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+.animate-swipe-hint {
+  animation: swipe-hint 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-swipe-hint {
+    animation: none;
+  }
+}

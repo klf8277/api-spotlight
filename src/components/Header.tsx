@@ -32,10 +32,19 @@ export default function Header({ locale }: { locale: Locale }) {
 
   const closeDrawer = () => setDrawerOpen(false);
   const path = (value: string) => localePath(locale, value);
+  const radarHref = locale === "zh" ? "https://hub.apiops.cloud/zh/radar/" : "https://hub.apiops.cloud/radar/";
 
+  // 批F 工单1 防撞定案（2026-10-15 真机实测 7 视口 × 中英双语）：
+  //   · Logo 侧常驻 mr-4 lg:mr-8 安全区，1024px 以下整栏收进抽屉（头部只留 Logo + 菜单键）；
+  //   · 1024px+ 展示「核心六项 + 开源武器库 + 大厂特惠」短词全量导航（含语言 / 主题切换），
+  //     1280px+ 字号升到 text-sm；实测导航总宽恒小于可用宽度（1024 档 ≈744/773px、1280 档 ≈858/916px），
+  //     不触发换行、绝不与 Logo 碰撞；
+  //   · 「第三方 API 方案 / Telegram」等低频链接统一常驻抽屉（汉堡键全宽度可用，≥1024 即“更多”菜单），
+  //     避免 1152px 容器里硬塞 12 项导致物理溢出。
   const mobilePrimary = [
     { href: "/", label: dictionary.nav.home },
     { href: "/#ranking", label: dictionary.nav.platforms },
+    { href: "/#perks", label: dictionary.nav.perks },
     { href: "/free-tier", label: dictionary.nav.freeTier },
     { href: "/test", label: dictionary.nav.modelTest },
     { href: "/resources", label: dictionary.nav.resources },
@@ -43,11 +52,12 @@ export default function Header({ locale }: { locale: Locale }) {
 
   return (
     <header className="sticky top-0 z-10 border-b border-foreground/10 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-4">
+      {/* 批F 工单1：头部行 flex-wrap 兜底——极窄屏（<360px）只会换行，绝不产生横向溢出 */}
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:gap-4">
         <Link
           href={path("/")}
           onClick={closeDrawer}
-          className="group flex shrink-0 items-center gap-2.5 tracking-tight"
+          className="group mr-4 flex shrink-0 items-center gap-2.5 tracking-tight lg:mr-8"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-cyan-500/10 text-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.12)] transition-all group-hover:border-emerald-500/50 group-hover:shadow-[0_0_16px_rgba(16,185,129,0.22)] dark:text-emerald-400">
             <svg
@@ -73,72 +83,58 @@ export default function Header({ locale }: { locale: Locale }) {
             <span className="font-mono text-base font-bold tracking-tight text-foreground sm:text-lg">
               APISpotlight
             </span>
-            <span className="hidden text-[10px] font-sans font-medium tracking-wider text-foreground/50 sm:block">
+            <span className="mt-1 hidden text-[10px] font-sans font-medium tracking-wider text-foreground/50 sm:block">
               {dictionary.common.tagline}
             </span>
           </span>
         </Link>
-        <nav className="hidden min-w-0 items-center justify-end gap-0 text-xs sm:flex sm:gap-1.5 sm:text-sm">
-          <Link href={path("/#ranking")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
-            <span className="hidden sm:inline">{dictionary.nav.ranking}</span>
-            <span className="sm:hidden">{dictionary.nav.rankingShort}</span>
+        {/* 批F 工单1：桌面导航 lg 起展开（短词全量，实测恒稳单行）；flex-wrap 兜底——任何意外超宽只会换行，绝不可能压到 Logo */}
+        <nav className="hidden min-w-0 flex-wrap items-center justify-end gap-0 text-xs lg:flex lg:gap-1.5 xl:text-sm">
+          <Link href={path("/#ranking")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.rankingShort}
           </Link>
-          <Link href={path("/#perks")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
-            <span className="hidden sm:inline">{dictionary.nav.perks}</span>
-            <span className="sm:hidden">{dictionary.nav.perksShort}</span>
+          <Link href={path("/#perks")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.perksShort}
           </Link>
-          <Link href={path("/free-tier")} className="hidden shrink-0 whitespace-nowrap rounded-md px-2 py-1 hover:bg-foreground/5 sm:inline">{dictionary.nav.freeTier}</Link>
-          <Link href={path("/resources")} className="hidden shrink-0 whitespace-nowrap rounded-md px-2 py-1 hover:bg-foreground/5 sm:inline">{dictionary.nav.resources}</Link>
-          <Link href={path("/test")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
-            <span className="hidden sm:inline">{dictionary.nav.test}</span>
-            <span className="sm:hidden">{dictionary.nav.testShort}</span>
+          <Link href={path("/free-tier")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.freeTier}
           </Link>
-          <Link href={path("/method")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 sm:px-2">
-            <span className="hidden sm:inline">{dictionary.nav.methodology}</span>
-            <span className="sm:hidden">{dictionary.nav.methodologyShort}</span>
+          <Link href={path("/resources")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.resources}
+          </Link>
+          <Link href={path("/test")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.testShort}
+          </Link>
+          <Link href={path("/method")} className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 hover:bg-foreground/5 xl:px-2">
+            {dictionary.nav.methodologyShort}
           </Link>
           <a
-            href={locale === "zh" ? "https://hub.apiops.cloud/zh/radar/" : "https://hub.apiops.cloud/radar/"}
+            href={radarHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-md px-2 py-1 font-semibold text-amber-500 hover:bg-foreground/5 hover:text-amber-400 sm:inline"
+            className="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 font-semibold text-amber-500 hover:bg-foreground/5 hover:text-amber-400 xl:px-2"
           >
-            {dictionary.nav.radar || (locale === "zh" ? "🛠️ 开源武器库 (副业雷达) ↗" : "🛠️ Open-Source Toolkit ↗")}
-          </a>
-          <a
-            href={commercialHubHref(locale)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-md px-2 py-1 text-foreground/70 hover:bg-foreground/5 hover:text-foreground sm:inline"
-          >
-            {dictionary.nav.commercial}
+            {dictionary.nav.radarShort}
           </a>
           {/* 批F 工单2-A：常驻特惠药丸 → 商业站 /offers（漏斗顶部曝光） */}
           <a
             href={`${commercialHubHref(locale)}offers/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-1 hidden shrink-0 items-center whitespace-nowrap rounded-full border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-600 hover:bg-amber-500/20 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 sm:inline-flex"
+            className="ml-1 inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-600 hover:bg-amber-500/20 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
           >
             {dictionary.nav.deals}
           </a>
-          {COMMUNITY.map((c) => (
-            <a
-              key={c.href}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden rounded-md px-2 py-1 text-foreground/70 hover:bg-foreground/5 hover:text-foreground sm:inline"
-            >
-              {c.label}
-            </a>
-          ))}
           <LanguageSwitcher locale={locale} />
           <ThemeToggle locale={locale} />
         </nav>
-        <div className="flex items-center gap-2 sm:hidden">
-          <LanguageSwitcher locale={locale} />
-          <ThemeToggle locale={locale} />
+        {/* 批F 工单1：汉堡菜单全宽度常驻——lg 以下展开全量抽屉；lg 以上作为「更多」菜单，
+            常驻「第三方 API 方案 / Telegram」等低频链接，保证任何视口下全站导航零遗漏 */}
+        <div className="flex shrink-0 items-center gap-2">
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher locale={locale} />
+            <ThemeToggle locale={locale} />
+          </div>
           <button
             type="button"
             aria-label={drawerOpen ? dictionary.nav.closeDrawer : dictionary.nav.openDrawer}
@@ -152,7 +148,7 @@ export default function Header({ locale }: { locale: Locale }) {
         </div>
       </div>
       {drawerOpen && (
-        <div className="absolute inset-x-0 top-full min-h-[calc(100vh-65px)] bg-black/30 sm:hidden" onClick={closeDrawer}>
+        <div className="absolute inset-x-0 top-full min-h-[calc(100vh-65px)] bg-black/30" onClick={closeDrawer}>
           <nav
             id="mobile-navigation-drawer"
             aria-label={dictionary.nav.mobileNavLabel}
@@ -198,7 +194,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 {dictionary.nav.methodology}
               </Link>
               <a
-                href={locale === "zh" ? "https://hub.apiops.cloud/zh/radar/" : "https://hub.apiops.cloud/radar/"}
+                href={radarHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeDrawer}
@@ -209,6 +205,18 @@ export default function Header({ locale }: { locale: Locale }) {
               <a href={commercialHubHref(locale)} target="_blank" rel="noopener noreferrer" onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.commercial}
               </a>
+              {COMMUNITY.map((c) => (
+                <a
+                  key={c.href}
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeDrawer}
+                  className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5"
+                >
+                  {c.label}
+                </a>
+              ))}
             </div>
           </nav>
         </div>

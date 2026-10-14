@@ -2,7 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import PerksGrid from "@/components/PerksGrid";
 import RankingTable from "@/components/RankingTable";
-import { FreeTierCard, PlatformCard, ResourceCard } from "@/components/ContentCard";
+import { ResourceCard } from "@/components/ContentCard";
 import {
   getAuthenticityMap,
   getLastChecked,
@@ -11,9 +11,15 @@ import {
 } from "@/lib/content";
 import { commercialHubHref, getDictionary, localePath, template, type Locale } from "@/lib/i18n";
 
+/**
+ * 批F 工单2：首页黄金动线极简大瘦身。
+ *   已拔除「先看真正有用的入口」（9 张平台卡，与下方实测表重复）与
+ *   「免费额度与免费层」（6 张生硬卡片，与底部官方赠额撞车；/free-tier 路由保留）。
+ *   瘦身后动线：Hero ➔ 01·原厂 API 实测排行榜 ➔ 官方赠额算力卡（Perks）➔ 精选开发者资源（6 张）➔ 商业站特惠大盘 CTA。
+ */
 export default function HomeView({ locale }: { locale: Locale }) {
   const dictionary = getDictionary(locale);
-  const { platforms, platformContents, freeTiers, resources, perks } = getSiteData(locale);
+  const { platforms, freeTiers, resources, perks } = getSiteData(locale);
   const authenticityMap = getAuthenticityMap(locale);
   const latencyHistory = getLatencyHistory();
   const lastChecked = getLastChecked();
@@ -40,17 +46,6 @@ export default function HomeView({ locale }: { locale: Locale }) {
         lastChecked={lastChecked}
       />
 
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <div className="max-w-3xl"><p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.foundationEyebrow}</p><h2 className="mt-2 text-2xl font-bold">{dictionary.home.foundationTitle}</h2><p className="mt-3 text-sm leading-6 text-foreground/70">{dictionary.home.foundationBody}</p></div>
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{platformContents.map((content) => { const platform = platforms.find((item) => item.id === content.platform_id); return platform ? <PlatformCard key={content.slug} locale={locale} platform={platform} content={content} /> : null; })}</div>
-      </section>
-
-      <section className="border-y border-foreground/10 bg-foreground/[0.02]">
-        <div className="mx-auto max-w-6xl px-4 py-12"><div className="flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.freeTierEyebrow}</p><h2 className="mt-2 text-2xl font-bold">{dictionary.home.freeTierTitle}</h2></div><Link href={path("/free-tier")} className="text-sm underline underline-offset-4">{template(dictionary.common.viewAll, { count: freeTiers.length })}</Link></div><div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{freeTiers.slice(0, 6).map((entry) => <FreeTierCard key={entry.slug} locale={locale} entry={entry} />)}</div></div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-12"><div className="flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.resourcesEyebrow}</p><h2 className="mt-2 text-2xl font-bold">{dictionary.home.resourcesTitle}</h2></div><Link href={path("/resources")} className="text-sm underline underline-offset-4">{template(dictionary.common.viewAll, { count: resources.length })}</Link></div><div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.slice(0, 6).map((resource) => <ResourceCard key={resource.slug} locale={locale} resource={resource} />)}</div></section>
-
       <section id="ranking" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
         <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
           <div>
@@ -59,6 +54,10 @@ export default function HomeView({ locale }: { locale: Locale }) {
           </div>
           <p className="text-xs text-foreground/50">{dictionary.home.rankingNote}</p>
         </div>
+        {/* 批F 工单2-④：移动端滑动提示（微动效，仅小屏展示；表格 min-w 需横向滑动） */}
+        <p className="animate-swipe-hint mb-3 text-center text-xs font-medium text-emerald-600 sm:hidden dark:text-emerald-400">
+          {dictionary.home.rankingSwipeHint}
+        </p>
         <RankingTable
           locale={locale}
           platforms={platforms}
@@ -68,7 +67,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
         />
       </section>
 
-      <section id="perks" className="border-t border-foreground/10 bg-foreground/[0.02]">
+      <section id="perks" className="border-y border-foreground/10 bg-foreground/[0.02]">
         <div className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
           <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="text-2xl font-bold">{dictionary.home.perksTitle}</h2>
@@ -78,12 +77,15 @@ export default function HomeView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* 批F 工单3-①：底部大盘引流卡 → 商业站特惠大盘（/offers） */}
+      <section className="mx-auto max-w-6xl px-4 py-12"><div className="flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.resourcesEyebrow}</p><h2 className="mt-2 text-2xl font-bold">{dictionary.home.resourcesTitle}</h2></div><Link href={path("/resources")} className="text-sm underline underline-offset-4">{template(dictionary.common.viewAll, { count: resources.length })}</Link></div><div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{resources.slice(0, 6).map((resource) => <ResourceCard key={resource.slug} locale={locale} resource={resource} />)}</div></section>
+
+      {/* 批F 工单3-①：底部大盘引流卡 → 商业站特惠大盘（/offers）
+          min-w-0 + 标题可断行：中文大标题在 keep-all 全局规则下会撑破窄屏 flex 卡（真机 375px 实测溢出 81px 已修） */}
       <section className="mx-auto max-w-6xl px-4 pb-14">
         <div className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-6 sm:p-8">
-          <div className="max-w-2xl">
+          <div className="min-w-0 max-w-2xl">
             <p className="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{dictionary.home.hubCtaEyebrow}</p>
-            <h2 className="mt-2 text-xl font-bold sm:text-2xl">{dictionary.home.hubCtaTitle}</h2>
+            <h2 className="mt-2 text-xl font-bold [word-break:normal] sm:text-2xl">{dictionary.home.hubCtaTitle}</h2>
             <p className="mt-2 text-sm leading-6 text-foreground/70">{dictionary.home.hubCtaBody}</p>
             <p className="mt-2 text-xs text-foreground/50">{dictionary.home.hubCtaNote}</p>
           </div>
