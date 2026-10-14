@@ -12,18 +12,6 @@ const STATUS_DOT: Record<Platform["status"], string> = {
   offline: "bg-red-500",
 };
 
-const CN_ACCESS_DOT: Record<string, string> = {
-  direct: "bg-emerald-500",
-  unstable: "bg-amber-500",
-  blocked: "bg-red-500",
-};
-
-const CN_ACCESS_CLS: Record<string, string> = {
-  direct: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-  unstable: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
-  blocked: "bg-red-500/15 text-red-500",
-};
-
 const VERDICT_CLS: Record<string, string> = {
   authentic: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
   suspect: "bg-red-500/15 text-red-500",
@@ -31,6 +19,9 @@ const VERDICT_CLS: Record<string, string> = {
   skipped: "bg-foreground/5 text-foreground/50",
   "no-response": "bg-red-500/15 text-red-500",
 };
+
+// 批F 工单2-B：移动支付口径 = 公开信息整理的支付宝 / 微信支付
+const MOBILE_PAY_METHODS = ["支付宝", "微信支付"];
 
 function latencyTone(v: number): string {
   if (v < 200) return "text-emerald-600 dark:text-emerald-400";
@@ -161,11 +152,6 @@ export default function RankingTable({
   // 抽查详情展开行：点击徽标切换
   const [openId, setOpenId] = useState<string | null>(null);
 
-  const cnAccessLabels: Record<string, string> = {
-    direct: ranking.cnAccessDirect,
-    unstable: ranking.cnAccessUnstable,
-    blocked: ranking.cnAccessBlocked,
-  };
   const statusLabels: Record<Platform["status"], string> = {
     online: dictionary.common.online,
     degraded: dictionary.common.degraded,
@@ -205,7 +191,7 @@ export default function RankingTable({
   return (
     <div>
       <div className="overflow-x-auto rounded-xl border border-foreground/10 bg-background shadow-sm">
-        <table className="w-full min-w-[760px] text-sm">
+        <table className="w-full min-w-[720px] text-sm">
           <thead>
             <tr className="border-b border-foreground/10 text-left text-xs uppercase tracking-wider text-foreground/50">
               <th className="px-4 py-3 font-medium">{ranking.colRank}</th>
@@ -219,7 +205,6 @@ export default function RankingTable({
               </th>
               <th className="px-4 py-3 font-medium">{ranking.colStatus}</th>
               <th className="px-4 py-3 font-medium">{ranking.colAuthenticity}</th>
-              <th className="px-4 py-3 font-medium">{ranking.colCnAccess}</th>
               <th className="px-4 py-3 font-medium">
                 <button
                   onClick={() => onSort("latency_ms")}
@@ -241,7 +226,11 @@ export default function RankingTable({
             </tr>
           </thead>
           <tbody>
-            {sorted.map((p, i) => (
+            {sorted.map((p, i) => {
+              const pays = p.payment_methods ?? [];
+              const mobilePays = pays.filter((m) => MOBILE_PAY_METHODS.includes(m));
+              const tags = p.tags ?? [];
+              return (
               <Fragment key={p.id}>
               <tr
                 className="border-b border-foreground/5 last:border-0 hover:bg-foreground/[0.03]"
@@ -266,9 +255,9 @@ export default function RankingTable({
                       </span>
                     )}
                   </div>
-                  {(p.tags ?? []).length > 0 && (
+                  {(tags.length > 0 || p.cn_access === "direct" || mobilePays.length > 0) && (
                     <div className="mt-1 flex flex-wrap gap-1">
-                      {(p.tags ?? []).map((t) => (
+                      {tags.map((t) => (
                         <span
                           key={t}
                           className="rounded bg-foreground/5 px-1.5 py-0.5 text-[11px] text-foreground/60"
@@ -276,6 +265,25 @@ export default function RankingTable({
                           {t}
                         </span>
                       ))}
+                      {/* 批F 工单2-B：原「境内可用」大列拆解为平台列轻量徽章 */}
+                      {p.cn_access === "direct" && (
+                        <span
+                          className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400"
+                          title={ranking.badgeDirectCnTitle}
+                        >
+                          {ranking.badgeDirectCn}
+                        </span>
+                      )}
+                      {mobilePays.length > 0 && (
+                        <span
+                          className="rounded border border-emerald-500/20 bg-emerald-500/[0.06] px-1.5 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300"
+                          title={template(ranking.paymentTitle, {
+                            list: mobilePays.join(listSeparator) || ranking.paymentFallback,
+                          })}
+                        >
+                          {ranking.badgeMobilePay}
+                        </span>
+                      )}
                     </div>
                   )}
                 </td>
@@ -298,29 +306,6 @@ export default function RankingTable({
                   >
                     <VerdictBadge report={authenticityMap[p.id]} locale={locale} />
                   </button>
-                </td>
-                <td className="px-4 py-3">
-                  {(() => {
-                    const key = p.cn_access ?? "direct";
-                    const pays = p.payment_methods ?? [];
-                    return (
-                      <>
-                        <span
-                          className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ${CN_ACCESS_CLS[key] ?? ""}`}
-                          title={template(ranking.paymentTitle, { list: pays.join(listSeparator) || ranking.paymentFallback })}
-                        >
-                          <span className={`h-1.5 w-1.5 rounded-full ${CN_ACCESS_DOT[key] ?? ""}`} />
-                          {cnAccessLabels[key] ?? key}
-                        </span>
-                        <div className="mt-0.5 text-[10px] text-foreground/40">
-                          {pays.length > 0
-                            ? pays.slice(0, 2).join(" · ") +
-                              (pays.length > 2 ? ` +${pays.length - 2}` : "")
-                            : ranking.paymentInlineFallback}
-                        </div>
-                      </>
-                    );
-                  })()}
                 </td>
                 <td className="px-4 py-3 font-mono text-base font-semibold">
                   {p.latency_ms === null ? (
@@ -360,13 +345,14 @@ export default function RankingTable({
               </tr>
               {openId === p.id && (
                 <tr className="border-b border-foreground/5 bg-foreground/[0.02]">
-                  <td colSpan={9} className="px-4 py-3 text-xs">
+                  <td colSpan={8} className="px-4 py-3 text-xs">
                     <AuthDetail report={authenticityMap[p.id]} locale={locale} />
                   </td>
                 </tr>
               )}
               </Fragment>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>

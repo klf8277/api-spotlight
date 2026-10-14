@@ -4,7 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #fafafa;
+  /* 批F 工单2-A：Linear / Apple 风格温润米白（护眼纸质底色，长时间阅读不刺眼） */
+  --background: #F9F9F8;
   --foreground: #18181b;
 }
 

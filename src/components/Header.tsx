@@ -6,10 +6,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { commercialHubHref, getDictionary, localePath, type Locale } from "@/lib/i18n";
 
-// 社区链接为占位地址，上线前替换为真实群组/频道
+// 社区链接为占位地址，上线前替换为真实群组/频道（批F 工单2-A：QQ 死链已彻底拔除）
 const COMMUNITY = [
   { href: "https://t.me/klf_ai_radar", label: "Telegram" },
-  { href: "https://qm.qq.com/apitest", label: "QQ" },
 ];
 
 // Commercial Hub 独立部署，仅导航互连；本站不读取其数据（链接按语种指向对应版本）
@@ -93,6 +92,15 @@ export default function Header({ locale }: { locale: Locale }) {
           >
             {dictionary.nav.commercial}
           </a>
+          {/* 批F 工单2-A：常驻特惠药丸 → 商业站 /offers（漏斗顶部曝光） */}
+          <a
+            href={`${commercialHubHref(locale)}offers/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 hidden shrink-0 items-center whitespace-nowrap rounded-full border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-600 hover:bg-amber-500/20 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 sm:inline-flex"
+          >
+            {dictionary.nav.deals}
+          </a>
           {COMMUNITY.map((c) => (
             <a
               key={c.href}
@@ -145,6 +153,17 @@ export default function Header({ locale }: { locale: Locale }) {
             </div>
             <div className="my-4 border-t border-foreground/10" />
             <div className="grid gap-1">
+              {/* 批F 工单2-A：移动端抽屉同步常驻特惠药丸 */}
+              <a
+                href={`${commercialHubHref(locale)}offers/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeDrawer}
+                className="flex items-center justify-between rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 font-semibold text-amber-600 hover:bg-amber-500/20 dark:text-amber-400"
+              >
+                <span>{dictionary.nav.deals}</span>
+                <span className="text-xs">↗</span>
+              </a>
               <Link href={path("/method")} onClick={closeDrawer} className="rounded-lg px-3 py-3 text-sm text-foreground/75 hover:bg-foreground/5">
                 {dictionary.nav.methodology}
               </Link>

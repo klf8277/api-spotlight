@@ -34,6 +34,23 @@ export default function FreeTierDetailView({ locale, slug }: { locale: Locale; s
 
   const platform = entry.platform_id ? getLocalizedPlatform(locale, platformSlug(entry.platform_id) ?? "") : undefined;
   const platformPath = entry.platform_id ? platformSlug(entry.platform_id) : undefined;
+  // 批F 铁律：中文环境下核验状态与置信度改为中文本地化标签（不再裸露 verified / high confidence）
+  const verificationLabel =
+    entry.verification_status === "verified"
+      ? dictionary.platform.verificationVerified
+      : entry.verification_status === "partial"
+        ? dictionary.platform.verificationPartial
+        : dictionary.common.unknown;
+  const confidenceLabel =
+    entry.confidence === "high"
+      ? dictionary.card.confidenceHigh
+      : entry.confidence === "medium"
+        ? dictionary.card.confidenceMedium
+        : dictionary.card.confidenceLow;
+  const verificationFact =
+    locale === "zh"
+      ? `${entry.last_verified} · ${verificationLabel} · ${confidenceLabel}置信度`
+      : `${entry.last_verified} · ${verificationLabel} · ${confidenceLabel} confidence`;
   const facts: Array<[string, string]> = [
     [detail.factApiService, entry.api_service],
     [detail.factUnit, entry.unit],
@@ -42,7 +59,7 @@ export default function FreeTierDetailView({ locale, slug }: { locale: Locale; s
     [detail.factCreditCard, entry.credit_card],
     [detail.factSignup, entry.signup],
     [detail.factExpiration, entry.expiration],
-    [detail.factVerification, `${entry.last_verified} · ${entry.verification_status} · ${entry.confidence} confidence`],
+    [detail.factVerification, verificationFact],
   ];
   const heading = slug === "openrouter" ? detail.openrouterHeading : `${entry.provider} Free Tier`;
 

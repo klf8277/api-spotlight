@@ -1,23 +1,5 @@
 [
   {
-    "slug": "openrouter",
-    "platform_id": "provider-openrouter",
-    "short_description": "OpenAI 兼容的多模型路由入口，适合快速比较不同供应商与开放模型。",
-    "capabilities": ["统一 Chat Completions 接口", "多供应商路由", "模型价格与可用性比较"],
-    "free_tier_summary": "部分模型标记为 Free；现有福利记录还包含注册初始额度。固定额度与可用模型会变化。",
-    "free_limits": "按模型、供应商和账户策略分别限速；固定日/月额度 Unknown。",
-    "credit_card": "Unknown；以控制台当前注册流程为准。",
-    "signup": "需要注册并创建 API Key。",
-    "restrictions": ["免费模型可能排队或限速", "路由可用性取决于上游供应商", "生产使用前应核对模型条款"],
-    "pricing_url": "https://openrouter.ai/pricing",
-    "documentation_url": "https://openrouter.ai/docs/quickstart",
-    "website_url": "https://openrouter.ai",
-    "last_verified": "2026-08-28",
-    "verification_status": "verified",
-    "recommended_use_cases": ["原型验证", "多模型 A/B 测试", "统一 OpenAI 兼容接入"],
-    "related_resource_slugs": ["litellm", "promptfoo", "langfuse"]
-  },
-  {
     "slug": "openai",
     "platform_id": "provider-openai",
     "short_description": "提供通用文本、推理、向量与多模态 API 的官方平台。",

@@ -24,6 +24,7 @@
     "methodology": "Methodology",
     "methodologyShort": "Method",
     "radar": "AI Radar ↗",
+    "deals": "Big-Tech Deals ↗",
     "commercial": "Third-party APIs ↗",
     "openDrawer": "Open navigation drawer",
     "closeDrawer": "Close navigation drawer",
@@ -44,29 +45,17 @@
   },
   "hero": {
     "eyebrow": "// APISpotlight · AI API Radar",
-    "title": "The authoritative selection guide for enterprise-grade AI models and licensed cloud compute",
-    "subtitle": "A neutral, reproducible, open enterprise API probe benchmark: official vendors and licensed cloud endpoints only, with standard pricing, free quotas and measured latency — never pay-to-rank.",
+    "title": "The selection guide for enterprise-grade models and compliant compute",
+    "subtitle": "Neutral reviews · Official vendors · Live latency and free-quota roundup",
     "ctaTest": "Start testing →",
-    "ctaFreeTier": "Find free quotas",
+    "ctaFreeTier": "2026 big-tech free quota & subsidy guide →",
     "ctaDirectory": "Browse API platforms",
     "securityNotice": "Only test endpoints you are authorized to use; the key stays in this browser's memory only and is cleared once testing ends.",
-    "startHere": "START HERE",
-    "quickEntries": "4 real entry points",
     "statPlatforms": "API platforms",
     "statFreeTiers": "Free tiers",
     "statResources": "Dev resources",
     "statLastChecked": "Last benchmark",
-    "disclaimer": "Platform latency, success rate and status come from actual measured data fields; a test result describes that one observation and is not permanent certification.",
-    "entryPlatformsEyebrow": "API PLATFORMS",
-    "entryPlatformsTitle": "Browse API platforms",
-    "entryPlatformsDetail": "Compare measured data and public information",
-    "entryFreeTierTitle": "Find free quotas",
-    "entryFreeTierDetail": "Allowances, conditions and verification status",
-    "entryTesterEyebrow": "GATEWAY TEST",
-    "entryTesterTitle": "Test an endpoint",
-    "entryTesterDetail": "Low-impact probe against an authorized address",
-    "entryResourcesTitle": "Browse developer resources",
-    "entryResourcesDetail": "Tools, infrastructure and documentation"
+    "disclaimer": "Platform latency, success rate and status come from actual measured data fields; a test result describes that one observation and is not permanent certification."
   },
   "home": {
     "foundationEyebrow": "CONTENT FOUNDATION",
@@ -89,17 +78,17 @@
   },
   "ranking": {
     "colRank": "#",
-    "colSite": "Site",
+    "colSite": "Platform",
     "colStatus": "Status",
-    "colAuthenticity": "Authenticity probe",
-    "colCnAccess": "🇨🇳 Reachable in China",
-    "cnAccessDirect": "Direct",
-    "cnAccessUnstable": "Restricted",
-    "cnAccessBlocked": "Blocked",
+    "colAuthenticity": "Authenticity",
     "colLatency": "Latency (ms)",
     "colSuccessRate": "Success rate",
-    "colModels": "Models",
-    "colEntry": "Entry",
+    "colModels": "Top models",
+    "colEntry": "Website",
+    "badgeDirectCn": "Direct in China",
+    "badgeDirectCnTitle": "Measured from this site's machine in mainland China: directly reachable (not an official guarantee; cross-border networks vary over time)",
+    "badgeMobilePay": "Mobile pay",
+    "badgeMobilePayTitle": "Compiled from public information: Alipay / WeChat Pay supported (refer to the official page)",
     "typeRelay": "🔁 Third-party relay",
     "typeRelayTitle": "Third-party relay node",
     "typeOfficial": "🏢 Official",
@@ -113,7 +102,6 @@
     "latencySparkTitle": "Latency history (last 30 days, recorded by daily probes)",
     "paymentTitle": "Payment methods: {list} (compiled from public information)",
     "paymentFallback": "refer to the official page",
-    "paymentInlineFallback": "Payment methods: refer to the official page",
     "website": "Website ↗",
     "verdictAuthentic": "✅ Authentic",
     "verdictSuspect": "⚠️ Suspected substitution",
@@ -131,7 +119,7 @@
     "detailCheckedAt": "Probed at",
     "detailSummary": "Summary: ",
     "detailNote": "Note: ",
-    "footnote": "How to read these numbers: latency is the median of the latest probe (3 samples per site); success rate = successful requests / total requests. Data is refreshed periodically by scripts/ping_test.py, and clicking a column header sorts the table. The authenticity column shows Phase 3 probe results (scripts/authenticity_test.py); rows show — / ⏳ when no test key is configured or the fingerprint baseline is not calibrated. Click a badge to expand probe details (temperature set / self-reported ID / drift / response / timestamp). The 🇨🇳 reachable-in-China column is what this site observed from a single machine and is not an official guarantee, since cross-border networks vary by time and route. Payment methods are compiled from public information; refer to the official page. The model list was compiled from official documentation and public model lists as of 2026-08; refer to the official page."
+    "footnote": "How to read these numbers: latency is the median of the latest probe (3 samples per site); success rate = successful requests / total requests. Data is refreshed periodically by scripts/ping_test.py, and clicking a column header sorts the table. The authenticity column shows Phase 3 probe results (scripts/authenticity_test.py); rows show — / ⏳ when no test key is configured or the fingerprint baseline is not calibrated. Click a badge to expand probe details (temperature set / self-reported ID / drift / response / timestamp). The \"Direct in China\" badge in the platform column is what this site observed from a single machine and is not an official guarantee, since cross-border networks vary by time and route; the \"Mobile pay\" badge is compiled from public information; refer to the official page. The model list was compiled from each vendor's official documentation and public model lists; refer to the official page."
   },
   "perks": {
     "hot": "🔥 Hot",
@@ -160,7 +148,7 @@
     "line3Suffix": "(commercial content is kept separate from this site's benchmark data).",
     "businessLabel": "Business & Partnerships:",
     "businessNote": "(for business, data and commercial enquiries only; no end-user technical support.)",
-    "copyright": "© 2026 APISpotlight (API Radar) · Static deployment · No user data collection · Community: Telegram · QQ"
+    "copyright": "© 2026 APISpotlight (API Radar) · Static deployment · No user data collection · Community: Telegram"
   },
   "freeTierIndex": {
     "eyebrow": "Verified Free Tier",
@@ -242,7 +230,7 @@
       {
         "title": "🧪 Test nodes (an honest statement of the single-node limitation)",
         "items": [
-          "🇨🇳 A local machine in mainland China: the data source for the \"reachable in China\" column (the network where the development machine sits, not a dedicated line);",
+          "🇨🇳 A local machine in mainland China: the data source for the \"Direct in China\" badge in the platform column (the network where the development machine sits, not a dedicated line);",
           "🌍 GitHub Actions runner (overseas, location scheduled by GitHub): the data source for latency / success_rate, running automatically every 6 hours;",
           "Both viewpoints are observations: cross-border networks vary by time and route (visibility, routing and rate limiting can all change), so neither is an official guarantee."
         ]

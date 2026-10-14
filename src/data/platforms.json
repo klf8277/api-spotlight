@@ -1,36 +1,5 @@
 [
   {
-    "id": "provider-openrouter",
-    "name": "OpenRouter",
-    "type": "official",
-    "url": "https://openrouter.ai",
-    "api_base": "https://openrouter.ai/api",
-    "affiliate_url": null,
-    "status": "online",
-    "latency_ms": 79,
-    "success_rate": 100.0,
-    "supported_models": [
-      "openai/gpt-5.6-luna",
-      "anthropic/claude-opus-5",
-      "google/gemini-3.7-flash",
-      "deepseek/deepseek-v4-pro"
-    ],
-    "is_featured": true,
-    "tags": [
-      "全球聚合",
-      "一 key 多模型",
-      "美元计价"
-    ],
-    "payment_methods": [
-      "国际信用卡",
-      "加密货币"
-    ],
-    "cn_access": "direct",
-    "test_endpoint": "/v1/models",
-    "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
-  },
-  {
     "id": "provider-openai",
     "name": "OpenAI",
     "type": "official",
@@ -41,15 +10,14 @@
     "latency_ms": 117,
     "success_rate": 100.0,
     "supported_models": [
-      "gpt-5.6-sol",
-      "gpt-5.6-terra",
-      "gpt-5.6-luna"
+      "gpt-4o",
+      "o1"
     ],
     "is_featured": false,
     "tags": [
       "官方直供",
       "行业标杆",
-      "GPT-5.6 家族"
+      "GPT 系列"
     ],
     "payment_methods": [
       "国际信用卡"
@@ -70,9 +38,8 @@
     "latency_ms": 94,
     "success_rate": 100.0,
     "supported_models": [
-      "claude-opus-5",
-      "claude-sonnet-5",
-      "claude-haiku-4-5"
+      "claude-3-5-sonnet",
+      "claude-3-opus"
     ],
     "is_featured": false,
     "tags": [
@@ -99,9 +66,8 @@
     "latency_ms": 69,
     "success_rate": 100.0,
     "supported_models": [
-      "gemini-3.7-flash",
-      "gemini-3.1-pro",
-      "gemini-2.5-pro"
+      "gemini-1.5-pro",
+      "gemini-1.5-flash"
     ],
     "is_featured": false,
     "tags": [
@@ -128,9 +94,8 @@
     "latency_ms": 60,
     "success_rate": 100.0,
     "supported_models": [
-      "grok-4.6",
-      "grok-4.5",
-      "grok-4.3"
+      "grok-4",
+      "grok-3-mini"
     ],
     "is_featured": false,
     "tags": [
@@ -156,9 +121,8 @@
     "latency_ms": 125,
     "success_rate": 100.0,
     "supported_models": [
-      "command-r-plus",
-      "command-r",
-      "command-a"
+      "command-a-03-2025",
+      "command-r-plus"
     ],
     "is_featured": false,
     "tags": [
@@ -186,8 +150,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "llama-3.3-70b-versatile",
-      "gemma2-27b-it",
-      "mixtral-8x7b-32768"
+      "qwen/qwen3-32b"
     ],
     "is_featured": false,
     "tags": [
@@ -215,8 +178,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "mistral-large-latest",
-      "mistral-small-latest",
-      "codestral-latest"
+      "mistral-small-latest"
     ],
     "is_featured": false,
     "tags": [
@@ -234,7 +196,7 @@
   },
   {
     "id": "provider-deepseek",
-    "name": "DeepSeek",
+    "name": "深度求索 (DeepSeek)",
     "type": "official",
     "url": "https://platform.deepseek.com",
     "api_base": "https://api.deepseek.com",
@@ -243,8 +205,8 @@
     "latency_ms": 282,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-v4-pro",
-      "deepseek-v4-flash"
+      "deepseek-chat",
+      "deepseek-reasoner"
     ],
     "is_featured": true,
     "tags": [
@@ -262,7 +224,7 @@
   },
   {
     "id": "provider-siliconflow",
-    "name": "SiliconFlow",
+    "name": "硅基流动 (SiliconFlow)",
     "type": "official",
     "url": "https://siliconflow.cn",
     "api_base": "https://api.siliconflow.cn",
@@ -271,9 +233,8 @@
     "latency_ms": 575,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-ai/DeepSeek-V4-Pro",
-      "Qwen/Qwen3.7-Max",
-      "THUDM/GLM-4-9B-Chat"
+      "deepseek-ai/DeepSeek-V3",
+      "Qwen/Qwen3-8B"
     ],
     "is_featured": true,
     "tags": [
@@ -292,7 +253,7 @@
   },
   {
     "id": "provider-moonshot",
-    "name": "Moonshot AI (Kimi)",
+    "name": "月之暗面 (Moonshot AI)",
     "type": "official",
     "url": "https://platform.moonshot.cn",
     "api_base": "https://api.moonshot.cn",
@@ -301,9 +262,8 @@
     "latency_ms": 926,
     "success_rate": 100.0,
     "supported_models": [
-      "moonshot-v1-8k",
-      "moonshot-v1-32k",
-      "kimi-k2"
+      "moonshot-v1-auto",
+      "moonshot-v1-128k"
     ],
     "is_featured": true,
     "tags": [
@@ -322,7 +282,7 @@
   },
   {
     "id": "provider-zhipu",
-    "name": "智谱 AI (GLM)",
+    "name": "智谱 AI (Zhipu AI)",
     "type": "official",
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
@@ -331,8 +291,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "glm-4-plus",
-      "glm-4.5",
-      "glm-4-air"
+      "glm-4-flash"
     ],
     "is_featured": false,
     "tags": [
@@ -350,7 +309,7 @@
   },
   {
     "id": "provider-bailian",
-    "name": "阿里云百炼 (通义)",
+    "name": "阿里百炼 (Aliyun Bailian)",
     "type": "official",
     "url": "https://bailian.console.aliyun.com",
     "api_base": "https://dashscope.aliyuncs.com",
@@ -360,7 +319,6 @@
     "success_rate": 100.0,
     "supported_models": [
       "qwen-max",
-      "qwen-turbo",
       "qwen-plus"
     ],
     "is_featured": false,
@@ -381,7 +339,7 @@
   },
   {
     "id": "provider-qianfan",
-    "name": "百度千帆 (文心)",
+    "name": "百度千帆 (Baidu Qianfan)",
     "type": "official",
     "url": "https://qianfan.baidubce.com",
     "api_base": "https://qianfan.baidubce.com",
@@ -390,9 +348,8 @@
     "latency_ms": 686,
     "success_rate": 100.0,
     "supported_models": [
-      "ernie-4.0-8k",
-      "ernie-4.5",
-      "ernie-3.5-8k"
+      "ernie-4.0-turbo-8k",
+      "ernie-speed-128k"
     ],
     "is_featured": false,
     "tags": [
@@ -412,7 +369,7 @@
   },
   {
     "id": "provider-volcano",
-    "name": "火山引擎方舟 (豆包)",
+    "name": "火山方舟 (Volcengine Ark)",
     "type": "official",
     "url": "https://www.volcengine.com/product/ark",
     "api_base": "https://ark.cn-beijing.volces.com",
@@ -421,9 +378,8 @@
     "latency_ms": 657,
     "success_rate": 100.0,
     "supported_models": [
-      "doubao-pro-128k",
-      "doubao-pro-32k",
-      "doubao-lite-32k"
+      "doubao-1.5-pro",
+      "doubao-lite"
     ],
     "is_featured": false,
     "tags": [
@@ -443,7 +399,7 @@
   },
   {
     "id": "provider-tencent",
-    "name": "腾讯混元",
+    "name": "腾讯混元 (Tencent Hunyuan)",
     "type": "official",
     "url": "https://cloud.tencent.com/product/hunyuan",
     "api_base": "https://api.hunyuan.cloud.tencent.com",
@@ -452,9 +408,8 @@
     "latency_ms": 1466,
     "success_rate": 100.0,
     "supported_models": [
-      "hunyuan-turbo",
-      "hunyuan-pro",
-      "hunyuan-large"
+      "hunyuan-standard",
+      "hunyuan-turbo"
     ],
     "is_featured": false,
     "tags": [
@@ -481,8 +436,8 @@
     "latency_ms": 905,
     "success_rate": 100.0,
     "supported_models": [
-      "abab6.5s-chat",
-      "MiniMax-M1"
+      "MiniMax-M1",
+      "MiniMax-Text-01"
     ],
     "is_featured": false,
     "tags": [
@@ -510,8 +465,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "step-2-16k",
-      "step-1-32k",
-      "step-1-8k"
+      "step-2-mini"
     ],
     "is_featured": false,
     "tags": [
@@ -538,9 +492,8 @@
     "latency_ms": 80,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-ai/DeepSeek-V4-Pro",
       "meta-llama/Llama-3.3-70B-Instruct",
-      "Qwen/Qwen3.7-Max"
+      "deepseek-ai/DeepSeek-V3"
     ],
     "is_featured": true,
     "tags": [
@@ -567,9 +520,8 @@
     "latency_ms": 10,
     "success_rate": 100.0,
     "supported_models": [
-      "accounts/fireworks/models/llama-v3p1-70b-instruct",
-      "accounts/fireworks/models/deepseek-v3",
-      "accounts/fireworks/models/qwen2p5-72b-instruct"
+      "llama-v3p3-70b-instruct",
+      "deepseek-v3"
     ],
     "is_featured": false,
     "tags": [
@@ -596,9 +548,8 @@
     "latency_ms": 110,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek/deepseek-v4-pro",
-      "qwen/qwen3.7-max",
-      "meta-llama/llama-4-maverick-17b-128e-instruct-fp8"
+      "deepseek/deepseek-v3",
+      "meta-llama/llama-3.3-70b-instruct"
     ],
     "is_featured": false,
     "tags": [
@@ -625,8 +576,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "sonar",
-      "sonar-pro",
-      "sonar-reasoning"
+      "sonar-pro"
     ],
     "is_featured": true,
     "tags": [
@@ -653,8 +603,7 @@
     "success_rate": 0.0,
     "supported_models": [
       "meta/llama-3.3-70b-instruct",
-      "deepseek-ai/deepseek-r1",
-      "moonshotai/kimi-k2"
+      "deepseek-ai/deepseek-r1"
     ],
     "is_featured": false,
     "tags": [
@@ -682,8 +631,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "meta-llama/Llama-3.3-70B-Instruct",
-      "deepseek-ai/DeepSeek-V4-Pro",
-      "Qwen/Qwen3.7-Max"
+      "deepseek-ai/DeepSeek-V3"
     ],
     "is_featured": true,
     "tags": [
@@ -709,9 +657,8 @@
     "latency_ms": 110,
     "success_rate": 100.0,
     "supported_models": [
-      "llama-3.3-70b",
-      "llama3.1-8b",
-      "qwen3-32b"
+      "llama3.3-70b",
+      "qwen-3-32b"
     ],
     "is_featured": false,
     "tags": [
@@ -737,8 +684,7 @@
     "latency_ms": 302,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-ai/DeepSeek-V4-Pro",
-      "anthropic/claude-opus-5",
+      "deepseek-ai/DeepSeek-V3",
       "meta-llama/Llama-3.3-70B-Instruct"
     ],
     "is_featured": false,
@@ -766,8 +712,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "Meta-Llama-3.3-70B-Instruct",
-      "DeepSeek-R1-Distill-Llama-70B",
-      "Qwen2.5-72B-Instruct"
+      "DeepSeek-R1"
     ],
     "is_featured": false,
     "tags": [
@@ -794,12 +739,8 @@
     "latency_ms": 306,
     "success_rate": 100.0,
     "supported_models": [
-      "agnes-1.5-flash",
-      "agnes-2.0-flash",
       "agnes-2.5-flash",
-      "agnes-image-2.0-flash",
-      "agnes-image-2.1-flash",
-      "agnes-video-v2.0"
+      "agnes-image-2.1-flash"
     ],
     "is_featured": false,
     "tags": [

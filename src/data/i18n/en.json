@@ -1,24 +1,12 @@
 {
   "$comment": "English translation overlay for src/data/*.json. Keyed by id/slug; any missing key falls back to the Chinese base data. Do not add contract fields here: platforms.json / perks.json / authenticity.json are rewritten by probe scripts and are frozen by Contract v1.",
   "platforms": {
-    "provider-openrouter": {
-      "name": "OpenRouter",
-      "tags": [
-        "Global aggregation",
-        "One key, many models",
-        "USD pricing"
-      ],
-      "payment_methods": [
-        "International credit card",
-        "Cryptocurrency"
-      ]
-    },
     "provider-openai": {
       "name": "OpenAI",
       "tags": [
         "Official direct access",
         "Industry benchmark",
-        "GPT-5.6 family"
+        "GPT family"
       ],
       "payment_methods": [
         "International credit card"
@@ -125,7 +113,7 @@
       ]
     },
     "provider-zhipu": {
-      "name": "Zhipu AI (GLM)",
+      "name": "Zhipu AI",
       "tags": [
         "Top tier in China",
         "GLM family"
@@ -136,7 +124,7 @@
       ]
     },
     "provider-bailian": {
-      "name": "Alibaba Cloud Model Studio (Tongyi)",
+      "name": "Aliyun Bailian",
       "tags": [
         "Alibaba ecosystem",
         "Qwen models",
@@ -311,28 +299,6 @@
     }
   },
   "platformContent": {
-    "openrouter": {
-      "short_description": "An OpenAI-compatible multi-model routing entry point, useful for quickly comparing different providers and open models.",
-      "capabilities": [
-        "Unified Chat Completions interface",
-        "Multi-provider routing",
-        "Model price and availability comparison"
-      ],
-      "free_tier_summary": "Some models are marked as Free; existing benefit records also include a sign-up credit. Fixed allowances and available models change over time.",
-      "free_limits": "Rate limits are applied per model, provider and account policy; fixed daily/monthly allowances are Unknown.",
-      "credit_card": "Unknown; refer to the current sign-up flow in the console.",
-      "signup": "Requires sign-up and creating an API key.",
-      "restrictions": [
-        "Free models may be queued or rate limited",
-        "Routing availability depends on upstream providers",
-        "Check model terms before production use"
-      ],
-      "recommended_use_cases": [
-        "Prototyping",
-        "Multi-model A/B testing",
-        "Unified OpenAI-compatible access"
-      ]
-    },
     "openai": {
       "short_description": "The official platform offering general text, reasoning, embedding and multimodal APIs.",
       "capabilities": [
