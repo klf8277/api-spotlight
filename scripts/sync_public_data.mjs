@@ -8,7 +8,7 @@ import { resolve } from "node:path";
 
 const SRC = resolve("src/data");
 const DST = resolve("public/data");
-const FILES = ["platforms.json", "perks.json", "authenticity.json"];
+const FILES = ["platforms.json", "perks.json", "authenticity.json", "official_sources.json", "models_diff.json"];
 const SCHEMA_VERSION = "1.0";
 const TREND_DAYS = 30; // 与 scripts/history_update.py 的历史封顶保持一致
 

@@ -97,9 +97,9 @@
     "latency_ms": 97,
     "success_rate": 100.0,
     "supported_models": [
-      "grok-3",
-      "grok-3-mini",
-      "grok-2"
+      "grok-4.7",
+      "grok-4.6",
+      "grok-4.5"
     ],
     "is_featured": false,
     "tags": [
@@ -125,9 +125,9 @@
     "latency_ms": 66,
     "success_rate": 100.0,
     "supported_models": [
-      "command-r-plus",
-      "command-r",
-      "command-light"
+      "command-a-plus",
+      "command-a",
+      "command-r-plus"
     ],
     "is_featured": false,
     "tags": [
@@ -154,9 +154,9 @@
     "latency_ms": 91,
     "success_rate": 100.0,
     "supported_models": [
-      "llama-3.3-70b-versatile",
-      "deepseek-r1-distill-llama-70b",
-      "llama-3.1-8b-instant"
+      "meta-llama/Llama-3.3-70B-Versatile",
+      "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "meta-llama/Llama-3.1-8B-Instant"
     ],
     "is_featured": false,
     "tags": [
@@ -212,9 +212,9 @@
     "latency_ms": 416,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-chat",
-      "deepseek-reasoner",
-      "deepseek-coder"
+      "deepseek-v4-pro",
+      "deepseek-flash",
+      "deepseek-v4-flash"
     ],
     "is_featured": true,
     "tags": [
@@ -538,9 +538,9 @@
     "latency_ms": 185,
     "success_rate": 100.0,
     "supported_models": [
-      "llama-v3p3-70b-instruct",
-      "deepseek-r1",
-      "llama-v3p1-8b-instruct"
+      "meta-llama/llama-v3p3-70b-instruct",
+      "deepseek-ai/deepseek-r1",
+      "meta-llama/llama-v3p1-8b-instruct"
     ],
     "is_featured": false,
     "tags": [
@@ -568,8 +568,8 @@
     "success_rate": 100.0,
     "supported_models": [
       "meta-llama/llama-3.3-70b-instruct",
-      "deepseek/deepseek-r1",
-      "deepseek/deepseek-v3"
+      "deepseek-ai/deepseek-r1",
+      "deepseek-ai/deepseek-v3"
     ],
     "is_featured": false,
     "tags": [
@@ -680,9 +680,9 @@
     "latency_ms": 70,
     "success_rate": 100.0,
     "supported_models": [
-      "llama3.3-70b",
-      "qwen2.5-coder-32b",
-      "llama3.1-8b"
+      "meta-llama/llama3.3-70b",
+      "Qwen/qwen2.5-coder-32b",
+      "meta-llama/llama3.1-8b"
     ],
     "is_featured": false,
     "tags": [
@@ -737,7 +737,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "Meta-Llama-3.3-70B-Instruct",
-      "DeepSeek-R1",
+      "deepseek-ai/DeepSeek-R1",
       "Meta-Llama-3.1-8B-Instruct"
     ],
     "is_featured": false,

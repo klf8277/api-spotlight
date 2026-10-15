@@ -44,7 +44,15 @@ FRESHNESS_TARGETS = (
     ("platform-content.json", ("last_verified",), "平台内容"),
     ("perks.json", ("verified_at",), "官方赠额"),
     ("resources.json", ("last_verified",), "开发者资源"),
+    ("official_sources.json", ("last_verified",), "官方源出处"),
 )
+
+DOMESTIC_PLATFORM_IDS = {
+    "provider-deepseek", "provider-siliconflow", "provider-moonshot",
+    "provider-zhipu", "provider-bailian", "provider-qianfan",
+    "provider-volcano", "provider-tencent", "provider-minimax",
+    "provider-stepfun",
+}
 
 FORBIDDEN_PREFIXES = (
     "partner_", "sponsor_", "ad_", "promo_", "commercial_",
@@ -126,7 +134,63 @@ def validate_platforms(data, where: str) -> None:
             if sid in ids:
                 err(f"{where} 出现重复 id「{sid}」（[0]={ids[sid]}）")
             ids[sid] = i
+
+        # CI 硬门禁 1：境外直连硬门禁（杜绝代理污染与虚假宣称，境外恒不可标 direct）
+        if sid and sid not in DOMESTIC_PLATFORM_IDS:
+            if x.get("cn_access") == "direct":
+                err(f"{w} [硬门禁熔断] 境外平台「{x.get('name')}」违规标记为 cn_access='direct'，违反真实性与反代理污染红线！")
+
+        # CI 硬门禁 2：算力托管抢夺原厂旗舰红线
+        if x.get("type") == "relay":
+            first_model = (x.get("supported_models") or [""])[0].lower()
+            if "deepseek-r1" in first_model and not first_model.startswith("deepseek-ai/"):
+                err(f"{w} [硬门禁熔断] 算力托管平台不可将未经冠名的第三方原厂旗舰「{first_model}」设为主打首位！")
+
         check_forbidden_keys(x, w)
+
+
+def validate_official_sources(platforms: list[dict], data, where: str) -> None:
+    if not isinstance(data, dict):
+        err(f"{where}: 必须为对象")
+        return
+    sources = data.get("sources")
+    if not isinstance(sources, list) or not sources:
+        err(f"{where}.sources 必须为非空数组")
+        return
+    sources_map: dict[str, dict] = {}
+    today = date.today()
+    for i, s in enumerate(sources):
+        sw = f"{where}.sources[{i}]"
+        pid = s.get("platform_id")
+        if not pid:
+            err(f"{sw}.platform_id 缺失")
+            continue
+        sources_map[pid] = s
+        murl = s.get("models_url")
+        if not murl or not str(murl).startswith("https://"):
+            err(f"{sw}.models_url 必须为有效 https:// 官方出处链接")
+        lv = s.get("last_verified")
+        if not lv or not DATE.match(str(lv)):
+            err(f"{sw}.last_verified 必须为 YYYY-MM-DD")
+        else:
+            try:
+                days = (today - date.fromisoformat(str(lv))).days
+                if days > FRESHNESS_MAX_DAYS:
+                    err(f"{sw}.last_verified 已过期 {days} 天（超过 {FRESHNESS_MAX_DAYS} 天上限）")
+            except ValueError:
+                err(f"{sw}.last_verified 日期格式无法解析")
+
+    for i, p in enumerate(platforms):
+        pid = p.get("id")
+        pw = f"src/data/platforms.json[{i}]"
+        if pid not in sources_map:
+            err(f"{pw} (id={pid}) 未在 official_sources.json 中登记权威官方源（一家一源红线）")
+            continue
+        src = sources_map[pid]
+        active_models = set(src.get("active_models", []))
+        for m in p.get("supported_models", []):
+            if m not in active_models:
+                err(f"{pw}.supported_models 模型「{m}」未在 official_sources.json 权威源中登记认证")
 
 
 def validate_perks(data, where: str) -> None:
@@ -269,7 +333,7 @@ def check_freshness() -> None:
         except json.JSONDecodeError:
             continue
         if isinstance(data, dict):
-            data = data.get("reports") or data.get("entries") or data.get("profiles") or []
+            data = data.get("reports") or data.get("entries") or data.get("profiles") or data.get("sources") or []
         if not isinstance(data, list):
             continue
         stale: list[tuple[int, str]] = []
@@ -337,6 +401,9 @@ def main() -> int:
     platforms = load(SRC / "platforms.json", "src/data/platforms.json")
     if platforms is not None:
         validate_platforms(platforms, "src/data/platforms.json")
+    official_sources = load(SRC / "official_sources.json", "src/data/official_sources.json")
+    if official_sources is not None and platforms is not None:
+        validate_official_sources(platforms, official_sources, "src/data/official_sources.json")
     perks = load(SRC / "perks.json", "src/data/perks.json")
     if perks is not None:
         validate_perks(perks, "src/data/perks.json")
@@ -350,7 +417,7 @@ def main() -> int:
     if (PUB / "contract.json").exists():
         platform_ids = {x.get("id") for x in platforms} if platforms else set()
         validate_trends(load(PUB / "trends.json", "public/data/trends.json"), "public/data/trends.json", platform_ids)
-        for name in ("platforms.json", "perks.json", "authenticity.json"):
+        for name in ("platforms.json", "perks.json", "authenticity.json", "official_sources.json"):
             src_v = load(SRC / name, f"src/data/{name}")
             pub_v = load(PUB / name, f"public/data/{name}")
             if src_v is not None and pub_v is not None and json.dumps(src_v, sort_keys=True) != json.dumps(pub_v, sort_keys=True):

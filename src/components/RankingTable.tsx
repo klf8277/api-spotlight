@@ -3,6 +3,7 @@
 import { Fragment, useMemo, useState } from "react";
 import type { AuthenticityReport, Platform } from "@/types";
 import { commercialHubHref, getDictionary, template, type Locale } from "@/lib/i18n";
+import officialSourcesData from "@/data/official_sources.json";
 
 type SortKey = "name" | "latency_ms" | "success_rate";
 
@@ -161,6 +162,14 @@ export default function RankingTable({
     offline: dictionary.common.offline,
   };
   const listSeparator = locale === "zh" ? "、" : ", ";
+
+  const officialSourceMap = useMemo(() => {
+    const map: Record<string, { models_url: string; last_verified: string; evidence: string }> = {};
+    for (const s of (officialSourcesData.sources as Array<{ platform_id: string; models_url: string; last_verified: string; evidence: string }>)) {
+      map[s.platform_id] = s;
+    }
+    return map;
+  }, []);
 
   const sorted = useMemo(() => {
     const arr = [...platforms];
@@ -394,6 +403,20 @@ export default function RankingTable({
                     >
                       {ranking.website}
                     </a>
+                    {officialSourceMap[p.id]?.models_url && (
+                      <a
+                        href={officialSourceMap[p.id].models_url}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="rounded border border-foreground/15 bg-foreground/5 px-1.5 py-0.5 text-[11px] font-mono text-foreground/60 transition hover:border-emerald-500/40 hover:text-emerald-600 dark:hover:text-emerald-400"
+                        title={template(ranking.officialSourceTooltip, {
+                          date: officialSourceMap[p.id].last_verified,
+                          evidence: officialSourceMap[p.id].evidence,
+                        })}
+                      >
+                        {ranking.officialSourceLink}
+                      </a>
+                    )}
                     {/* 批F 2.5 工单2：高转化导流胶囊 → 商业站特惠大盘（存在公开免费额度 / 大厂直属·国内可付的平台） */}
                     {promoPlatformIds.includes(p.id) && (
                       <a
