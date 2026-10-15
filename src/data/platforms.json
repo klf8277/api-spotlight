@@ -7,7 +7,7 @@
     "api_base": "https://api.openai.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 111,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "gpt-6-astra",
@@ -26,7 +26,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:15Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-anthropic",
@@ -36,7 +37,7 @@
     "api_base": "https://api.anthropic.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 152,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "claude-opus-5-5",
@@ -55,7 +56,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:16Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-google",
@@ -65,7 +67,7 @@
     "api_base": "https://generativelanguage.googleapis.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 145,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "gemini-4-argon",
@@ -84,7 +86,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:15Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-meta",
@@ -112,7 +115,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T13:54:18Z"
+    "last_checked": "2026-10-15T17:17:22Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-xai",
@@ -122,7 +126,7 @@
     "api_base": "https://api.x.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 97,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "grok-4.7",
@@ -140,7 +144,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:14Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-cohere",
@@ -150,7 +155,7 @@
     "api_base": "https://api.cohere.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 66,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "command-a-plus-05-2026",
@@ -169,7 +174,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:15Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-mistral",
@@ -179,7 +185,7 @@
     "api_base": "https://api.mistral.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 139,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "mistral-large-latest",
@@ -198,7 +204,8 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:21Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-deepseek",
@@ -208,7 +215,7 @@
     "api_base": "https://api.deepseek.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 416,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-v4-pro",
@@ -227,7 +234,8 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:16Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-moonshot",
@@ -237,7 +245,7 @@
     "api_base": "https://api.moonshot.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1711,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "kimi-k3",
@@ -257,7 +265,8 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:19Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-zhipu",
@@ -266,7 +275,7 @@
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 258,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "glm-5.3",
@@ -285,7 +294,8 @@
     "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:17Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-bailian",
@@ -295,7 +305,7 @@
     "api_base": "https://dashscope.aliyuncs.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 786,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "qwen3.8-max",
@@ -316,7 +326,8 @@
     "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:18Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-qianfan",
@@ -326,7 +337,7 @@
     "api_base": "https://qianfan.baidubce.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 897,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "ernie-5.1",
@@ -347,7 +358,8 @@
     "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:18Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-volcano",
@@ -357,7 +369,7 @@
     "api_base": "https://ark.cn-beijing.volces.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 2258,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "doubao-seed-2-1-pro",
@@ -378,7 +390,8 @@
     "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:17Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-tencent",
@@ -388,7 +401,7 @@
     "api_base": "https://api.hunyuan.cloud.tencent.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 2000,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "hunyuan-t1-latest",
@@ -407,7 +420,8 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:19Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-minimax",
@@ -417,7 +431,7 @@
     "api_base": "https://api.minimaxi.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1181,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "MiniMax-M3.1-Flash-Preview",
@@ -436,7 +450,8 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:19Z",
+    "measured_via": "tunnel"
   },
   {
     "id": "provider-stepfun",
@@ -446,7 +461,7 @@
     "api_base": "https://api.stepfun.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 785,
+    "latency_ms": null,
     "success_rate": 100.0,
     "supported_models": [
       "step-5-preview",
@@ -465,6 +480,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-15T07:28:19Z"
+    "last_checked": "2026-10-15T17:17:18Z",
+    "measured_via": "tunnel"
   }
 ]

@@ -24,16 +24,34 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import ipaddress
 import json
 import os
 import shutil
+import socket
 import statistics
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
+
+# TUN fake-IP 段：Clash/FlClash 虚拟网卡劫持域名的铁证段（RFC 2544 基准段被挪用）
+TUN_FAKE_NET = ipaddress.ip_network("198.18.0.0/15")
+
+
+def probe_path_kind(url: str) -> str:
+    """探测口径判定：域名解析落入 198.18.0.0/15 = 本机 TUN 隧道在应答，
+    测得延迟为隧道出口视角，禁止冒充跨境直连质量。"""
+    host = urlparse(url).hostname or ""
+    try:
+        ip = socket.getaddrinfo(host, None, socket.AF_INET)[0][4][0]
+    except OSError:
+        return "unknown"
+    return "tunnel" if ipaddress.ip_address(ip) in TUN_FAKE_NET else "direct"
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "src" / "data" / "platforms.json"
@@ -87,10 +105,27 @@ async def probe_site(
         if code is not None:
             latencies.append(elapsed)
 
+    used_endpoint = endpoint
+    web_url = (site.get("url") or "").rstrip("/")
+    if not any(c is not None for c in codes) and web_url and web_url != base:
+        codes.clear()
+        latencies.clear()
+        used_endpoint = "(web fallback)"
+        for _ in range(samples):
+            async with sem:
+                start = time.perf_counter()
+                code = await asyncio.to_thread(_http_status, web_url, headers, timeout)
+                codes.append(code)
+                if code is not None:
+                    latencies.append((time.perf_counter() - start) * 1000)
+        probe_url = web_url
+    else:
+        probe_url = base + endpoint
+
     # 成功 = 收到响应、状态码 < 500 且非 404；
     # 404 = 端点配置有误（失败）；401/403 = 服务可达但缺 Key（成功，避免误标离线）
     successes = sum(1 for c in codes if c is not None and c < 500 and c != 404)
-    success_rate = round(successes / samples * 100, 1)
+    success_rate = round(successes / samples * 100, 1) if samples > 0 else 0.0
     median_ms = round(statistics.median(latencies)) if latencies else None
 
     if success_rate >= 95:
@@ -100,6 +135,9 @@ async def probe_site(
     else:
         status = "offline"
 
+    measured_via = probe_path_kind(probe_url)
+    checked_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
     return {
         "id": site["id"],
         "name": site["name"],
@@ -108,7 +146,9 @@ async def probe_site(
         "success_rate": success_rate,
         "codes": sorted({c for c in codes if c is not None}),
         "auth": "key" if api_key else "no-key",
-        "endpoint": endpoint,
+        "endpoint": used_endpoint,
+        "checked_at": checked_at,
+        "measured_via": measured_via,
     }
 
 
@@ -118,8 +158,8 @@ async def run_all(sites: list[dict], key_env: str, samples: int, timeout: float,
 
 
 def print_report(results: list[dict]) -> None:
-    print(f"{'状态':<4} {'成功率':>7} {'延迟中位':>9}  {'站点':<14} 端点 / HTTP 记录")
-    print("-" * 90)
+    print(f"{'状态':<4} {'成功率':>7} {'延迟中位':>9} {'口径':<8} {'站点':<14} 端点 / HTTP 记录")
+    print("-" * 100)
     for r in results:
         if "error" in r:
             print(f"ERR       {r['error']}")
@@ -127,8 +167,9 @@ def print_report(results: list[dict]) -> None:
         latency = f"{r['latency_ms']}ms" if r["latency_ms"] is not None else "-"
         codes = ",".join(str(c) for c in r["codes"]) or "不可达"
         auth = r["auth"]
+        via = r.get("measured_via", "unknown")
         print(
-            f"{r['status']:<4} {r['success_rate']:>6.1f}% {latency:>9}  {r['name']:<12} "
+            f"{r['status']:<4} {r['success_rate']:>6.1f}% {latency:>9} [{via:<6}] {r['name']:<12} "
             f"{r['endpoint']} [{codes}] ({auth})"
         )
 
@@ -143,18 +184,27 @@ def update_data_file(results: list[dict]) -> int:
         sites = json.load(fh)
 
     by_id = {r["id"]: r for r in results if "error" not in r}
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # 旧版全局 now 统一盖章已废除：last_checked 必须取各平台自身探测时刻
 
     for site in sites:
         r = by_id.get(site["id"])
         if not r:
             continue
+        via = r.get("measured_via", "unknown")
+        is_blocked = site.get("cn_access") == "blocked"
+        effective_via = "tunnel" if is_blocked and via == "direct" else via
+        effective_latency = None if (is_blocked or effective_via != "direct") else r["latency_ms"]
+
         site.update(
             {
                 "status": r["status"],
-                "latency_ms": r["latency_ms"],
+                # 隧道口径及跨境受限平台禁止以直连姿态落用户可见延迟位；
+                # 排序/筛选逻辑须把 None 视为"无数据"排尾部，不得当 0
+                "latency_ms": effective_latency,
                 "success_rate": r["success_rate"],
-                "last_checked": now,
+                "last_checked": r.get("checked_at")
+                    or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "measured_via": effective_via,
             }
         )
 

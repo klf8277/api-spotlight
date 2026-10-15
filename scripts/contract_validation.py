@@ -71,7 +71,7 @@ FORBIDDEN_PREFIXES = (
     "partner_", "sponsor_", "ad_", "promo_", "commercial_",
     "tracking_", "utm_", "affiliate_link", "ref_", "referral_",
 )
-ISO8601 = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$")
+ISO8601 = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 errors: list[str] = []

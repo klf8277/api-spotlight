@@ -4,6 +4,7 @@ import { Fragment, useMemo, useState } from "react";
 import type { AuthenticityReport, Platform } from "@/types";
 import { commercialHubHref, getDictionary, template, type Locale } from "@/lib/i18n";
 import officialSourcesData from "@/data/official_sources.json";
+import { ProbeBadge } from "@/components/ProbeBadge";
 
 type SortKey = "name" | "latency_ms" | "success_rate";
 
@@ -217,6 +218,7 @@ export default function RankingTable({
       const va = a[sortKey];
       const vb = b[sortKey];
       // 无数据（null）恒排底部，避免排序方向切换时跳动
+      if (va === null && vb === null) return 0;
       if (va === null) return 1;
       if (vb === null) return -1;
       const cmp =
@@ -340,12 +342,15 @@ export default function RankingTable({
                   )}
                 </td>
                 <td className="px-4 py-3">
+                  <div className="flex flex-col gap-1 items-start">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground/5 px-2 py-0.5 text-xs">
-                    <span
-                      className={`h-2 w-2 rounded-full ${STATUS_DOT[p.status]}`}
-                    />
-                    {statusLabels[p.status]}
-                  </span>
+                      <span
+                        className={`h-2 w-2 rounded-full ${STATUS_DOT[p.status]}`}
+                      />
+                      {statusLabels[p.status]}
+                    </span>
+                    <ProbeBadge platformId={p.id} locale={locale} />
+                  </div>
                 </td>
                 <td className="px-4 py-3">
                   <button
@@ -361,7 +366,16 @@ export default function RankingTable({
                 </td>
                 <td className="tabular-metric px-4 py-3 text-base font-semibold">
                   {p.latency_ms === null ? (
-                    <span className="text-foreground/40">—</span>
+                    p.measured_via === "tunnel" ? (
+                      <span
+                        className="inline-block rounded bg-foreground/5 px-2 py-0.5 text-[11px] font-normal text-foreground/60 whitespace-nowrap"
+                        title={locale === "zh" ? "经代理隧道环境 · 暂无直连实测" : "Measured via tunnel · No direct probe"}
+                      >
+                        {locale === "zh" ? "经代理隧道 · 暂无直连实测" : "Via Tunnel · No Direct Probe"}
+                      </span>
+                    ) : (
+                      <span className="text-foreground/40">—</span>
+                    )
                   ) : (
                     <span className={latencyTone(p.latency_ms)}>{p.latency_ms}</span>
                   )}
