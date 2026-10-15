@@ -16,7 +16,7 @@ Contract v1 红线（详见 docs/contract-v1.md）：
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 # 确保在 Windows 控制台（cp936/GBK）下输出带 emoji 提示时不报 UnicodeEncodeError
@@ -34,6 +34,9 @@ SCHEMA_VERSION = "1.0"
 
 # 数据保鲜门禁（批F第3阶段）：核验日期超过该天数即控制台警告，防止再出现数月无人复核。
 FRESHNESS_MAX_DAYS = 30
+# 批B A线探针 sidecar（src/data/probe_live.json）只读消费：超 45 天未探仅黄灯提醒，
+# 不阻断构建（30 天人工核验硬闸仍以 last_checked 为准，探针是旁路辅助证词）。
+PROBE_STALE_WARN_DAYS = 45
 FRESHNESS_TARGETS = (
     # (文件, 日期字段优先序, 展示名) —— platforms.json 为探针写回的 last_checked，其余为人工核验日期
     ("platforms.json", ("last_verified", "last_checked"), "平台实测"),
@@ -301,6 +304,35 @@ def check_freshness() -> None:
     return None
 
 
+def check_probe_sidecar() -> str | None:
+    """探针副证只读消费：sidecar 存在才读，缺失静默跳过；过期仅黄灯，绝不阻断构建。"""
+    path = SRC / "probe_live.json"
+    if not path.exists():
+        return None  # 探针尚未跑过：完全静默，不干扰构建
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        warn(f"探针 sidecar 解析失败（不阻断）：{e}")
+        return None
+    generated = str(data.get("generated_at", ""))[:19]
+    try:
+        age_days = (datetime.now() - datetime.fromisoformat(generated)).days
+    except ValueError:
+        warn("探针 sidecar.generated_at 无法解析（不阻断）")
+        return None
+    s = data.get("summary") or {}
+    if age_days > PROBE_STALE_WARN_DAYS:
+        warn(
+            f"探针副证已 {age_days} 天未测活（阈值 {PROBE_STALE_WARN_DAYS}）"
+            f"→ 请跑 npm run probe:live 刷新（不阻断构建）"
+        )
+        return None
+    return (
+        f"🛰️ 探针副证：{age_days} 天前测活（{generated[:10]}）"
+        f"—— alive {s.get('alive', '?')} / dead {s.get('dead', '?')} / skipped {s.get('skipped', '?')} / blocked {s.get('blocked', '?')}"
+    )
+
+
 def main() -> int:
     platforms = load(SRC / "platforms.json", "src/data/platforms.json")
     if platforms is not None:
@@ -327,11 +359,15 @@ def main() -> int:
 
     # 防懒政保鲜门禁（批F第3阶段）：核验日期超 30 天 → 控制台警告（不阻断，同 CI 口径）
     freshness_ok = check_freshness()
+    # 探针副证只读消费（批B A线）：旁路旁证，缺失静默、过期黄灯、永不阻断
+    probe_note = check_probe_sidecar()
 
     for w in warnings:
         print(f"⚠️  {w}")
     if freshness_ok:
         print(freshness_ok)
+    if probe_note:
+        print(probe_note)
     if errors:
         print(f"❌ Contract v1 校验失败（{len(errors)} 项）:")
         for e in errors:
