@@ -12,7 +12,7 @@
     "supported_models": [
       "gpt-6-astra",
       "gpt-6.1-sol",
-      "o3"
+      "gpt-6-luna"
     ],
     "is_featured": false,
     "tags": [
@@ -23,7 +23,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -36,7 +36,7 @@
     "api_base": "https://api.anthropic.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 52,
+    "latency_ms": 152,
     "success_rate": 100.0,
     "supported_models": [
       "claude-opus-5-5",
@@ -52,7 +52,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -65,12 +65,12 @@
     "api_base": "https://generativelanguage.googleapis.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 61,
+    "latency_ms": 145,
     "success_rate": 100.0,
     "supported_models": [
-      "gemini-2.5-pro",
-      "gemini-2.5-flash",
-      "gemini-2.5-flash-lite"
+      "gemini-4-argon",
+      "gemini-3.8-flash",
+      "gemini-3.8-flash-lite"
     ],
     "is_featured": false,
     "tags": [
@@ -81,7 +81,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -109,7 +109,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -138,7 +138,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -146,7 +146,7 @@
   {
     "id": "provider-groq",
     "name": "Groq",
-    "type": "official",
+    "type": "relay",
     "url": "https://console.groq.com",
     "api_base": "https://api.groq.com/openai",
     "affiliate_url": null,
@@ -167,7 +167,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -196,7 +196,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -212,9 +212,9 @@
     "latency_ms": 416,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-v4-pro",
-      "deepseek-flash",
-      "deepseek-reasoner"
+      "deepseek-chat",
+      "deepseek-reasoner",
+      "deepseek-coder"
     ],
     "is_featured": true,
     "tags": [
@@ -233,7 +233,7 @@
   {
     "id": "provider-siliconflow",
     "name": "硅基流动 (SiliconFlow)",
-    "type": "official",
+    "type": "relay",
     "url": "https://siliconflow.cn",
     "api_base": "https://api.siliconflow.cn",
     "affiliate_url": null,
@@ -241,9 +241,9 @@
     "latency_ms": 711,
     "success_rate": 100.0,
     "supported_models": [
+      "Qwen/Qwen2.5-72B-Instruct",
       "deepseek-ai/DeepSeek-V3",
-      "deepseek-ai/DeepSeek-R1",
-      "Qwen/Qwen2.5-72B-Instruct"
+      "deepseek-ai/DeepSeek-R1"
     ],
     "is_featured": true,
     "tags": [
@@ -501,7 +501,7 @@
   {
     "id": "provider-together",
     "name": "Together AI",
-    "type": "official",
+    "type": "relay",
     "url": "https://www.together.ai",
     "api_base": "https://api.together.xyz",
     "affiliate_url": null,
@@ -509,8 +509,8 @@
     "latency_ms": 116,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-ai/DeepSeek-R1",
       "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "deepseek-ai/DeepSeek-R1",
       "meta-llama/Llama-3.1-8B-Instruct-Turbo"
     ],
     "is_featured": true,
@@ -522,7 +522,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -530,16 +530,16 @@
   {
     "id": "provider-fireworks",
     "name": "Fireworks AI",
-    "type": "official",
+    "type": "relay",
     "url": "https://fireworks.ai",
     "api_base": "https://api.fireworks.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 25,
+    "latency_ms": 185,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-r1",
       "llama-v3p3-70b-instruct",
+      "deepseek-r1",
       "llama-v3p1-8b-instruct"
     ],
     "is_featured": false,
@@ -551,7 +551,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/inference/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -559,7 +559,7 @@
   {
     "id": "provider-novita",
     "name": "Novita AI",
-    "type": "official",
+    "type": "relay",
     "url": "https://novita.ai",
     "api_base": "https://api.novita.ai",
     "affiliate_url": null,
@@ -567,9 +567,9 @@
     "latency_ms": 373,
     "success_rate": 100.0,
     "supported_models": [
+      "meta-llama/llama-3.3-70b-instruct",
       "deepseek/deepseek-r1",
-      "deepseek/deepseek-v3",
-      "meta-llama/llama-3.3-70b-instruct"
+      "deepseek/deepseek-v3"
     ],
     "is_featured": false,
     "tags": [
@@ -579,7 +579,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v3/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -587,12 +587,12 @@
   {
     "id": "provider-perplexity",
     "name": "Perplexity",
-    "type": "official",
+    "type": "relay",
     "url": "https://www.perplexity.ai",
     "api_base": "https://api.perplexity.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 46,
+    "latency_ms": 168,
     "success_rate": 100.0,
     "supported_models": [
       "sonar-reasoning-pro",
@@ -607,7 +607,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -615,7 +615,7 @@
   {
     "id": "provider-nvidia",
     "name": "NVIDIA NIM",
-    "type": "official",
+    "type": "relay",
     "url": "https://build.nvidia.com",
     "api_base": "https://integrated.api.nvidia.com",
     "affiliate_url": null,
@@ -623,9 +623,9 @@
     "latency_ms": null,
     "success_rate": 0.0,
     "supported_models": [
-      "deepseek-ai/deepseek-r1",
       "meta/llama-3.3-70b-instruct",
-      "nvidia/llama-3.1-nemotron-70b-instruct"
+      "nvidia/llama-3.1-nemotron-70b-instruct",
+      "deepseek-ai/deepseek-r1"
     ],
     "is_featured": false,
     "tags": [
@@ -644,7 +644,7 @@
   {
     "id": "provider-huggingface",
     "name": "Hugging Face",
-    "type": "official",
+    "type": "relay",
     "url": "https://huggingface.co",
     "api_base": "https://router.huggingface.co",
     "affiliate_url": null,
@@ -652,9 +652,9 @@
     "latency_ms": 54,
     "success_rate": 100.0,
     "supported_models": [
-      "deepseek-ai/DeepSeek-R1",
       "meta-llama/Llama-3.3-70B-Instruct",
-      "Qwen/Qwen2.5-Coder-32B-Instruct"
+      "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "deepseek-ai/DeepSeek-R1"
     ],
     "is_featured": true,
     "tags": [
@@ -664,7 +664,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -672,7 +672,7 @@
   {
     "id": "provider-cerebras",
     "name": "Cerebras",
-    "type": "official",
+    "type": "relay",
     "url": "https://cloud.cerebras.ai",
     "api_base": "https://api.cerebras.ai",
     "affiliate_url": null,
@@ -692,7 +692,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -700,7 +700,7 @@
   {
     "id": "provider-deepinfra",
     "name": "DeepInfra",
-    "type": "official",
+    "type": "relay",
     "url": "https://deepinfra.com",
     "api_base": "https://api.deepinfra.com",
     "affiliate_url": null,
@@ -708,9 +708,9 @@
     "latency_ms": 413,
     "success_rate": 100.0,
     "supported_models": [
+      "meta-llama/Llama-3.3-70B-Instruct",
       "deepseek-ai/DeepSeek-R1",
-      "deepseek-ai/DeepSeek-V3",
-      "meta-llama/Llama-3.3-70B-Instruct"
+      "deepseek-ai/DeepSeek-V3"
     ],
     "is_featured": false,
     "tags": [
@@ -720,7 +720,7 @@
     "payment_methods": [
       "国际信用卡"
     ],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"
@@ -728,7 +728,7 @@
   {
     "id": "provider-sambanova",
     "name": "SambaNova",
-    "type": "official",
+    "type": "relay",
     "url": "https://cloud.sambanova.ai",
     "api_base": "https://api.sambanova.ai",
     "affiliate_url": null,
@@ -736,15 +736,15 @@
     "latency_ms": 257,
     "success_rate": 100.0,
     "supported_models": [
-      "DeepSeek-R1",
       "Meta-Llama-3.3-70B-Instruct",
+      "DeepSeek-R1",
       "Meta-Llama-3.1-8B-Instruct"
     ],
     "is_featured": false,
     "tags": [
       "晶圆级芯片",
-      "R1 官方",
-      "极速"
+      "极速",
+      "晶圆级推理"
     ],
     "payment_methods": [
       "国际信用卡"
@@ -757,7 +757,7 @@
   {
     "id": "provider-agnes",
     "name": "Agnes AI",
-    "type": "official",
+    "type": "relay",
     "url": "https://agnes-ai.com",
     "api_base": "https://apihub.agnes-ai.com",
     "affiliate_url": null,
@@ -775,7 +775,7 @@
       "免费额度"
     ],
     "payment_methods": [],
-    "cn_access": "direct",
+    "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
     "last_checked": "2026-10-15T07:28:19Z"

@@ -330,16 +330,31 @@ export default function RankingTable({
                   <div className="flex flex-wrap items-center gap-1.5 min-w-[200px]">
                     {p.supported_models.map((model, mIdx) => {
                       if (mIdx === 0) {
+                        if (p.type === "official") {
+                          return (
+                            <span
+                              key={model}
+                              title={`${ranking.badgeLatestModelTitle}: ${model}`}
+                              className="inline-flex items-center gap-1.5 rounded-md border border-amber-500/60 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-800 shadow-[0_0_12px_-2px_rgba(245,158,11,0.5)] dark:border-amber-400/50 dark:from-amber-400/25 dark:via-orange-400/20 dark:to-amber-400/15 dark:text-amber-200"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+                              <span className="font-mono">{model}</span>
+                              <span className="rounded bg-amber-500/30 px-1 py-0.2 text-[9px] font-bold uppercase tracking-wider text-amber-900 dark:text-amber-100">
+                                {ranking.badgeLatestModel}
+                              </span>
+                            </span>
+                          );
+                        }
                         return (
                           <span
                             key={model}
-                            title={`${ranking.badgeLatestModelTitle}: ${model}`}
-                            className="inline-flex items-center gap-1.5 rounded-md border border-amber-500/60 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-800 shadow-[0_0_12px_-2px_rgba(245,158,11,0.5)] dark:border-amber-400/50 dark:from-amber-400/25 dark:via-orange-400/20 dark:to-amber-400/15 dark:text-amber-200"
+                            title={`${ranking.badgeHostedFeatured}: ${model}`}
+                            className="inline-flex items-center gap-1 rounded-md border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-amber-700 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-300"
                           >
-                            <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
-                            <span className="font-mono">{model}</span>
-                            <span className="rounded bg-amber-500/30 px-1 py-0.2 text-[9px] font-bold uppercase tracking-wider text-amber-900 dark:text-amber-100">
-                              {ranking.badgeLatestModel}
+                            <span className="h-1 w-1 rounded-full bg-amber-500/80" />
+                            {model}
+                            <span className="rounded bg-amber-500/20 px-1 py-0.2 text-[9px] font-medium text-amber-800 dark:text-amber-200">
+                              {ranking.badgeHostedFeatured}
                             </span>
                           </span>
                         );
