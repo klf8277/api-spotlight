@@ -94,8 +94,8 @@
     "latency_ms": 97,
     "success_rate": 100.0,
     "supported_models": [
-      "grok-4",
-      "grok-3-mini"
+      "grok-2",
+      "grok-2-mini"
     ],
     "is_featured": false,
     "tags": [
@@ -121,8 +121,8 @@
     "latency_ms": 66,
     "success_rate": 100.0,
     "supported_models": [
-      "command-a-03-2025",
-      "command-r-plus"
+      "command-r-plus",
+      "command-r"
     ],
     "is_featured": false,
     "tags": [
@@ -150,7 +150,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "llama-3.3-70b-versatile",
-      "qwen/qwen3-32b"
+      "llama-3.1-8b-instant"
     ],
     "is_featured": false,
     "tags": [
@@ -178,7 +178,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "mistral-large-latest",
-      "mistral-small-latest"
+      "codestral-latest"
     ],
     "is_featured": false,
     "tags": [
@@ -234,7 +234,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-ai/DeepSeek-V3",
-      "Qwen/Qwen3-8B"
+      "Qwen/Qwen2.5-72B-Instruct"
     ],
     "is_featured": true,
     "tags": [
@@ -378,8 +378,8 @@
     "latency_ms": 2258,
     "success_rate": 100.0,
     "supported_models": [
-      "doubao-1.5-pro",
-      "doubao-lite"
+      "doubao-pro-128k",
+      "doubao-lite-128k"
     ],
     "is_featured": false,
     "tags": [
@@ -408,8 +408,8 @@
     "latency_ms": 2000,
     "success_rate": 100.0,
     "supported_models": [
-      "hunyuan-standard",
-      "hunyuan-turbo"
+      "hunyuan-pro",
+      "hunyuan-standard"
     ],
     "is_featured": false,
     "tags": [
@@ -436,8 +436,8 @@
     "latency_ms": 1181,
     "success_rate": 100.0,
     "supported_models": [
-      "MiniMax-M1",
-      "MiniMax-Text-01"
+      "MiniMax-Text-01",
+      "abab6.5s-chat"
     ],
     "is_featured": false,
     "tags": [
@@ -465,7 +465,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "step-2-16k",
-      "step-2-mini"
+      "step-1-8k"
     ],
     "is_featured": false,
     "tags": [
@@ -575,8 +575,8 @@
     "latency_ms": 46,
     "success_rate": 100.0,
     "supported_models": [
-      "sonar",
-      "sonar-pro"
+      "sonar-pro",
+      "sonar"
     ],
     "is_featured": true,
     "tags": [
@@ -658,7 +658,7 @@
     "success_rate": 100.0,
     "supported_models": [
       "llama3.3-70b",
-      "qwen-3-32b"
+      "llama3.1-8b"
     ],
     "is_featured": false,
     "tags": [

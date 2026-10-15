@@ -324,16 +324,36 @@ export default function RankingTable({
                 </td>
                 <td className="tabular-metric px-4 py-3 text-base font-semibold">{p.success_rate.toFixed(1)}%</td>
                 <td
-                  className="px-4 py-3 text-foreground/70"
+                  className="px-4 py-3"
                   title={p.supported_models.join(listSeparator)}
                 >
-                  {p.supported_models.slice(0, 3).join(" · ")}
-                  {p.supported_models.length > 3 && (
-                    <span className="text-foreground/40">
-                      {" "}
-                      +{p.supported_models.length - 3}
-                    </span>
-                  )}
+                  <div className="flex flex-wrap items-center gap-1.5 min-w-[180px]">
+                    {p.supported_models.map((model, mIdx) => {
+                      if (mIdx === 0) {
+                        return (
+                          <span
+                            key={model}
+                            title={`${ranking.badgeLatestModelTitle}: ${model}`}
+                            className="inline-flex items-center gap-1 rounded-md border border-amber-500/40 bg-gradient-to-r from-amber-500/15 to-orange-500/10 px-2 py-0.5 text-xs font-semibold text-amber-700 shadow-[0_0_10px_-3px_rgba(245,158,11,0.35)] dark:border-amber-400/35 dark:from-amber-400/20 dark:to-orange-400/15 dark:text-amber-300"
+                          >
+                            <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+                            <span className="font-mono">{model}</span>
+                            <span className="rounded bg-amber-500/25 px-1 py-0.2 text-[9px] font-bold text-amber-800 dark:text-amber-200">
+                              {ranking.badgeLatestModel}
+                            </span>
+                          </span>
+                        );
+                      }
+                      return (
+                        <span
+                          key={model}
+                          className="inline-flex items-center rounded-md border border-foreground/10 bg-foreground/[0.04] px-1.5 py-0.5 font-mono text-xs text-foreground/70"
+                        >
+                          {model}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </td>
                 <td className="whitespace-nowrap px-4 py-3">
                   <div className="flex flex-wrap items-center gap-2">

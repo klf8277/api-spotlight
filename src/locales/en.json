@@ -86,6 +86,8 @@
     "colLatency": "Latency (ms)",
     "colSuccessRate": "Success rate",
     "colModels": "Top models",
+    "badgeLatestModel": "Latest",
+    "badgeLatestModelTitle": "Vendor's current flagship model in service",
     "colEntry": "Website",
     "badgeDirectCn": "Direct in China",
     "badgeDirectCnTitle": "Measured from this site's machine in mainland China: directly reachable (not an official guarantee; cross-border networks vary over time)",

@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T12:57:31+08:00",
+  "generated_at": "2026-10-15T15:06:30+08:00",
   "runner": "scripts/probe_live_models.py",
-  "duration_s": 179.0,
+  "duration_s": 187.6,
   "summary": {
     "total": 35,
-    "alive": 32,
+    "alive": 31,
     "degraded": 0,
-    "dead": 1,
+    "dead": 2,
     "skipped": 1,
     "blocked": 1
   },
@@ -17,11 +17,11 @@
       "id": "provider-agnes",
       "name": "Agnes AI",
       "endpoint": "https://apihub.agnes-ai.com/v1/models",
-      "status_class": "alive_public",
-      "http_status": 200,
-      "latency_ms": 996,
-      "checked_at": "2026-10-15T12:54:33+08:00",
-      "note": ""
+      "status_class": "alive_auth_walled",
+      "http_status": 401,
+      "latency_ms": 1042,
+      "checked_at": "2026-10-15T15:03:23+08:00",
+      "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
       "track": 1,
@@ -30,8 +30,8 @@
       "endpoint": "https://api.anthropic.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 867,
-      "checked_at": "2026-10-15T12:54:36+08:00",
+      "latency_ms": 787,
+      "checked_at": "2026-10-15T15:03:26+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -41,8 +41,8 @@
       "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 1460,
-      "checked_at": "2026-10-15T12:54:41+08:00",
+      "latency_ms": 1717,
+      "checked_at": "2026-10-15T15:03:32+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -52,8 +52,8 @@
       "endpoint": "https://api.cerebras.ai/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 403,
-      "latency_ms": 1095,
-      "checked_at": "2026-10-15T12:54:44+08:00",
+      "latency_ms": 765,
+      "checked_at": "2026-10-15T15:03:35+08:00",
       "note": "官方盾拦截（端点活着）"
     },
     {
@@ -63,8 +63,8 @@
       "endpoint": "https://api.cohere.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 943,
-      "checked_at": "2026-10-15T12:54:48+08:00",
+      "latency_ms": 956,
+      "checked_at": "2026-10-15T15:03:38+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -74,8 +74,8 @@
       "endpoint": "https://api.deepinfra.com/v1/openai/models",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 1277,
-      "checked_at": "2026-10-15T12:54:51+08:00",
+      "latency_ms": 886,
+      "checked_at": "2026-10-15T15:03:41+08:00",
       "note": ""
     },
     {
@@ -85,8 +85,8 @@
       "endpoint": "https://api.deepseek.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 1099,
-      "checked_at": "2026-10-15T12:54:58+08:00",
+      "latency_ms": 963,
+      "checked_at": "2026-10-15T15:03:49+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -96,8 +96,8 @@
       "endpoint": "https://api.fireworks.ai/inference/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 787,
-      "checked_at": "2026-10-15T12:55:01+08:00",
+      "latency_ms": 728,
+      "checked_at": "2026-10-15T15:03:52+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -107,8 +107,8 @@
       "endpoint": "https://generativelanguage.googleapis.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 403,
-      "latency_ms": 906,
-      "checked_at": "2026-10-15T12:55:05+08:00",
+      "latency_ms": 745,
+      "checked_at": "2026-10-15T15:03:55+08:00",
       "note": "官方盾拦截（端点活着）"
     },
     {
@@ -118,8 +118,8 @@
       "endpoint": "https://api.groq.com/openai/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 906,
-      "checked_at": "2026-10-15T12:55:08+08:00",
+      "latency_ms": 789,
+      "checked_at": "2026-10-15T15:03:59+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -129,8 +129,8 @@
       "endpoint": "https://router.huggingface.co/v1/models",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 880,
-      "checked_at": "2026-10-15T12:55:11+08:00",
+      "latency_ms": 902,
+      "checked_at": "2026-10-15T15:04:02+08:00",
       "note": ""
     },
     {
@@ -140,8 +140,8 @@
       "endpoint": "https://api.minimaxi.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 2003,
-      "checked_at": "2026-10-15T12:55:19+08:00",
+      "latency_ms": 1712,
+      "checked_at": "2026-10-15T15:04:08+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -151,8 +151,8 @@
       "endpoint": "https://api.mistral.ai/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 975,
-      "checked_at": "2026-10-15T12:55:23+08:00",
+      "latency_ms": 868,
+      "checked_at": "2026-10-15T15:04:11+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -162,8 +162,8 @@
       "endpoint": "https://api.moonshot.cn/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 2564,
-      "checked_at": "2026-10-15T12:55:32+08:00",
+      "latency_ms": 1725,
+      "checked_at": "2026-10-15T15:04:20+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -173,8 +173,8 @@
       "endpoint": "https://api.novita.ai/v3/openai/models",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 1150,
-      "checked_at": "2026-10-15T12:55:35+08:00",
+      "latency_ms": 987,
+      "checked_at": "2026-10-15T15:04:23+08:00",
       "note": ""
     },
     {
@@ -184,8 +184,8 @@
       "endpoint": "https://integrated.api.nvidia.com/v1/models",
       "status_class": "unhealthy",
       "http_status": null,
-      "latency_ms": 1594,
-      "checked_at": "2026-10-15T12:55:40+08:00",
+      "latency_ms": 1542,
+      "checked_at": "2026-10-15T15:04:26+08:00",
       "note": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of "
     },
     {
@@ -195,8 +195,8 @@
       "endpoint": "https://api.openai.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 959,
-      "checked_at": "2026-10-15T12:55:43+08:00",
+      "latency_ms": 737,
+      "checked_at": "2026-10-15T15:04:29+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -206,8 +206,8 @@
       "endpoint": "https://api.perplexity.ai/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 1160,
-      "checked_at": "2026-10-15T12:55:46+08:00",
+      "latency_ms": 846,
+      "checked_at": "2026-10-15T15:04:32+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -216,10 +216,10 @@
       "name": "百度千帆 (Baidu Qianfan)",
       "endpoint": "https://qianfan.baidubce.com/v2/models",
       "status_class": "blocked",
-      "http_status": 429,
-      "latency_ms": 2049,
-      "checked_at": "2026-10-15T12:55:56+08:00",
-      "note": "429 逢阻即退"
+      "http_status": 403,
+      "latency_ms": 2268,
+      "checked_at": "2026-10-15T15:04:40+08:00",
+      "note": "403 逢阻即退"
     },
     {
       "track": 1,
@@ -228,8 +228,8 @@
       "endpoint": "https://api.sambanova.ai/v1/models",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 860,
-      "checked_at": "2026-10-15T12:55:59+08:00",
+      "latency_ms": 1204,
+      "checked_at": "2026-10-15T15:04:44+08:00",
       "note": ""
     },
     {
@@ -239,8 +239,8 @@
       "endpoint": "https://api.siliconflow.cn/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 1492,
-      "checked_at": "2026-10-15T12:56:07+08:00",
+      "latency_ms": 1429,
+      "checked_at": "2026-10-15T15:04:49+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -250,8 +250,8 @@
       "endpoint": "https://api.stepfun.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 2160,
-      "checked_at": "2026-10-15T12:56:15+08:00",
+      "latency_ms": 1567,
+      "checked_at": "2026-10-15T15:04:57+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -261,8 +261,8 @@
       "endpoint": "https://api.hunyuan.cloud.tencent.com/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 2457,
-      "checked_at": "2026-10-15T12:56:22+08:00",
+      "latency_ms": 2522,
+      "checked_at": "2026-10-15T15:05:06+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -272,8 +272,8 @@
       "endpoint": "https://api.together.xyz/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 928,
-      "checked_at": "2026-10-15T12:56:25+08:00",
+      "latency_ms": 752,
+      "checked_at": "2026-10-15T15:05:09+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -283,8 +283,8 @@
       "endpoint": "https://ark.cn-beijing.volces.com/api/v3/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 1350,
-      "checked_at": "2026-10-15T12:56:32+08:00",
+      "latency_ms": 1233,
+      "checked_at": "2026-10-15T15:05:16+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -294,8 +294,8 @@
       "endpoint": "https://api.x.ai/v1/models",
       "status_class": "alive_auth_walled",
       "http_status": 401,
-      "latency_ms": 881,
-      "checked_at": "2026-10-15T12:56:34+08:00",
+      "latency_ms": 771,
+      "checked_at": "2026-10-15T15:05:20+08:00",
       "note": "需鉴权（端点活着，无密钥仅测活）"
     },
     {
@@ -306,7 +306,7 @@
       "status_class": "skipped",
       "http_status": null,
       "latency_ms": null,
-      "checked_at": "2026-10-15T12:56:34+08:00",
+      "checked_at": "2026-10-15T15:05:20+08:00",
       "note": "缺 api_base/test_endpoint，逢疑即跳"
     },
     {
@@ -316,8 +316,8 @@
       "endpoint": "https://apikey.fun/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 842,
-      "checked_at": "2026-10-15T12:56:40+08:00",
+      "latency_ms": 762,
+      "checked_at": "2026-10-15T15:05:24+08:00",
       "note": ""
     },
     {
@@ -327,8 +327,8 @@
       "endpoint": "https://chat.b.ai/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 2989,
-      "checked_at": "2026-10-15T12:56:50+08:00",
+      "latency_ms": 2054,
+      "checked_at": "2026-10-15T15:05:34+08:00",
       "note": ""
     },
     {
@@ -338,8 +338,8 @@
       "endpoint": "https://cun.ai/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 1197,
-      "checked_at": "2026-10-15T12:56:58+08:00",
+      "latency_ms": 1139,
+      "checked_at": "2026-10-15T15:05:42+08:00",
       "note": ""
     },
     {
@@ -349,8 +349,8 @@
       "endpoint": "https://diegeai.com/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 970,
-      "checked_at": "2026-10-15T12:57:05+08:00",
+      "latency_ms": 825,
+      "checked_at": "2026-10-15T15:05:49+08:00",
       "note": ""
     },
     {
@@ -360,8 +360,8 @@
       "endpoint": "https://hulukey.com/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 964,
-      "checked_at": "2026-10-15T12:57:08+08:00",
+      "latency_ms": 912,
+      "checked_at": "2026-10-15T15:05:56+08:00",
       "note": ""
     },
     {
@@ -369,11 +369,11 @@
       "id": "partner-kapibala",
       "name": "卡皮巴拉API",
       "endpoint": "https://kapibala.asia/",
-      "status_class": "alive_public",
-      "http_status": 200,
-      "latency_ms": 1417,
-      "checked_at": "2026-10-15T12:57:13+08:00",
-      "note": ""
+      "status_class": "unhealthy",
+      "http_status": null,
+      "latency_ms": 10015,
+      "checked_at": "2026-10-15T15:06:13+08:00",
+      "note": "<urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "track": 2,
@@ -382,8 +382,8 @@
       "endpoint": "https://ai.levolink.com/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 1064,
-      "checked_at": "2026-10-15T12:57:22+08:00",
+      "latency_ms": 930,
+      "checked_at": "2026-10-15T15:06:22+08:00",
       "note": ""
     },
     {
@@ -393,8 +393,8 @@
       "endpoint": "https://pgh.ai/",
       "status_class": "alive_public",
       "http_status": 200,
-      "latency_ms": 1590,
-      "checked_at": "2026-10-15T12:57:31+08:00",
+      "latency_ms": 1464,
+      "checked_at": "2026-10-15T15:06:30+08:00",
       "note": ""
     }
   ]
