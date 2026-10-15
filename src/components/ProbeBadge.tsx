@@ -62,7 +62,7 @@ export function ProbeBadge({ platformId, locale, className = "" }: ProbeBadgePro
     mobileText = isZh ? "未测直连" : "Not probed";
   }
 
-  const rawTime = probe.checked_at || (probeLiveData as any)?.generated_at;
+  const rawTime = probe.checked_at || (probeLiveData as { generated_at?: string })?.generated_at;
   let isExpired = false;
   if (rawTime) {
     try {
