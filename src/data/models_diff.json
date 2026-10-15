@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T14:15:19Z",
+  "generated_at": "2026-10-15T15:27:48Z",
   "summary": {
     "total_platforms": 16,
     "synced_platforms": 16,
     "divergent_platforms": 0,
     "network_probed": 16,
-    "network_reachable": 15,
-    "network_blocked_or_timeout": 1,
+    "network_reachable": 13,
+    "network_blocked_or_timeout": 3,
     "status": "clean"
   },
   "diffs": [
@@ -32,14 +32,14 @@
       "hosted_upstream": null,
       "evidence": "developers.openai.com/api/docs/models documentation confirmed (GPT-6 Astra flagship, GPT-6.1 Sol, GPT-6 Luna)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://developers.openai.com/api/docs/models",
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "9d618bf7f7268eb2c81a397f1afbe8b776abf96bb9b365e27aba638ef66868c2",
-        "latency_ms": 1034,
-        "fetched_at": "2026-10-15T14:15:19Z",
+        "latency_ms": 1505,
+        "fetched_at": "2026-10-15T15:27:48Z",
         "note": "HTTP 200 verified (payload sha256: 9d618bf7f726...)"
       }
     },
@@ -64,15 +64,15 @@
       "hosted_upstream": null,
       "evidence": "docs.anthropic.com/en/docs/about-claude/models documentation confirmed (Claude 5.5 generation: Opus, Sonnet, Haiku)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://docs.anthropic.com/en/docs/about-claude/models",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "d3aeb4b5ca81df8cfe294c265688285143082dfca4cfca66b31f0e07679cf366",
-        "latency_ms": 4319,
-        "fetched_at": "2026-10-15T14:15:20Z",
-        "note": "HTTP 200 verified (payload sha256: d3aeb4b5ca81...)"
+        "page_sha256": "9f43492b36adad11b5b25fa2d2737b202af44ceaabed00c08c923e994f684c45",
+        "latency_ms": 4757,
+        "fetched_at": "2026-10-15T15:27:50Z",
+        "note": "HTTP 200 verified (payload sha256: 9f43492b36ad...)"
       }
     },
     {
@@ -96,14 +96,14 @@
       "hosted_upstream": null,
       "evidence": "ai.google.dev/gemini-api/docs/models documentation confirmed (Gemini 4 Argon is now available, Gemini 3.8 Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://ai.google.dev/gemini-api/docs/models",
         "fetch_status": "ok",
         "status_code": 302,
         "page_sha256": "28e114958716691359b1cff65d6f2bdcd6128a3252fd9252ab2fcee5e37de9a5",
-        "latency_ms": 14642,
-        "fetched_at": "2026-10-15T14:15:24Z",
+        "latency_ms": 21985,
+        "fetched_at": "2026-10-15T15:27:55Z",
         "note": "HTTP 302 upstream response received (direct connection confirmed)"
       }
     },
@@ -126,15 +126,15 @@
       "hosted_upstream": null,
       "evidence": "dev.meta.ai/models/muse-wonder documentation confirmed (MUSE family cloud API roster: Muse Wonder 1.0 agentic flagship and Muse Spark 1.3 long-context workhorse; note: Glimmer 30B is a local open-weight release, not a cloud API model, and is excluded from this list)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://dev.meta.ai/models/muse-wonder",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "28f092def48019c410c9c993a04a23d73af822e4be4d73e6401d7f2dad1ed6e4",
-        "latency_ms": 1492,
-        "fetched_at": "2026-10-15T14:15:39Z",
-        "note": "HTTP 200 verified (payload sha256: 28f092def480...)"
+        "page_sha256": "708f873df5d9a5820fa0df87f6b29f2d9bd6c7feb9cfb3cbe7c8d4dae42db24b",
+        "latency_ms": 2408,
+        "fetched_at": "2026-10-15T15:28:17Z",
+        "note": "HTTP 200 verified (payload sha256: 708f873df5d9...)"
       }
     },
     {
@@ -158,15 +158,15 @@
       "hosted_upstream": null,
       "evidence": "docs.x.ai/docs/models documentation confirmed (Grok 4.7 recommended, Grok 4.6, Grok 4.5 listed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://docs.x.ai/docs/models",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "c5a2fcd48cec326d2d12edf466cf186cf463476816442a02ffcf017deeb8eae9",
-        "latency_ms": 1786,
-        "fetched_at": "2026-10-15T14:15:41Z",
-        "note": "HTTP 200 verified (payload sha256: c5a2fcd48cec...)"
+        "page_sha256": "bbf888349c6dcf306b86a9c9eefdb2c8a70d9a2bc1de905118346a16c98b7a73",
+        "latency_ms": 4491,
+        "fetched_at": "2026-10-15T15:28:19Z",
+        "note": "HTTP 200 verified (payload sha256: bbf888349c6d...)"
       }
     },
     {
@@ -190,14 +190,14 @@
       "hosted_upstream": null,
       "evidence": "docs.cohere.com/docs/models documentation confirmed (Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024 live versions listed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://docs.cohere.com/docs/models",
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "54f22ec94e203f2c154c694826227b3bb6b3f48cf30c1f24b26c08d777f60cf7",
-        "latency_ms": 1239,
-        "fetched_at": "2026-10-15T14:15:42Z",
+        "latency_ms": 1447,
+        "fetched_at": "2026-10-15T15:28:23Z",
         "note": "HTTP 200 verified (payload sha256: 54f22ec94e20...)"
       }
     },
@@ -222,14 +222,14 @@
       "hosted_upstream": null,
       "evidence": "docs.mistral.ai/getting-started/models/ (Mistral Large Latest, Codestral Latest canonical endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://docs.mistral.ai/getting-started/models/",
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "5fc6aee3bb6cb8beddf8e57c4a91f5bf16292c3a915c97f1339b2d264204995c",
-        "latency_ms": 2452,
-        "fetched_at": "2026-10-15T14:15:44Z",
+        "latency_ms": 2676,
+        "fetched_at": "2026-10-15T15:28:25Z",
         "note": "HTTP 200 verified (payload sha256: 5fc6aee3bb6c...)"
       }
     },
@@ -254,14 +254,14 @@
       "hosted_upstream": null,
       "evidence": "api-docs.deepseek.com documentation confirmed (deepseek-v4-pro, deepseek-flash, deepseek-v4-flash endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://api-docs.deepseek.com",
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "7ce9db1b1cc7e2efafe7cbfd57b9d46d240c20399f7bd87672c7e3a5250ccdd0",
-        "latency_ms": 993,
-        "fetched_at": "2026-10-15T14:15:46Z",
+        "latency_ms": 1308,
+        "fetched_at": "2026-10-15T15:28:28Z",
         "note": "HTTP 200 verified (payload sha256: 7ce9db1b1cc7...)"
       }
     },
@@ -286,14 +286,14 @@
       "hosted_upstream": null,
       "evidence": "platform.moonshot.cn/docs/pricing (Kimi K3 flagship series confirmed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://platform.moonshot.cn/docs/pricing",
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "3e42d8168532534dfa8451360a1c27822d10a4154fbf0b9c3395ad4dfc93c834",
-        "latency_ms": 8182,
-        "fetched_at": "2026-10-15T14:15:47Z",
+        "latency_ms": 8195,
+        "fetched_at": "2026-10-15T15:28:29Z",
         "note": "HTTP 200 verified (payload sha256: 3e42d8168532...)"
       }
     },
@@ -318,15 +318,15 @@
       "hosted_upstream": null,
       "evidence": "open.bigmodel.cn/dev/api (GLM-5.3 generation flagship & flash models)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://open.bigmodel.cn/dev/api",
-        "fetch_status": "ok",
-        "status_code": 200,
-        "page_sha256": "4c3ce17f801dad90a9f8d4caff7b73b869142b6001c887655117f3cf6918166b",
-        "latency_ms": 3691,
-        "fetched_at": "2026-10-15T14:15:55Z",
-        "note": "HTTP 200 verified (payload sha256: 4c3ce17f801d...)"
+        "fetch_status": "blocked_or_timeout",
+        "status_code": null,
+        "page_sha256": null,
+        "latency_ms": 4631,
+        "fetched_at": "2026-10-15T15:28:37Z",
+        "note": "Pure direct probe blocked or timed out (<urlopen error _ssl.c:993: The handshake operation timed out...); authentic proof of non-proxied network"
       }
     },
     {
@@ -350,15 +350,15 @@
       "hosted_upstream": null,
       "evidence": "help.aliyun.com/zh/model-studio (Qwen3.8-Max flagship, Qwen3.6-Plus, Qwen3.5-Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://help.aliyun.com/zh/model-studio/developer-reference",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "afe531fb00122369f3e919a4e0cc06f26265036e4c3ef26b768c9c803d49771a",
-        "latency_ms": 4753,
-        "fetched_at": "2026-10-15T14:15:59Z",
-        "note": "HTTP 200 verified (payload sha256: afe531fb0012...)"
+        "page_sha256": "b9317748fc739c4fbf0f769e25a09a9349cd45f65ca35ec68fb8e1bf8efbfa49",
+        "latency_ms": 5833,
+        "fetched_at": "2026-10-15T15:28:42Z",
+        "note": "HTTP 200 verified (payload sha256: b9317748fc73...)"
       }
     },
     {
@@ -382,15 +382,15 @@
       "hosted_upstream": null,
       "evidence": "cloud.baidu.com/doc/WENXINWORKSHOP (ERNIE 5.1 generation and ERNIE 4.5 Turbo)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Nlks5zkzu",
-        "fetch_status": "ok",
-        "status_code": 200,
-        "page_sha256": "53ab4fbaacebd424cb5e179b3cc2525dfef815b0db41d6011302b0d4359bba3b",
-        "latency_ms": 3827,
-        "fetched_at": "2026-10-15T14:16:04Z",
-        "note": "HTTP 200 verified (payload sha256: 53ab4fbaaceb...)"
+        "fetch_status": "blocked_or_timeout",
+        "status_code": null,
+        "page_sha256": null,
+        "latency_ms": 6005,
+        "fetched_at": "2026-10-15T15:28:48Z",
+        "note": "Pure direct probe blocked or timed out (<urlopen error _ssl.c:993: The handshake operation timed out...); authentic proof of non-proxied network"
       }
     },
     {
@@ -414,15 +414,15 @@
       "hosted_upstream": null,
       "evidence": "volcengine.com/docs/82379 (Doubao Seed 2.1 Pro / Lite model lineup)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://www.volcengine.com/docs/82379/1099475",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "f0992ac8ff42bc876c7fa7eccc7bee6c2b6cd28b8063869771c80d87fbb35194",
-        "latency_ms": 9394,
-        "fetched_at": "2026-10-15T14:16:07Z",
-        "note": "HTTP 200 verified (payload sha256: f0992ac8ff42...)"
+        "page_sha256": "8cc4ddf655369061ced42643239422887158fb5de3cfb5a0345bb7b6a6799e31",
+        "latency_ms": 8824,
+        "fetched_at": "2026-10-15T15:28:54Z",
+        "note": "HTTP 200 verified (payload sha256: 8cc4ddf65536...)"
       }
     },
     {
@@ -446,15 +446,15 @@
       "hosted_upstream": null,
       "evidence": "cloud.tencent.com/document/product/1729 (Hunyuan T1 latest flagship series)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://cloud.tencent.com/document/product/1729/104753",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "bbb04f27e583a3f43b77b34b05c7abed994053d73089fd5bc815b5f9b7b4bc67",
-        "latency_ms": 1163,
-        "fetched_at": "2026-10-15T14:16:17Z",
-        "note": "HTTP 200 verified (payload sha256: bbb04f27e583...)"
+        "page_sha256": "abd57f799ed8a58fec6bf6b320fe72228ecdc9d8bf79f6c2dc5617b5fd443735",
+        "latency_ms": 1387,
+        "fetched_at": "2026-10-15T15:29:02Z",
+        "note": "HTTP 200 verified (payload sha256: abd57f799ed8...)"
       }
     },
     {
@@ -478,14 +478,14 @@
       "hosted_upstream": null,
       "evidence": "platform.minimaxi.com/document/models (MiniMax M3.1 Flash and M3 enterprise series)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://platform.minimaxi.com/document/models",
         "fetch_status": "blocked_or_timeout",
         "status_code": null,
         "page_sha256": null,
-        "latency_ms": 3517,
-        "fetched_at": "2026-10-15T14:16:18Z",
+        "latency_ms": 3503,
+        "fetched_at": "2026-10-15T15:29:04Z",
         "note": "Pure direct probe blocked or timed out (<urlopen error _ssl.c:993: The handshake operation timed out...); authentic proof of non-proxied network"
       }
     },
@@ -510,14 +510,14 @@
       "hosted_upstream": null,
       "evidence": "platform.stepfun.com/docs/llm/model (Step-5 Preview flagship & Step-3.7 Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T14:15:19Z",
+      "last_checked": "2026-10-15T15:27:48Z",
       "network_check": {
         "tested_url": "https://platform.stepfun.com/docs/llm/model",
         "fetch_status": "ok",
         "status_code": 404,
         "page_sha256": "8b46ce28c059d77f77a48ad17459ed9a347a3976d81ea23af94cdd0f740b5101",
-        "latency_ms": 1694,
-        "fetched_at": "2026-10-15T14:16:22Z",
+        "latency_ms": 2030,
+        "fetched_at": "2026-10-15T15:29:07Z",
         "note": "HTTP 404 upstream response received (direct connection confirmed)"
       }
     }
