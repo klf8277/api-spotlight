@@ -9,7 +9,7 @@
     "calibrated": false,
     "self_id_patterns": [
       "gpt-4o",
-      "gpt-gpt-6-astra"
+      "gpt-6-astra"
     ],
     "expected_self_id": "gpt-6-astra",
     "median_tokens": null,
