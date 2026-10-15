@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T14:47:52Z",
+  "generated_at": "2026-10-15T14:15:19Z",
   "platform_count": 16,
   "sources": [
     {
@@ -9,9 +9,9 @@
       "type": "official",
       "models_url": "https://developers.openai.com/api/docs/models",
       "active_models": [
-        "gpt-5.6-sol",
-        "gpt-5.6-terra",
-        "gpt-5.6-luna"
+        "gpt-6-astra",
+        "gpt-6.1-sol",
+        "gpt-6-luna"
       ],
       "status": "synced",
       "network_check": {
@@ -19,8 +19,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "9d618bf7f7268eb2c81a397f1afbe8b776abf96bb9b365e27aba638ef66868c2",
-        "latency_ms": 1292,
-        "fetched_at": "2026-10-15T14:47:52Z",
+        "latency_ms": 1034,
+        "fetched_at": "2026-10-15T14:15:19Z",
         "note": "HTTP 200 verified (payload sha256: 9d618bf7f726...)"
       }
     },
@@ -39,10 +39,10 @@
         "tested_url": "https://docs.anthropic.com/en/docs/about-claude/models",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "c2a3d0ec414dd1231fae02f48b5878333b6c32399184b5e239d5231c64f40b06",
-        "latency_ms": 4886,
-        "fetched_at": "2026-10-15T14:47:53Z",
-        "note": "HTTP 200 verified (payload sha256: c2a3d0ec414d...)"
+        "page_sha256": "d3aeb4b5ca81df8cfe294c265688285143082dfca4cfca66b31f0e07679cf366",
+        "latency_ms": 4319,
+        "fetched_at": "2026-10-15T14:15:20Z",
+        "note": "HTTP 200 verified (payload sha256: d3aeb4b5ca81...)"
       }
     },
     {
@@ -61,8 +61,8 @@
         "fetch_status": "ok",
         "status_code": 302,
         "page_sha256": "28e114958716691359b1cff65d6f2bdcd6128a3252fd9252ab2fcee5e37de9a5",
-        "latency_ms": 18001,
-        "fetched_at": "2026-10-15T14:47:58Z",
+        "latency_ms": 14642,
+        "fetched_at": "2026-10-15T14:15:24Z",
         "note": "HTTP 302 upstream response received (direct connection confirmed)"
       }
     },
@@ -80,10 +80,10 @@
         "tested_url": "https://dev.meta.ai/models/muse-wonder",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "57a6b41f35fe990b3db235184842285a207c23215a15af02db899f73027f3056",
-        "latency_ms": 1362,
-        "fetched_at": "2026-10-15T14:48:16Z",
-        "note": "HTTP 200 verified (payload sha256: 57a6b41f35fe...)"
+        "page_sha256": "28f092def48019c410c9c993a04a23d73af822e4be4d73e6401d7f2dad1ed6e4",
+        "latency_ms": 1492,
+        "fetched_at": "2026-10-15T14:15:39Z",
+        "note": "HTTP 200 verified (payload sha256: 28f092def480...)"
       }
     },
     {
@@ -101,10 +101,10 @@
         "tested_url": "https://docs.x.ai/docs/models",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "cb155840ada6a4e6ffdcd18045905fef971ba407acec124ac7a67656b5aaf819",
-        "latency_ms": 2125,
-        "fetched_at": "2026-10-15T14:48:17Z",
-        "note": "HTTP 200 verified (payload sha256: cb155840ada6...)"
+        "page_sha256": "c5a2fcd48cec326d2d12edf466cf186cf463476816442a02ffcf017deeb8eae9",
+        "latency_ms": 1786,
+        "fetched_at": "2026-10-15T14:15:41Z",
+        "note": "HTTP 200 verified (payload sha256: c5a2fcd48cec...)"
       }
     },
     {
@@ -123,8 +123,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "54f22ec94e203f2c154c694826227b3bb6b3f48cf30c1f24b26c08d777f60cf7",
-        "latency_ms": 2404,
-        "fetched_at": "2026-10-15T14:48:19Z",
+        "latency_ms": 1239,
+        "fetched_at": "2026-10-15T14:15:42Z",
         "note": "HTTP 200 verified (payload sha256: 54f22ec94e20...)"
       }
     },
@@ -143,10 +143,10 @@
         "tested_url": "https://docs.mistral.ai/getting-started/models/",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "0202aa94bc85622b4e3db6e1ea1c99a7677c6c439cc2dfa04cc17fcb0b488a7a",
-        "latency_ms": 2830,
-        "fetched_at": "2026-10-15T14:48:22Z",
-        "note": "HTTP 200 verified (payload sha256: 0202aa94bc85...)"
+        "page_sha256": "5fc6aee3bb6cb8beddf8e57c4a91f5bf16292c3a915c97f1339b2d264204995c",
+        "latency_ms": 2452,
+        "fetched_at": "2026-10-15T14:15:44Z",
+        "note": "HTTP 200 verified (payload sha256: 5fc6aee3bb6c...)"
       }
     },
     {
@@ -165,8 +165,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "7ce9db1b1cc7e2efafe7cbfd57b9d46d240c20399f7bd87672c7e3a5250ccdd0",
-        "latency_ms": 1205,
-        "fetched_at": "2026-10-15T14:48:25Z",
+        "latency_ms": 993,
+        "fetched_at": "2026-10-15T14:15:46Z",
         "note": "HTTP 200 verified (payload sha256: 7ce9db1b1cc7...)"
       }
     },
@@ -186,8 +186,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "3e42d8168532534dfa8451360a1c27822d10a4154fbf0b9c3395ad4dfc93c834",
-        "latency_ms": 8478,
-        "fetched_at": "2026-10-15T14:48:26Z",
+        "latency_ms": 8182,
+        "fetched_at": "2026-10-15T14:15:47Z",
         "note": "HTTP 200 verified (payload sha256: 3e42d8168532...)"
       }
     },
@@ -207,8 +207,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "4c3ce17f801dad90a9f8d4caff7b73b869142b6001c887655117f3cf6918166b",
-        "latency_ms": 4048,
-        "fetched_at": "2026-10-15T14:48:34Z",
+        "latency_ms": 3691,
+        "fetched_at": "2026-10-15T14:15:55Z",
         "note": "HTTP 200 verified (payload sha256: 4c3ce17f801d...)"
       }
     },
@@ -227,10 +227,10 @@
         "tested_url": "https://help.aliyun.com/zh/model-studio/developer-reference",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "e688b1c746032119d2087755fd5d5993743ae2b4d926868ca8a0f2cd487f2030",
-        "latency_ms": 5255,
-        "fetched_at": "2026-10-15T14:48:38Z",
-        "note": "HTTP 200 verified (payload sha256: e688b1c74603...)"
+        "page_sha256": "afe531fb00122369f3e919a4e0cc06f26265036e4c3ef26b768c9c803d49771a",
+        "latency_ms": 4753,
+        "fetched_at": "2026-10-15T14:15:59Z",
+        "note": "HTTP 200 verified (payload sha256: afe531fb0012...)"
       }
     },
     {
@@ -249,8 +249,8 @@
         "fetch_status": "ok",
         "status_code": 200,
         "page_sha256": "53ab4fbaacebd424cb5e179b3cc2525dfef815b0db41d6011302b0d4359bba3b",
-        "latency_ms": 4791,
-        "fetched_at": "2026-10-15T14:48:44Z",
+        "latency_ms": 3827,
+        "fetched_at": "2026-10-15T14:16:04Z",
         "note": "HTTP 200 verified (payload sha256: 53ab4fbaaceb...)"
       }
     },
@@ -269,10 +269,10 @@
         "tested_url": "https://www.volcengine.com/docs/82379/1099475",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "bc109167326060c98d04da104d4c1c381053b4aa4ac29f2642fc4f2c2d39dc8c",
-        "latency_ms": 11646,
-        "fetched_at": "2026-10-15T14:48:48Z",
-        "note": "HTTP 200 verified (payload sha256: bc1091673260...)"
+        "page_sha256": "f0992ac8ff42bc876c7fa7eccc7bee6c2b6cd28b8063869771c80d87fbb35194",
+        "latency_ms": 9394,
+        "fetched_at": "2026-10-15T14:16:07Z",
+        "note": "HTTP 200 verified (payload sha256: f0992ac8ff42...)"
       }
     },
     {
@@ -290,10 +290,10 @@
         "tested_url": "https://cloud.tencent.com/document/product/1729/104753",
         "fetch_status": "ok",
         "status_code": 200,
-        "page_sha256": "98ba4f467d5a6b941394b135c2c720aa8e407416faeb9c4769ae177cc5da0de5",
-        "latency_ms": 1252,
-        "fetched_at": "2026-10-15T14:49:00Z",
-        "note": "HTTP 200 verified (payload sha256: 98ba4f467d5a...)"
+        "page_sha256": "bbb04f27e583a3f43b77b34b05c7abed994053d73089fd5bc815b5f9b7b4bc67",
+        "latency_ms": 1163,
+        "fetched_at": "2026-10-15T14:16:17Z",
+        "note": "HTTP 200 verified (payload sha256: bbb04f27e583...)"
       }
     },
     {
@@ -309,12 +309,12 @@
       "status": "synced",
       "network_check": {
         "tested_url": "https://platform.minimaxi.com/document/models",
-        "fetch_status": "ok",
-        "status_code": 200,
-        "page_sha256": "76fcaba839fbc3e35d33b202c9e8a97545066fb48304def392a0adcfe937bcf2",
-        "latency_ms": 9473,
-        "fetched_at": "2026-10-15T14:49:01Z",
-        "note": "HTTP 200 verified (payload sha256: 76fcaba839fb...)"
+        "fetch_status": "blocked_or_timeout",
+        "status_code": null,
+        "page_sha256": null,
+        "latency_ms": 3517,
+        "fetched_at": "2026-10-15T14:16:18Z",
+        "note": "Pure direct probe blocked or timed out (<urlopen error _ssl.c:993: The handshake operation timed out...); authentic proof of non-proxied network"
       }
     },
     {
@@ -333,8 +333,8 @@
         "fetch_status": "ok",
         "status_code": 404,
         "page_sha256": "8b46ce28c059d77f77a48ad17459ed9a347a3976d81ea23af94cdd0f740b5101",
-        "latency_ms": 2027,
-        "fetched_at": "2026-10-15T14:49:11Z",
+        "latency_ms": 1694,
+        "fetched_at": "2026-10-15T14:16:22Z",
         "note": "HTTP 404 upstream response received (direct connection confirmed)"
       }
     }
