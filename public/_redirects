@@ -8,3 +8,19 @@
 # 这里把同一份文件挂在第二个路径上，便于用新 URL 让 GSC 建立全新抓取上下文；
 # 内容与 /sitemap.xml 完全一致（同一份产物），不存在漂移。
 /sitemap-fallback.xml /sitemap.xml 200
+
+# Stage 3 双站重组 · 算力云/聚合网关 SEO 护城河 301（2026-10-15）
+# 12 家被剥离平台的详情页一对一精准 301 至商业站对应算力卡片（独立部署 hub.apiops.cloud，权重无损迁移）。
+# 主站不再收录这些平台；如未来有同类平台剥离，按同一规范逐条登记，禁止用通配符吞并保留平台路由。
+/platform/groq https://hub.apiops.cloud/providers/groq 301
+/platform/siliconflow https://hub.apiops.cloud/providers/siliconflow 301
+/platform/together-ai https://hub.apiops.cloud/providers/together-ai 301
+/platform/hugging-face https://hub.apiops.cloud/providers/hugging-face 301
+/platform/cerebras https://hub.apiops.cloud/providers/cerebras 301
+/platform/fireworks-ai https://hub.apiops.cloud/providers/fireworks-ai 301
+/platform/novita-ai https://hub.apiops.cloud/providers/novita-ai 301
+/platform/nvidia-nim https://hub.apiops.cloud/providers/nvidia-nim 301
+/platform/deepinfra https://hub.apiops.cloud/providers/deepinfra 301
+/platform/sambanova https://hub.apiops.cloud/providers/sambanova 301
+/platform/agnes-ai https://hub.apiops.cloud/providers/agnes-ai 301
+/platform/perplexity https://hub.apiops.cloud/providers/perplexity 301

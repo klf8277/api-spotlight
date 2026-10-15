@@ -1,33 +1,820 @@
 [
-  {"slug":"free-ai-apis","name":"免费 AI 接口起步清单 (Free AI APIs)","category":"免费 AI 接口","category_slug":"free-ai-apis","description":"围绕可验证免费层、初始额度和低门槛 API 的入口集合。","free_summary":"目录页免费浏览；每项需回到官方来源核对条件。","official_url":"/free-tier","documentation_url":"/method","related_platform_ids":["provider-google","provider-groq","provider-huggingface"],"related_free_tier_slugs":["groq","gemini","openrouter","huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"free-models","name":"免费开放模型库与模型卡片 (Hugging Face Models)","category":"免费开源模型","category_slug":"free-models","description":"开放模型、模型卡片、许可证与推理入口的官方目录。","free_summary":"模型目录公开浏览；推理是否免费取决于 Provider 与账户。","official_url":"https://huggingface.co/models","documentation_url":"https://huggingface.co/docs","related_platform_ids":["provider-huggingface"],"related_free_tier_slugs":["huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"free-api-credits","name":"免费 API 额度与试用代金券合集 (Free API Credits)","category":"免费额度与代金券","category_slug":"free-api-credits","description":"按官方来源整理新用户额度、试用余额与活动型代金券。","free_summary":"页面免费；额度状态必须以提供商官方页面为准。","official_url":"/free-tier","documentation_url":"/method","related_platform_ids":["provider-together","provider-siliconflow"],"related_free_tier_slugs":["openrouter","together-ai","siliconflow"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":3,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"litellm","name":"多模型统一路由与成本控制网关 (LiteLLM)","category":"开发框架与路由网关","category_slug":"developer-tools","description":"将多个 LLM 提供商统一到 OpenAI 兼容接口，适合网关、路由与成本观测。","free_summary":"开源项目，可自托管；云服务计划另行核对。","official_url":"https://github.com/BerriAI/litellm","documentation_url":"https://docs.litellm.ai/","related_platform_ids":["provider-openai","provider-anthropic","provider-deepseek","provider-groq"],"related_free_tier_slugs":["openrouter","groq"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":29,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"langchain","name":"大模型应用与 Agent 编排开发框架 (LangChain)","category":"开发框架与路由网关","category_slug":"developer-tools","description":"用于模型、工具、检索和 Agent 工作流编排的开发框架。","free_summary":"核心代码开源；第三方模型/API 费用不包含在项目内。","official_url":"https://github.com/langchain-ai/langchain","documentation_url":"https://python.langchain.com/docs/introduction/","related_platform_ids":["provider-openai","provider-anthropic","provider-google","provider-bailian"],"related_free_tier_slugs":["gemini","bailian"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"llamaindex","name":"RAG 检索增强与数据接入框架 (LlamaIndex)","category":"开发框架与路由网关","category_slug":"developer-tools","description":"面向 RAG、数据连接与 Agent 的 LLM 应用框架。","free_summary":"开源核心可自托管；模型、向量库与托管服务费用另计。","official_url":"https://github.com/run-llama/llama_index","documentation_url":"https://docs.llamaindex.ai/","related_platform_ids":["provider-openai","provider-anthropic","provider-google","provider-cohere"],"related_free_tier_slugs":["cohere","gemini"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":26,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"vllm","name":"高吞吐开源大模型推理引擎 (vLLM)","category":"本地模型与推理底座","category_slug":"ai-infrastructure","description":"高吞吐开源 LLM 推理与 OpenAI 兼容服务框架。","free_summary":"Apache-2.0 开源；运行所需 GPU/云资源可能产生费用。","official_url":"https://github.com/vllm-project/vllm","documentation_url":"https://docs.vllm.ai/","related_platform_ids":["provider-siliconflow","provider-together","provider-huggingface"],"related_free_tier_slugs":["siliconflow","together-ai","huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":29,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"ollama","name":"本地大模型免配置极速运行器 (Ollama)","category":"本地模型与推理底座","category_slug":"ai-infrastructure","description":"在本地运行开放模型并提供简单 API 的开发工具。","free_summary":"软件开源且本地运行免费；硬件、电力和模型存储成本自理。","official_url":"https://github.com/ollama/ollama","documentation_url":"https://docs.ollama.com/","related_platform_ids":["provider-groq","provider-huggingface"],"related_free_tier_slugs":["groq","huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":29,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"mcp","name":"大模型连接外部工具与数据的开放协议 (Model Context Protocol)","category":"本地模型与推理底座","category_slug":"ai-infrastructure","description":"连接模型与外部工具、数据源和工作流的开放协议。","free_summary":"规范与 SDK 公开；具体服务器的服务成本和权限单独核对。","official_url":"https://github.com/modelcontextprotocol","documentation_url":"https://modelcontextprotocol.io/","related_platform_ids":["provider-openai","provider-anthropic"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":29,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"promptfoo","name":"提示词与模型输出批量评测工具 (Promptfoo)","category":"AI 编程与评测工具","category_slug":"ai-coding-tools","description":"用于提示词、模型输出和安全策略的本地评测工具。","free_summary":"开源 CLI 可本地运行；企业能力与外部模型费用另计。","official_url":"https://github.com/promptfoo/promptfoo","documentation_url":"https://www.promptfoo.dev/docs/","related_platform_ids":["provider-openai","provider-anthropic","provider-groq"],"related_free_tier_slugs":["openrouter","groq"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":29,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"langfuse","name":"开源大模型用量追踪与调试平台 (Langfuse)","category":"成本分析与调用监控","category_slug":"observability","description":"面向 LLM 应用的 tracing、成本、延迟和质量观测平台。","free_summary":"开源版本可自托管；官方云免费层与额度需查看当前计划。","official_url":"https://github.com/langfuse/langfuse","documentation_url":"https://langfuse.com/docs","related_platform_ids":["provider-deepseek","provider-siliconflow"],"related_free_tier_slugs":["openrouter","siliconflow"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"helicone","name":"LLM API 成本分析与调用监控代理 (Helicone)","category":"成本分析与调用监控","category_slug":"observability","description":"LLM API 可观测性与成本分析工具，支持代理式接入。","free_summary":"核心项目开源；云端免费层和配额以官方计划页为准。","official_url":"https://github.com/Helicone/helicone","documentation_url":"https://docs.helicone.ai/","related_platform_ids":["provider-openai","provider-anthropic"],"related_free_tier_slugs":["openrouter"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"chroma","name":"本地优先的轻量向量数据库 (Chroma)","category":"开源向量数据库","category_slug":"free-vector-databases","description":"面向 AI 应用的开源 embedding 数据库与检索组件。","free_summary":"开源本地模式免费；云端免费层以官方计划页为准。","official_url":"https://github.com/chroma-core/chroma","documentation_url":"https://docs.trychroma.com/","related_platform_ids":["provider-openai","provider-google"],"related_free_tier_slugs":["gemini"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"qdrant","name":"支持过滤检索的开源向量搜索引擎 (Qdrant)","category":"开源向量数据库","category_slug":"free-vector-databases","description":"开源向量搜索引擎，提供过滤、相似度检索和云端服务。","free_summary":"开源自托管免费；Qdrant Cloud 免费层以官方计划页为准。","official_url":"https://github.com/qdrant/qdrant","documentation_url":"https://qdrant.tech/documentation/","related_platform_ids":["provider-openai","provider-huggingface"],"related_free_tier_slugs":["huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"weaviate","name":"模块化混合检索开源向量数据库 (Weaviate)","category":"开源向量数据库","category_slug":"free-vector-databases","description":"开源向量数据库，支持混合检索与模块化 AI 集成。","free_summary":"开源自托管免费；云免费层和资源限制需核对官方计划。","official_url":"https://github.com/weaviate/weaviate","documentation_url":"https://weaviate.io/developers/weaviate","related_platform_ids":["provider-openai","provider-google"],"related_free_tier_slugs":["gemini"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"milvus","name":"面向大规模检索的开源向量数据库 (Milvus)","category":"开源向量数据库","category_slug":"free-vector-databases","description":"面向大规模向量检索的开源数据库与云服务。","free_summary":"开源组件可自托管；Zilliz Cloud 计划另行核对。","official_url":"https://github.com/milvus-io/milvus","documentation_url":"https://github.com/milvus-io/milvus-docs","related_platform_ids":["provider-openai","provider-huggingface"],"related_free_tier_slugs":["huggingface"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"pinecone","name":"免运维托管向量数据库 (Pinecone)","category":"开源向量数据库","category_slug":"free-vector-databases","description":"托管向量数据库，面向 RAG 和语义检索应用。","free_summary":"官方提供 Starter/免费入口；具体存储、读写限制以当前计划页为准。","official_url":"https://www.pinecone.io/","documentation_url":"https://docs.pinecone.io/","related_platform_ids":["provider-openai","provider-google"],"related_free_tier_slugs":["gemini"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"modal","name":"按需启动云函数与 GPU 任务的 Python 平台 (Modal)","category":"免费算力与显卡","category_slug":"free-compute-gpu","description":"以 Python 工作流启动云函数、GPU 任务和模型推理服务。","free_summary":"官方提供开发者试用/免费额度入口；额度按当前计划核对。","official_url":"https://modal.com/","documentation_url":"https://modal.com/docs","related_platform_ids":["provider-huggingface","provider-together"],"related_free_tier_slugs":["huggingface","together-ai"],"quality":{"developer_relevance":5,"api_relevance":4,"free_value":4,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"runpod","name":"GPU 算力租用与模型部署云平台 (RunPod)","category":"免费算力与显卡","category_slug":"free-compute-gpu","description":"面向模型推理、训练和 GPU Pod 的开发者云平台。","free_summary":"公开文档与按量计费入口；免费额度需以活动/账户条件确认。","official_url":"https://www.runpod.io/","documentation_url":"https://docs.runpod.io/","related_platform_ids":["provider-huggingface","provider-together"],"related_free_tier_slugs":["huggingface","together-ai"],"quality":{"developer_relevance":5,"api_relevance":4,"free_value":3,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":26,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"huggingface-spaces","name":"零运维发布模型 Demo 的免费托管空间 (Hugging Face Spaces)","category":"免费云部署与托管","category_slug":"free-hosting","description":"用 Gradio、Streamlit 等方式发布模型 Demo 和开发者应用。","free_summary":"存在免费硬件档；休眠、资源和公开性限制以官方文档为准。","official_url":"https://huggingface.co/spaces","documentation_url":"https://huggingface.co/docs/hub/spaces","related_platform_ids":["provider-huggingface"],"related_free_tier_slugs":["huggingface","nvidia-nim"],"quality":{"developer_relevance":5,"api_relevance":4,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":28,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"kaggle-datasets","name":"可检索可复现的公开数据集仓库 (Kaggle Datasets)","category":"高质量开源语料","category_slug":"free-datasets","description":"可检索、版本化和共享的数据集目录，适合模型实验与基线复现。","free_summary":"公开浏览与下载入口；单个数据集许可证必须单独核对。","official_url":"https://www.kaggle.com/datasets","documentation_url":"https://www.kaggle.com/docs/datasets","related_platform_ids":["provider-huggingface"],"related_free_tier_slugs":["huggingface"],"quality":{"developer_relevance":5,"api_relevance":3,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":26,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"common-crawl","name":"全球公开网页语料库与抓取数据集 (Common Crawl)","category":"高质量开源语料","category_slug":"free-datasets","description":"公开网页抓取语料与索引，适合检索、数据工程和研究用途。","free_summary":"数据公开可下载；需遵守数据集条款、robots 与下游许可证要求。","official_url":"https://commoncrawl.org/","documentation_url":"https://commoncrawl.org/get-started","related_platform_ids":["provider-huggingface"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":3,"free_value":5,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"github-actions","name":"代码仓库自动化 CI/CD 流水线 (GitHub Actions)","category":"开发与自动化工具","category_slug":"devops","description":"将测试、数据更新和静态部署自动化的 CI/CD 平台。","free_summary":"公共仓库通常有免费 Actions 配额；分钟数与组织计划以官方政策为准。","official_url":"https://github.com/features/actions","documentation_url":"https://docs.github.com/en/actions","related_platform_ids":["provider-groq"],"related_free_tier_slugs":["openrouter","groq"],"quality":{"developer_relevance":5,"api_relevance":4,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":5,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"cloudflare-pages","name":"静态网站与前端免费边缘部署 (Cloudflare Pages)","category":"免费云部署与托管","category_slug":"free-hosting","description":"适合静态站点和前端构建产物的边缘部署平台。","free_summary":"官方提供 Pages 免费计划；构建、请求和功能限制以当前计划页为准。","official_url":"https://pages.cloudflare.com/","documentation_url":"https://developers.cloudflare.com/pages/","related_platform_ids":[],"related_free_tier_slugs":["openrouter"],"quality":{"developer_relevance":5,"api_relevance":3,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":5,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"sentry","name":"应用错误追踪与性能监控 (Sentry)","category":"成本分析与调用监控","category_slug":"observability","description":"错误追踪、性能监控和发布健康度分析工具。","free_summary":"官方提供开发者免费计划；事件量与保留期以当前计划页为准。","official_url":"https://sentry.io/","documentation_url":"https://docs.sentry.io/","related_platform_ids":["provider-openai","provider-anthropic"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":3,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":5,"total":26,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"posthog","name":"产品行为分析与增长实验平台 (PostHog)","category":"成本分析与调用监控","category_slug":"observability","description":"产品分析、事件采集和实验平台，适合开发者产品行为观测。","free_summary":"官方提供免费事件额度；具体产品模块和配额以当前计划页为准。","official_url":"https://posthog.com/","documentation_url":"https://posthog.com/docs","related_platform_ids":["provider-openai","provider-anthropic"],"related_free_tier_slugs":[],"quality":{"developer_relevance":4,"api_relevance":3,"free_value":4,"uniqueness":4,"source_quality":5,"maintenance_risk":5,"total":25,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"replicate","name":"一行 API 运行社区模型的托管平台 (Replicate)","category":"开发框架与路由网关","category_slug":"developer-tools","description":"通过 API 运行和部署社区模型的开发者平台。","free_summary":"模型可发现和试用；收费、试用与模型运行成本需按当前页面核对。","official_url":"https://replicate.com/","documentation_url":"https://replicate.com/docs","related_platform_ids":["provider-huggingface","provider-together"],"related_free_tier_slugs":["huggingface","together-ai"],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":3,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"fireworks-ai","name":"开放模型高速推理与微调 API (Fireworks AI)","category":"本地模型与推理底座","category_slug":"ai-infrastructure","description":"提供开放模型推理、微调和高性能部署 API 的平台。","free_summary":"公开文档可评估接口；免费额度需以当前账户和定价页确认为准。","official_url":"https://fireworks.ai/","documentation_url":"https://docs.fireworks.ai/","related_platform_ids":["provider-fireworks"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":3,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":26,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"perplexity-api","name":"带搜索与引用能力的实时问答 API (Perplexity API)","category":"免费 AI 接口","category_slug":"free-ai-apis","description":"提供带搜索与引用能力的 Sonar API，适合需要实时信息的应用。","free_summary":"官方文档和定价公开；免费额度需以当前账户政策确认。","official_url":"https://www.perplexity.ai/","documentation_url":"https://docs.perplexity.ai/","related_platform_ids":["provider-perplexity"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":3,"uniqueness":5,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"model-context-protocol-servers","name":"现成 MCP 服务器工具目录 (MCP Servers Directory)","category":"开发框架与路由网关","category_slug":"developer-tools","description":"围绕 MCP 服务器、工具连接和本地开发集成的官方生态入口。","free_summary":"生态目录公开；每个服务器的权限、数据处理和费用需单独审查。","official_url":"https://github.com/modelcontextprotocol/servers","documentation_url":"https://modelcontextprotocol.io/","related_platform_ids":["provider-openai","provider-anthropic"],"related_free_tier_slugs":[],"quality":{"developer_relevance":5,"api_relevance":5,"free_value":4,"uniqueness":5,"source_quality":5,"maintenance_risk":3,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"},
-  {"slug":"open-webui","name":"自托管大模型聊天界面 (Open WebUI)","category":"AI 编程与评测工具","category_slug":"ai-coding-tools","description":"可自托管的模型交互界面，支持 Ollama 与 OpenAI 兼容 API。","free_summary":"开源可自托管；外部模型 API 与服务器资源费用另计。","official_url":"https://github.com/open-webui/open-webui","documentation_url":"https://docs.openwebui.com/","related_platform_ids":["provider-openai","provider-groq","provider-huggingface"],"related_free_tier_slugs":["groq","huggingface"],"quality":{"developer_relevance":4,"api_relevance":5,"free_value":5,"uniqueness":4,"source_quality":5,"maintenance_risk":4,"total":27,"verdict":"Strong Candidate"},"last_verified":"2026-10-15"}
+  {
+    "slug": "free-ai-apis",
+    "name": "免费 AI 接口起步清单 (Free AI APIs)",
+    "category": "免费 AI 接口",
+    "category_slug": "free-ai-apis",
+    "description": "围绕可验证免费层、初始额度和低门槛 API 的入口集合。",
+    "free_summary": "目录页免费浏览；每项需回到官方来源核对条件。",
+    "official_url": "/free-tier",
+    "documentation_url": "/method",
+    "related_platform_ids": [
+      "provider-google"
+    ],
+    "related_free_tier_slugs": [
+      "groq",
+      "gemini",
+      "openrouter",
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "free-models",
+    "name": "免费开放模型库与模型卡片 (Hugging Face Models)",
+    "category": "免费开源模型",
+    "category_slug": "free-models",
+    "description": "开放模型、模型卡片、许可证与推理入口的官方目录。",
+    "free_summary": "模型目录公开浏览；推理是否免费取决于 Provider 与账户。",
+    "official_url": "https://huggingface.co/models",
+    "documentation_url": "https://huggingface.co/docs",
+    "related_free_tier_slugs": [
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "free-api-credits",
+    "name": "免费 API 额度与试用代金券合集 (Free API Credits)",
+    "category": "免费额度与代金券",
+    "category_slug": "free-api-credits",
+    "description": "按官方来源整理新用户额度、试用余额与活动型代金券。",
+    "free_summary": "页面免费；额度状态必须以提供商官方页面为准。",
+    "official_url": "/free-tier",
+    "documentation_url": "/method",
+    "related_free_tier_slugs": [
+      "openrouter",
+      "together-ai",
+      "siliconflow"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 3,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "litellm",
+    "name": "多模型统一路由与成本控制网关 (LiteLLM)",
+    "category": "开发框架与路由网关",
+    "category_slug": "developer-tools",
+    "description": "将多个 LLM 提供商统一到 OpenAI 兼容接口，适合网关、路由与成本观测。",
+    "free_summary": "开源项目，可自托管；云服务计划另行核对。",
+    "official_url": "https://github.com/BerriAI/litellm",
+    "documentation_url": "https://docs.litellm.ai/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic",
+      "provider-deepseek"
+    ],
+    "related_free_tier_slugs": [
+      "openrouter",
+      "groq"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 29,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "langchain",
+    "name": "大模型应用与 Agent 编排开发框架 (LangChain)",
+    "category": "开发框架与路由网关",
+    "category_slug": "developer-tools",
+    "description": "用于模型、工具、检索和 Agent 工作流编排的开发框架。",
+    "free_summary": "核心代码开源；第三方模型/API 费用不包含在项目内。",
+    "official_url": "https://github.com/langchain-ai/langchain",
+    "documentation_url": "https://python.langchain.com/docs/introduction/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic",
+      "provider-google",
+      "provider-bailian"
+    ],
+    "related_free_tier_slugs": [
+      "gemini",
+      "bailian"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "llamaindex",
+    "name": "RAG 检索增强与数据接入框架 (LlamaIndex)",
+    "category": "开发框架与路由网关",
+    "category_slug": "developer-tools",
+    "description": "面向 RAG、数据连接与 Agent 的 LLM 应用框架。",
+    "free_summary": "开源核心可自托管；模型、向量库与托管服务费用另计。",
+    "official_url": "https://github.com/run-llama/llama_index",
+    "documentation_url": "https://docs.llamaindex.ai/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic",
+      "provider-google",
+      "provider-cohere"
+    ],
+    "related_free_tier_slugs": [
+      "cohere",
+      "gemini"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 26,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "vllm",
+    "name": "高吞吐开源大模型推理引擎 (vLLM)",
+    "category": "本地模型与推理底座",
+    "category_slug": "ai-infrastructure",
+    "description": "高吞吐开源 LLM 推理与 OpenAI 兼容服务框架。",
+    "free_summary": "Apache-2.0 开源；运行所需 GPU/云资源可能产生费用。",
+    "official_url": "https://github.com/vllm-project/vllm",
+    "documentation_url": "https://docs.vllm.ai/",
+    "related_free_tier_slugs": [
+      "siliconflow",
+      "together-ai",
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 29,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "ollama",
+    "name": "本地大模型免配置极速运行器 (Ollama)",
+    "category": "本地模型与推理底座",
+    "category_slug": "ai-infrastructure",
+    "description": "在本地运行开放模型并提供简单 API 的开发工具。",
+    "free_summary": "软件开源且本地运行免费；硬件、电力和模型存储成本自理。",
+    "official_url": "https://github.com/ollama/ollama",
+    "documentation_url": "https://docs.ollama.com/",
+    "related_free_tier_slugs": [
+      "groq",
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 29,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "mcp",
+    "name": "大模型连接外部工具与数据的开放协议 (Model Context Protocol)",
+    "category": "本地模型与推理底座",
+    "category_slug": "ai-infrastructure",
+    "description": "连接模型与外部工具、数据源和工作流的开放协议。",
+    "free_summary": "规范与 SDK 公开；具体服务器的服务成本和权限单独核对。",
+    "official_url": "https://github.com/modelcontextprotocol",
+    "documentation_url": "https://modelcontextprotocol.io/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 29,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "promptfoo",
+    "name": "提示词与模型输出批量评测工具 (Promptfoo)",
+    "category": "AI 编程与评测工具",
+    "category_slug": "ai-coding-tools",
+    "description": "用于提示词、模型输出和安全策略的本地评测工具。",
+    "free_summary": "开源 CLI 可本地运行；企业能力与外部模型费用另计。",
+    "official_url": "https://github.com/promptfoo/promptfoo",
+    "documentation_url": "https://www.promptfoo.dev/docs/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [
+      "openrouter",
+      "groq"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 29,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "langfuse",
+    "name": "开源大模型用量追踪与调试平台 (Langfuse)",
+    "category": "成本分析与调用监控",
+    "category_slug": "observability",
+    "description": "面向 LLM 应用的 tracing、成本、延迟和质量观测平台。",
+    "free_summary": "开源版本可自托管；官方云免费层与额度需查看当前计划。",
+    "official_url": "https://github.com/langfuse/langfuse",
+    "documentation_url": "https://langfuse.com/docs",
+    "related_platform_ids": [
+      "provider-deepseek"
+    ],
+    "related_free_tier_slugs": [
+      "openrouter",
+      "siliconflow"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "helicone",
+    "name": "LLM API 成本分析与调用监控代理 (Helicone)",
+    "category": "成本分析与调用监控",
+    "category_slug": "observability",
+    "description": "LLM API 可观测性与成本分析工具，支持代理式接入。",
+    "free_summary": "核心项目开源；云端免费层和配额以官方计划页为准。",
+    "official_url": "https://github.com/Helicone/helicone",
+    "documentation_url": "https://docs.helicone.ai/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [
+      "openrouter"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "chroma",
+    "name": "本地优先的轻量向量数据库 (Chroma)",
+    "category": "开源向量数据库",
+    "category_slug": "free-vector-databases",
+    "description": "面向 AI 应用的开源 embedding 数据库与检索组件。",
+    "free_summary": "开源本地模式免费；云端免费层以官方计划页为准。",
+    "official_url": "https://github.com/chroma-core/chroma",
+    "documentation_url": "https://docs.trychroma.com/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-google"
+    ],
+    "related_free_tier_slugs": [
+      "gemini"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "qdrant",
+    "name": "支持过滤检索的开源向量搜索引擎 (Qdrant)",
+    "category": "开源向量数据库",
+    "category_slug": "free-vector-databases",
+    "description": "开源向量搜索引擎，提供过滤、相似度检索和云端服务。",
+    "free_summary": "开源自托管免费；Qdrant Cloud 免费层以官方计划页为准。",
+    "official_url": "https://github.com/qdrant/qdrant",
+    "documentation_url": "https://qdrant.tech/documentation/",
+    "related_platform_ids": [
+      "provider-openai"
+    ],
+    "related_free_tier_slugs": [
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "weaviate",
+    "name": "模块化混合检索开源向量数据库 (Weaviate)",
+    "category": "开源向量数据库",
+    "category_slug": "free-vector-databases",
+    "description": "开源向量数据库，支持混合检索与模块化 AI 集成。",
+    "free_summary": "开源自托管免费；云免费层和资源限制需核对官方计划。",
+    "official_url": "https://github.com/weaviate/weaviate",
+    "documentation_url": "https://weaviate.io/developers/weaviate",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-google"
+    ],
+    "related_free_tier_slugs": [
+      "gemini"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "milvus",
+    "name": "面向大规模检索的开源向量数据库 (Milvus)",
+    "category": "开源向量数据库",
+    "category_slug": "free-vector-databases",
+    "description": "面向大规模向量检索的开源数据库与云服务。",
+    "free_summary": "开源组件可自托管；Zilliz Cloud 计划另行核对。",
+    "official_url": "https://github.com/milvus-io/milvus",
+    "documentation_url": "https://github.com/milvus-io/milvus-docs",
+    "related_platform_ids": [
+      "provider-openai"
+    ],
+    "related_free_tier_slugs": [
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "pinecone",
+    "name": "免运维托管向量数据库 (Pinecone)",
+    "category": "开源向量数据库",
+    "category_slug": "free-vector-databases",
+    "description": "托管向量数据库，面向 RAG 和语义检索应用。",
+    "free_summary": "官方提供 Starter/免费入口；具体存储、读写限制以当前计划页为准。",
+    "official_url": "https://www.pinecone.io/",
+    "documentation_url": "https://docs.pinecone.io/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-google"
+    ],
+    "related_free_tier_slugs": [
+      "gemini"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "modal",
+    "name": "按需启动云函数与 GPU 任务的 Python 平台 (Modal)",
+    "category": "免费算力与显卡",
+    "category_slug": "free-compute-gpu",
+    "description": "以 Python 工作流启动云函数、GPU 任务和模型推理服务。",
+    "free_summary": "官方提供开发者试用/免费额度入口；额度按当前计划核对。",
+    "official_url": "https://modal.com/",
+    "documentation_url": "https://modal.com/docs",
+    "related_free_tier_slugs": [
+      "huggingface",
+      "together-ai"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 4,
+      "free_value": 4,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "runpod",
+    "name": "GPU 算力租用与模型部署云平台 (RunPod)",
+    "category": "免费算力与显卡",
+    "category_slug": "free-compute-gpu",
+    "description": "面向模型推理、训练和 GPU Pod 的开发者云平台。",
+    "free_summary": "公开文档与按量计费入口；免费额度需以活动/账户条件确认。",
+    "official_url": "https://www.runpod.io/",
+    "documentation_url": "https://docs.runpod.io/",
+    "related_free_tier_slugs": [
+      "huggingface",
+      "together-ai"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 4,
+      "free_value": 3,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 26,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "huggingface-spaces",
+    "name": "零运维发布模型 Demo 的免费托管空间 (Hugging Face Spaces)",
+    "category": "免费云部署与托管",
+    "category_slug": "free-hosting",
+    "description": "用 Gradio、Streamlit 等方式发布模型 Demo 和开发者应用。",
+    "free_summary": "存在免费硬件档；休眠、资源和公开性限制以官方文档为准。",
+    "official_url": "https://huggingface.co/spaces",
+    "documentation_url": "https://huggingface.co/docs/hub/spaces",
+    "related_free_tier_slugs": [
+      "huggingface",
+      "nvidia-nim"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 4,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 28,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "kaggle-datasets",
+    "name": "可检索可复现的公开数据集仓库 (Kaggle Datasets)",
+    "category": "高质量开源语料",
+    "category_slug": "free-datasets",
+    "description": "可检索、版本化和共享的数据集目录，适合模型实验与基线复现。",
+    "free_summary": "公开浏览与下载入口；单个数据集许可证必须单独核对。",
+    "official_url": "https://www.kaggle.com/datasets",
+    "documentation_url": "https://www.kaggle.com/docs/datasets",
+    "related_free_tier_slugs": [
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 3,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 26,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "common-crawl",
+    "name": "全球公开网页语料库与抓取数据集 (Common Crawl)",
+    "category": "高质量开源语料",
+    "category_slug": "free-datasets",
+    "description": "公开网页抓取语料与索引，适合检索、数据工程和研究用途。",
+    "free_summary": "数据公开可下载；需遵守数据集条款、robots 与下游许可证要求。",
+    "official_url": "https://commoncrawl.org/",
+    "documentation_url": "https://commoncrawl.org/get-started",
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 3,
+      "free_value": 5,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "github-actions",
+    "name": "代码仓库自动化 CI/CD 流水线 (GitHub Actions)",
+    "category": "开发与自动化工具",
+    "category_slug": "devops",
+    "description": "将测试、数据更新和静态部署自动化的 CI/CD 平台。",
+    "free_summary": "公共仓库通常有免费 Actions 配额；分钟数与组织计划以官方政策为准。",
+    "official_url": "https://github.com/features/actions",
+    "documentation_url": "https://docs.github.com/en/actions",
+    "related_free_tier_slugs": [
+      "openrouter",
+      "groq"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 4,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 5,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "cloudflare-pages",
+    "name": "静态网站与前端免费边缘部署 (Cloudflare Pages)",
+    "category": "免费云部署与托管",
+    "category_slug": "free-hosting",
+    "description": "适合静态站点和前端构建产物的边缘部署平台。",
+    "free_summary": "官方提供 Pages 免费计划；构建、请求和功能限制以当前计划页为准。",
+    "official_url": "https://pages.cloudflare.com/",
+    "documentation_url": "https://developers.cloudflare.com/pages/",
+    "related_platform_ids": [],
+    "related_free_tier_slugs": [
+      "openrouter"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 3,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 5,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "sentry",
+    "name": "应用错误追踪与性能监控 (Sentry)",
+    "category": "成本分析与调用监控",
+    "category_slug": "observability",
+    "description": "错误追踪、性能监控和发布健康度分析工具。",
+    "free_summary": "官方提供开发者免费计划；事件量与保留期以当前计划页为准。",
+    "official_url": "https://sentry.io/",
+    "documentation_url": "https://docs.sentry.io/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 3,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 5,
+      "total": 26,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "posthog",
+    "name": "产品行为分析与增长实验平台 (PostHog)",
+    "category": "成本分析与调用监控",
+    "category_slug": "observability",
+    "description": "产品分析、事件采集和实验平台，适合开发者产品行为观测。",
+    "free_summary": "官方提供免费事件额度；具体产品模块和配额以当前计划页为准。",
+    "official_url": "https://posthog.com/",
+    "documentation_url": "https://posthog.com/docs",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 4,
+      "api_relevance": 3,
+      "free_value": 4,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 5,
+      "total": 25,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "replicate",
+    "name": "一行 API 运行社区模型的托管平台 (Replicate)",
+    "category": "开发框架与路由网关",
+    "category_slug": "developer-tools",
+    "description": "通过 API 运行和部署社区模型的开发者平台。",
+    "free_summary": "模型可发现和试用；收费、试用与模型运行成本需按当前页面核对。",
+    "official_url": "https://replicate.com/",
+    "documentation_url": "https://replicate.com/docs",
+    "related_free_tier_slugs": [
+      "huggingface",
+      "together-ai"
+    ],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 3,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "fireworks-ai",
+    "name": "开放模型高速推理与微调 API (Fireworks AI)",
+    "category": "本地模型与推理底座",
+    "category_slug": "ai-infrastructure",
+    "description": "提供开放模型推理、微调和高性能部署 API 的平台。",
+    "free_summary": "公开文档可评估接口；免费额度需以当前账户和定价页确认为准。",
+    "official_url": "https://fireworks.ai/",
+    "documentation_url": "https://docs.fireworks.ai/",
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 3,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 26,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "perplexity-api",
+    "name": "带搜索与引用能力的实时问答 API (Perplexity API)",
+    "category": "免费 AI 接口",
+    "category_slug": "free-ai-apis",
+    "description": "提供带搜索与引用能力的 Sonar API，适合需要实时信息的应用。",
+    "free_summary": "官方文档和定价公开；免费额度需以当前账户政策确认。",
+    "official_url": "https://www.perplexity.ai/",
+    "documentation_url": "https://docs.perplexity.ai/",
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 3,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "model-context-protocol-servers",
+    "name": "现成 MCP 服务器工具目录 (MCP Servers Directory)",
+    "category": "开发框架与路由网关",
+    "category_slug": "developer-tools",
+    "description": "围绕 MCP 服务器、工具连接和本地开发集成的官方生态入口。",
+    "free_summary": "生态目录公开；每个服务器的权限、数据处理和费用需单独审查。",
+    "official_url": "https://github.com/modelcontextprotocol/servers",
+    "documentation_url": "https://modelcontextprotocol.io/",
+    "related_platform_ids": [
+      "provider-openai",
+      "provider-anthropic"
+    ],
+    "related_free_tier_slugs": [],
+    "quality": {
+      "developer_relevance": 5,
+      "api_relevance": 5,
+      "free_value": 4,
+      "uniqueness": 5,
+      "source_quality": 5,
+      "maintenance_risk": 3,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  },
+  {
+    "slug": "open-webui",
+    "name": "自托管大模型聊天界面 (Open WebUI)",
+    "category": "AI 编程与评测工具",
+    "category_slug": "ai-coding-tools",
+    "description": "可自托管的模型交互界面，支持 Ollama 与 OpenAI 兼容 API。",
+    "free_summary": "开源可自托管；外部模型 API 与服务器资源费用另计。",
+    "official_url": "https://github.com/open-webui/open-webui",
+    "documentation_url": "https://docs.openwebui.com/",
+    "related_platform_ids": [
+      "provider-openai"
+    ],
+    "related_free_tier_slugs": [
+      "groq",
+      "huggingface"
+    ],
+    "quality": {
+      "developer_relevance": 4,
+      "api_relevance": 5,
+      "free_value": 5,
+      "uniqueness": 4,
+      "source_quality": 5,
+      "maintenance_risk": 4,
+      "total": 27,
+      "verdict": "Strong Candidate"
+    },
+    "last_verified": "2026-10-15"
+  }
 ]

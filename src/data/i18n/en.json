@@ -55,17 +55,6 @@
         "International credit card"
       ]
     },
-    "provider-groq": {
-      "name": "Groq",
-      "tags": [
-        "Very fast inference",
-        "LPU hardware",
-        "Free tier"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
     "provider-mistral": {
       "name": "Mistral AI",
       "tags": [
@@ -82,18 +71,6 @@
       "tags": [
         "China-based open source",
         "Extremely cost-effective"
-      ],
-      "payment_methods": [
-        "Alipay",
-        "WeChat Pay"
-      ]
-    },
-    "provider-siliconflow": {
-      "name": "SiliconFlow",
-      "tags": [
-        "China-based GPU cloud",
-        "Full model lineup",
-        "Signup credit"
       ],
       "payment_methods": [
         "Alipay",
@@ -195,107 +172,16 @@
         "WeChat Pay"
       ]
     },
-    "provider-together": {
-      "name": "Together AI",
+    "provider-meta": {
+      "name": "Meta (Meta Model API)",
       "tags": [
-        "Full model pool",
-        "Open weights",
-        "Accelerated inference"
+        "Official model API",
+        "Agentic memory",
+        "MUSE family"
       ],
       "payment_methods": [
         "International credit card"
       ]
-    },
-    "provider-fireworks": {
-      "name": "Fireworks AI",
-      "tags": [
-        "Accelerated inference",
-        "Open weights",
-        "Enterprise-grade"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-novita": {
-      "name": "Novita AI",
-      "tags": [
-        "Cost-effective",
-        "GPU cloud"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-perplexity": {
-      "name": "Perplexity",
-      "tags": [
-        "Web search",
-        "Real-time citations"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-nvidia": {
-      "name": "NVIDIA NIM",
-      "tags": [
-        "NVIDIA ecosystem",
-        "GPU cloud",
-        "High throughput"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-huggingface": {
-      "name": "Hugging Face",
-      "tags": [
-        "Open-source ecosystem",
-        "Huge model count"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-cerebras": {
-      "name": "Cerebras",
-      "tags": [
-        "Ultra-fast inference",
-        "Wafer-scale chip"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-deepinfra": {
-      "name": "DeepInfra",
-      "tags": [
-        "Low-cost open weights",
-        "Elastic"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-sambanova": {
-      "name": "SambaNova",
-      "tags": [
-        "Wafer-scale chip",
-        "Official R1",
-        "Very fast"
-      ],
-      "payment_methods": [
-        "International credit card"
-      ]
-    },
-    "provider-agnes": {
-      "name": "Agnes AI",
-      "tags": [
-        "Omni-modal",
-        "Free tier"
-      ],
-      "payment_methods": []
     }
   },
   "platformContent": {
@@ -363,28 +249,6 @@
         "Google ecosystem applications"
       ]
     },
-    "groq": {
-      "short_description": "A high-speed inference API for open models, offering an OpenAI-compatible developer experience.",
-      "capabilities": [
-        "High-speed text inference",
-        "OpenAI-compatible API",
-        "Open model serving"
-      ],
-      "free_tier_summary": "The official console provides a free-tier entry point; dynamic limits are not guessed at as a fixed token allowance.",
-      "free_limits": "Rate limits such as RPM/TPM are configured per model; see the official Rate Limits page for the specific values.",
-      "credit_card": "Existing records show a free sign-up path that does not require a credit card; if the policy changes, refer to the official page.",
-      "signup": "Requires sign-up and creating an API key.",
-      "restrictions": [
-        "The free tier is noticeably rate limited",
-        "The model list and rate limits are adjusted over time",
-        "Not suitable for high-concurrency production workloads without evaluation"
-      ],
-      "recommended_use_cases": [
-        "Low-latency demos",
-        "Real-time interactive prototypes",
-        "Open model comparison"
-      ]
-    },
     "deepseek": {
       "short_description": "The official DeepSeek API, providing reasoning and general-purpose model endpoints compatible with the OpenAI SDK.",
       "capabilities": [
@@ -404,92 +268,6 @@
         "Reasoning tasks",
         "Prototyping for Chinese-language developers",
         "OpenAI-compatible migration"
-      ]
-    },
-    "siliconflow": {
-      "short_description": "A model API aggregation and inference platform aimed at Chinese-language developers, covering a range of open models.",
-      "capabilities": [
-        "Unified multi-model API",
-        "Open model inference",
-        "Console for Chinese-language developers"
-      ],
-      "free_tier_summary": "New users receive a trial credit after registration and verification (approx. ¥14; usable with DeepSeek / Qwen and other platform models); the pricing page also lists several free models (translation / embedding / rerank). The exact amount is subject to the current official announcement.",
-      "free_limits": "Per-model rate limits and balance rules are per the official console; fixed allowances are not inferred further.",
-      "credit_card": "Existing records do not require a credit card; identity verification conditions may apply.",
-      "signup": "Requires sign-up; some allowances require completing verification.",
-      "restrictions": [
-        "Granted credits depend on promotions and account conditions",
-        "Pricing and rate limits differ by model",
-        "Note the balance validity period"
-      ],
-      "recommended_use_cases": [
-        "Trying out Chinese-language models",
-        "Open model selection",
-        "Low-cost API prototyping"
-      ]
-    },
-    "together-ai": {
-      "short_description": "A developer platform offering open model inference, fine-tuning and GPU workflows.",
-      "capabilities": [
-        "Open model inference",
-        "Fine-tuning workflows",
-        "OpenAI-compatible API"
-      ],
-      "free_tier_summary": "Existing benefit records include a new-user starting credit; refer to the official account page for the amount and eligibility.",
-      "free_limits": "The free starting credit and model rate limits change; a fixed recurring allowance is Unknown.",
-      "credit_card": "Unknown; refer to the current sign-up and top-up flow.",
-      "signup": "Requires sign-up and creating an API key.",
-      "restrictions": [
-        "The starting credit is not a permanent free commitment",
-        "Model and GPU resources are subject to the official terms"
-      ],
-      "recommended_use_cases": [
-        "Open model prototyping",
-        "Model evaluation",
-        "Fine-tuning and inference experiments"
-      ]
-    },
-    "hugging-face": {
-      "short_description": "An open AI community platform connecting models, datasets, Spaces and Inference Providers.",
-      "capabilities": [
-        "Model and dataset catalog",
-        "Inference Providers",
-        "Spaces app hosting"
-      ],
-      "free_tier_summary": "The official documentation and pricing page offer limited inference usage for free users; fixed allowances may change with account policy.",
-      "free_limits": "Rate limits apply per account, provider and model; refer to the official account page for the specific free allowance.",
-      "credit_card": "Free browsing and some inference paths do not require a credit card; paid plans are handled separately.",
-      "signup": "No account is needed to browse; calling and creating resources usually requires a Hugging Face account and token.",
-      "restrictions": [
-        "Third-party Inference Provider terms differ",
-        "Free resources are shared and rate limited",
-        "Model licenses must be checked separately"
-      ],
-      "recommended_use_cases": [
-        "Open model discovery",
-        "Dataset research",
-        "Lightweight demos and model experiments"
-      ]
-    },
-    "cerebras": {
-      "short_description": "An inference API built on purpose-built AI hardware, offering low latency and support for a range of open models.",
-      "capabilities": [
-        "Low-latency inference",
-        "Open model API",
-        "OpenAI-compatible development"
-      ],
-      "free_tier_summary": "The official developer documentation provides a free developer entry point; the fixed free allowance is per the console's current policy.",
-      "free_limits": "Rate limits and available models change with account policy; the specific values are Unknown.",
-      "credit_card": "Unknown; refer to the current sign-up flow.",
-      "signup": "Requires sign-up and creating an API key.",
-      "restrictions": [
-        "The free tier is suited to development and evaluation",
-        "Production capacity, rates and model scope may be restricted separately"
-      ],
-      "recommended_use_cases": [
-        "Real-time assistants",
-        "Low-latency benchmark comparison",
-        "Open model demos"
       ]
     }
   },
@@ -690,22 +468,6 @@
         "Prices and free allowances differ across models"
       ],
       "source_type": "Official site / existing verification records"
-    },
-    "agnes-ai": {
-      "provider": "Agnes AI",
-      "api_service": "Agnes API Hub",
-      "free_amount": "agnes-2.0-flash input/output $0 / 1M (existing official records; the current home page does not directly show pricing details)",
-      "unit": "Token price is $0",
-      "reset_period": "Per official policy",
-      "rate_limits": "Unknown",
-      "credit_card": "No card requirement recorded",
-      "signup": "Sign up and create an API Key",
-      "expiration": "Subject to the official pricing page",
-      "restrictions": [
-        "The free price applies to the model and point in time in the records",
-        "Models and free policies may change"
-      ],
-      "source_type": "Official site plus existing verification records; the current home page does not directly confirm pricing details"
     },
     "cloudflare-workers-ai": {
       "provider": "Cloudflare Workers AI",
@@ -1044,14 +806,6 @@
       "expires_at": "Subject to the official promotion",
       "tag": "Trial credits"
     },
-    "perk-11": {
-      "name": "Free API pricing",
-      "provider": "Agnes AI",
-      "content": "Official documentation shows that agnes-2.0-flash input/output tokens are currently $0 / 1M (standard price $0.03 / $0.15); the official site states that it provides free AI API credits and a free API key, which can be created on registration. Specifics are subject to the official site.",
-      "requirement": "Register and create an API key",
-      "expires_at": "Ongoing (refer to the official page)",
-      "tag": "Free credits"
-    },
     "perk-12": {
       "name": "Workers AI daily free Neurons",
       "provider": "Cloudflare Workers AI",
@@ -1092,17 +846,11 @@
     "provider-deepseek": {
       "note": "Official direct connection (api.deepseek.com): 12 samples across 3 temperatures match the calibrated baseline (token median / repetition). The model does not self-identify (its identity probe reply is not a matchable model ID), so the verdict relies on the token-median and repetition checks"
     },
-    "provider-siliconflow": {
-      "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
-    },
     "provider-zhipu": {
       "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
     },
     "provider-moonshot": {
       "note": "No test key configured (the environment variable referenced by api_key_env is empty); only connectivity is covered by ping_test"
-    },
-    "provider-agnes": {
-      "note": "Self-ID match: agnes-2.0-flash (matched in ['agnes-2.0-flash'])"
     }
   }
 }

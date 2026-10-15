@@ -48,9 +48,22 @@ FRESHNESS_TARGETS = (
 )
 
 DOMESTIC_PLATFORM_IDS = {
-    "provider-deepseek", "provider-siliconflow", "provider-moonshot",
+    "provider-deepseek", "provider-moonshot",
     "provider-zhipu", "provider-bailian", "provider-qianfan",
     "provider-volcano", "provider-tencent", "provider-minimax",
+    "provider-stepfun",
+}
+
+# Stage 3 双站重组（2026-10-15）：主站白名单锁定 16 家自研基座原厂（境外 7 雄 + 境内 9 强）。
+# 算力托管云 / 聚合网关已全量剥离迁往商业站（hub.apiops.cloud）；任何平台回流必须先过
+# 架构裁定并在此登记，否则 CI 红牌熔断——防止分类混杂再次制度化（红队审计 D2 整改闭环）。
+PLATFORM_WHITELIST = {
+    # 境外 7 雄
+    "provider-openai", "provider-anthropic", "provider-google", "provider-meta",
+    "provider-xai", "provider-mistral", "provider-cohere",
+    # 境内 9 强
+    "provider-deepseek", "provider-moonshot", "provider-zhipu", "provider-bailian",
+    "provider-qianfan", "provider-volcano", "provider-tencent", "provider-minimax",
     "provider-stepfun",
 }
 
@@ -134,6 +147,10 @@ def validate_platforms(data, where: str) -> None:
             if sid in ids:
                 err(f"{where} 出现重复 id「{sid}」（[0]={ids[sid]}）")
             ids[sid] = i
+
+        # CI 硬门禁 0：主站 16 家基座原厂白名单（Stage 3 双站重组）
+        if sid and sid not in PLATFORM_WHITELIST:
+            err(f"{w} [硬门禁熔断] 平台「{x.get('name')}」(id={sid}) 不在主站 16 家基座原厂白名单内，禁止入榜！")
 
         # CI 硬门禁 1：境外直连硬门禁（杜绝代理污染与虚假宣称，境外恒不可标 direct）
         if sid and sid not in DOMESTIC_PLATFORM_IDS:

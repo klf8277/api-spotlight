@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-15T13:51:50Z",
+  "platform_count": 16,
+  "sources": [
+    {
+      "platform_id": "provider-openai",
+      "name": "OpenAI",
+      "type": "official",
+      "models_url": "https://developers.openai.com/api/docs/models",
+      "active_models": [
+        "gpt-6-astra",
+        "gpt-6.1-sol",
+        "gpt-6-luna"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://developers.openai.com/api/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "9d618bf7f7268eb2c81a397f1afbe8b776abf96bb9b365e27aba638ef66868c2",
+        "latency_ms": 1037,
+        "fetched_at": "2026-10-15T13:51:50Z",
+        "note": "HTTP 200 verified (payload sha256: 9d618bf7f726...)"
+      }
+    },
+    {
+      "platform_id": "provider-anthropic",
+      "name": "Anthropic",
+      "type": "official",
+      "models_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "active_models": [
+        "claude-opus-5-5",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "87e394009ba03cd223fbe9955857cc4e6d84bedbfbbb31d6c2d6dcfe63b13432",
+        "latency_ms": 4378,
+        "fetched_at": "2026-10-15T13:51:51Z",
+        "note": "HTTP 200 verified (payload sha256: 87e394009ba0...)"
+      }
+    },
+    {
+      "platform_id": "provider-google",
+      "name": "Google Gemini",
+      "type": "official",
+      "models_url": "https://ai.google.dev/gemini-api/docs/models",
+      "active_models": [
+        "gemini-4-argon",
+        "gemini-3.8-flash",
+        "gemini-3.8-flash-lite"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://ai.google.dev/gemini-api/docs/models",
+        "fetch_status": "ok",
+        "status_code": 302,
+        "page_sha256": "28e114958716691359b1cff65d6f2bdcd6128a3252fd9252ab2fcee5e37de9a5",
+        "latency_ms": 13848,
+        "fetched_at": "2026-10-15T13:51:56Z",
+        "note": "HTTP 302 upstream response received (direct connection confirmed)"
+      }
+    },
+    {
+      "platform_id": "provider-meta",
+      "name": "Meta (Meta Model API)",
+      "type": "official",
+      "models_url": "https://dev.meta.ai/models/muse-wonder",
+      "active_models": [
+        "muse-wonder-1.0",
+        "muse-spark-1.3"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://dev.meta.ai/models/muse-wonder",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "6e843960ee13fa95bac8215be14621cf3f00a33169c16e4fde66004e4e8e125c",
+        "latency_ms": 1437,
+        "fetched_at": "2026-10-15T13:52:10Z",
+        "note": "HTTP 200 verified (payload sha256: 6e843960ee13...)"
+      }
+    },
+    {
+      "platform_id": "provider-xai",
+      "name": "xAI (Grok)",
+      "type": "official",
+      "models_url": "https://docs.x.ai/docs/models",
+      "active_models": [
+        "grok-4.7",
+        "grok-4.6",
+        "grok-4.5"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://docs.x.ai/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "591123e0c122204c47daf859e748898316a01484d09dd1e9f0ebea654b59feaf",
+        "latency_ms": 1839,
+        "fetched_at": "2026-10-15T13:52:11Z",
+        "note": "HTTP 200 verified (payload sha256: 591123e0c122...)"
+      }
+    },
+    {
+      "platform_id": "provider-cohere",
+      "name": "Cohere",
+      "type": "official",
+      "models_url": "https://docs.cohere.com/docs/models",
+      "active_models": [
+        "command-a-plus-05-2026",
+        "command-a-03-2025",
+        "command-r-plus-08-2024"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://docs.cohere.com/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "54f22ec94e203f2c154c694826227b3bb6b3f48cf30c1f24b26c08d777f60cf7",
+        "latency_ms": 1142,
+        "fetched_at": "2026-10-15T13:52:13Z",
+        "note": "HTTP 200 verified (payload sha256: 54f22ec94e20...)"
+      }
+    },
+    {
+      "platform_id": "provider-mistral",
+      "name": "Mistral AI",
+      "type": "official",
+      "models_url": "https://docs.mistral.ai/getting-started/models/",
+      "active_models": [
+        "mistral-large-latest",
+        "codestral-latest",
+        "mistral-small-latest"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://docs.mistral.ai/getting-started/models/",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "425029981bcb1fa0dff751d9bae2b3dcdb2e1e2c7b7659e8bbc0f1d13cdbe6db",
+        "latency_ms": 2318,
+        "fetched_at": "2026-10-15T13:52:14Z",
+        "note": "HTTP 200 verified (payload sha256: 425029981bcb...)"
+      }
+    },
+    {
+      "platform_id": "provider-deepseek",
+      "name": "深度求索 (DeepSeek)",
+      "type": "official",
+      "models_url": "https://api-docs.deepseek.com",
+      "active_models": [
+        "deepseek-v4-pro",
+        "deepseek-flash",
+        "deepseek-v4-flash"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://api-docs.deepseek.com",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "7ce9db1b1cc7e2efafe7cbfd57b9d46d240c20399f7bd87672c7e3a5250ccdd0",
+        "latency_ms": 1149,
+        "fetched_at": "2026-10-15T13:52:16Z",
+        "note": "HTTP 200 verified (payload sha256: 7ce9db1b1cc7...)"
+      }
+    },
+    {
+      "platform_id": "provider-moonshot",
+      "name": "月之暗面 (Moonshot AI)",
+      "type": "official",
+      "models_url": "https://platform.moonshot.cn/docs/pricing",
+      "active_models": [
+        "kimi-k3",
+        "kimi-k2.7-code",
+        "kimi-k2.6"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://platform.moonshot.cn/docs/pricing",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "3e42d8168532534dfa8451360a1c27822d10a4154fbf0b9c3395ad4dfc93c834",
+        "latency_ms": 7266,
+        "fetched_at": "2026-10-15T13:52:17Z",
+        "note": "HTTP 200 verified (payload sha256: 3e42d8168532...)"
+      }
+    },
+    {
+      "platform_id": "provider-zhipu",
+      "name": "智谱 AI (Zhipu AI)",
+      "type": "official",
+      "models_url": "https://open.bigmodel.cn/dev/api",
+      "active_models": [
+        "glm-5.3",
+        "glm-5.3-Flash",
+        "glm-4.7"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://open.bigmodel.cn/dev/api",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "4c3ce17f801dad90a9f8d4caff7b73b869142b6001c887655117f3cf6918166b",
+        "latency_ms": 3398,
+        "fetched_at": "2026-10-15T13:52:25Z",
+        "note": "HTTP 200 verified (payload sha256: 4c3ce17f801d...)"
+      }
+    },
+    {
+      "platform_id": "provider-bailian",
+      "name": "阿里百炼 (Aliyun Bailian)",
+      "type": "official",
+      "models_url": "https://help.aliyun.com/zh/model-studio/developer-reference",
+      "active_models": [
+        "qwen3.8-max",
+        "qwen3.6-plus",
+        "qwen3.5-flash"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://help.aliyun.com/zh/model-studio/developer-reference",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "592e1f69a7b044d74260080e864cdf13dcf8963784901d982db75643f72ad1e7",
+        "latency_ms": 4387,
+        "fetched_at": "2026-10-15T13:52:28Z",
+        "note": "HTTP 200 verified (payload sha256: 592e1f69a7b0...)"
+      }
+    },
+    {
+      "platform_id": "provider-qianfan",
+      "name": "百度千帆 (Baidu Qianfan)",
+      "type": "official",
+      "models_url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Nlks5zkzu",
+      "active_models": [
+        "ernie-5.1",
+        "ernie-4.5-turbo-128k",
+        "ernie-speed-128k"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Nlks5zkzu",
+        "fetch_status": "blocked_or_timeout",
+        "status_code": null,
+        "page_sha256": null,
+        "latency_ms": 3529,
+        "fetched_at": "2026-10-15T13:52:32Z",
+        "note": "Pure direct probe blocked or timed out (<urlopen error _ssl.c:993: The handshake operation timed out...); authentic proof of non-proxied network"
+      }
+    },
+    {
+      "platform_id": "provider-volcano",
+      "name": "火山方舟 (Volcengine Ark)",
+      "type": "official",
+      "models_url": "https://www.volcengine.com/docs/82379/1099475",
+      "active_models": [
+        "doubao-seed-2-1-pro",
+        "doubao-seed-2-1-lite",
+        "doubao-seed-evolving"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://www.volcengine.com/docs/82379/1099475",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "050fb61a11b9f9caa96ae1adf7a839b4f55de3c81c459118c0f58decdb279e5f",
+        "latency_ms": 8707,
+        "fetched_at": "2026-10-15T13:52:36Z",
+        "note": "HTTP 200 verified (payload sha256: 050fb61a11b9...)"
+      }
+    },
+    {
+      "platform_id": "provider-tencent",
+      "name": "腾讯混元 (Tencent Hunyuan)",
+      "type": "official",
+      "models_url": "https://cloud.tencent.com/document/product/1729/104753",
+      "active_models": [
+        "hunyuan-t1-latest",
+        "hunyuan-pro",
+        "hunyuan-turbos-latest"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://cloud.tencent.com/document/product/1729/104753",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "cb2eec7dff8a48da2aeb8881f7379a1db9e185ce4633de0f98ec5b137d3faad2",
+        "latency_ms": 1017,
+        "fetched_at": "2026-10-15T13:52:45Z",
+        "note": "HTTP 200 verified (payload sha256: cb2eec7dff8a...)"
+      }
+    },
+    {
+      "platform_id": "provider-minimax",
+      "name": "MiniMax",
+      "type": "official",
+      "models_url": "https://platform.minimaxi.com/document/models",
+      "active_models": [
+        "MiniMax-M3.1-Flash-Preview",
+        "MiniMax-M3",
+        "MiniMax-Text-01"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://platform.minimaxi.com/document/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "76fcaba839fbc3e35d33b202c9e8a97545066fb48304def392a0adcfe937bcf2",
+        "latency_ms": 6504,
+        "fetched_at": "2026-10-15T13:52:46Z",
+        "note": "HTTP 200 verified (payload sha256: 76fcaba839fb...)"
+      }
+    },
+    {
+      "platform_id": "provider-stepfun",
+      "name": "阶跃星辰 (StepFun)",
+      "type": "official",
+      "models_url": "https://platform.stepfun.com/docs/llm/model",
+      "active_models": [
+        "step-5-preview",
+        "step-3.7-flash",
+        "step-2"
+      ],
+      "status": "synced",
+      "network_check": {
+        "tested_url": "https://platform.stepfun.com/docs/llm/model",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "8b46ce28c059d77f77a48ad17459ed9a347a3976d81ea23af94cdd0f740b5101",
+        "latency_ms": 1789,
+        "fetched_at": "2026-10-15T13:52:52Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
+    }
+  ]
+}

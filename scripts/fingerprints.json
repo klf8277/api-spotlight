@@ -5,13 +5,13 @@
     "校准流程：对同一模型在‘官方直连正版渠道’采集 ≥20 次探针响应 → 填 median_tokens / token_tolerance_pct / max_repeat / self_id_patterns → 置 calibrated=true。",
     "多温度上限：参考值应对应最高温度档（如 1.3），低温档响应更稳定。"
   ],
-  "gpt-5.6-sol": {
+  "gpt-6-astra": {
     "calibrated": false,
     "self_id_patterns": [
       "gpt-4o",
-      "gpt-gpt-5.6-sol"
+      "gpt-gpt-6-astra"
     ],
-    "expected_self_id": "gpt-5.6-sol",
+    "expected_self_id": "gpt-6-astra",
     "median_tokens": null,
     "token_tolerance_pct": null,
     "max_repeat": null,
@@ -29,50 +29,28 @@
     "max_repeat": null,
     "note": "基线由 authenticity_test.py --calibrate 于 2026-09-30T09:27:52Z 采样回写"
   },
-  "deepseek-ai/DeepSeek-V4-Pro": {
+  "glm-5.3": {
     "calibrated": false,
     "self_id_patterns": [
-      "deepseek-v3",
-      "DeepSeek-deepseek-ai/DeepSeek-V4-Pro"
-    ],
-    "expected_self_id": "deepseek-ai/DeepSeek-V4-Pro",
-    "median_tokens": null,
-    "token_tolerance_pct": null,
-    "max_repeat": null,
-    "note": "待官方直连采样校准"
-  },
-  "glm-4-plus": {
-    "calibrated": false,
-    "self_id_patterns": [
-      "glm-4-plus",
+      "glm-5.3",
       "glm-4"
     ],
-    "expected_self_id": "glm-4-plus",
+    "expected_self_id": "glm-5.3",
     "median_tokens": null,
     "token_tolerance_pct": null,
     "max_repeat": null,
     "note": "待官方直连采样校准"
   },
-  "kimi-k2": {
+  "kimi-k3": {
     "calibrated": false,
     "self_id_patterns": [
-      "kimi-k2",
-      "kimi-k2-thinking"
+      "kimi-k3",
+      "kimi-k3-thinking"
     ],
-    "expected_self_id": "kimi-k2",
+    "expected_self_id": "kimi-k3",
     "median_tokens": null,
     "token_tolerance_pct": null,
     "max_repeat": null,
     "note": "待官方直连采样校准"
-  },
-  "agnes-2.0-flash": {
-    "calibrated": true,
-    "median_tokens": 400,
-    "token_tolerance_pct": 22,
-    "self_id_patterns": [
-      "agnes-2.0-flash"
-    ],
-    "expected_self_id": "agnes-2.0-flash",
-    "note": "基线由 authenticity_test.py --calibrate 于 2026-08-27T10:33:17Z 采样回写"
   }
 }

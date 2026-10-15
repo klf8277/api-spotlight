@@ -159,7 +159,7 @@
     "line3Suffix": "(commercial content is kept separate from this site's benchmark data).",
     "businessLabel": "Business & Partnerships:",
     "businessNote": "(for business, data and commercial enquiries only; no end-user technical support.)",
-    "transparencyNotice": "APISpotlight adheres to absolute data transparency: fully audited and purified across the network in October 2026 — removed pseudo-direct overseas flags caused by legacy proxy pollution, demarcated official providers from hosted compute clouds, and attached verifiable links to official model documentation. See ",
+    "transparencyNotice": "APISpotlight adheres to absolute data transparency: fully audited and purified across the network in October 2026 — pseudo-direct overseas flags caused by legacy proxy pollution were removed, and the Stage 3 dual-site restructuring has landed: the main site now lists only 16 first-party foundation-model labs (hosted compute clouds and aggregator gateways were fully decoupled and migrated to the independent hub at hub.apiops.cloud), with every model roster linked to its verifiable official source. See ",
     "transparencyLink": "Official Source Manifest ↗",
     "copyright": "© 2026 APISpotlight (API Radar) · Static deployment · No user data collection · Community: Telegram"
   },

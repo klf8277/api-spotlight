@@ -8,6 +8,7 @@
 - 真实发起 HTTP GET 请求，记录真实延迟、HTTP 状态码及页面/响应 sha256 哈希
 - 境外被阻断/超时项真实记录 blocked_or_timeout，作为纯内网物理直连探测的真实性实证
 - 输出权威审计产物 src/data/models_diff.json，包含每家平台的 network_check 证据
+- 同步输出 sidecar 快照 src/data/models_snapshot.json（官方台账 + 真实网络指纹，供差分对账与审计复用）
 """
 
 from __future__ import annotations
@@ -103,6 +104,7 @@ def main() -> int:
     platforms_file = SRC / "platforms.json"
     sources_file = SRC / "official_sources.json"
     out_diff_file = SRC / "models_diff.json"
+    out_snapshot_file = SRC / "models_snapshot.json"
 
     if not platforms_file.exists():
         print(f"❌ 找不到 {platforms_file}")
@@ -219,9 +221,34 @@ def main() -> int:
         json.dump(report, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
+    # models_snapshot.json：官方源台账快照 sidecar（每条含真实网络指纹 network_check）。
+    # 与 models_diff.json 分工：diff 报告差异与红线状态，snapshot 留存当期官方台账与
+    # 物理直连证据（page_sha256 / latency_ms / fetched_at），供审计对账与差分报警复用。
+    snapshot = {
+        "schema_version": "1.0",
+        "generated_at": now_iso,
+        "platform_count": len(platforms),
+        "sources": [
+            {
+                "platform_id": d.get("platform_id"),
+                "name": d.get("name"),
+                "type": d.get("type"),
+                "models_url": d.get("models_url"),
+                "active_models": d.get("official_models", []),
+                "status": d.get("status"),
+                "network_check": d.get("network_check"),
+            }
+            for d in diff_list
+        ],
+    }
+    with open(out_snapshot_file, "w", encoding="utf-8") as f:
+        json.dump(snapshot, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
     print(f"\n✓ models_diff.json 已生成（真联网物理实证落盘）:")
     print(f"  - 平台配置核验: {synced_count}/{len(platforms)} 同步一致，{divergent_count} 差异")
     print(f"  - 网络物理对账: 连通 {network_reachable} 家，直连阻断/超时 {network_blocked} 家（真实非代理回显）")
+    print(f"✓ models_snapshot.json 已生成（{len(platforms)} 家官方源台账 + 真实网络指纹）")
     return 0 if divergent_count == 0 else 1
 
 

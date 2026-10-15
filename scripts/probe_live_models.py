@@ -61,15 +61,13 @@ OVERSEAS_RANGE = (1.5, 3.0)   # 境外档
 BLOCKED_CIRCUIT = 2           # 某轨连续 N 家 blocked → 打开熔断跳过剩余
 UA = "apiops-live-probe/1.0 (site health check; contact via apiops.cloud)"
 
-# 边界①·轨一白名单：47号作业单核定 27 家 Tier1（与 platforms.json type=official 双断言）
+# 边界①·轨一白名单：Stage 3 双站重组核定 16 家基座原厂（与 platforms.json 16 家白名单双断言）
 WHITELIST_TIER1 = {
-    "provider-openai", "provider-anthropic", "provider-google", "provider-xai",
-    "provider-cohere", "provider-groq", "provider-mistral", "provider-deepseek",
-    "provider-siliconflow", "provider-moonshot", "provider-zhipu", "provider-bailian",
+    "provider-openai", "provider-anthropic", "provider-google", "provider-meta",
+    "provider-xai", "provider-cohere", "provider-mistral",
+    "provider-deepseek", "provider-moonshot", "provider-zhipu", "provider-bailian",
     "provider-qianfan", "provider-volcano", "provider-tencent", "provider-minimax",
-    "provider-stepfun", "provider-together", "provider-fireworks", "provider-novita",
-    "provider-perplexity", "provider-nvidia", "provider-huggingface", "provider-cerebras",
-    "provider-deepinfra", "provider-sambanova", "provider-agnes",
+    "provider-stepfun",
 }
 # 边界①·轨二白名单：二审批准入驻测活的 8 家（hub/partners.json），仅测官网首页
 WHITELIST_TRACK2 = {
@@ -78,7 +76,7 @@ WHITELIST_TRACK2 = {
 }
 # 境内 API 主机显式名单（fail-closed：不在名单一律按境内保守档处理）
 DOMESTIC_API_HOSTS = {
-    "api.deepseek.com", "api.siliconflow.cn", "api.moonshot.cn", "open.bigmodel.cn",
+    "api.deepseek.com", "api.moonshot.cn", "open.bigmodel.cn",
     "dashscope.aliyuncs.com", "qianfan.baidubce.com", "ark.cn-beijing.volces.com",
     "api.hunyuan.cloud.tencent.com", "api.minimaxi.com", "api.stepfun.com",
 }
