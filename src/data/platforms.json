@@ -7,7 +7,7 @@
     "api_base": "https://api.openai.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 117,
+    "latency_ms": 111,
     "success_rate": 100.0,
     "supported_models": [
       "gpt-4o",
@@ -25,7 +25,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-anthropic",
@@ -35,7 +35,7 @@
     "api_base": "https://api.anthropic.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 94,
+    "latency_ms": 52,
     "success_rate": 100.0,
     "supported_models": [
       "claude-3-5-sonnet",
@@ -53,7 +53,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-google",
@@ -63,7 +63,7 @@
     "api_base": "https://generativelanguage.googleapis.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 69,
+    "latency_ms": 61,
     "success_rate": 100.0,
     "supported_models": [
       "gemini-1.5-pro",
@@ -81,7 +81,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-xai",
@@ -91,7 +91,7 @@
     "api_base": "https://api.x.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 60,
+    "latency_ms": 97,
     "success_rate": 100.0,
     "supported_models": [
       "grok-4",
@@ -108,7 +108,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-cohere",
@@ -118,7 +118,7 @@
     "api_base": "https://api.cohere.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 125,
+    "latency_ms": 66,
     "success_rate": 100.0,
     "supported_models": [
       "command-a-03-2025",
@@ -136,7 +136,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-groq",
@@ -146,7 +146,7 @@
     "api_base": "https://api.groq.com/openai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 70,
+    "latency_ms": 91,
     "success_rate": 100.0,
     "supported_models": [
       "llama-3.3-70b-versatile",
@@ -164,7 +164,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-mistral",
@@ -174,7 +174,7 @@
     "api_base": "https://api.mistral.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 179,
+    "latency_ms": 139,
     "success_rate": 100.0,
     "supported_models": [
       "mistral-large-latest",
@@ -192,7 +192,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-deepseek",
@@ -202,7 +202,7 @@
     "api_base": "https://api.deepseek.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 282,
+    "latency_ms": 416,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-chat",
@@ -220,7 +220,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-siliconflow",
@@ -230,7 +230,7 @@
     "api_base": "https://api.siliconflow.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 575,
+    "latency_ms": 711,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-ai/DeepSeek-V3",
@@ -249,7 +249,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-moonshot",
@@ -259,7 +259,7 @@
     "api_base": "https://api.moonshot.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 926,
+    "latency_ms": 1711,
     "success_rate": 100.0,
     "supported_models": [
       "moonshot-v1-auto",
@@ -278,7 +278,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-zhipu",
@@ -287,7 +287,7 @@
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 180,
+    "latency_ms": 258,
     "success_rate": 100.0,
     "supported_models": [
       "glm-4-plus",
@@ -305,7 +305,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-bailian",
@@ -315,7 +315,7 @@
     "api_base": "https://dashscope.aliyuncs.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 634,
+    "latency_ms": 786,
     "success_rate": 100.0,
     "supported_models": [
       "qwen-max",
@@ -335,7 +335,7 @@
     "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-qianfan",
@@ -345,7 +345,7 @@
     "api_base": "https://qianfan.baidubce.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 686,
+    "latency_ms": 897,
     "success_rate": 100.0,
     "supported_models": [
       "ernie-4.0-turbo-8k",
@@ -365,7 +365,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-volcano",
@@ -375,7 +375,7 @@
     "api_base": "https://ark.cn-beijing.volces.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 657,
+    "latency_ms": 2258,
     "success_rate": 100.0,
     "supported_models": [
       "doubao-1.5-pro",
@@ -395,7 +395,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-tencent",
@@ -405,7 +405,7 @@
     "api_base": "https://api.hunyuan.cloud.tencent.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1466,
+    "latency_ms": 2000,
     "success_rate": 100.0,
     "supported_models": [
       "hunyuan-standard",
@@ -423,7 +423,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-minimax",
@@ -433,7 +433,7 @@
     "api_base": "https://api.minimaxi.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 905,
+    "latency_ms": 1181,
     "success_rate": 100.0,
     "supported_models": [
       "MiniMax-M1",
@@ -451,7 +451,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-stepfun",
@@ -461,7 +461,7 @@
     "api_base": "https://api.stepfun.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 645,
+    "latency_ms": 785,
     "success_rate": 100.0,
     "supported_models": [
       "step-2-16k",
@@ -479,7 +479,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-together",
@@ -489,7 +489,7 @@
     "api_base": "https://api.together.xyz",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 80,
+    "latency_ms": 116,
     "success_rate": 100.0,
     "supported_models": [
       "meta-llama/Llama-3.3-70B-Instruct",
@@ -507,7 +507,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-fireworks",
@@ -517,7 +517,7 @@
     "api_base": "https://api.fireworks.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 10,
+    "latency_ms": 25,
     "success_rate": 100.0,
     "supported_models": [
       "llama-v3p3-70b-instruct",
@@ -535,7 +535,7 @@
     "cn_access": "direct",
     "test_endpoint": "/inference/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-novita",
@@ -545,7 +545,7 @@
     "api_base": "https://api.novita.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 110,
+    "latency_ms": 373,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek/deepseek-v3",
@@ -562,7 +562,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v3/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-perplexity",
@@ -572,7 +572,7 @@
     "api_base": "https://api.perplexity.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 218,
+    "latency_ms": 46,
     "success_rate": 100.0,
     "supported_models": [
       "sonar",
@@ -589,7 +589,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-nvidia",
@@ -617,7 +617,7 @@
     "cn_access": "unstable",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-huggingface",
@@ -627,7 +627,7 @@
     "api_base": "https://router.huggingface.co",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 104,
+    "latency_ms": 54,
     "success_rate": 100.0,
     "supported_models": [
       "meta-llama/Llama-3.3-70B-Instruct",
@@ -644,7 +644,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-cerebras",
@@ -654,7 +654,7 @@
     "api_base": "https://api.cerebras.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 110,
+    "latency_ms": 70,
     "success_rate": 100.0,
     "supported_models": [
       "llama3.3-70b",
@@ -671,7 +671,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-deepinfra",
@@ -681,7 +681,7 @@
     "api_base": "https://api.deepinfra.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 302,
+    "latency_ms": 413,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-ai/DeepSeek-V3",
@@ -698,7 +698,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/openai/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-sambanova",
@@ -708,7 +708,7 @@
     "api_base": "https://api.sambanova.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 28,
+    "latency_ms": 257,
     "success_rate": 100.0,
     "supported_models": [
       "Meta-Llama-3.3-70B-Instruct",
@@ -726,7 +726,7 @@
     "cn_access": "unstable",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   },
   {
     "id": "provider-agnes",
@@ -736,7 +736,7 @@
     "api_base": "https://apihub.agnes-ai.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 306,
+    "latency_ms": 257,
     "success_rate": 100.0,
     "supported_models": [
       "agnes-2.5-flash",
@@ -751,6 +751,6 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-14T07:39:46Z"
+    "last_checked": "2026-10-15T07:28:19Z"
   }
 ]
