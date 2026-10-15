@@ -10,9 +10,9 @@
     "latency_ms": 111,
     "success_rate": 100.0,
     "supported_models": [
-      "gpt-6-astra",
-      "gpt-6.1-sol",
-      "gpt-6-luna"
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna"
     ],
     "is_featured": false,
     "tags": [

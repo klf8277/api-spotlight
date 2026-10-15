@@ -31,12 +31,12 @@ sources = [
         "api_endpoint": "https://api.openai.com/v1/models",
         "selector": "models",
         "active_models": [
-            "gpt-6-astra",
-            "gpt-6.1-sol",
-            "gpt-6-luna"
+            "gpt-5.6-sol",
+            "gpt-5.6-terra",
+            "gpt-5.6-luna"
         ],
         "last_verified": "2026-10-15",
-        "evidence": "developers.openai.com/api/docs/models documentation confirmed (GPT-6 Astra flagship, GPT-6.1 Sol, GPT-6 Luna)"
+        "evidence": "developers.openai.com/api/docs/models documentation confirmed (GPT-5.6 Sol flagship, GPT-5.6 Terra workhorse, GPT-5.6 Luna compact)"
     },
     {
         "platform_id": "provider-anthropic",
