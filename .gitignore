@@ -25,6 +25,7 @@
 *.pem
 __pycache__/
 *.pyc
+*.bak
 
 # debug
 npm-debug.log*
