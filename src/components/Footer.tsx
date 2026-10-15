@@ -31,6 +31,20 @@ export default function Footer({ locale }: { locale: Locale }) {
           </a>{" "}
           <span>{dictionary.footer.businessNote}</span>
         </p>
+        <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] p-3 text-xs leading-5 text-foreground/80">
+          <span className="font-semibold text-emerald-700 dark:text-emerald-400">
+            {locale === "zh" ? "🛡️ 数据质量与透明度自查公告：" : "🛡️ Data Quality & Transparency Self-Audit: "}
+          </span>
+          <span>{dictionary.footer.transparencyNotice}</span>{" "}
+          <a
+            href="/data/official_sources.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-emerald-600 underline decoration-emerald-500/30 underline-offset-2 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+          >
+            {dictionary.footer.transparencyLink}
+          </a>
+        </div>
         <p className="font-mono">{dictionary.footer.copyright}</p>
       </div>
     </footer>

@@ -164,12 +164,52 @@ export default function RankingTable({
   const listSeparator = locale === "zh" ? "、" : ", ";
 
   const officialSourceMap = useMemo(() => {
-    const map: Record<string, { models_url: string; last_verified: string; evidence: string }> = {};
-    for (const s of (officialSourcesData.sources as Array<{ platform_id: string; models_url: string; last_verified: string; evidence: string }>)) {
+    const map: Record<
+      string,
+      {
+        models_url: string;
+        last_verified: string;
+        evidence: string;
+        hosted_upstream?: Record<string, string>;
+      }
+    > = {};
+    for (const s of (officialSourcesData.sources as Array<{
+      platform_id: string;
+      models_url: string;
+      last_verified: string;
+      evidence: string;
+      hosted_upstream?: Record<string, string>;
+    }>)) {
       map[s.platform_id] = s;
     }
     return map;
   }, []);
+
+  const getHostedTooltip = (model: string, platformId: string) => {
+    const upstream = officialSourceMap[platformId]?.hosted_upstream?.[model] || "";
+    const lower = (upstream + " " + model).toLowerCase();
+    let owner = "";
+    if (lower.includes("deepseek")) {
+      owner = locale === "zh" ? "深度求索 (DeepSeek)" : "DeepSeek";
+    } else if (lower.includes("meta") || lower.includes("llama")) {
+      owner = "Meta";
+    } else if (lower.includes("qwen") || lower.includes("alibaba") || lower.includes("aliyun")) {
+      owner = locale === "zh" ? "阿里巴巴 (Alibaba / Qwen)" : "Alibaba (Qwen)";
+    } else if (lower.includes("nvidia") || lower.includes("nemotron")) {
+      owner = locale === "zh" ? "英伟达 (NVIDIA)" : "NVIDIA";
+    } else if (lower.includes("agnes")) {
+      owner = "Agnes AI";
+    } else if (upstream) {
+      owner = locale === "zh" ? upstream : (upstream.replace(/[\u4e00-\u9fa5]/g, "").trim() || "Upstream Provider");
+    } else if (model.includes("/")) {
+      owner = model.split("/")[0];
+    } else {
+      owner = locale === "zh" ? "上游原厂" : "Upstream Provider";
+    }
+    return locale === "zh"
+      ? `第三方算力托管 · 权重属主：${owner}`
+      : `Third-party hosted compute · Weights owner: ${owner}`;
+  };
 
   const sorted = useMemo(() => {
     const arr = [...platforms];
@@ -338,6 +378,14 @@ export default function RankingTable({
                 >
                   <div className="flex flex-wrap items-center gap-1.5 min-w-[200px]">
                     {p.supported_models.map((model, mIdx) => {
+                      const isRelay = p.type === "relay";
+                      const hostedTooltip = isRelay ? getHostedTooltip(model, p.id) : undefined;
+                      const hostedBadge = isRelay && (
+                        <span className="rounded bg-foreground/10 px-1 py-0.2 text-[9px] font-normal text-foreground/70">
+                          {locale === "zh" ? "托管" : "Hosted"}
+                        </span>
+                      );
+
                       if (mIdx === 0) {
                         if (p.type === "official") {
                           return (
@@ -357,11 +405,12 @@ export default function RankingTable({
                         return (
                           <span
                             key={model}
-                            title={`${ranking.badgeHostedFeatured}: ${model}`}
+                            title={hostedTooltip ? `${hostedTooltip} · ${ranking.badgeHostedFeatured}: ${model}` : `${ranking.badgeHostedFeatured}: ${model}`}
                             className="inline-flex items-center gap-1 rounded-md border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-amber-700 shadow-sm dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-300"
                           >
                             <span className="h-1 w-1 rounded-full bg-amber-500/80" />
-                            {model}
+                            {hostedBadge}
+                            <span>{model}</span>
                             <span className="rounded bg-amber-500/20 px-1 py-0.2 text-[9px] font-medium text-amber-800 dark:text-amber-200">
                               {ranking.badgeHostedFeatured}
                             </span>
@@ -372,22 +421,24 @@ export default function RankingTable({
                         return (
                           <span
                             key={model}
-                            title={`${ranking.badgeCoreModelTitle}: ${model}`}
+                            title={hostedTooltip ?? `${ranking.badgeCoreModelTitle}: ${model}`}
                             className="inline-flex items-center gap-1 rounded-md border border-emerald-500/35 bg-emerald-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-emerald-700 shadow-sm dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300"
                           >
                             <span className="h-1 w-1 rounded-full bg-emerald-500/80" />
-                            {model}
+                            {hostedBadge}
+                            <span>{model}</span>
                           </span>
                         );
                       }
                       return (
                         <span
                           key={model}
-                          title={`${ranking.badgeFastModelTitle}: ${model}`}
+                          title={hostedTooltip ?? `${ranking.badgeFastModelTitle}: ${model}`}
                           className="inline-flex items-center gap-1 rounded-md border border-sky-500/30 bg-sky-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-sky-700 shadow-sm dark:border-sky-400/25 dark:bg-sky-500/15 dark:text-sky-300"
                         >
                           <span className="h-1 w-1 rounded-full bg-sky-500/80" />
-                          {model}
+                          {hostedBadge}
+                          <span>{model}</span>
                         </span>
                       );
                     })}

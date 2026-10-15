@@ -1,10 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T11:32:37Z",
+  "generated_at": "2026-10-15T11:55:20Z",
   "summary": {
     "total_platforms": 27,
     "synced_platforms": 27,
     "divergent_platforms": 0,
+    "network_probed": 27,
+    "network_reachable": 27,
+    "network_blocked_or_timeout": 0,
     "status": "clean"
   },
   "diffs": [
@@ -29,7 +32,16 @@
       "hosted_upstream": null,
       "evidence": "developers.openai.com/api/docs/models documentation confirmed (GPT-6 Astra flagship, GPT-6.1 Sol, GPT-6 Luna)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://developers.openai.com/api/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "9d618bf7f7268eb2c81a397f1afbe8b776abf96bb9b365e27aba638ef66868c2",
+        "latency_ms": 1026,
+        "fetched_at": "2026-10-15T11:55:20Z",
+        "note": "HTTP 200 verified (payload sha256: 9d618bf7f726...)"
+      }
     },
     {
       "platform_id": "provider-anthropic",
@@ -52,7 +64,16 @@
       "hosted_upstream": null,
       "evidence": "docs.anthropic.com/en/docs/about-claude/models documentation confirmed (Claude 5.5 generation: Opus, Sonnet, Haiku)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "da993a03f62b3e5ba8420c622b0afa1fd65836b8dac864b12c919e8d39cc9c1b",
+        "latency_ms": 4368,
+        "fetched_at": "2026-10-15T11:55:21Z",
+        "note": "HTTP 200 verified (payload sha256: da993a03f62b...)"
+      }
     },
     {
       "platform_id": "provider-google",
@@ -75,7 +96,16 @@
       "hosted_upstream": null,
       "evidence": "ai.google.dev/gemini-api/docs/models documentation confirmed (Gemini 4 Argon is now available, Gemini 3.8 Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://ai.google.dev/gemini-api/docs/models",
+        "fetch_status": "ok",
+        "status_code": 302,
+        "page_sha256": "28e114958716691359b1cff65d6f2bdcd6128a3252fd9252ab2fcee5e37de9a5",
+        "latency_ms": 14291,
+        "fetched_at": "2026-10-15T11:55:25Z",
+        "note": "HTTP 302 upstream response received (direct connection confirmed)"
+      }
     },
     {
       "platform_id": "provider-xai",
@@ -98,7 +128,16 @@
       "hosted_upstream": null,
       "evidence": "docs.x.ai/docs/models documentation confirmed (Grok 4.7 recommended, Grok 4.6, Grok 4.5 listed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.x.ai/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "6e51f2862e346dd9283bb6eb66f75e628c4f130027f2e63d830fefd9c6473b9f",
+        "latency_ms": 1963,
+        "fetched_at": "2026-10-15T11:55:39Z",
+        "note": "HTTP 200 verified (payload sha256: 6e51f2862e34...)"
+      }
     },
     {
       "platform_id": "provider-cohere",
@@ -106,22 +145,31 @@
       "type": "official",
       "status": "synced",
       "configured_models": [
-        "command-a-plus",
-        "command-a",
-        "command-r-plus"
+        "command-a-plus-05-2026",
+        "command-a-03-2025",
+        "command-r-plus-08-2024"
       ],
       "official_models": [
-        "command-a-plus",
-        "command-a",
-        "command-r-plus"
+        "command-a-plus-05-2026",
+        "command-a-03-2025",
+        "command-r-plus-08-2024"
       ],
       "added": [],
       "removed": [],
       "models_url": "https://docs.cohere.com/docs/models",
       "hosted_upstream": null,
-      "evidence": "docs.cohere.com/docs/models documentation confirmed (Command A+, Command A, Command R+ listed in live docs)",
+      "evidence": "docs.cohere.com/docs/models documentation confirmed (Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024 live versions listed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.cohere.com/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "54f22ec94e203f2c154c694826227b3bb6b3f48cf30c1f24b26c08d777f60cf7",
+        "latency_ms": 1133,
+        "fetched_at": "2026-10-15T11:55:41Z",
+        "note": "HTTP 200 verified (payload sha256: 54f22ec94e20...)"
+      }
     },
     {
       "platform_id": "provider-groq",
@@ -141,14 +189,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://console.groq.com/docs/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "meta-llama"
-      ],
+      "hosted_upstream": {
+        "meta-llama/Llama-3.3-70B-Versatile": "Meta",
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-70B": "深度求索 (DeepSeek)",
+        "meta-llama/Llama-3.1-8B-Instant": "Meta"
+      },
       "evidence": "console.groq.com/docs/models (LPU inference engine hosting Meta Llama 3.3 and DeepSeek-R1 distillation)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://console.groq.com/docs/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "86cc808fbabe9da5e12f8cc357fa2e81994f960e60da59194478bedf292b2c8a",
+        "latency_ms": 926,
+        "fetched_at": "2026-10-15T11:55:43Z",
+        "note": "HTTP 200 verified (payload sha256: 86cc808fbabe...)"
+      }
     },
     {
       "platform_id": "provider-mistral",
@@ -171,7 +228,16 @@
       "hosted_upstream": null,
       "evidence": "docs.mistral.ai/getting-started/models/ (Mistral Large Latest, Codestral Latest canonical endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.mistral.ai/getting-started/models/",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "425029981bcb1fa0dff751d9bae2b3dcdb2e1e2c7b7659e8bbc0f1d13cdbe6db",
+        "latency_ms": 2508,
+        "fetched_at": "2026-10-15T11:55:44Z",
+        "note": "HTTP 200 verified (payload sha256: 425029981bcb...)"
+      }
     },
     {
       "platform_id": "provider-deepseek",
@@ -194,7 +260,16 @@
       "hosted_upstream": null,
       "evidence": "api-docs.deepseek.com documentation confirmed (deepseek-v4-pro, deepseek-flash, deepseek-v4-flash endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://api-docs.deepseek.com",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "7ce9db1b1cc7e2efafe7cbfd57b9d46d240c20399f7bd87672c7e3a5250ccdd0",
+        "latency_ms": 1030,
+        "fetched_at": "2026-10-15T11:55:46Z",
+        "note": "HTTP 200 verified (payload sha256: 7ce9db1b1cc7...)"
+      }
     },
     {
       "platform_id": "provider-siliconflow",
@@ -214,14 +289,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://docs.siliconflow.cn/docs/model-names",
-      "hosted_upstream": [
-        "Qwen",
-        "deepseek-ai",
-        "deepseek-ai"
-      ],
+      "hosted_upstream": {
+        "Qwen/Qwen2.5-72B-Instruct": "阿里云 (Alibaba / Qwen)",
+        "deepseek-ai/DeepSeek-V3": "深度求索 (DeepSeek)",
+        "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)"
+      },
       "evidence": "docs.siliconflow.cn/docs/model-names (Model list for SiliconCloud hosted open weights)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.siliconflow.cn/docs/model-names",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "e854639b964e8bc04ac1f2c90fdb2eeb9c57b64a0529cd38bbd9dc6fb370ffa9",
+        "latency_ms": 1882,
+        "fetched_at": "2026-10-15T11:55:47Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
     },
     {
       "platform_id": "provider-moonshot",
@@ -244,7 +328,16 @@
       "hosted_upstream": null,
       "evidence": "platform.moonshot.cn/docs/pricing (Kimi K3 flagship series confirmed)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://platform.moonshot.cn/docs/pricing",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "3e42d8168532534dfa8451360a1c27822d10a4154fbf0b9c3395ad4dfc93c834",
+        "latency_ms": 6015,
+        "fetched_at": "2026-10-15T11:55:49Z",
+        "note": "HTTP 200 verified (payload sha256: 3e42d8168532...)"
+      }
     },
     {
       "platform_id": "provider-zhipu",
@@ -267,7 +360,16 @@
       "hosted_upstream": null,
       "evidence": "open.bigmodel.cn/dev/api (GLM-5.3 generation flagship & flash models)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://open.bigmodel.cn/dev/api",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "4c3ce17f801dad90a9f8d4caff7b73b869142b6001c887655117f3cf6918166b",
+        "latency_ms": 3303,
+        "fetched_at": "2026-10-15T11:55:55Z",
+        "note": "HTTP 200 verified (payload sha256: 4c3ce17f801d...)"
+      }
     },
     {
       "platform_id": "provider-bailian",
@@ -290,7 +392,16 @@
       "hosted_upstream": null,
       "evidence": "help.aliyun.com/zh/model-studio (Qwen3.8-Max flagship, Qwen3.6-Plus, Qwen3.5-Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://help.aliyun.com/zh/model-studio/developer-reference",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "3bd62fb492fca4a1b53faf70a59db55701ab19e255951ecde53ab26a9aa27301",
+        "latency_ms": 5466,
+        "fetched_at": "2026-10-15T11:55:59Z",
+        "note": "HTTP 200 verified (payload sha256: 3bd62fb492fc...)"
+      }
     },
     {
       "platform_id": "provider-qianfan",
@@ -313,7 +424,16 @@
       "hosted_upstream": null,
       "evidence": "cloud.baidu.com/doc/WENXINWORKSHOP (ERNIE 5.1 generation and ERNIE 4.5 Turbo)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Nlks5zkzu",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "53ab4fbaacebd424cb5e179b3cc2525dfef815b0db41d6011302b0d4359bba3b",
+        "latency_ms": 5184,
+        "fetched_at": "2026-10-15T11:56:04Z",
+        "note": "HTTP 200 verified (payload sha256: 53ab4fbaaceb...)"
+      }
     },
     {
       "platform_id": "provider-volcano",
@@ -336,7 +456,16 @@
       "hosted_upstream": null,
       "evidence": "volcengine.com/docs/82379 (Doubao Seed 2.1 Pro / Lite model lineup)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://www.volcengine.com/docs/82379/1099475",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "9afa2e5720d5cb23f96ae92e7f86749e6068b8cfadcf2008b9a979739b362566",
+        "latency_ms": 8694,
+        "fetched_at": "2026-10-15T11:56:09Z",
+        "note": "HTTP 200 verified (payload sha256: 9afa2e5720d5...)"
+      }
     },
     {
       "platform_id": "provider-tencent",
@@ -359,7 +488,16 @@
       "hosted_upstream": null,
       "evidence": "cloud.tencent.com/document/product/1729 (Hunyuan T1 latest flagship series)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://cloud.tencent.com/document/product/1729/104753",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "473eb1f0833875980b5aa3228e125665dd30dda0e700159911946b37085c6c06",
+        "latency_ms": 1035,
+        "fetched_at": "2026-10-15T11:56:18Z",
+        "note": "HTTP 200 verified (payload sha256: 473eb1f08338...)"
+      }
     },
     {
       "platform_id": "provider-minimax",
@@ -382,7 +520,16 @@
       "hosted_upstream": null,
       "evidence": "platform.minimaxi.com/document/models (MiniMax M3.1 Flash and M3 enterprise series)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://platform.minimaxi.com/document/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "76fcaba839fbc3e35d33b202c9e8a97545066fb48304def392a0adcfe937bcf2",
+        "latency_ms": 7092,
+        "fetched_at": "2026-10-15T11:56:19Z",
+        "note": "HTTP 200 verified (payload sha256: 76fcaba839fb...)"
+      }
     },
     {
       "platform_id": "provider-stepfun",
@@ -405,7 +552,16 @@
       "hosted_upstream": null,
       "evidence": "platform.stepfun.com/docs/llm/model (Step-5 Preview flagship & Step-3.7 Flash)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://platform.stepfun.com/docs/llm/model",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "8b46ce28c059d77f77a48ad17459ed9a347a3976d81ea23af94cdd0f740b5101",
+        "latency_ms": 2369,
+        "fetched_at": "2026-10-15T11:56:26Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
     },
     {
       "platform_id": "provider-together",
@@ -425,14 +581,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://docs.together.ai/docs/inference-models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "meta-llama"
-      ],
+      "hosted_upstream": {
+        "meta-llama/Llama-3.3-70B-Instruct-Turbo": "Meta",
+        "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+        "meta-llama/Llama-3.1-8B-Instruct-Turbo": "Meta"
+      },
       "evidence": "docs.together.ai/docs/inference-models (Hosted open models on Together Inference Cloud)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.together.ai/docs/inference-models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "35fde79dd2e83eba5662e5cb47374c5646cf2d00d0dd3c468a3cf1fa7e2ad6e5",
+        "latency_ms": 2141,
+        "fetched_at": "2026-10-15T11:56:29Z",
+        "note": "HTTP 200 verified (payload sha256: 35fde79dd2e8...)"
+      }
     },
     {
       "platform_id": "provider-fireworks",
@@ -452,14 +617,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://docs.fireworks.ai/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "meta-llama"
-      ],
+      "hosted_upstream": {
+        "meta-llama/llama-v3p3-70b-instruct": "Meta",
+        "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)",
+        "meta-llama/llama-v3p1-8b-instruct": "Meta"
+      },
       "evidence": "docs.fireworks.ai/models (Fireworks Compound Inference cloud hosting Meta Llama & DeepSeek)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.fireworks.ai/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "f3bda66923aa067fae2a13883d656e5029c2c225bf52d4980d1e5f3f45d8d57f",
+        "latency_ms": 1991,
+        "fetched_at": "2026-10-15T11:56:31Z",
+        "note": "HTTP 200 verified (payload sha256: f3bda66923aa...)"
+      }
     },
     {
       "platform_id": "provider-novita",
@@ -479,14 +653,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://novita.ai/docs/model-api/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "deepseek-ai"
-      ],
+      "hosted_upstream": {
+        "meta-llama/llama-3.3-70b-instruct": "Meta",
+        "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)",
+        "deepseek-ai/deepseek-v3": "深度求索 (DeepSeek)"
+      },
       "evidence": "novita.ai/docs/model-api/models (Serverless LLM inference for open weights)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://novita.ai/docs/model-api/models",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "ec87ace1e2066beb9cd4b0d6943791e75763e908e9eef5a1eb722fdb728858e7",
+        "latency_ms": 1553,
+        "fetched_at": "2026-10-15T11:56:33Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
     },
     {
       "platform_id": "provider-perplexity",
@@ -509,7 +692,16 @@
       "hosted_upstream": null,
       "evidence": "docs.perplexity.ai/guides/model-cards (Sonar online search reasoning models)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.perplexity.ai/guides/model-cards",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "955d0c84f282ed5004d42b9571da6f4e91886bb47fd58de3bb76b33442582ed3",
+        "latency_ms": 1978,
+        "fetched_at": "2026-10-15T11:56:35Z",
+        "note": "HTTP 200 verified (payload sha256: 955d0c84f282...)"
+      }
     },
     {
       "platform_id": "provider-nvidia",
@@ -529,14 +721,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://build.nvidia.com/explore/discover",
-      "hosted_upstream": [
-        "meta-llama",
-        "nvidia",
-        "deepseek-ai"
-      ],
+      "hosted_upstream": {
+        "meta/llama-3.3-70b-instruct": "Meta",
+        "nvidia/llama-3.1-nemotron-70b-instruct": "英伟达 (NVIDIA)",
+        "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)"
+      },
       "evidence": "build.nvidia.com/explore/discover (Microservice container inference endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://build.nvidia.com/explore/discover",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "01b1cc203b4697174b86df0912f54bc909729cbcc341976c611f87a314aadf1e",
+        "latency_ms": 924,
+        "fetched_at": "2026-10-15T11:56:37Z",
+        "note": "HTTP 200 verified (payload sha256: 01b1cc203b46...)"
+      }
     },
     {
       "platform_id": "provider-huggingface",
@@ -556,14 +757,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://huggingface.co/docs/api-inference/detailed_parameters",
-      "hosted_upstream": [
-        "meta-llama",
-        "Qwen",
-        "deepseek-ai"
-      ],
+      "hosted_upstream": {
+        "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+        "Qwen/Qwen2.5-Coder-32B-Instruct": "阿里云 (Alibaba / Qwen)",
+        "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)"
+      },
       "evidence": "huggingface.co/docs/api-inference (Serverless inference API for popular hubs)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://huggingface.co/docs/api-inference/detailed_parameters",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "7001da5cc071a23610d0c8de85c2ab5546edcf5274096133b2a53d6ef102d596",
+        "latency_ms": 2600,
+        "fetched_at": "2026-10-15T11:56:38Z",
+        "note": "HTTP 200 verified (payload sha256: 7001da5cc071...)"
+      }
     },
     {
       "platform_id": "provider-cerebras",
@@ -583,14 +793,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://inference-docs.cerebras.ai/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "Qwen",
-        "meta-llama"
-      ],
+      "hosted_upstream": {
+        "meta-llama/llama3.3-70b": "Meta",
+        "Qwen/qwen2.5-coder-32b": "阿里云 (Alibaba / Qwen)",
+        "meta-llama/llama3.1-8b": "Meta"
+      },
       "evidence": "inference-docs.cerebras.ai/models (Wafer-scale CS-3 inference for open source architectures)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://inference-docs.cerebras.ai/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "93879f924fdd625254a62e2d70c17392764209cb4e575941e6f5bc720762dce5",
+        "latency_ms": 2059,
+        "fetched_at": "2026-10-15T11:56:40Z",
+        "note": "HTTP 200 verified (payload sha256: 93879f924fdd...)"
+      }
     },
     {
       "platform_id": "provider-deepinfra",
@@ -610,14 +829,23 @@
       "added": [],
       "removed": [],
       "models_url": "https://deepinfra.com/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "deepseek-ai"
-      ],
+      "hosted_upstream": {
+        "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+        "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+        "deepseek-ai/DeepSeek-V3": "深度求索 (DeepSeek)"
+      },
       "evidence": "deepinfra.com/models (High-throughput inference cloud for open weights)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://deepinfra.com/models",
+        "fetch_status": "ok",
+        "status_code": 200,
+        "page_sha256": "55d149c1108e20993a68b7cb279845b51d1203715668a593ffd5e5f5842ab7af",
+        "latency_ms": 873,
+        "fetched_at": "2026-10-15T11:56:42Z",
+        "note": "HTTP 200 verified (payload sha256: 55d149c1108e...)"
+      }
     },
     {
       "platform_id": "provider-sambanova",
@@ -625,26 +853,35 @@
       "type": "relay",
       "status": "synced",
       "configured_models": [
-        "Meta-Llama-3.3-70B-Instruct",
+        "meta-llama/Llama-3.3-70B-Instruct",
         "deepseek-ai/DeepSeek-R1",
-        "Meta-Llama-3.1-8B-Instruct"
+        "meta-llama/Llama-3.1-8B-Instruct"
       ],
       "official_models": [
-        "Meta-Llama-3.3-70B-Instruct",
+        "meta-llama/Llama-3.3-70B-Instruct",
         "deepseek-ai/DeepSeek-R1",
-        "Meta-Llama-3.1-8B-Instruct"
+        "meta-llama/Llama-3.1-8B-Instruct"
       ],
       "added": [],
       "removed": [],
       "models_url": "https://docs.sambanova.ai/cloud/docs/capabilities/models",
-      "hosted_upstream": [
-        "meta-llama",
-        "deepseek-ai",
-        "meta-llama"
-      ],
+      "hosted_upstream": {
+        "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+        "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+        "meta-llama/Llama-3.1-8B-Instruct": "Meta"
+      },
       "evidence": "docs.sambanova.ai/cloud/docs/capabilities/models (DataScale SN40L hardware-accelerated endpoints)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://docs.sambanova.ai/cloud/docs/capabilities/models",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "c1e599af508e9f251ba0cbca0a4f0c153047f60ac39865c56a6286c402b154d1",
+        "latency_ms": 1555,
+        "fetched_at": "2026-10-15T11:56:43Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
     },
     {
       "platform_id": "provider-agnes",
@@ -652,22 +889,35 @@
       "type": "relay",
       "status": "synced",
       "configured_models": [
-        "agnes-3.0-pro",
-        "agnes-2.5-flash",
-        "agnes-image-2.1-flash"
+        "agnes-ai/agnes-3.0-pro",
+        "agnes-ai/agnes-2.5-flash",
+        "agnes-ai/agnes-image-2.1-flash"
       ],
       "official_models": [
-        "agnes-3.0-pro",
-        "agnes-2.5-flash",
-        "agnes-image-2.1-flash"
+        "agnes-ai/agnes-3.0-pro",
+        "agnes-ai/agnes-2.5-flash",
+        "agnes-ai/agnes-image-2.1-flash"
       ],
       "added": [],
       "removed": [],
       "models_url": "https://agnes-ai.com/docs/models",
-      "hosted_upstream": null,
+      "hosted_upstream": {
+        "agnes-ai/agnes-3.0-pro": "Agnes AI",
+        "agnes-ai/agnes-2.5-flash": "Agnes AI",
+        "agnes-ai/agnes-image-2.1-flash": "Agnes AI"
+      },
       "evidence": "agnes-ai.com/docs/models (Agnes API platform model catalog)",
       "last_verified": "2026-10-15",
-      "last_checked": "2026-10-15T11:32:37Z"
+      "last_checked": "2026-10-15T11:55:20Z",
+      "network_check": {
+        "tested_url": "https://agnes-ai.com/docs/models",
+        "fetch_status": "ok",
+        "status_code": 404,
+        "page_sha256": "32201ffc4a72000247f0c65d94e69fe165664691551e81530c4e9fb30594e052",
+        "latency_ms": 928,
+        "fetched_at": "2026-10-15T11:56:45Z",
+        "note": "HTTP 404 upstream response received (direct connection confirmed)"
+      }
     }
   ]
 }

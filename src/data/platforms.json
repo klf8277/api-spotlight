@@ -125,9 +125,9 @@
     "latency_ms": 66,
     "success_rate": 100.0,
     "supported_models": [
-      "command-a-plus",
-      "command-a",
-      "command-r-plus"
+      "command-a-plus-05-2026",
+      "command-a-03-2025",
+      "command-r-plus-08-2024"
     ],
     "is_featured": false,
     "tags": [
@@ -736,9 +736,9 @@
     "latency_ms": 257,
     "success_rate": 100.0,
     "supported_models": [
-      "Meta-Llama-3.3-70B-Instruct",
+      "meta-llama/Llama-3.3-70B-Instruct",
       "deepseek-ai/DeepSeek-R1",
-      "Meta-Llama-3.1-8B-Instruct"
+      "meta-llama/Llama-3.1-8B-Instruct"
     ],
     "is_featured": false,
     "tags": [
@@ -765,9 +765,9 @@
     "latency_ms": 257,
     "success_rate": 100.0,
     "supported_models": [
-      "agnes-3.0-pro",
-      "agnes-2.5-flash",
-      "agnes-image-2.1-flash"
+      "agnes-ai/agnes-3.0-pro",
+      "agnes-ai/agnes-2.5-flash",
+      "agnes-ai/agnes-image-2.1-flash"
     ],
     "is_featured": false,
     "tags": [

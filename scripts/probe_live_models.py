@@ -43,6 +43,10 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
+# 强制纯净直连物理通道，杜绝继承本机 Clash 代理
+direct_opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+urllib.request.install_opener(direct_opener)
+
 # ---------------------------------------------------------------- 路径与常量
 MAIN_ROOT = Path(__file__).resolve().parent.parent
 PLATFORMS_JSON = MAIN_ROOT / "src" / "data" / "platforms.json"
@@ -124,7 +128,7 @@ def load_targets() -> tuple[list[dict], list[dict]]:
     track1: list[dict] = []
     pdata = json.loads(PLATFORMS_JSON.read_text(encoding="utf-8"))
     items = pdata if isinstance(pdata, list) else pdata.get("platforms") or pdata.get("items") or []
-    official_entries = {x.get("id"): x for x in items if x.get("type") == "official"}
+    official_entries = {x.get("id"): x for x in items}
     for pid in sorted(WHITELIST_TIER1 & set(official_entries)):
         e = official_entries[pid]
         base = (e.get("api_base") or "").rstrip("/")

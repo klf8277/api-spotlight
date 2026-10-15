@@ -68,9 +68,9 @@ sources = [
         "models_url": "https://docs.cohere.com/docs/models",
         "api_endpoint": "https://api.cohere.com/v1/models",
         "selector": "models",
-        "active_models": ["command-a-plus", "command-a", "command-r-plus"],
+        "active_models": ["command-a-plus-05-2026", "command-a-03-2025", "command-r-plus-08-2024"],
         "last_verified": "2026-10-15",
-        "evidence": "docs.cohere.com/docs/models documentation confirmed (Command A+, Command A, Command R+ listed in live docs)"
+        "evidence": "docs.cohere.com/docs/models documentation confirmed (Command A+ 05-2026, Command A 03-2025, Command R+ 08-2024 live versions listed)"
     },
     {
         "platform_id": "provider-groq",
@@ -80,7 +80,11 @@ sources = [
         "api_endpoint": "https://api.groq.com/openai/v1/models",
         "selector": "data",
         "active_models": ["meta-llama/Llama-3.3-70B-Versatile", "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "meta-llama/Llama-3.1-8B-Instant"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "meta-llama"],
+        "hosted_upstream": {
+            "meta-llama/Llama-3.3-70B-Versatile": "Meta",
+            "deepseek-ai/DeepSeek-R1-Distill-Llama-70B": "深度求索 (DeepSeek)",
+            "meta-llama/Llama-3.1-8B-Instant": "Meta"
+        },
         "last_verified": "2026-10-15",
         "evidence": "console.groq.com/docs/models (LPU inference engine hosting Meta Llama 3.3 and DeepSeek-R1 distillation)"
     },
@@ -114,7 +118,11 @@ sources = [
         "api_endpoint": "https://api.siliconflow.cn/v1/models",
         "selector": "data",
         "active_models": ["Qwen/Qwen2.5-72B-Instruct", "deepseek-ai/DeepSeek-V3", "deepseek-ai/DeepSeek-R1"],
-        "hosted_upstream": ["Qwen", "deepseek-ai", "deepseek-ai"],
+        "hosted_upstream": {
+            "Qwen/Qwen2.5-72B-Instruct": "阿里云 (Alibaba / Qwen)",
+            "deepseek-ai/DeepSeek-V3": "深度求索 (DeepSeek)",
+            "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)"
+        },
         "last_verified": "2026-10-15",
         "evidence": "docs.siliconflow.cn/docs/model-names (Model list for SiliconCloud hosted open weights)"
     },
@@ -214,7 +222,11 @@ sources = [
         "api_endpoint": "https://api.together.xyz/v1/models",
         "selector": "data",
         "active_models": ["meta-llama/Llama-3.3-70B-Instruct-Turbo", "deepseek-ai/DeepSeek-R1", "meta-llama/Llama-3.1-8B-Instruct-Turbo"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "meta-llama"],
+        "hosted_upstream": {
+            "meta-llama/Llama-3.3-70B-Instruct-Turbo": "Meta",
+            "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+            "meta-llama/Llama-3.1-8B-Instruct-Turbo": "Meta"
+        },
         "last_verified": "2026-10-15",
         "evidence": "docs.together.ai/docs/inference-models (Hosted open models on Together Inference Cloud)"
     },
@@ -226,7 +238,11 @@ sources = [
         "api_endpoint": "https://api.fireworks.ai/inference/v1/models",
         "selector": "data",
         "active_models": ["meta-llama/llama-v3p3-70b-instruct", "deepseek-ai/deepseek-r1", "meta-llama/llama-v3p1-8b-instruct"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "meta-llama"],
+        "hosted_upstream": {
+            "meta-llama/llama-v3p3-70b-instruct": "Meta",
+            "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)",
+            "meta-llama/llama-v3p1-8b-instruct": "Meta"
+        },
         "last_verified": "2026-10-15",
         "evidence": "docs.fireworks.ai/models (Fireworks Compound Inference cloud hosting Meta Llama & DeepSeek)"
     },
@@ -238,7 +254,11 @@ sources = [
         "api_endpoint": "https://api.novita.ai/v3/openai/models",
         "selector": "data",
         "active_models": ["meta-llama/llama-3.3-70b-instruct", "deepseek-ai/deepseek-r1", "deepseek-ai/deepseek-v3"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "deepseek-ai"],
+        "hosted_upstream": {
+            "meta-llama/llama-3.3-70b-instruct": "Meta",
+            "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)",
+            "deepseek-ai/deepseek-v3": "深度求索 (DeepSeek)"
+        },
         "last_verified": "2026-10-15",
         "evidence": "novita.ai/docs/model-api/models (Serverless LLM inference for open weights)"
     },
@@ -261,7 +281,11 @@ sources = [
         "api_endpoint": "https://integrate.api.nvidia.com/v1/models",
         "selector": "data",
         "active_models": ["meta/llama-3.3-70b-instruct", "nvidia/llama-3.1-nemotron-70b-instruct", "deepseek-ai/deepseek-r1"],
-        "hosted_upstream": ["meta-llama", "nvidia", "deepseek-ai"],
+        "hosted_upstream": {
+            "meta/llama-3.3-70b-instruct": "Meta",
+            "nvidia/llama-3.1-nemotron-70b-instruct": "英伟达 (NVIDIA)",
+            "deepseek-ai/deepseek-r1": "深度求索 (DeepSeek)"
+        },
         "last_verified": "2026-10-15",
         "evidence": "build.nvidia.com/explore/discover (Microservice container inference endpoints)"
     },
@@ -273,7 +297,11 @@ sources = [
         "api_endpoint": "https://api-inference.huggingface.co/models",
         "selector": "data",
         "active_models": ["meta-llama/Llama-3.3-70B-Instruct", "Qwen/Qwen2.5-Coder-32B-Instruct", "deepseek-ai/DeepSeek-R1"],
-        "hosted_upstream": ["meta-llama", "Qwen", "deepseek-ai"],
+        "hosted_upstream": {
+            "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+            "Qwen/Qwen2.5-Coder-32B-Instruct": "阿里云 (Alibaba / Qwen)",
+            "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)"
+        },
         "last_verified": "2026-10-15",
         "evidence": "huggingface.co/docs/api-inference (Serverless inference API for popular hubs)"
     },
@@ -285,7 +313,11 @@ sources = [
         "api_endpoint": "https://api.cerebras.ai/v1/models",
         "selector": "data",
         "active_models": ["meta-llama/llama3.3-70b", "Qwen/qwen2.5-coder-32b", "meta-llama/llama3.1-8b"],
-        "hosted_upstream": ["meta-llama", "Qwen", "meta-llama"],
+        "hosted_upstream": {
+            "meta-llama/llama3.3-70b": "Meta",
+            "Qwen/qwen2.5-coder-32b": "阿里云 (Alibaba / Qwen)",
+            "meta-llama/llama3.1-8b": "Meta"
+        },
         "last_verified": "2026-10-15",
         "evidence": "inference-docs.cerebras.ai/models (Wafer-scale CS-3 inference for open source architectures)"
     },
@@ -297,7 +329,11 @@ sources = [
         "api_endpoint": "https://api.deepinfra.com/v1/openai/models",
         "selector": "data",
         "active_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-R1", "deepseek-ai/DeepSeek-V3"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "deepseek-ai"],
+        "hosted_upstream": {
+            "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+            "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+            "deepseek-ai/DeepSeek-V3": "深度求索 (DeepSeek)"
+        },
         "last_verified": "2026-10-15",
         "evidence": "deepinfra.com/models (High-throughput inference cloud for open weights)"
     },
@@ -308,8 +344,12 @@ sources = [
         "models_url": "https://docs.sambanova.ai/cloud/docs/capabilities/models",
         "api_endpoint": "https://api.sambanova.ai/v1/models",
         "selector": "data",
-        "active_models": ["Meta-Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-R1", "Meta-Llama-3.1-8B-Instruct"],
-        "hosted_upstream": ["meta-llama", "deepseek-ai", "meta-llama"],
+        "active_models": ["meta-llama/Llama-3.3-70B-Instruct", "deepseek-ai/DeepSeek-R1", "meta-llama/Llama-3.1-8B-Instruct"],
+        "hosted_upstream": {
+            "meta-llama/Llama-3.3-70B-Instruct": "Meta",
+            "deepseek-ai/DeepSeek-R1": "深度求索 (DeepSeek)",
+            "meta-llama/Llama-3.1-8B-Instruct": "Meta"
+        },
         "last_verified": "2026-10-15",
         "evidence": "docs.sambanova.ai/cloud/docs/capabilities/models (DataScale SN40L hardware-accelerated endpoints)"
     },
@@ -320,7 +360,12 @@ sources = [
         "models_url": "https://agnes-ai.com/docs/models",
         "api_endpoint": "https://api.agnes-ai.com/v1/models",
         "selector": "data",
-        "active_models": ["agnes-3.0-pro", "agnes-2.5-flash", "agnes-image-2.1-flash"],
+        "active_models": ["agnes-ai/agnes-3.0-pro", "agnes-ai/agnes-2.5-flash", "agnes-ai/agnes-image-2.1-flash"],
+        "hosted_upstream": {
+            "agnes-ai/agnes-3.0-pro": "Agnes AI",
+            "agnes-ai/agnes-2.5-flash": "Agnes AI",
+            "agnes-ai/agnes-image-2.1-flash": "Agnes AI"
+        },
         "last_verified": "2026-10-15",
         "evidence": "agnes-ai.com/docs/models (Agnes API platform model catalog)"
     }

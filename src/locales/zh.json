@@ -159,6 +159,8 @@
     "line3Suffix": "（商业内容与本站评测数据相互独立）。",
     "businessLabel": "Business & Partnerships：",
     "businessNote": "（仅用于商业合作、数据合作及商务联系，不提供终端用户技术支持。）",
+    "transparencyNotice": "APISpotlight 坚持数据透明度铁律：已于 2026 年 10 月完成全网审计净化，下线历史代理污染产生的境外假直连标识，拆分官方原厂与算力托管边界，并挂载官方出处实证直跳。详见",
+    "transparencyLink": "官方源存证 ↗",
     "copyright": "© 2026 APISpotlight (API 探照灯) · 纯静态部署 · 无用户数据收集 · 社区：Telegram"
   },
   "freeTierIndex": {
