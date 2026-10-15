@@ -327,28 +327,42 @@ export default function RankingTable({
                   className="px-4 py-3"
                   title={p.supported_models.join(listSeparator)}
                 >
-                  <div className="flex flex-wrap items-center gap-1.5 min-w-[180px]">
+                  <div className="flex flex-wrap items-center gap-1.5 min-w-[200px]">
                     {p.supported_models.map((model, mIdx) => {
                       if (mIdx === 0) {
                         return (
                           <span
                             key={model}
                             title={`${ranking.badgeLatestModelTitle}: ${model}`}
-                            className="inline-flex items-center gap-1 rounded-md border border-amber-500/40 bg-gradient-to-r from-amber-500/15 to-orange-500/10 px-2 py-0.5 text-xs font-semibold text-amber-700 shadow-[0_0_10px_-3px_rgba(245,158,11,0.35)] dark:border-amber-400/35 dark:from-amber-400/20 dark:to-orange-400/15 dark:text-amber-300"
+                            className="inline-flex items-center gap-1.5 rounded-md border border-amber-500/60 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-800 shadow-[0_0_12px_-2px_rgba(245,158,11,0.5)] dark:border-amber-400/50 dark:from-amber-400/25 dark:via-orange-400/20 dark:to-amber-400/15 dark:text-amber-200"
                           >
                             <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
                             <span className="font-mono">{model}</span>
-                            <span className="rounded bg-amber-500/25 px-1 py-0.2 text-[9px] font-bold text-amber-800 dark:text-amber-200">
+                            <span className="rounded bg-amber-500/30 px-1 py-0.2 text-[9px] font-bold uppercase tracking-wider text-amber-900 dark:text-amber-100">
                               {ranking.badgeLatestModel}
                             </span>
+                          </span>
+                        );
+                      }
+                      if (mIdx === 1) {
+                        return (
+                          <span
+                            key={model}
+                            title={`${ranking.badgeCoreModelTitle}: ${model}`}
+                            className="inline-flex items-center gap-1 rounded-md border border-emerald-500/35 bg-emerald-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-emerald-700 shadow-sm dark:border-emerald-400/30 dark:bg-emerald-500/15 dark:text-emerald-300"
+                          >
+                            <span className="h-1 w-1 rounded-full bg-emerald-500/80" />
+                            {model}
                           </span>
                         );
                       }
                       return (
                         <span
                           key={model}
-                          className="inline-flex items-center rounded-md border border-foreground/10 bg-foreground/[0.04] px-1.5 py-0.5 font-mono text-xs text-foreground/70"
+                          title={`${ranking.badgeFastModelTitle}: ${model}`}
+                          className="inline-flex items-center gap-1 rounded-md border border-sky-500/30 bg-sky-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-sky-700 shadow-sm dark:border-sky-400/25 dark:bg-sky-500/15 dark:text-sky-300"
                         >
+                          <span className="h-1 w-1 rounded-full bg-sky-500/80" />
                           {model}
                         </span>
                       );

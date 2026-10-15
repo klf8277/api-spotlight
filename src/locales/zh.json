@@ -88,6 +88,8 @@
     "colModels": "代表模型",
     "badgeLatestModel": "最新旗舰",
     "badgeLatestModelTitle": "厂商当前最新在架旗舰模型",
+    "badgeCoreModelTitle": "主力推荐",
+    "badgeFastModelTitle": "极速/轻量",
     "colEntry": "官网入口",
     "badgeDirectCn": "国内直连",
     "badgeDirectCnTitle": "本站本机实测：境内可直连（非官方保证，跨境网络存在时点差异）",
