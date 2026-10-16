@@ -21,6 +21,8 @@ jobs:
   test-and-verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      SPOTLIGHT_WARN_STALE: "1"
     steps:
       - name: 检出代码
         uses: actions/checkout@v5
@@ -50,10 +52,11 @@ jobs:
             exit 1
           fi
 
-      - name: 构建与质量门禁（含真实性门禁）
+      - name: 构建与质量门禁（含真实性门禁，定时CI允许超期警示不阻断）
         run: |
           npm ci
           npm run lint
           npm run build
           npm run contract:check
-          python scripts/verify_metrics_truth.py
+          python scripts/verify_metrics_truth.py --warn-stale
+

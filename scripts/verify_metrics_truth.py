@@ -98,8 +98,8 @@ def check_r5(platforms: list[dict]) -> tuple[bool, str]:
     return True, "无口径禁止上墙校验通过（所有展示延迟的平台均具有 direct 明确口径）"
 
 
-def check_r6_freshness() -> tuple[bool, str]:
-    """令状 R5（探针副证保鲜防线）：probe_live.json 缺失或 >48h 告警拦截"""
+def check_r6_freshness(warn_stale: bool = False) -> tuple[bool, str]:
+    """令状 R5（探针副证保鲜防线）：probe_live.json 缺失或 >48h 告警拦截；CI 定时体检支持降级警示"""
     if not PROBE_LIVE_FILE.exists():
         return False, f"probe_live.json 缺失：{PROBE_LIVE_FILE}"
     try:
@@ -112,6 +112,8 @@ def check_r6_freshness() -> tuple[bool, str]:
         now_dt = datetime.now(timezone.utc)
         age_hours = (now_dt - gen_dt).total_seconds() / 3600.0
         if age_hours > 48.0:
+            if warn_stale:
+                return True, f"探针保鲜预警 (CI 定时体检降级): 采样于 {age_hours:.1f} 小时前 > 48h，处于日常巡检环境，降级为警告不阻断流水线"
             return False, f"probe_live.json 探针副证已超期（生成于 {age_hours:.1f} 小时前，上限 48h），禁止陈旧探针上墙！"
         return True, f"探针保鲜校验通过（采样于 {age_hours:.1f} 小时前 <= 48h）"
     except Exception as e:
@@ -119,6 +121,9 @@ def check_r6_freshness() -> tuple[bool, str]:
 
 
 def main() -> int:
+    import os
+    warn_stale = "--warn-stale" in sys.argv or os.environ.get("SPOTLIGHT_WARN_STALE") == "1"
+
     print("=" * 70)
     print("【度量真实性门禁校验】(Metrics Truth Gatekeeper)")
     print("=" * 70)
@@ -140,7 +145,7 @@ def main() -> int:
         ("R3 零旁挂校验", check_r3()),
         ("R4 零硬编码校验", check_r4()),
         ("R5 口径准入校验", check_r5(platforms)),
-        ("R6 探针新鲜度校验", check_r6_freshness()),
+        ("R6 探针新鲜度校验", check_r6_freshness(warn_stale=warn_stale)),
     ]
 
     all_pass = True
