@@ -21,6 +21,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           </a>{" "}
           {dictionary.footer.line3Suffix}
         </p>
+        <p className="text-foreground/50">
+          {dictionary.footer.disclosure}
+        </p>
         <p>
           <span className="font-medium text-foreground/70">{dictionary.footer.businessLabel}</span>{" "}
           <a
