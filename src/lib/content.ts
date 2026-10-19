@@ -98,7 +98,7 @@ export function getAuthenticityMap(locale: Locale): Record<string, AuthenticityR
 
 /** 近 30 天延迟趋势：platform_id → [{date, latency}]，按日期升序（数据源 history.json）。 */
 export function getLatencyHistory(): Record<string, Array<{ date: string; latency: number }>> {
-  const history = (historyData.entries ?? []) as HistoryEntry[];
+  const history = (historyData.entries ?? []) as unknown as HistoryEntry[];
   const acc: Record<string, Array<{ date: string; latency: number }>> = {};
   for (const entry of history) {
     for (const [platformId, point] of Object.entries(entry.platforms ?? {})) {

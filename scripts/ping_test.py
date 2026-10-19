@@ -154,7 +154,13 @@ async def probe_site(
 
 async def run_all(sites: list[dict], key_env: str, samples: int, timeout: float, concurrency: int) -> list[dict]:
     sem = asyncio.Semaphore(concurrency)
-    return await asyncio.gather(*(probe_site(s, sem, key_env, samples, timeout) for s in sites))
+
+    async def _staggered_probe(site: dict, idx: int) -> dict:
+        if idx > 0:
+            await asyncio.sleep(idx * 0.4)
+        return await probe_site(site, sem, key_env, samples, timeout)
+
+    return await asyncio.gather(*(_staggered_probe(s, i) for i, s in enumerate(sites)))
 
 
 def print_report(results: list[dict]) -> None:

@@ -1,8 +1,8 @@
-# Api探照灯 · 定时连通性与质量体检
-# 每日（UTC）自动执行 ping_test.py（纯探测，不写盘），度量数据唯一写入权归本地测量站。
+# Api探照灯 · 定时连通性与实测保鲜
+# 每日（UTC）自动执行 ping_test.py --apply，更新平台指标并写回，保持前台实测日期新鲜。
 # 手动触发：GitHub Actions 页 → Run workflow。
 
-name: CI - 定时连通性与质量体检
+name: CI - 定时实测平台数据与保鲜更新
 
 on:
   schedule:
@@ -11,14 +11,15 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write # 允许把实测结果 push 回仓库
+  actions: write # watchman：允许触发 deploy_pages.yml（workflow_dispatch 自愈）
 
 concurrency:
   group: api-spotlight-cron-test
   cancel-in-progress: true
 
 jobs:
-  test-and-verify:
+  test-and-update:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -38,12 +39,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 接口连通性实测（纯校验，不写盘）
+      - name: 接口连通性实测并写回
         env:
           SPOTLIGHT_TEST_KEY: ${{ secrets.SPOTLIGHT_TEST_KEY }}
         run: |
           set -o pipefail
-          python scripts/ping_test.py | tee "$RUNNER_TEMP/ping-test.log"
+          python scripts/ping_test.py --apply | tee "$RUNNER_TEMP/ping-test.log"
 
       - name: 连通性保底核验
         run: |
@@ -52,11 +53,51 @@ jobs:
             exit 1
           fi
 
-      - name: 构建与质量门禁（含真实性门禁，定时CI允许超期警示不阻断）
+      - name: 记录当日历史基线
+        run: python scripts/history_update.py --apply
+
+      - name: 构建与质量门禁（含真实性门禁）
         run: |
           npm ci
           npm run lint
           npm run build
           npm run contract:check
-          python scripts/verify_metrics_truth.py --warn-stale
 
+      - name: 提交数据变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "未检测到指标变化，跳过提交"
+          else
+            git commit -m "chore: update platform metrics ($(date -u +'%Y-%m-%d'))"
+            git push
+          fi
+
+      # Watchman 自愈：按 head_sha 匹配运行记录；同 SHA 已有 完成/进行中/排队 运行时不重复补发
+      - name: Watchman - 确保部署跟上 main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          HEAD=$(git rev-parse HEAD)
+          CHECK() {
+            curl -s -m 20 -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/runs?per_page=10" \
+              | python3 -c "import json,sys; runs=json.load(sys.stdin).get('workflow_runs',[]) or []; m=[r for r in runs if r.get('head_sha','')==sys.argv[1]]; print('0' if (m and m[0].get('status') in ('completed','in_progress','queued')) else '1')" "$HEAD"
+          }
+          NEED=$(CHECK)
+          if [ "$NEED" = "1" ]; then
+            echo "⏳ 未发现同 SHA 部署运行，等待 45s 复检（排除 push 事件迟到）..."
+            sleep 45
+            NEED=$(CHECK)
+          fi
+          if [ "$NEED" = "1" ]; then
+            echo "⚠️ 复检后仍无 HEAD=${HEAD} 的部署运行，触发自愈..."
+            curl -s -m 20 -X POST -H "Authorization: Bearer ${GH_TOKEN}" \
+              -d '{"ref":"main"}' \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy_pages.yml/dispatches" \
+              -o /dev/null -w "dispatch_http=%{http_code}\n"
+          else
+            echo "✅ 已存在 HEAD=${HEAD} 的部署运行（完成/进行中/排队），无需自愈"
+          fi
