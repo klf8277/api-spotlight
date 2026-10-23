@@ -26,7 +26,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:48Z",
+    "last_checked": "2026-10-23T07:34:08Z",
     "measured_via": "tunnel"
   },
   {
@@ -56,7 +56,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:49Z",
+    "last_checked": "2026-10-23T07:34:09Z",
     "measured_via": "tunnel"
   },
   {
@@ -86,7 +86,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:49Z",
+    "last_checked": "2026-10-23T07:34:09Z",
     "measured_via": "tunnel"
   },
   {
@@ -115,7 +115,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:52Z",
+    "last_checked": "2026-10-23T07:34:12Z",
     "measured_via": "tunnel"
   },
   {
@@ -144,7 +144,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:50Z",
+    "last_checked": "2026-10-23T07:34:10Z",
     "measured_via": "tunnel"
   },
   {
@@ -174,7 +174,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:50Z",
+    "last_checked": "2026-10-23T07:34:10Z",
     "measured_via": "tunnel"
   },
   {
@@ -204,7 +204,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:51Z",
+    "last_checked": "2026-10-23T07:34:11Z",
     "measured_via": "tunnel"
   },
   {
@@ -215,7 +215,7 @@
     "api_base": "https://api.deepseek.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 352,
+    "latency_ms": 341,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-v4-pro",
@@ -234,7 +234,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:52Z",
+    "last_checked": "2026-10-23T07:34:12Z",
     "measured_via": "direct"
   },
   {
@@ -245,7 +245,7 @@
     "api_base": "https://api.moonshot.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1418,
+    "latency_ms": 1227,
     "success_rate": 100.0,
     "supported_models": [
       "kimi-k3",
@@ -265,7 +265,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:56Z",
+    "last_checked": "2026-10-23T07:34:15Z",
     "measured_via": "direct"
   },
   {
@@ -275,7 +275,7 @@
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 276,
+    "latency_ms": 314,
     "success_rate": 100.0,
     "supported_models": [
       "glm-5.3",
@@ -294,7 +294,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:53Z",
+    "last_checked": "2026-10-23T07:34:13Z",
     "measured_via": "direct"
   },
   {
@@ -305,7 +305,7 @@
     "api_base": "https://dashscope.aliyuncs.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 822,
+    "latency_ms": 746,
     "success_rate": 100.0,
     "supported_models": [
       "qwen3.8-max",
@@ -326,7 +326,7 @@
     "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:55Z",
+    "last_checked": "2026-10-23T07:34:14Z",
     "measured_via": "direct"
   },
   {
@@ -337,7 +337,7 @@
     "api_base": "https://qianfan.baidubce.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 899,
+    "latency_ms": 832,
     "success_rate": 100.0,
     "supported_models": [
       "ernie-5.1",
@@ -358,7 +358,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:56Z",
+    "last_checked": "2026-10-23T07:34:15Z",
     "measured_via": "direct"
   },
   {
@@ -369,7 +369,7 @@
     "api_base": "https://ark.cn-beijing.volces.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 891,
+    "latency_ms": 1537,
     "success_rate": 100.0,
     "supported_models": [
       "doubao-seed-2-1-pro",
@@ -390,7 +390,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:56Z",
+    "last_checked": "2026-10-23T07:34:17Z",
     "measured_via": "direct"
   },
   {
@@ -401,7 +401,7 @@
     "api_base": "https://api.hunyuan.cloud.tencent.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1703,
+    "latency_ms": 1628,
     "success_rate": 100.0,
     "supported_models": [
       "hunyuan-t1-latest",
@@ -420,7 +420,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:59Z",
+    "last_checked": "2026-10-23T07:34:19Z",
     "measured_via": "direct"
   },
   {
@@ -431,7 +431,7 @@
     "api_base": "https://api.minimaxi.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1155,
+    "latency_ms": 1030,
     "success_rate": 100.0,
     "supported_models": [
       "MiniMax-M3.1-Flash-Preview",
@@ -450,7 +450,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:57Z",
+    "last_checked": "2026-10-23T07:34:17Z",
     "measured_via": "direct"
   },
   {
@@ -461,7 +461,7 @@
     "api_base": "https://api.stepfun.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1163,
+    "latency_ms": 2052,
     "success_rate": 100.0,
     "supported_models": [
       "step-5-preview",
@@ -480,7 +480,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-10-22T07:36:57Z",
+    "last_checked": "2026-10-23T07:34:19Z",
     "measured_via": "direct"
   }
 ]
