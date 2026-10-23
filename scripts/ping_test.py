@@ -196,6 +196,9 @@ def update_data_file(results: list[dict]) -> int:
         r = by_id.get(site["id"])
         if not r:
             continue
+        # 保护合规的新加坡海外前哨物理实测值，避免 CI/本地简易 ping 降级覆盖
+        if site.get("measured_via") == "singapore_outpost":
+            continue
         via = r.get("measured_via", "unknown")
         is_blocked = site.get("cn_access") == "blocked"
         effective_via = "tunnel" if is_blocked and via == "direct" else via
