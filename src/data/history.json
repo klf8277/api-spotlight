@@ -3201,67 +3201,67 @@
       "date": "2026-10-23",
       "platforms": {
         "provider-openai": {
-          "latency_ms": null,
+          "latency_ms": 265,
           "success_rate": 100.0
         },
         "provider-anthropic": {
-          "latency_ms": null,
+          "latency_ms": 274,
           "success_rate": 100.0
         },
         "provider-google": {
-          "latency_ms": null,
+          "latency_ms": 60,
           "success_rate": 100.0
         },
         "provider-meta": {
-          "latency_ms": null,
+          "latency_ms": 544,
           "success_rate": 100.0
         },
         "provider-xai": {
-          "latency_ms": null,
+          "latency_ms": 224,
           "success_rate": 100.0
         },
         "provider-cohere": {
-          "latency_ms": null,
+          "latency_ms": 274,
           "success_rate": 100.0
         },
         "provider-mistral": {
-          "latency_ms": null,
+          "latency_ms": 479,
           "success_rate": 100.0
         },
         "provider-deepseek": {
-          "latency_ms": 341,
+          "latency_ms": 137,
           "success_rate": 100.0
         },
         "provider-moonshot": {
-          "latency_ms": 1227,
+          "latency_ms": 59,
           "success_rate": 100.0
         },
         "provider-zhipu": {
-          "latency_ms": 314,
+          "latency_ms": 152,
           "success_rate": 100.0
         },
         "provider-bailian": {
-          "latency_ms": 746,
+          "latency_ms": 3078,
           "success_rate": 100.0
         },
         "provider-qianfan": {
-          "latency_ms": 832,
+          "latency_ms": 465,
           "success_rate": 100.0
         },
         "provider-volcano": {
-          "latency_ms": 1537,
+          "latency_ms": 940,
           "success_rate": 100.0
         },
         "provider-tencent": {
-          "latency_ms": 1628,
+          "latency_ms": 1186,
           "success_rate": 100.0
         },
         "provider-minimax": {
-          "latency_ms": 1030,
+          "latency_ms": 263,
           "success_rate": 100.0
         },
         "provider-stepfun": {
-          "latency_ms": 2052,
+          "latency_ms": 3211,
           "success_rate": 100.0
         }
       }

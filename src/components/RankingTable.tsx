@@ -377,13 +377,26 @@ export default function RankingTable({
                       <span className="text-foreground/40">—</span>
                     )
                   ) : (
-                    <span className={latencyTone(p.latency_ms)}>{p.latency_ms}</span>
+                    <div className="flex flex-col items-start gap-0.5">
+                      <div className="flex items-baseline gap-1">
+                        <span className={latencyTone(p.latency_ms)}>{p.latency_ms}</span>
+                        <span className="text-xs font-normal text-foreground/50">ms</span>
+                        {p.measured_via === "singapore_outpost" && (
+                          <span
+                            className="ml-1 inline-flex items-center rounded border border-emerald-500/30 bg-emerald-500/10 px-1 py-0.2 text-[10px] font-medium text-emerald-700 dark:text-emerald-300"
+                            title={locale === "zh" ? "华为云新加坡海外前哨 · Tier-1 骨干物理 TLS 直连实测（零代理劫持）" : "Huawei Cloud Singapore Outpost · Tier-1 Physical TLS Direct Probe"}
+                          >
+                            🇸🇬 {locale === "zh" ? "前哨" : "SG"}
+                          </span>
+                        )}
+                      </div>
+                      <Sparkline
+                        points={(latencyHistory?.[p.id] ?? []).map((e) => e.latency)}
+                        ariaLabel={ranking.latencySparkAria}
+                        title={ranking.latencySparkTitle}
+                      />
+                    </div>
                   )}
-                  <Sparkline
-                    points={(latencyHistory?.[p.id] ?? []).map((e) => e.latency)}
-                    ariaLabel={ranking.latencySparkAria}
-                    title={ranking.latencySparkTitle}
-                  />
                 </td>
                 <td className="tabular-metric px-4 py-3 text-base font-semibold">{p.success_rate.toFixed(1)}%</td>
                 <td

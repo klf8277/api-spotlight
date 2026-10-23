@@ -37,17 +37,20 @@ def check_r1(platforms: list[dict]) -> tuple[bool, str]:
 
 
 def check_r2(platforms: list[dict]) -> tuple[bool, str]:
-    """R2（零假直连）：cn_access == 'blocked' 的平台，measured_via 为 tunnel/unknown 且 latency_ms 为 None"""
+    """R2（零假直连）：cn_access == 'blocked' 的平台，measured_via 为 tunnel/unknown，或经合规海外前哨物理实测"""
     bad = []
     for p in platforms:
         if p.get("cn_access") == "blocked":
             via = p.get("measured_via")
             lat = p.get("latency_ms")
+            # 允许新加坡海外前哨真实物理测速上墙；严禁本机代理隧道伪造延迟
+            if via == "singapore_outpost":
+                continue
             if via not in ("tunnel", "unknown") or lat is not None:
                 bad.append(f"{p.get('id')} (cn_access=blocked, measured_via={via}, latency_ms={lat})")
     if bad:
         return False, f"发现受限平台冒充直连或落库延迟：{bad}"
-    return True, "零假直连校验通过（所有 cn_access=blocked 平台均未暴露直连延迟）"
+    return True, "零假直连校验通过（所有 cn_access=blocked 平台均未暴露直连延迟或已采用合法海外前哨口径）"
 
 
 def check_r3() -> tuple[bool, str]:
@@ -86,16 +89,16 @@ def check_r4() -> tuple[bool, str]:
 
 
 def check_r5(platforms: list[dict]) -> tuple[bool, str]:
-    """R5（无口径禁止上墙）：凡 latency_ms != None 的项，measured_via 必须明确为 'direct'"""
+    """R5（无口径禁止上墙）：凡 latency_ms != None 的项，measured_via 必须明确为 'direct' 或 'singapore_outpost'"""
     bad = []
     for p in platforms:
         lat = p.get("latency_ms")
         via = p.get("measured_via")
-        if lat is not None and via != "direct":
+        if lat is not None and via not in ("direct", "singapore_outpost"):
             bad.append(f"{p.get('id')} (latency_ms={lat}, measured_via={via})")
     if bad:
-        return False, f"发现非 direct 口径平台落库 latency_ms：{bad}"
-    return True, "无口径禁止上墙校验通过（所有展示延迟的平台均具有 direct 明确口径）"
+        return False, f"发现非合法口径平台落库 latency_ms：{bad}"
+    return True, "无口径禁止上墙校验通过（所有展示延迟的平台均具有 direct/singapore_outpost 明确口径）"
 
 
 def check_r6_freshness(warn_stale: bool = False) -> tuple[bool, str]:

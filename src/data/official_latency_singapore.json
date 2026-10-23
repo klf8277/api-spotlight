@@ -1,0 +1,153 @@
+{
+  "probe_node": "huawei-cloud-singapore-01",
+  "probe_ip": "111.91.22.52",
+  "network_type": "Tier-1 International Transit",
+  "generated_at": "2026-10-23T16:15:25.497406+00:00",
+  "total_targets": 16,
+  "results": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "url": "https://api.openai.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 265,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "url": "https://api.anthropic.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 274,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "google",
+      "name": "Google Gemini",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models",
+      "status": "online",
+      "http_code": 403,
+      "latency_ms": 60,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "meta",
+      "name": "Meta Llama",
+      "url": "https://api.llama.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 544,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "xai",
+      "name": "xAI (Grok)",
+      "url": "https://api.x.ai/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 224,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "url": "https://api.cohere.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 274,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "url": "https://api.mistral.ai/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 479,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "url": "https://api.deepseek.com/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 137,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI",
+      "url": "https://api.moonshot.ai/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 59,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "zhipu",
+      "name": "Zhipu AI",
+      "url": "https://open.bigmodel.cn/api/paas/v4/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 152,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "bailian",
+      "name": "Aliyun Bailian",
+      "url": "https://dashscope.aliyuncs.com/compatible-mode/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 3078,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "qianfan",
+      "name": "Baidu Qianfan",
+      "url": "https://qianfan.baidubce.com/v2/models",
+      "status": "online",
+      "http_code": 403,
+      "latency_ms": 465,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "volcano",
+      "name": "Volcengine Ark",
+      "url": "https://ark.cn-beijing.volces.com/api/v3/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 940,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent Hunyuan",
+      "url": "https://api.hunyuan.cloud.tencent.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 1186,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "url": "https://api.minimax.chat/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 263,
+      "auth_state": "unauthenticated_expected"
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun",
+      "url": "https://api.stepfun.com/v1/models",
+      "status": "online",
+      "http_code": 401,
+      "latency_ms": 3211,
+      "auth_state": "unauthenticated_expected"
+    }
+  ]
+}

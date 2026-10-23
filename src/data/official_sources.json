@@ -53,7 +53,7 @@
       "name": "Meta",
       "type": "official",
       "models_url": "https://dev.meta.ai/models/muse-wonder",
-      "api_endpoint": "https://api.meta.com/v1/models",
+      "api_endpoint": "https://api.llama.com/v1/models",
       "selector": "models",
       "active_models": [
         "muse-wonder-1.0",
@@ -127,7 +127,7 @@
       "name": "月之暗面 (Moonshot AI)",
       "type": "official",
       "models_url": "https://platform.moonshot.cn/docs/pricing",
-      "api_endpoint": "https://api.moonshot.cn/v1/models",
+      "api_endpoint": "https://api.moonshot.ai/v1/models",
       "selector": "data",
       "active_models": [
         "kimi-k3",

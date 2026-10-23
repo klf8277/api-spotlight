@@ -52,7 +52,13 @@ export default function HomeView({ locale }: { locale: Locale }) {
             <p className="font-mono text-xs uppercase tracking-widest text-foreground/45">{dictionary.home.rankingEyebrow}</p>
             <h2 className="mt-1 text-2xl font-bold">{dictionary.home.rankingTitle}</h2>
           </div>
-          <p className="text-xs text-foreground/50">{dictionary.home.rankingNote}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              {locale === "zh" ? "测速节点：华为云新加坡海外前哨 (Tier-1 骨干物理实测)" : "Vantage Node: Huawei Cloud SG Outpost (Tier-1 Physical TLS Probe)"}
+            </span>
+            <p className="text-xs text-foreground/50">{dictionary.home.rankingNote}</p>
+          </div>
         </div>
         {/* 批F 工单2-④：移动端滑动提示（微动效，仅小屏展示；表格 min-w 需横向滑动） */}
         <p className="animate-swipe-hint mb-3 text-center text-xs font-medium text-emerald-600 sm:hidden dark:text-emerald-400">

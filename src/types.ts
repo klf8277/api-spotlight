@@ -33,7 +33,7 @@ export interface Platform {
   /** 最近实测时间，ISO8601 */
   last_checked: string;
   /** 网络探测口径：direct=直连实测 / tunnel=经本地代理隧道出口实测 / unknown */
-  measured_via?: "direct" | "tunnel" | "unknown";
+  measured_via?: "direct" | "tunnel" | "singapore_outpost" | "unknown";
 }
 
 export interface Perk {
