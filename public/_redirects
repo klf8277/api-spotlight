@@ -24,3 +24,9 @@
 /platform/sambanova https://hub.apiops.cloud/providers/sambanova 301
 /platform/agnes-ai https://hub.apiops.cloud/providers/agnes-ai 301
 /platform/perplexity https://hub.apiops.cloud/providers/perplexity 301
+
+# 商机雷达站 301 重定向至商业站（解决 F5 死链并引流）
+/radar https://hub.apiops.cloud/radar 301
+/radar/* https://hub.apiops.cloud/radar/:splat 301
+/zh/radar https://hub.apiops.cloud/zh/radar 301
+/zh/radar/* https://hub.apiops.cloud/zh/radar/:splat 301
