@@ -157,7 +157,7 @@ async def run_all(sites: list[dict], key_env: str, samples: int, timeout: float,
 
     async def _staggered_probe(site: dict, idx: int) -> dict:
         if idx > 0:
-            await asyncio.sleep(idx * 0.4)
+            await asyncio.sleep(idx * 0.8)
         return await probe_site(site, sem, key_env, samples, timeout)
 
     return await asyncio.gather(*(_staggered_probe(s, i) for i, s in enumerate(sites)))
@@ -196,8 +196,11 @@ def update_data_file(results: list[dict]) -> int:
         r = by_id.get(site["id"])
         if not r:
             continue
-        # 保护合规的新加坡海外前哨物理实测值，避免 CI/本地简易 ping 降级覆盖
+        # 保护合规的新加坡海外前哨物理实测延迟值，但刷新最近实测时间戳与状态
         if site.get("measured_via") == "singapore_outpost":
+            site["status"] = r["status"]
+            site["success_rate"] = r["success_rate"]
+            site["last_checked"] = r.get("checked_at") or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             continue
         via = r.get("measured_via", "unknown")
         is_blocked = site.get("cn_access") == "blocked"
@@ -221,6 +224,9 @@ def update_data_file(results: list[dict]) -> int:
     tmp = DATA_FILE.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(sites, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     os.replace(tmp, DATA_FILE)
+    pub_file = ROOT / "public" / "data" / "platforms.json"
+    if pub_file.parent.exists():
+        shutil.copy2(DATA_FILE, pub_file)
     return 0
 
 
