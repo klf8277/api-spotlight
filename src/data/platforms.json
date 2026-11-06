@@ -26,7 +26,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:12Z",
+    "last_checked": "2026-11-06T09:26:32Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -56,7 +56,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:13Z",
+    "last_checked": "2026-11-06T09:26:33Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -86,7 +86,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:14Z",
+    "last_checked": "2026-11-06T09:26:34Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -115,7 +115,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:14Z",
+    "last_checked": "2026-11-06T09:26:35Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -144,7 +144,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:15Z",
+    "last_checked": "2026-11-06T09:26:35Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -174,7 +174,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:16Z",
+    "last_checked": "2026-11-06T09:26:36Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -204,7 +204,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:17Z",
+    "last_checked": "2026-11-06T09:26:37Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -234,7 +234,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:18Z",
+    "last_checked": "2026-11-06T09:26:39Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -265,7 +265,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:19Z",
+    "last_checked": "2026-11-06T09:26:39Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -294,7 +294,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:20Z",
+    "last_checked": "2026-11-06T09:26:40Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -326,7 +326,7 @@
     "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:21Z",
+    "last_checked": "2026-11-06T09:26:42Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -358,7 +358,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:23Z",
+    "last_checked": "2026-11-06T09:26:44Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -390,7 +390,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:23Z",
+    "last_checked": "2026-11-06T09:26:45Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -420,7 +420,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:27Z",
+    "last_checked": "2026-11-06T09:26:48Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -450,7 +450,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:25Z",
+    "last_checked": "2026-11-06T09:26:46Z",
     "measured_via": "singapore_outpost"
   },
   {
@@ -480,7 +480,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-05T09:31:28Z",
+    "last_checked": "2026-11-06T09:26:48Z",
     "measured_via": "singapore_outpost"
   }
 ]
