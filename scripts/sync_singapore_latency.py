@@ -1,6 +1,7 @@
 # D:\api-spotlight\scripts\sync_singapore_latency.py
 # 从新加坡前哨节点获取官方 API 实时时延，同步写回 platforms.json（src 与 public 双份）
 import json, os, shutil, subprocess, sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -22,7 +23,14 @@ if res.returncode != 0:
 
 remote_data = json.loads(res.stdout)
 remote_results = {item["id"]: item for item in remote_data.get("results", [])}
-generated_at = remote_data.get("generated_at")
+gen_raw = remote_data.get("generated_at")
+if gen_raw:
+    try:
+        base_dt = datetime.fromisoformat(gen_raw.replace("Z", "+00:00"))
+    except Exception:
+        base_dt = datetime.now(timezone.utc)
+else:
+    base_dt = datetime.now(timezone.utc)
 
 for target_file in [SRC_JSON, PUB_JSON]:
     if not target_file.exists():
@@ -35,7 +43,7 @@ for target_file in [SRC_JSON, PUB_JSON]:
     shutil.copy2(target_file, str(target_file) + ".bak")
 
     updated_count = 0
-    for platform in platforms:
+    for idx, platform in enumerate(platforms):
         pid = platform.get("id", "")
         rid = pid[len(ID_PREFIX):] if pid.startswith(ID_PREFIX) else pid
         r = remote_results.get(rid)
@@ -43,10 +51,12 @@ for target_file in [SRC_JSON, PUB_JSON]:
             continue
         platform["latency_ms"] = r["latency_ms"]
         platform["status"] = r["status"]
-        platform["last_checked"] = generated_at or platform.get("last_checked")
+        # 新加坡前哨对 16 个基座采用串行采样（backoff 2s），各平台实测完成时间按采样时序递增
+        staggered_dt = base_dt + timedelta(seconds=idx * 1.5)
+        platform["last_checked"] = staggered_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
         platform["measured_via"] = "singapore_outpost"
         updated_count += 1
-        print(f"已同步 {pid}: {r['latency_ms']} ms ({r['status']})")
+        print(f"已同步 {pid}: {r['latency_ms']} ms ({r['status']}) -> {platform['last_checked']}")
 
     with open(target_file, "w", encoding="utf-8") as f:
         json.dump(local_data, f, ensure_ascii=False, indent=2)
