@@ -7,7 +7,7 @@
     "api_base": "https://api.openai.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 265,
+    "latency_ms": 282,
     "success_rate": 100.0,
     "supported_models": [
       "gpt-6-astra",
@@ -26,7 +26,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:09Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -56,7 +56,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:10Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -67,7 +67,7 @@
     "api_base": "https://generativelanguage.googleapis.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 60,
+    "latency_ms": 57,
     "success_rate": 100.0,
     "supported_models": [
       "gemini-4-argon",
@@ -86,7 +86,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:10Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -97,7 +97,7 @@
     "api_base": "https://api.llama.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 544,
+    "latency_ms": 214,
     "success_rate": 100.0,
     "supported_models": [
       "muse-wonder-1.0",
@@ -115,7 +115,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:12Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -126,7 +126,7 @@
     "api_base": "https://api.x.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 224,
+    "latency_ms": 261,
     "success_rate": 100.0,
     "supported_models": [
       "grok-4.7",
@@ -144,7 +144,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:12Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -155,7 +155,7 @@
     "api_base": "https://api.cohere.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 274,
+    "latency_ms": 266,
     "success_rate": 100.0,
     "supported_models": [
       "command-a-plus-05-2026",
@@ -174,7 +174,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:13Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -185,7 +185,7 @@
     "api_base": "https://api.mistral.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 479,
+    "latency_ms": 286,
     "success_rate": 100.0,
     "supported_models": [
       "mistral-large-latest",
@@ -204,7 +204,7 @@
     "cn_access": "blocked",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:14Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -215,7 +215,7 @@
     "api_base": "https://api.deepseek.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 137,
+    "latency_ms": 140,
     "success_rate": 100.0,
     "supported_models": [
       "deepseek-v4-pro",
@@ -234,7 +234,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:15Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -245,7 +245,7 @@
     "api_base": "https://api.moonshot.ai",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 59,
+    "latency_ms": 62,
     "success_rate": 100.0,
     "supported_models": [
       "kimi-k3",
@@ -265,7 +265,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:16Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -275,7 +275,7 @@
     "url": "https://open.bigmodel.cn",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 152,
+    "latency_ms": 145,
     "success_rate": 100.0,
     "supported_models": [
       "glm-5.3",
@@ -294,7 +294,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/paas/v4/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:17Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -305,7 +305,7 @@
     "api_base": "https://dashscope.aliyuncs.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 3078,
+    "latency_ms": 1509,
     "success_rate": 100.0,
     "supported_models": [
       "qwen3.8-max",
@@ -326,7 +326,7 @@
     "cn_access": "direct",
     "test_endpoint": "/compatible-mode/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:19Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -337,7 +337,7 @@
     "api_base": "https://qianfan.baidubce.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 465,
+    "latency_ms": 464,
     "success_rate": 100.0,
     "supported_models": [
       "ernie-5.1",
@@ -358,7 +358,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v2/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:20Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -369,7 +369,7 @@
     "api_base": "https://ark.cn-beijing.volces.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 940,
+    "latency_ms": 1383,
     "success_rate": 100.0,
     "supported_models": [
       "doubao-seed-2-1-pro",
@@ -390,7 +390,7 @@
     "cn_access": "direct",
     "test_endpoint": "/api/v3/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:22Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -401,7 +401,7 @@
     "api_base": "https://api.hunyuan.cloud.tencent.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 1186,
+    "latency_ms": 1536,
     "success_rate": 100.0,
     "supported_models": [
       "hunyuan-t1-latest",
@@ -420,7 +420,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:24Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -431,7 +431,7 @@
     "api_base": "https://api.minimaxi.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 263,
+    "latency_ms": 278,
     "success_rate": 100.0,
     "supported_models": [
       "MiniMax-M3.1-Flash-Preview",
@@ -450,7 +450,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:23Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   },
   {
@@ -461,7 +461,7 @@
     "api_base": "https://api.stepfun.com",
     "affiliate_url": null,
     "status": "online",
-    "latency_ms": 3211,
+    "latency_ms": 3056,
     "success_rate": 100.0,
     "supported_models": [
       "step-5-preview",
@@ -480,7 +480,7 @@
     "cn_access": "direct",
     "test_endpoint": "/v1/models",
     "api_key_env": "SPOTLIGHT_TEST_KEY",
-    "last_checked": "2026-11-07T08:49:23Z",
+    "last_checked": "2026-11-08T08:15:10.889832+00:00",
     "measured_via": "singapore_outpost"
   }
 ]
